@@ -1,0 +1,9 @@
+#+TITLE: Install Ubuntu - Assessment
+
+* Task
+  
+  Demonstrate that you have installed Ubuntu to your computer. If you are one of my uwaterloo students you will do this by uploading a screen shot of your Ubuntu desktop to the Learn Dropbox. Have something open where you can type in your name and student id so that I can verify who is who. 
+
+* Comments
+  
+  There are [[https://linuxconfig.org/how-to-take-a-screenshot-on-ubuntu-20-04-focal-fossa-linux][screen capture tools]] available for your Ubuntu installation.
