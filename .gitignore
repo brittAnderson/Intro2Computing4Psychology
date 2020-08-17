@@ -1,0 +1,15 @@
+auto/
+*.*~
+venv/
+__pycache__/
+*.synctex
+.Rhistory
+*.aux
+*.toc
+*.out
+*.blg
+*.bbl
+*.log
+*.*#
+.RData
+code/*.pyc
