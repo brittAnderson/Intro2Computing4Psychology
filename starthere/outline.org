@@ -1,0 +1,48 @@
+#+Title: Outline
+#+Author: Britt Anderson
+
+* Overview
+  This file contains a list of topics and associated activities for teaching yourself how to use your computer for research. Below you will find a list of topics with links to the relevant files in the other directories in this repository. The most convenient way to navigate the links may be to fork this repository and then clone it to your own computer and work from there. The ordering below is used in my course at the University of Waterloo, but you are encouraged to depart from that structure and navigate your own path as your needs and interests dictate. Most of the topics are reasonably self-contained, but of course, some of the later topics may require earlier skills or make reference to earlier activities. 
+
+* Installing Linux to Your Own Computer
+
+** Run from a USB (or SD card or external hard drive)
+
+** Dual Booting
+
+** Linux Only
+
+* RStudio
+  
+** Rstudio on Windows and OSX
+   
+** Rstudio with *buntu
+
+
+* Terminal (aka the Command Line)
+
+* Emacs 
+
+* Python
+
+* R
+
+* Data Handling
+
+* Basic Plotting
+
+* Programming Psychology Experiments
+
+* Report Writing
+  
+** Org, markdown, and related dialects and tools
+
+** LaTeX
+
+** Reference Management
+
+*** Biblatex (Bibtex)
+
+** Mixing Code and Text
+
+* Presentations
