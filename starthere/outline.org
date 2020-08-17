@@ -12,6 +12,13 @@
 
 ** Linux Only
 
+* Version Control
+  
+** Git
+
+*** Github
+
+
 * RStudio
   
 ** Rstudio on Windows and OSX
