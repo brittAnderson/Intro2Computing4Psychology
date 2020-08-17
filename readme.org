@@ -1,0 +1,29 @@
+#+Title: Introduction to Computing for Psychology Students
+#+Author: Britt Anderson
+
+* Overview
+  This repository houses material I use in teaching at the University of Waterloo (Canada). Psychology undergraduates are usually Arts students who have limited quantitative and computing backgrounds. In order to assist them to use their computers as research tools I have organized a skills course to give them a brief background and exposure to several computing topics: 
+
+  1. version control,
+  2. operating system and software installation,
+  3. using the terminal/command line,
+  4. coding (Python and R),
+     1. General purpose computing
+     2. Data analysis
+     3. Statistics
+     4. Data Visualizations
+  5. and the writing tools necessary for conducting
+     1. a simple data collection (Psychopy),
+     2. analysis, and
+     3. generation of a reproducible report. 
+
+* Invitation
+
+  While the material was developed for students at the University of Waterloo, I hope that some of the material may be useful to others. Feel free to provide feedback, or suggest material for inclusion.
+
+* Organization of the Repository
+
+  In the ~starthere~ directory I list an outline with a possible path through the material. That material is usually contained in a subdirectory of the ~topics~ folder. There may be further subdirectories if a topic has multiple levels or activities associated with it. The ~assignments~ directory contains versions of assignments I give the students to provide them a concrete opportunity to use the skills and in order to document their progress an to progress. If you are welcome to use the assignments to develop your own skills, but don't expect feedback or submit them to me. ~codeExamples~ contains examples submitted by past students, or written by me, to show how certain lessons might be tackled, or as educational illustrations. Many of the exercises are accompanied by videos or screencasts walking through various tasks. Those videos are hosted on ~Vimeo~ and will have the *i2c4p* identifier somewhere in their title, usually first, with the rest of the title to guide you to the accompanying activity. 
+
+
+
