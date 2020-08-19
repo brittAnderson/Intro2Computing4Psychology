@@ -4,27 +4,28 @@
 * Overview
   This file contains a list of topics and associated activities for teaching yourself how to use your computer for research. Below you will find a list of topics with links to the relevant files in the other directories in this repository. The most convenient way to navigate the links may be to fork this repository and then clone it to your own computer and work from there. The ordering below is used in my course at the University of Waterloo, but you are encouraged to depart from that structure and navigate your own path as your needs and interests dictate. Most of the topics are reasonably self-contained, but of course, some of the later topics may require earlier skills or make reference to earlier activities. 
 
+* RStudio
+** Rstudio on Windows and OSX
+   This is a way to get started with some elements of programming without the need to install Linux, but it is more limited in its potential. Still, it may be a good starting point for some students to learn some of the tools and conventions before taking the plunge. 
+** Rstudio with Ubuntu
+   Don't do this until you have a working installation of Ubuntu (or
+   alternative linux) working on your computer. This topic is intended
+   to start your R programming via a graphical inteface. After
+   familiarizing yourself with the basic features of the R language
+   and using a markdown dialect for mixing text and code we will
+   explore other editors for this function. Later modules will focus
+   in more detail on analysis and visualization.
 * Installing Linux to Your Own Computer
-
 ** Run from a USB (or SD card or external hard drive)
-
+   [[file:~/gitRepos/introComp4Psych/topics/installUbuntu.org][installUbuntu.org]]
 ** Dual Booting
-
+   [[file:~/gitRepos/introComp4Psych/topics/installUbuntu.org::*Dual Boot][Dual Boot]]
 ** Linux Only
-
+   [[file:~/gitRepos/introComp4Psych/topics/installUbuntu.org::*Linux only][linux only]]
 * Version Control
-  
 ** Git
 
 *** Github
-
-
-* RStudio
-  
-** Rstudio on Windows and OSX
-   
-** Rstudio with *buntu
-
 
 * Terminal (aka the Command Line)
 
