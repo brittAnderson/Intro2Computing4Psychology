@@ -1,117 +1,73 @@
 #+TITLE: Installing Linux
 
+* Your goal ...
+  is a _bootable_, _persistent_, Ubuntu 20.04 to a USB (note you can use an SD card and portable hard disc also, but they are not as widely used or as well documented).
+
 * Overview
   For this topic we will install a new operating system to your computer. We will use a flavor of linux called "Ubuntu." Linux is the ~kernel~ of the operating system and all the flavors, also called distributions: distros for short, are sets of packages that were curated by the distribution's creators to give a look or facilitate an ease of use. Underneath they all run the some version of the same kernel (versions are specified numerically).
+
+  There are [[*Other Methods][many ways]] to get Linux working on your computer and many varieties of Linux to try. If you are brave try dual-booting (there are lots of online resources - make sure you look at recent ones). If you have an older spare laptop why not make that your linux laptop and install only linux to it. As most new users are hesitant to make those big leaps, at least initially, for the following material I will assume that you want to run a Live version where you can try out Linux without installing anything to your personal computer. Thus, the material below describes mostly how to get a /persistent/ live USB with Ubuntu so that you can begin to use linux for the learning objectives of this course. 
 
 ** What operating system are you using now?
    Probably either Windows10 or OSX, but there are others. 
 
 * Summary of Steps
-  1. We will need to get a version of the ubuntu operating system downloaded to our computer.
+  1. We will need to get a version of the Ubuntu operating system downloaded to our computer.
   2. We will need to copy that file to a USB drive (you can also use CDs, DVDs, SD cards and other devices, but our instructions here will focus on the USB). This will process will require us to take several smaller steps. 
   3. You will have to figure out how to *boot* your computer from the USB device.
   4. Decide whether to install Ubuntu to your computer or to run it from the USB. The trade-offs will be discussed below, but I will assume you will be running a _persistent USB installation._
-  5. Verify your ubuntu installation.
+  5. Verify your Ubuntu installation.
 
 * Justification for Ubuntu
-  - Why use Ubuntu? :: There are many different Linux distributions. Some of them are Debian, Archlinux, Fedora, OpenSuse, and NixOS. Linux is the kernel that powers the system. All the rest are different choices people make of the tools they want to wrap around that "engine." Ubuntu has the best developed set of tools for getting started, and so it has a wealth of documentation to help beginning users get started. That large pool of users can make it easier to find help on line or among your colleagues. However, many experts use it too. You are not losing any potential by using Ubuntu, but it does have a reputation of being a "heavy" distribution that makes larger demands on your processor. For older equipment XUbuntu and LUbuntu will put less resource demands on your system, but come at some expense of usability and appearance. Debian emphasizes free software. Fedora and OpenSuse are used more widely in industry and also in Europe. Archlinux has less support for the beginner, but can be easier to understand since many configurations are done through text files, and it has an excellent wiki. Even for other distros the ArchLinux Wiki and Forums can be a good location for finding help. NixOS is a very different approach to Linux. It may well be the future, but as it breaks several of the common file conventions for Linux it is not recommended for newer users. I began with Ubuntu, but now run Archlinux on most of my lab and office computers. I have two machines that I am using Nixos on to get familiarity with that flavor before transitioning my other computers over. 
+  - Why use Ubuntu? :: There are many different Linux distributions. Some of them are Debian, Archlinux, Fedora, OpenSuse, and NixOS. Linux is the kernel that powers the system. All the rest are different choices people make of the tools they want to wrap around that "engine." Ubuntu has the best developed set of tools for getting started, and so it has a wealth of documentation to help beginning users get started. That large pool of users can make it easier to find help on line or among your colleagues. However, many experts use it too. You are not losing any potential by using Ubuntu, but it does have a reputation of being a "heavy" distribution that makes larger demands on your processor. For older equipment XUbuntu and LUbuntu will put less resource demands on your system, but come at some expense of usability and appearance. Debian emphasizes free software. Fedora and OpenSuse are used more widely in industry and also in Europe. Archlinux has less support for the beginner, but can be easier to understand since many configurations are done through text files, and it has an excellent wiki. Even for other distros the Archlinux Wiki and Forums can be a good location for finding help. NixOS is a very different approach to Linux. It may well be the future, but as it breaks several of the common file conventions for Linux it is not recommended for newer users. I began with Ubuntu, but now run Archlinux on most of my lab and office computers. I have two machines that I am using Archlinux on to get familiarity with that flavor before transitioning my other computers over. 
 
-* Steps in Detail :video:screencast:
-  1. *Important Warning*
-     If you find anything confusing and you decide to go to the internet to look for help or videos make sure you pay attention to the *date* of the help/video. Things change rapidly. Videos from even one year ago may not be correct any longer. Certainly you should not use anything from more than three years ago without a very critical eye. There can be good information there, you just need to be increasingly careful the farther you go back in time. 
-  2. Learn how to boot your computer from a USB.
-     You should do this before downloading or installing anything. Every computer manufacturer seems to do something different. You will have to search online for your computers make and model and some combination of how to boot to "Bios" or "UEFI" or "boot from USB". There is a short video showing how I do this on my lenovo laptop.
+* Steps in Detail
+  1. [[https://vimeo.com/448906706][A video introduction]].
+  2. *Important Warning*
+     If you find anything confusing and you decide to go to the Internet to look for help or videos make sure you pay attention to the *date* of the help/video. Things change rapidly. Videos from even one year ago may not be correct any longer. Certainly you should not use anything from more than three years ago without a very critical eye. There can be good information there, you just need to be increasingly careful the farther you go back in time. 
+  3. Buy a *new* USB
+     You can try to re-purpose an old one, but it is much safer, and a better use of your time to invest in a new one, and not the cheapest one you can find. You will be using this USB as your hard disk with lots of write and re-write operations. You want a high-quality USB of a healthy size. It needs to be a minimum of 8 GB, but you will probably run out of space if you go that small. 32 GB should be enough without getting too costly. Don't go ridiculously large (512 MB or 1TB).
+     [[https://vimeo.com/448908514][Video on Your USB Needs]]
+  4. Learn how to boot your computer from a USB ([[https://vimeo.com/448908272][video1: getting to your boot menu]] & [[https://vimeo.com/448908305][video2: boot menu walk-through]]).
+     You should practice getting to your boot menu first. If you cannot figure out how to access it nothing you will do later will work. 
+     Every computer manufacturer seems to do something different. You will have to search online for your computers make and model and some combination of how to boot to "Bios" or "UEFI" or "boot from USB".
      Some Hints that often work are: 
      - Mac OSX - start the computer with option key held down
      - Windows - F2 or F10 during the boot process - (look for a very briefly flashed screen and your computer does a full restart. There is often a very quick display that tells you which key to press to interrupt the start-up process). Another option is to tell Windows to boot from recovery mode. Find the "advanced" menu of the Windows Start Up menu (look in the "recovery" section of the start-up). Select from "another device". Some devices, like Surfaces, have other key combinations.
-  3. Get the Ubuntu 20.04 Live CD file
-     Regardless of whether you currently use a Mac or Windows computer you will need to download a version of Ubuntu. You need an *ISO* version. Currently, I recommend [[https://ubuntu.com/download/desktop][Ubuntu 20.04 LTS]]. The most current long term support (LTS) changes from time to time. This is current as of this writing (<2020-08-17 Mon 09:47>). You will save this to the Desktop (or someother location where you can find it when needed below). 
-  4. Get a USB
-     You can try to repurpose an old one, but it is much safer, and a better use of your time to invest in a new one, and not the cheapest one you can find. You will be using this USB as your hard disk with lots of write and re-write operations. You want a high-quality USB of a healthy size. It needs to be a minimum of 8 GB, but you will probably run out of space if you go that small. 32 GB should be enough without getting too costly. Don't go ridiculously large (512 MB or 1TB).
-  5. Prepare the USB
-     In order to get your computer to treat this USB as a device that it can boot from you will need to follow different steps than if you were to just use it as a storage device.
+  5. Get the Ubuntu 20.04 Live CD file ([[https://vimeo.com/448908073][video: getting Ubuntu ISO]])
+     Regardless of whether you currently use a Mac or Windows computer you will need to download a version of Ubuntu. You need an *ISO* version. Currently, I recommend [[https://ubuntu.com/download/desktop][Ubuntu 20.04 LTS]]. The most current long term support (LTS) changes from time to time. This is current as of this writing (<2020-08-17 Mon 09:47>). You will save this to the Desktop (or some other location where you can find it when needed below). 
      1. Live or Persistent?
 	You want *persistent*. This will allow you to keep your settings, software, and files between uses.
-     
-	A *live* version allows you to run and use Ubuntu. It will save things while you are using it, but when you turn it off all your settings are forgotten, and your saved files lost.
-     2. Creating a _bootable_ usb requires more than copying over the file. For Windows you should use [[https://rufus.ie/][Rufus]]. And when you pick the installation type you want to use the persistent version (needs version 3.7 or greater - as described [[https://www.linuxuprising.com/2019/08/rufus-creating-persistent-storage-live.html][here]]).For Mac [[https://etcher.io/][Etcher]] is often recommended, but Etcher does not support persistence. There are other tools and [[https://unetbootin.github.io/][Unetbootin]] is recommended. If you have a friend with a windows computer you could aways make the bootable USB on that computer, and then later on use it on your Mac. 
-	1. Windows
-	   I will be making a series of short videos for this. You will find them on the course Vimeo page.
-	   - changing boot options
-	   - getting Rufus
-	   - installing Ubuntu via Rufus
-	   - rebooting to Ubuntu
-	2. Mac 
-	   I do not have a mac for testing or demonstration.
-     3. Your goal is a _bootable_, _persistent_, Ubuntu 20.04 to a USB (note you can use an SD card and portable hard disc also, but they are not as widely used or as well documented).
-     4. The test! After installation to the USB insert the USB and power off. Restart. Select boot from USB option and see your linux installation. Open _gedit_ (or anything else you find that lets you edit a document) and save something trivial to your Desktop. Then power off, and see if it is still there when you restart? If so, you have done what you need to get a system working for this course.
-** Vimeo Screencast Links
-   - Intro to course: https://vimeo.com/448900968
-   - Intro to booting linux from usb: https://vimeo.com/448906706
-   - Comments on your USB: https://vimeo.com/448908514
-   - Download Rufus: https://vimeo.com/448908150
-   - Download Ubuntu: https://vimeo.com/448908073
-   - Installing to USB with Rufus: https://vimeo.com/448908151
-   - After Rufus Finishes: https://vimeo.com/448908366
-   - Getting to your Boot Menu: https://vimeo.com/448908272
-   - Boot Menu Walkthrough: https://vimeo.com/448908305
-   - Your First Successful Boot: https://vimeo.com/449006223
-
-
-
+     	A *live* version allows you to run and use Ubuntu. It will save things while you are using it, but when you turn it off all your settings are forgotten, and your saved files lost.
+     2. Creating a _bootable_ USB requires more than copying over the file. For Windows you should use [[https://rufus.ie/][Rufus]]. And when you pick the installation type you want to use the persistent version (needs version 3.7 or greater - as described [[https://www.linuxuprising.com/2019/08/rufus-creating-persistent-storage-live.html][here]]).For Mac [[https://etcher.io/][Etcher]] is often recommended, but Etcher does not support persistence. There are other tools ([[https://unetbootin.github.io/][Unetbootin]] is recommended). If you have a friend with a windows computer you could always make the bootable USB on that computer, and then later on use it on your Mac. 
+	1. Getting Rufus
+	   Rufus is tool for creating a USB that you can boot from and that has persistent memory. You get it from [[https://rufus.ie/][here.]] [[https://vimeo.com/448908150][video: getting Rufus]]
+	2. Using Rufus
+	   Rufus runs without being installed to your computer, but you do need to be able to find the file you downloaded. Pay attention to where your downloads go. On Windows this is typically your "Downloads" folder. You double click the file icon to launch it, and you will have to give it administrative privledges to allow it to write to your USB disk. Make sure that you have the USB plugged in to your computer when you launch Rufus so it can find the disk it is trying to write too. And for safety's sake only have that one USB plugged in.
+	   [[https://vimeo.com/448908151][video: using Rufus]]
+	3. Concluding Rufus
+	   After Rufus finishes you will need to shut things down and reboot. 
+           video: [[https://vimeo.com/448908366][after Rufus Finishes]] 
+  6. The test! After installation to the USB power off. Restart. Select you boot from USB option and see your linux installation. [[https://vimeo.com/449006223][video: your first Ubuntu boot]]
+  7. Test persistence
+     Open _gedit_ (or anything else you find that lets you edit a document) and save something trivial to your Desktop  like a text file that says "Hello world." Save it. Power off. Restart your Ubuntu system and see if the file is still there. If so, you have done what you need to get a system working for this course.
 ** Troubleshooting
-   - I don't have a USB port? :: Do you have an sdcard? If not, you will need a different computer.
+   - I don't have a USB port? :: Do you have an SD card? If not, you will need a different computer.
    - My Mac doesn't start UNetbootin :: That may be an issue with your version of OSX. Check out his [[https://youtu.be/YwvDemR60vw][video]] for an example of a workaround. 
-
 * Other Methods     
   You do not have to install and run Linux from a USB. Here are some other options you can consider.
 ** Dual Boot
    With this set up you have more than one operating system. You can use your usual Windows or Mac operating system, but if you choose, when you start, you can opt to use the Linux system you installed.
-   If you are going to try this (it is not that hard - I am tryping on a dual booted machine right now) you should *back-up* everything critical. The risk is small, but you can lose data in this process. Do not do this without first backing up all your critical data and files. 
+   If you are going to try this (it is not that hard - I am typing on a dual booted machine right now) you should *back-up* everything critical. The risk is small, but you can lose data in this process. Do not do this without first backing up all your critical data and files. 
    For Apple users search for ~Refind~ as the tool to handle dual booting.
    Windows10 users will find lots of online advice for dual booting with Ubuntu, and Ubuntu is generally smart enough to detect your Windows installation and not overwrite it. 
 ** Virtual Machine
-    Both Windows and Mac have methods for this. With a VM run Linux inside of your main, host, operating system. Many of the cloud services you read about create and use VMs. This set up requires your computer sharing its CPU and memory resources (RAM) with both OS's. This can slow down older hardware. While this requires a bit more expertise to set-up there are good online instructions, and it can work very well since you will have all the drivers (little programs that let the OS talk to your specific hardware) available. For Windows10 users you can easily get started with this. Look for information on using ~WSL2~ (Windows Subsystem for Linux v2). You will not be able to run graphical applications (at least easily) at this time, but those are likely coming soon.
+   Both Windows and Mac have methods for this. With a VM run Linux inside of your main, host, operating system. Many of the cloud services you read about create and use VMs. This set up requires your computer sharing its CPU and memory resources (RAM) with both OS's. This can slow down older hardware. While this requires a bit more expertise to set-up there are good online instructions, and it can work very well since you will have all the drivers (little programs that let the OS talk to your specific hardware) available. For Windows10 users you can easily get started with this. Look for information on using ~WSL2~ (Windows Subsystem for Linux v2). You will not be able to run graphical applications (at least easily) at this time, but those are likely coming soon.
 ** Linux only
-    This is like a standard installation, except when you start your computer it starts in Linux just like it starts in Windows/Mac now. I highly recommend this option. Many older computers run linux very well. Systems that were slow under windows can become quite perky with XUbuntu. If you have an old laptop or can find one in a family member's closet, or buy one for 150 CAD (the price of expensive textbooks in the old days). You can just install Linux to the computer and use it as a test, learning laptop and save your other device for your other classes and personal use. 
-   4. Explore the Live USB
-      1. Connect to the wifi.
-         1. Click up/down arrow in upper right corner of the screen.
-         2. Select the correct options (to be demonstrated).
-            - Authentication: PEAP
-            - Click box no certificate required
-            - Use your full watiam address (including the stuff after @ sign usually).
-      2. Verify working by opening Firefox Web Browser
-         1. Click little icon upper left.
-         2. From the dropdown menu select /Web Browser/.
-         3. Go to https://uwaterloo.ca
-      3. Explore some of the other programs available in the dropdown menu and under the different headings.
-         1. Which program is like Word for Windows?
-         2. How do you take a screenshot?
-         3. What is the standard email program on this version of Linux?
-      4. Installing programs
-         There is a "gui" installer, but we are going to use the package management system from the command line.
-         1. Open the terminal emulator
-         2. type ~sudo apt update~
-            What does /sudo/ mean?
-         3. Do *NOT* upgrade your old packages at this point.
-         4. type ~sudo apt install emacs~ ; accept the defaults
-         5. Leave the terminal open but drag over to the menu in the upper left corner and inspect the /Development/ folder. You should emacs in there. Do *not* click it. We are going to launch from the command line.
-         6. Back in terminal type: ~emacs &~.
-            What does the ampersand do? It lets things run in the background without freezing the terminal. If you don't know what I mean, then start without the ampersand, and then try to type another command in the terminal. Remember: if you don't know what will happen? Try it (after maybe backing up important files).
-         7. Go to the emacs help menu and under the drop down options pick emacs psychotherapist. Remember it is here when you need some counselling in the first few sessions of this course.
+   This is like a standard installation, except when you start your computer it starts in Linux just like it starts in Windows/Mac now. I highly recommend this option. Many older computers run linux very well. Systems that were slow under windows can become quite perky with XUbuntu. If you have an old laptop or can find one in a family member's closet, or buy one for 150 CAD (the price of expensive textbooks in the old days). You can just install Linux to the computer and use it as a test, learning laptop and save your other device for your other classes and personal use. 
 
-   9. Boot your computer from the /new/ USB and install *emacs* /from the command line/ again.
-      1. The command line - open up a "terminal". Your terminal will be running a "shell."
-      2. Package Managers
-         1. The ubuntu package manager
-            Basic commands: 
-            - apt update
-            - apt install 
-            - apt search
-            - apt remove
-   10. This time you might want to update those old programs. 
-       
 
 
     
+
+#  LocalWords:  ArchLinux
