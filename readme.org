@@ -16,6 +16,8 @@
      1. a simple data collection (Psychopy),
      2. analysis, and
      3. generation of a reproducible report. 
+	
+  I have recorded a [[https://vimeo.com/448900968][brief video introduction]] to the course.
 
 * Invitation
 
