@@ -1,0 +1,87 @@
+#+Title: First Steps in Programming and Markdown: RStudio
+
+* Goal
+  Our eventual goal is to do all the above in Linux. But in order to make some progress with our programming practice while we puzzle our way through the [[file:installUbuntu.org][Linux installation instructions]] we will begin by using a tool easily accessible in Windows and on Macs for using the programming language R, common for statistical analyses, and RStudio a programming environment that uses R and facilitates our first steps in learning to integrate code with text for integrated report generation.
+* Summary of Steps
+  We will: 
+  1. Download R
+  2. Download RStudio
+  3. Verify they are working
+  4. Generate a simple Rmd file to see some of the basic components of the markdown syntax.
+  5. Add some simple computing constructs including a 
+     - variable
+     - for loop
+     - function
+  6. Produce an Rmd file from the above
+  7. And export it to an html file that we can open in a web browser and that displays correctly. 
+* Detailed Steps
+** Download R
+   R is free statistical software. As it is a very popular language of academic statisticians many new and cutting edge statistical techniques are avaialable for R users that are well vetted. If you are using linux you can usually find instructions for downloading and installing that are specific to your linux distribution and its package manager. The comprehensive R network ([[https://cran.r-project.org/][CRAN]]) also maintains download links and instructions and this is the right place to go for [[https://cran.r-project.org/bin/windows/][Windows]] and [[https://cran.r-project.org/bin/macosx/][Mac]] downloads.
+   
+   The CRAN webpage also has links to [[https://cran.r-project.org/manuals.html][manuals]] that are useful for learning more about the language and its functions. While there is great material elsewhere, and you can find it by internet searches, it is still advisable to start at CRAN first. You know that information is curated by the body that funds, develops, and supports the language. 
+** Download RStudio 
+   RStudio is not R. It is a development environment wrapped around R. You can absolutely use R without RStudio (that is the way I use it and what I recommend). RStudio provides a lot of help to get a beginner started, and I used it as a beginner too, but it also reflects the opinions of the RStudio developers about their preferred way of using the language and the packages they think are best, but which may not be exactly what you want or how you want to use the tool. So, while I recommend RStudio to get going you should also try other ways to use R, and other styles of using R before you decide on your preferred approach. The people who make RStudio have a free desktop version that will provide all the functionality that we will need. They also make commercial tools that build on the basic RStudio functionality. 
+   [[https://rstudio.com/products/rstudio/download/#download][Here]] is where you can get RStudio. Choose the right version for your operating system and follow the instructions. 
+** Verify they are working.
+   Just click the icon and try to open the software. If it starts it works.
+** Generate and Rmd file; Try some simple programming; export a webpage
+   RStudio supports several different ways of interacting with R. We will use the Rmd file, which stands for R Mark Down; R because we are using the R language for our programming, and markdown because we are using the R markdown syntax (there are other varieties of markdown with slight differences in syntax and functions) for telling RStudio how to format our export file when it runs the code and reads our program. We will use this below to make the file we open in our browser. 
+   
+   A video will show examples. If you practice without watching the video pay attention to the difference between the /editor/ window and the /console/. The console evaluates the code and prints out the answer. You can use it to test whether your R code does what you think. The editor is where you mix the code with text. It lies static until you tell it to run a line, a block, or the entire document. It will then ouput the result (if there were no errors that you have to fix) in a viewer that in internal to RStudio. You want to be able to save that output somewhere (or know where RStudio saves it). Then you can open that file in your browser to see the full power of being able to write a simple text file and get produced a fully featured web page. 
+*** Variable 
+    A *variable* is something that holds a value. A value doesn't have to be a number. It could be name, character, or a list of pupil diameters, of even some larger data structure. As the name implies in R, as in most, but not all, programming languages a variable may vary. You could use a variable to "count" how many times you have done an operation and it would increment the value on each pass through the loop.
+
+    #+Name: A Variable Demonstration
+    #+begin_src R :exports both
+      a = 3
+      a = a + 1
+      print(a)
+    #+end_src
+
+    #+RESULTS:
+    : 4
+*** Loops
+    Often we use programs to automate things that need to be done over and over again. In many statistical and experimental procedures this need for repetition is common. Consider running all the trials of an experiment of finding the mean reaction time for a large number of experimental participants. When you have a task to do that needs to run until some condition is met you will often use a ~while~ loop. When you need to do something for a set number of time or through a list of items then you will typically use a ~for~ loop. A ~for~ loop iterates through a structure and executes the same code, the code in the /body/ of the loop each time through. 
+
+    #+begin_src R :exports both :results output
+      for (i in seq(1,10)) {
+        print(i)
+      }
+    #+end_src
+
+    #+RESULTS:
+    #+begin_example
+    [1] 1
+    [1] 2
+    [1] 3
+    [1] 4
+    [1] 5
+    [1] 6
+    [1] 7
+    [1] 8
+    [1] 9
+    [1] 10
+    #+end_example
+*** Functions
+    Functions in programming languages are black boxes for taking input and returning output. You, the author of the function, fill in the details of the black box, but we users only know what we feed in and what we get back. Each programming language has its own way of telling the processor what is and what is not a function. In R we use the keyword ~function~ and assign that to a name that we can use for our convenience when we want to invoke that function. 
+
+    For example, let's say we want to know if a number is even. We can use R's built in function to tell us the remainder of a division. This function is an /infix/ function as we put it INside its arguments. It uses the symbols ~%%~. For example ~ 5 %% 2~ equals 1 because if you divide 5 by 2 you have 1 left over. 
+
+    To know if a number is odd or even we only need to know if the remainder when divided by two is or is not zero. To do this we can use a *predicate*. It is a conventional way of saying it is a test that comes back true or false depending on whether a condition is met. Putting this altogether we can write a function that evaluates if a number is odd. 
+
+    #+begin_src R :results silent :session *isodd*
+	  isOdd <- function(n) {
+		     return(n %% 2 != 0)
+	  }
+    #+end_src
+    
+    And then we can use our function in a test:
+
+    #+begin_src R :results output :session *isodd*
+    print(isOdd(5))
+    #+end_src
+
+    #+RESULTS:
+    : [1] TRUE
+
+    We could then use this output value to test whether to print the number by using an "if" statement. Note that some of the syntax I am using in this file to get R to work is special to orgmode and not RStudio. You will see a demo of the same idea with RStudio in the videos for this topic. 
