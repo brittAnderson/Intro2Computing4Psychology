@@ -7,6 +7,19 @@
 * RStudio
 ** Rstudio on Windows and OSX
    This is a way to get started with some elements of programming without the need to install Linux, but it is more limited in its potential. Still, it may be a good starting point for some students to learn some of the tools and conventions before taking the plunge. 
+   For this beginning effort we will:
+   1. Download R
+   2. Download RStudio
+   3. Verify they are working
+   4. Generate a simple Rmd file to see some of the basic components of the markdown syntax.
+   5. Add some simple computing constructs including a 
+      - variable
+      - for loop
+      - function
+   6. Produce an Rmd file from the above
+   7. And export it to an html file that we can open in a web browser and that displays correctly. 
+
+   For the detailed instructions on the above steps consult [[file:~/gitRepos/Intro2Computing4Psychology/topics/rStudioWinMacFirstSteps.org][the first steps Rstudio file in the topics directory.]]
 ** Rstudio with Ubuntu
    Don't do this until you have a working installation of Ubuntu (or
    alternative linux) working on your computer. This topic is intended
@@ -17,7 +30,7 @@
    in more detail on analysis and visualization.
 * Installing Linux to Your Own Computer
 ** Run from a USB (or SD card or external hard drive)
-   [[file:~/gitRepos/introComp4Psych/topics/installUbuntu.org][installUbuntu.org]]
+   [[file:~/gitRepos/Intro2Computing4Psychology/topics/installUbuntu.org][installUbuntu.org]]
 ** Dual Booting
    [[file:~/gitRepos/introComp4Psych/topics/installUbuntu.org::*Dual Boot][Dual Boot]]
 ** Linux Only
