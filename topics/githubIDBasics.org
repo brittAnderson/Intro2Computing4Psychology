@@ -1,0 +1,14 @@
+#+Title: Github ID and the Basics
+
+
+* Goal
+  Create a github account and learn how to fork repositories.
+* Overview
+  Our longer term goal is to become fluent in version control. To do that we will use the [[https://git-scm.com/][git tool]] for managing changes we make to files in a project. In order to share and collaborate on our projects locally and remotely we will use a popular social coding platform: [[https://github.com][Github]]. 
+* Summary of Steps
+  1. Create a Github Account. ([[https://vimeo.com/450563119][introductory video]])
+  2. Read the "Hello World" Github guide. ([[https://vimeo.com/450563176][next steps video]])
+  3. Navigate to the course repository.
+  4. /Fork/ both the course repository and the practice repository for the course.
+  5. Generate a screen shot of your github home page after you have forked the course repositories ([[file:~/gitRepos/introComp4Psych/assessments/githubIDAssessment.org][github intro assessment]]). 
+* Details
