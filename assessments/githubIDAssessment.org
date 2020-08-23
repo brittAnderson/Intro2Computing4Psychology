@@ -1,0 +1,10 @@
+#+Title: GithubID - Assessment
+
+* Task
+  1. Create a [[https://github.com/][github account]].
+  2. *Fork* the two course related repositories.
+     A. [[https://github.com/brittAnderson/Intro2Computing4Psychology][Intro2Computing4Psychology]]
+     B. [[https://github.com/brittAnderson/psych363Practice][psych363Practice]]
+
+* Comment
+  This course makes use of [[https://github.com][github]] for practicing how to use the version control program git. To do that we will use a popular, public hosting site for sharing code.  
