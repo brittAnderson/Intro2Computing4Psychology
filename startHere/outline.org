@@ -32,18 +32,22 @@
    and using a markdown dialect for mixing text and code we will
    explore other editors for this function. Later modules will focus
    in more detail on analysis and visualization.
-* Installing Linux to Your Own Computer
-** Run from a USB (or SD card or external hard drive)
-   [[file:~/gitRepos/Intro2Computing4Psychology/topics/installUbuntu.org][installUbuntu.org]]
-** Dual Booting
-   [[file:~/gitRepos/introComp4Psych/topics/installUbuntu.org::*Dual Boot][Dual Boot]]
-** Linux Only
-   [[file:~/gitRepos/introComp4Psych/topics/installUbuntu.org::*Linux only][linux only]]
+* Linux Basics
+** Installing Linux to Your Own Computer
+*** Run from a USB (or SD card or external hard drive)
+    [[file:~/gitRepos/Intro2Computing4Psychology/topics/installUbuntu.org][installUbuntu.org]]
+*** Dual Booting
+    [[file:~/gitRepos/introComp4Psych/topics/installUbuntu.org::*Dual Boot][Dual Boot]]
+*** Linux Only
+    [[file:~/gitRepos/introComp4Psych/topics/installUbuntu.org::*Linux only][linux only]]
+** Ubuntu Walkthrough
+** Package Management
+*** Getting R/Rstudio for Linux
 * Version Control
 ** Git
-
 *** Github
-
+**** Github Basics
+     [[*Github][Github ID and Forking Repositories]]
 * Terminal (aka the Command Line)
 
 * Emacs 
