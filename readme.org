@@ -30,7 +30,7 @@
   The best way to use this repository is by forking or cloning your own version. There are internal links between files that don't work properly if you just open the code directory and click on one of the rendered versions of one of the ~.org~ files. Also, any exports to html that I include will open as raw files not as nicely rendered web pages, which they will often on your local computer. Links and file type associations should work better if you have work within a local clone of the repository than if you work by clicking on files in github or download files one at a time. Having your own version of all the files locally also makes it easier for you to copy and amend the material to suit your own needs. 
 
 * Feel Free to Comment or Contribute
-  If something is unclear go ahead an open an issue. If you find small changes like typos or broken links that you know how to fix please feel free to make a pull request, or if that is too inconvenient you can also point me to the needed fixes as an issue. 
+  If something is unclear go ahead and open an issue. If you find small changes like typos or broken links that you know how to fix please feel free to make a pull request, or if that is too inconvenient you can also point me to the needed fixes as an issue. 
 
   This material is taught in many ways and many places. If you have ideas about approaches you think may work better for me or want to talk about pedagogical strategies please feel free to email me. I am happy to entertain ideas for additional segments and topics, but all such suggestions or major restructuring of content will have to wait until this first version is completed and has been trialed by my Fall 2020 course at the [[https://uwaterloo.ca][University of Waterloo]].
 
