@@ -4,10 +4,10 @@
   Our eventual goal is to do all the above in Linux. But in order to make some progress with our programming practice while we puzzle our way through the [[file:installUbuntu.org][Linux installation instructions]] we will begin by using a tool easily accessible in Windows and on Macs for using the programming language R, common for statistical analyses, and RStudio a programming environment that uses R and facilitates our first steps in learning to integrate code with text for integrated report generation.
 * Summary of Steps
   We will: 
-  1. Download R
-  2. Download RStudio
-  3. Verify they are working
-  4. Generate a simple Rmd file to see some of the basic components of the markdown syntax.
+  1. Download R ([[https://vimeo.com/450719112][downloadR video]])
+  2. Download RStudio ([[https://vimeo.com/450719047][downloadRStudio video]])
+  3. Verify they are working ([[https://vimeo.com/450719009][RStudio Walk-through video]])
+  4. Generate a simple Rmd file to see some of the basic components of the markdown syntax ([[https://vimeo.com/450718879][simpleRmdDemo video]])
   5. Add some simple computing constructs including a 
      - variable
      - for loop
@@ -27,7 +27,7 @@
 ** Generate and Rmd file; Try some simple programming; export a webpage
    RStudio supports several different ways of interacting with R. We will use the Rmd file, which stands for R Mark Down; R because we are using the R language for our programming, and markdown because we are using the R markdown syntax (there are other varieties of markdown with slight differences in syntax and functions) for telling RStudio how to format our export file when it runs the code and reads our program. We will use this below to make the file we open in our browser. 
    
-   A video will show examples. If you practice without watching the video pay attention to the difference between the /editor/ window and the /console/. The console evaluates the code and prints out the answer. You can use it to test whether your R code does what you think. The editor is where you mix the code with text. It lies static until you tell it to run a line, a block, or the entire document. It will then ouput the result (if there were no errors that you have to fix) in a viewer that in internal to RStudio. You want to be able to save that output somewhere (or know where RStudio saves it). Then you can open that file in your browser to see the full power of being able to write a simple text file and get produced a fully featured web page. 
+   A [[https://vimeo.com/450718879][video]] shows an example. If you practice without watching the video pay attention to the difference between the /editor/ window and the /console/. The console evaluates the code and prints out the answer. You can use it to test whether your R code does what you think. The editor is where you mix the code with text. It lies static until you tell it to run a line, a block, or the entire document. It will then ouput the result (if there were no errors that you have to fix) in a viewer that in internal to RStudio. You want to be able to save that output somewhere (or know where RStudio saves it). Then you can open that file in your browser to see the full power of being able to write a simple text file and get produced a fully featured web page. 
 *** Variable 
     A *variable* is something that holds a value. A value doesn't have to be a number. It could be name, character, or a list of pupil diameters, of even some larger data structure. As the name implies in R, as in most, but not all, programming languages a variable may vary. You could use a variable to "count" how many times you have done an operation and it would increment the value on each pass through the loop.
 
@@ -69,7 +69,7 @@
 
     To know if a number is odd or even we only need to know if the remainder when divided by two is or is not zero. To do this we can use a *predicate*. It is a conventional way of saying it is a test that comes back true or false depending on whether a condition is met. Putting this altogether we can write a function that evaluates if a number is odd. 
 
-    #+begin_src R :results silent :session *isodd*
+    #+begin_src R :exports code :results silent :session *isodd*
 	  isOdd <- function(n) {
 		     return(n %% 2 != 0)
 	  }
@@ -77,7 +77,7 @@
     
     And then we can use our function in a test:
 
-    #+begin_src R :results output :session *isodd*
+    #+begin_src R :exports both :results output :session *isodd*
     print(isOdd(5))
     #+end_src
 
