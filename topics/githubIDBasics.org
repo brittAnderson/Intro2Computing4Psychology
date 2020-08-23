@@ -12,3 +12,25 @@
   4. /Fork/ both the course repository and the practice repository for the course.
   5. Generate a screen shot of your github home page after you have forked the course repositories ([[file:~/gitRepos/introComp4Psych/assessments/githubIDAssessment.org][github intro assessment]]). 
 * Details
+** A Github Account 
+   Science is collaborative and iterative. Computing projects, whether for industry or research, are usually too big for one person. Therefore, we benefit when there are tools to facilitate revision, reversion, recording, and sharing. [[https://github.com][Github]] is a large social coding platform with high visibility. While there are other similar platforms (e.g, [[https://bitbucket.org/product][Bitbucket,]] or [[https://gitlab.com/explore][Gitlab]]) Github is convenient for our educational goals. While you do *not* need a Github account to use ~git~, the version control software, ~git~ is used to manage your github projects. Therefore, you first need to create an account to use Github.
+*** Get your id   
+    This is a straightfoward process. Navigate to [[https://github.com][Github]] and complete the sign up process on the home page. You should use whatever email address is convenient, and you can chose whatever username is available, but think for a moment. If you are successful in this course at improving your computing skills the Github platform is something you may want to use professionally in the future; pick a username that won't embarass you later.
+** Sign in to your user account
+   You should see a blank page with a random geometric avatar and no activity or respositories. 
+** Look at the Github Guides
+   The [[https://guides.github.com/][Github Guides]] will provide you with short introductions to the git terminology, the Github workflow, and how to create your first repository.
+** Read the Hello World guide and create your first repository.
+   The [[https://guides.github.com/activities/hello-world/][hello world]] guide will walk you through creating a repository. Even if you delete after creation go through these steps to learn what a repository is. 
+** Navigate to my Github respositories and Fork the Course Repository and Practice Repository
+   My respositories are at: [[https://github.com/brittAnderson?tab=repositories][Britt's Repos]]
+*** What is a "Fork"?
+    There is short github guide on the notion of a [[https://guides.github.com/activities/forking/][fork]]. 
+** Fork the main course repository
+   When you fork the course repository you will enable /cloning/ (to be covered later) your own local version on your home computer or laptop. Your fork will also give you access to your own copies of all files that you can edit or add to without affecting my copies. Your fork (and subsequently your clone) will give you a way to add changes back to my copies (if I accept your /pull request/) and easily incorporate new changes that I make into your version. 
+   The main course repository is here: https://github.com/brittAnderson/Intro2Computing4Psychology
+   Note that there is a ~readme~ file on the landing page. This is created from the ~readme.org~ file that you can see in the list of code files right above. Open this up by clicking on it and make a local change to your version of the readme.org file. Maybe add a line that says this is your fork; something minor; and then ~commit~ that change. You should see the readme region change to reflect your change (you may have to refresh your browser). You will at this point have progressed through some of the core features of version control, but to practice some more ...
+** For the course practice respository
+   You can find that here: https://github.com/brittAnderson/psych363practice
+** Complete the github id assessment
+   [[file:~/gitRepos/introComp4Psych/assessments/githubIDAssessment.org][Github ID Assessment]]
