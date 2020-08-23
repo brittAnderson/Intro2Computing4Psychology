@@ -4,8 +4,10 @@
 * Overview
   This file contains a list of topics and associated activities for teaching yourself how to use your computer for research. Below you will find a list of topics with links to the relevant files in the other directories in this repository. The most convenient way to navigate the links may be to fork this repository and then clone it to your own computer and work from there. The ordering below is used in my course at the University of Waterloo, but you are encouraged to depart from that structure and navigate your own path as your needs and interests dictate. Most of the topics are reasonably self-contained, but of course, some of the later topics may require earlier skills or make reference to earlier activities. 
 
-* 
-
+* Github
+  We will be studying version control later when we have set up our Ubuntu installation and can use the terminal (aka: command line). To prepare for that we will create a [[https://github.com][Github account]] and gain some basic familiarity with the Github workflow. 
+  1. [[https://vimeo.com/450563119][Intro to Github video]]
+  2. [[https://vimeo.com/450563176][Github signup and walkthrough screencast video]]
 * RStudio
 ** Rstudio on Windows and OSX
    This is a way to ([[https://vimeo.com/450563454][get started video)]] with some elements of programming without the need to install Linux, but it is more limited in its potential. Still, it may be a good starting point for some students to learn some of the tools and conventions before taking the plunge. 
