@@ -4,14 +4,16 @@
 * Overview
   This file contains a list of topics and associated activities for teaching yourself how to use your computer for research. Below you will find a list of topics with links to the relevant files in the other directories in this repository. The most convenient way to navigate the links may be to fork this repository and then clone it to your own computer and work from there. The ordering below is used in my course at the University of Waterloo, but you are encouraged to depart from that structure and navigate your own path as your needs and interests dictate. Most of the topics are reasonably self-contained, but of course, some of the later topics may require earlier skills or make reference to earlier activities. 
 
+* 
+
 * RStudio
 ** Rstudio on Windows and OSX
-   This is a way to get started with some elements of programming without the need to install Linux, but it is more limited in its potential. Still, it may be a good starting point for some students to learn some of the tools and conventions before taking the plunge. 
+   This is a way to ([[https://vimeo.com/450563454][get started video)]] with some elements of programming without the need to install Linux, but it is more limited in its potential. Still, it may be a good starting point for some students to learn some of the tools and conventions before taking the plunge. 
    For this beginning effort we will:
-   1. Download R
-   2. Download RStudio
-   3. Verify they are working
-   4. Generate a simple Rmd file to see some of the basic components of the markdown syntax.
+   1. Download R ([[https://vimeo.com/450719112][downloadR video]])
+   2. Download RStudio ([[https://vimeo.com/450719047][downloadRStudio video]])
+   3. Verify they are working ([[https://vimeo.com/450719009][RStudio Walk-through video]])
+   4. Generate a simple Rmd file to see some of the basic components of the markdown syntax ([[https://vimeo.com/450718879][simpleRmdDemo video]])
    5. Add some simple computing constructs including a 
       - variable
       - for loop
