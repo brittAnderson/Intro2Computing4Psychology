@@ -23,7 +23,7 @@
    6. Produce an Rmd file from the above
    7. And export it to an html file that we can open in a web browser and that displays correctly. 
 
-   For the detailed instructions on the above steps consult [[file:~/gitRepos/Intro2Computing4Psychology/topics/rStudioWinMacFirstSteps.org][the first steps Rstudio file in the topics directory.]]
+   For the detailed instructions on the above steps consult [[file:~/gitRepos/introComp4Psych/topics/rStudioWinMacFirstSteps.org][the first steps Rstudio file in the topics directory.]]
 ** Rstudio with Ubuntu
    Don't do this until you have a working installation of Ubuntu (or
    alternative linux) working on your computer. This topic is intended
@@ -40,9 +40,8 @@
     [[file:~/gitRepos/introComp4Psych/topics/installUbuntu.org::*Dual Boot][Dual Boot]]
 *** Linux Only
     [[file:~/gitRepos/introComp4Psych/topics/installUbuntu.org::*Linux only][linux only]]
-** Ubuntu Walkthrough
+** Xubuntu Walkthrough
 ** Package Management
-*** Getting R/Rstudio for Linux
 * Version Control
 ** Git
 *** Github
@@ -55,6 +54,7 @@
 * Python
 
 * R
+** Getting R/Rstudio for Linux
 
 * Data Handling
 
