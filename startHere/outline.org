@@ -41,8 +41,11 @@
    in more detail on analysis and visualization.
 * Linux Basics
 ** Installing Linux to Your Own Computer
+   In this topic you will install a version of Linux on your own machine to use throughout this course (and after, I hope). 
 *** Run from a USB (or SD card or external hard drive)
-    [[file:~/gitRepos/Intro2Computing4Psychology/topics/installUbuntu.org][installUbuntu.org]]
+    As I assume most new users will be hesitant to try and install a second operating system on their personal laptop they use for school and their personal work I am highlighting the use of Linux (Xubuntu) on a USB. You use the USB as your hard disk. You still use you computer's hardware (screen, keyboard, camera, etc), but the reading and writing of data takes place on the USB. It makes things slower, but you don't change your personal set up. Shut down. Remove USB. Start back up and you are back to where you are used to. It is a reasonable way to get started for experimenting and learning, but not an ideal way to run a system long-term. Consider converting to a more flexible and faster option in the future. Details of all the steps you have to take, and there are many, can be found in the topics file. 
+*** Install Xubuntu to a USB Topic
+    [[file:../topics/installUbuntu.org][installUbuntu.org]]
 *** Dual Booting
     [[file:~/gitRepos/introComp4Psych/topics/installUbuntu.org::*Dual Boot][Dual Boot]]
 *** Linux Only
