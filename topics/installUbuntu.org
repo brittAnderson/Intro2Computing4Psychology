@@ -50,9 +50,16 @@
 	3. Concluding Rufus
 	   After Rufus finishes you will need to shut things down and reboot. 
            video: [[https://vimeo.com/448908366][after Rufus Finishes]] 
-  6. The test! After installation to the USB power off. Restart. Select you boot from USB option and see your linux installation. [[https://vimeo.com/449006223][video: your first Ubuntu boot]]
+  6. The test! After installation to the USB power off. Restart. Select you boot from USB option and see your linux installation. [[https://vimeo.com/channels/i2c4p/453034310][video: your first Xubuntu boot explained]] 
   7. Test persistence
-     Open _gedit_ (or anything else you find that lets you edit a document) and save something trivial to your Desktop  like a text file that says "Hello world." Save it. Power off. Restart your Ubuntu system and see if the file is still there. If so, you have done what you need to get a system working for this course.
+     Open _mousepad_ (or anything else you find that lets you edit a document) and save something trivial to your Desktop like a text file that says "Hello world." Save it. Power off. Restart your Ubuntu system and see if the file is still there. If so, you have done what you need to get a system working for this course.
+     [[https://vimeo.com/453295883][video: testing persistence and other housekeeping]]
+  8. Prove you can install a package.
+     1. Open the terminal.
+     2. run ~sudo apt update~
+     3. run ~sudo apt install emacs~
+     4. Follow the instructions in [[file:../assessments/installEmacs.org][installEmacs]] assessments
+  9. Celebrate!
 ** Troubleshooting
    - I don't have a USB port? :: Do you have an SD card? If not, you will need a different computer.
    - My Mac doesn't start UNetbootin :: That may be an issue with your version of OSX. Check out his [[https://youtu.be/YwvDemR60vw][video]] for an example of a workaround. 
