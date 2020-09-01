@@ -1,0 +1,113 @@
+# -*- org-link-file-path-type: relative; -*-
+#+Title: Introduction to the Terminal
+
+* Find the terminal
+  Different operating systems refer to the terminal differently. In Windows the =CMD.exe= [fn:1] command is an approximation to a terminal as is the =Power Shell= [fn:2]. 
+
+  For OSX you navigate to you applications, find the folder "Utilities" and look in their for the terminal application. 
+
+  For Xubuntu click the icon in the upper left of the screen and type terminal in the search bar.
+
+** Terminology
+   While they do not mean exactly the same thing, you will often find the following terms being used relatively interchangeably. 
+   - terminal
+   - shell
+   - command line
+  What they have in common is the idea of a text based interface to communicating with the operating system. What this means is that instead of opening a gui (gui: *G* raphical *U* ser *I* nterface) to navigate your file tree you do this with a text based system of commands. 
+
+** An example - your directory tree
+
+#+begin_src sh :eval :never :export code
+   ls
+#+end_src
+
+  Typing this command in your terminal will list the files and directory. 
+
+#+begin_src sh :eval :never :export code
+   ls -la
+#+end_src
+
+  Typing this command will get you a *l* ong version of the same list, /plus/ all the hidden files that can be hard to see from a conventional file manager display. 
+
+** An Historical Aside
+   In the early days of computing people wrote their programs on [[https://en.wikipedia.org/wiki/Computer_programming_in_the_punched_card_era][punch cards]]. Some see the inspiration as the [[https://en.wikipedia.org/wiki/Jacquard_machine][Jacquard machine.]] There are still programmers alive who can tell you their horror stories of tripping and falling and scattering their punch cards everywhere. Want to know if your program worked? Take it to the main frame data center, drop it off, and come back the next day to get your print out. 
+   [[https://en.wikipedia.org/wiki/Computer_terminal][Terminals]] came along as an alternative to communicating with big central processors. There was a screen and keyboard. By typing you could send input to the computer that returned the output to your screen. 
+   The terminals we have today are not true terminals, but emulators. Though few people refer to them as such. We emulate this old way of communicating to the processor because it works and is efficient.
+
+* Why use a terminal?
+  
+  You can get more done. You can get it done more quickly. Once you learn to do one hard thing you never have to figure out how to do it again, because you can [[https://www.theatlantic.com/technology/archive/2018/10/agents-of-automation/568795/][easily script it]]. That is why you want to learn to use the terminal
+
+  Terminals are ubiquitous. They are low in their resource usage. They permit remote logins without the need for sending graphics back and forth. In fact, the remote computer need not have a system installed for displaying windows or even a physical screen attached (called headless). 
+
+  Knowing how to use a terminal will allow you to use =ssh= to connect to remote hosts. It will allow you to quickly and efficiently navigate your system, and it will make it easy for you to do things that used to take ages. 
+
+  
+** A scripting example
+   Want to convert and compress a large directory of videos as I did for this course. No need to open up each in an application and click a bunch of mouse clicks. Just write a =bash= script to invoke a command line program to do all the work for you. Go get a cup of coffee and come back when the [[https://xkcd.com/1319/][job is done]].
+
+   #+begin_src sh :eval never :exports code
+   for i in *.MP4; 
+   do name=`echo "$i" | cut -d'.' -f1`; 
+   echo "$name"; 
+   ffmpeg -i "$i" -c:v libx264 -b:v 1.5M -c:a aac -b:a 128k "${name}S.mp4";
+   done
+   #+end_src
+
+   Almost all of this I copied off the Internet where it appeared as an answer to a question from someone else wanting to do essentially the same thing I did. It took me a while to tweak it to my particular use case, but when that was done my problem was solved, /forever./ Every new batch of videos I just put in their own directory and run this script from the command line. Note that this script uses a *for loop*, one of the constructs introduced in the first [[file:rStudioWinMacFirstSteps.org::*Loops][RStudio lesson]].
+
+   What learning the terminal does is allow you to leverage the knowledge of more people. Thus you get to think about the interesting part of your problems.
+   
+* Resources
+  There are a great many resources on how to use the terminal effectively, but don't go out and read them all. One of the skills to learn in learning to use the computer is to develop your own set of links and resources you can go to when need arises. Don't try to learn everything at once. You will get overwhelmed and discouraged. Instead you learn what you need when the need arises. And if you need to know something more than once, then you spend the time to dive deeper. There are a great many things about using the terminal that I do not know, but I know the ones I use often, and I know where to find more when I need to know more. You should do the same. Here are a few online resources to get you started.
+
+  1. [[https://ryanstutorials.net/linuxtutorial/commandline.php][The command line]]
+  2. [[https://ubuntu.com/tutorials/command-line-for-beginners#1-overview][A Short Series of Terminal Lessons from the UbuntuWiki]]
+  3. [[https://null-byte.wonderhowto.com/how-to/hack-like-pro-scripting-for-aspiring-hacker-part-1-bash-basics-0149422/][Some Scripting Basics]]
+     Most of what you want to do at the command line, at least in the beginning, you can do with typing directly into the terminal. But at some point you will want to write a file, a script, that has all the commands typed into it. They you can run that script from the terminal. This blog post has some basic background for how to get started. 
+     Note the use of the term "BASH". This stands for the Bourne Again Shell. Your terminal can use different shells. So while you can use the terms interchangeably most of the time, they don't mean exactly the same thing. The default shell in use by the terminals in Xubuntu is BASH. Another shell favored by many advanced programmers is [[https://ohmyz.sh/][zsh]]. You [[https://wiki.ubuntu.com/ChangingShells][can change the shell]] for your terminal if you like.
+  4. [[https://hpc-carpentry.github.io/hpc-shell/05-scripts/index.html][Another Scripting Introduction]]
+  5. [[https://medium.com/tech-tajawal/writing-shell-scripts-the-beginners-guide-4778e2c4f609][A More Detailed Treatment of Shell Scripting]]
+
+* Terminal Games
+  In order to give you some structure for your self-directed learning, I have organized a few activities you might try and a few questions you might ask yourself. 
+  1. ~ls -la /home/<username>~
+     - What does all this output mean?
+     - What changes when you leave out the ~-la~?
+     - What does the hyphen do?
+  2. Can you find the location of your desktop folder in your terminal? 
+  3. Can you change to that directory?
+     ~cd~
+  4. Find out where you are?
+     ~pwd~
+  5. Can you find out who the computer thinks you are, your user name?
+     ~whoami~
+  6. Find out how much free space you have on your computer disk.
+     ~df -h~
+  7. How do you get help for most of these commands?
+     Usually ~command --help~ or (~-h~)
+  8. How do you find the manual?
+     ~man ls~
+  9. Navigating
+     1. Paths: absolute and relative.
+     2. What do those "dots" mean?
+     3. What do those slashes mean?
+     4. Tab is your friend.
+     5. Try the up arrow too.
+  10. File ownership
+      1. Make a text file from the command line.
+         ~touch /home/yourname/Documents/testText.txt~
+      2. Who owns it?
+  11. Make a directory
+      ~mkdir /home/britt/Documents/myFirstDir/~
+      Spaces are the enemy. Never use them, but if you have to, escape (~\~) them.
+  12. Want more practice? Try some of the [[*Resources][resources]] above. 
+
+* Assessment
+  
+
+* Footnotes
+[fn:1] [[https://www.howtogeek.com/235101/10-ways-to-open-the-command-prompt-in-windows-10/][CMD]] 
+
+[fn:2] [[https://docs.microsoft.com/en-us/powershell/scripting/getting-started/getting-started-with-windows-powershell?view=powershell-6][Power Shell]]
+
