@@ -1,6 +1,5 @@
 #+Title: Github ID and the Basics
 
-
 * Goal
   Create a github account and learn how to fork repositories.
 * Overview
