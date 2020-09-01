@@ -7,7 +7,9 @@
 * Github
   We will be studying version control later when we have set up our Ubuntu installation and can use the terminal (aka: command line). To prepare for that we will create a [[https://github.com][Github account]] and gain some basic familiarity with the Github workflow. 
   1. [[https://vimeo.com/450563119][Intro to Github video]]
+     =git= is a program that allows you to do version control. /Github/ is one of the larger social coding platform: an online agora for sharing, finding, and collaborating. It uses =git= as its base version control program, but it does other things too. Start to learn a bit about /Github/ here.
   2. [[https://vimeo.com/450563176][Github signup and walkthrough screencast video]]
+     To participate at Github you have to be a member. It is free. Once you have done so, /fork/ this repository.
 * RStudio
 ** Rstudio on Windows and OSX
    This is a way to ([[https://vimeo.com/450563454][get started video)]] with some elements of programming without the need to install Linux, but it is more limited in its potential. Still, it may be a good starting point for some students to learn some of the tools and conventions before taking the plunge. 
