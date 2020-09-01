@@ -1,0 +1,472 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2020-09-01 Tue 14:49 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Introduction to the Terminal</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="Britt Anderson" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2020 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">Introduction to the Terminal</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#orge788a54">1. Find the terminal</a>
+<ul>
+<li><a href="#org0a6276e">1.1. Terminology</a></li>
+<li><a href="#orge343e0f">1.2. An example - your directory tree</a></li>
+<li><a href="#orgcad0831">1.3. An Historical Aside</a></li>
+</ul>
+</li>
+<li><a href="#orgb49a0f7">2. Why use a terminal?</a>
+<ul>
+<li><a href="#orge34c501">2.1. A scripting example</a></li>
+</ul>
+</li>
+<li><a href="#org70a0233">3. Resources</a></li>
+<li><a href="#orge6577d8">4. Terminal Games</a></li>
+<li><a href="#orgc5e9bff">5. Assessment</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orge788a54" class="outline-2">
+<h2 id="orge788a54"><span class="section-number-2">1</span> Find the terminal</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+Different operating systems refer to the terminal differently. In Windows the <code>CMD.exe</code> <sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup> command is an approximation to a terminal as is the <code>Power Shell</code> <sup><a id="fnr.2" class="footref" href="#fn.2">2</a></sup>. 
+</p>
+
+<p>
+For OSX you navigate to you applications, find the folder "Utilities" and look in their for the terminal application. 
+</p>
+
+<p>
+For Xubuntu click the icon in the upper left of the screen and type terminal in the search bar.
+</p>
+</div>
+
+<div id="outline-container-org0a6276e" class="outline-3">
+<h3 id="org0a6276e"><span class="section-number-3">1.1</span> Terminology</h3>
+<div class="outline-text-3" id="text-1-1">
+<p>
+While they do not mean exactly the same thing, you will often find the following terms being used relatively interchangeably. 
+</p>
+<ul class="org-ul">
+<li>terminal</li>
+<li>shell</li>
+<li>command line</li>
+</ul>
+<p>
+What they have in common is the idea of a text based interfact to communicating with the operating system. What this means is that instead of opening a gui (gui: <b>G</b> raphical <b>U</b> ser <b>I</b> nterface) to navigate your file tree you do this with a text based system of commands. 
+</p>
+</div>
+</div>
+
+<div id="outline-container-orge343e0f" class="outline-3">
+<h3 id="orge343e0f"><span class="section-number-3">1.2</span> An example - your directory tree</h3>
+<div class="outline-text-3" id="text-1-2">
+<div class="org-src-container">
+<pre class="src src-sh">ls
+</pre>
+</div>
+
+<p>
+Typing this command in your terminal will list the files and directory. 
+</p>
+
+<div class="org-src-container">
+<pre class="src src-sh">ls -la
+</pre>
+</div>
+
+<p>
+Typing this command will get you a <b>l</b> ong version of the same list, <i>plus</i> all the hidden files that can be hard to see from a conventional file manager display. 
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgcad0831" class="outline-3">
+<h3 id="orgcad0831"><span class="section-number-3">1.3</span> An Historical Aside</h3>
+<div class="outline-text-3" id="text-1-3">
+<p>
+In the early days of computing people wrote their programs on <a href="https://en.wikipedia.org/wiki/Computer_programming_in_the_punched_card_era">punch cards</a>. Some see the inspiration as the <a href="https://en.wikipedia.org/wiki/Jacquard_machine">Jacquard machine.</a> There are still programmers alive who can tell you their horror stories of tripping and falling and scattering their punch cards everywhere. Want to know if your program worked? Take it to the main frame data center, drop it off, and come back the next day to get your print out. 
+<a href="https://en.wikipedia.org/wiki/Computer_terminal">Terminals</a> came along as an alternative to communicating with big central processors. There was a screen and keyboard. By typing you could send input to the computer that returned the output to your screen. 
+The terminals we have today are not true terminals, but emulators. Though few people refer to them as such. We emulate this old way of communicating to the processor because it works and is efficient.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgb49a0f7" class="outline-2">
+<h2 id="orgb49a0f7"><span class="section-number-2">2</span> Why use a terminal?</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+You can get more done. You can get it done more quickly. Once you learn to do one hard thing you never have to figure out how to do it again, because you can <a href="https://www.theatlantic.com/technology/archive/2018/10/agents-of-automation/568795/">easily script it</a>. That is why you want to learn to use the terminal
+</p>
+
+<p>
+Terminals are ubiquitous. They are low in their resource usage. They permit remote logins without the need for sending graphics back and forth. In fact, the remote computer need not have a system installed for displaying windows or even a physical screen attached (called headless). 
+</p>
+
+<p>
+Knowing how to use a terminal will allow you to use <code>ssh</code> to connect to remote hosts. It will allow you to quickly and efficiently navigate your system, and it will make it easy for you to do things that used to take ages. 
+</p>
+</div>
+
+
+<div id="outline-container-orge34c501" class="outline-3">
+<h3 id="orge34c501"><span class="section-number-3">2.1</span> A scripting example</h3>
+<div class="outline-text-3" id="text-2-1">
+<p>
+Want to convert and compress a large directory of videos as I did for this course. No need to open up each in an application and click a bunch of mouse clicks. Just write a <code>bash</code> script to invoke a command line program to do all the work for you. Go get a cup of coffee and come back when the <a href="https://xkcd.com/1319/">job is done</a>.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-sh"><span style="color: #a020f0;">for</span> i<span style="color: #a020f0;"> in</span> *.MP4; 
+<span style="color: #a020f0;">do</span> <span style="color: #a0522d;">name</span>=<span style="color: #ff00ff;">`echo "$i" | cut -d'.' -f1`</span>; 
+<span style="color: #483d8b;">echo</span> <span style="color: #8b2252;">"$name"</span>; 
+ffmpeg -i <span style="color: #8b2252;">"$i"</span> -c:v libx264 -b:v 1.5M -c:a aac -b:a 128k <span style="color: #8b2252;">"${name}S.mp4"</span>;
+<span style="color: #a020f0;">done</span>
+</pre>
+</div>
+
+<p>
+Almost all of this I copied off the internet where it appeared as an answer to a question from someone else wanting to do essentially the same thing I did. It took me a while to tweak it to my particular use case, but when that was done my problem was solved, <i>forever.</i> Every new batch of videos I just put in their own directory and run this script from the command line. Note that this script uses a <b>for loop</b>, one of the constructs introduced in the first <a href="rStudioWinMacFirstSteps.html#MissingReference">RStudio lesson</a>.
+</p>
+
+<p>
+What learning the terminal does is allow you to leverage the knowledge of more people. Thus you get to think about the interesting part of your problems.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org70a0233" class="outline-2">
+<h2 id="org70a0233"><span class="section-number-2">3</span> Resources</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+There are a great many resources on how to use the terminal effectively, but don't go out and read them all. One of the skills to learn in learning to use the computer is to develop your own set of links and resources you can go to when need arises. Don't try to learn everything at once. You will get overwhelmed and discouraged. Instead you learn what you need when the need arises. And if you need to know something more than once, then you spend the time to dive deeper. There are a great many things about using the terminal that I do not know, but I know the ones I use often, and I know where to find more when I need to know more. You shoud do the same. Here are a few online resources to get you started.
+</p>
+
+<ol class="org-ol">
+<li><a href="https://ryanstutorials.net/linuxtutorial/commandline.php">The command line</a></li>
+<li><a href="https://ubuntu.com/tutorials/command-line-for-beginners#1-overview">A Short Series of Terminal Lessons from the UbuntuWiki</a></li>
+<li><a href="https://null-byte.wonderhowto.com/how-to/hack-like-pro-scripting-for-aspiring-hacker-part-1-bash-basics-0149422/">Some Scripting Basics</a>
+Most of what you want to do at the command line, at least in the beginning, you can do with typing directly into the terminal. But at some point you will want to write a file, a script, that has all the commands typed into it. They you can run that script from the terminal. This blog post has some basic background for how to get started. 
+Note the use of the term "BASH". This stands for the Bourne Again Shell. Your terminal can use different shells. So while you can use the terms interchangeably most of the time, they don't mean exactly the same thing. The default shell in use by the terminals in Xubuntu is BASH. Another shell favored by many advanced programmers is <a href="https://ohmyz.sh/">zsh</a>. You <a href="https://wiki.ubuntu.com/ChangingShells">can change the shell</a> for your terminal if you like.</li>
+<li><a href="https://hpc-carpentry.github.io/hpc-shell/05-scripts/index.html">Another Scripting Introduction</a></li>
+<li><a href="https://medium.com/tech-tajawal/writing-shell-scripts-the-beginners-guide-4778e2c4f609">A More Detailed Treatment of Shell Scripting</a></li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-orge6577d8" class="outline-2">
+<h2 id="orge6577d8"><span class="section-number-2">4</span> Terminal Games</h2>
+<div class="outline-text-2" id="text-4">
+<p>
+In order to give you some structure for your self-directed learning, I have organized a few activities you might try and a few questions you might ask yourself. 
+</p>
+<ol class="org-ol">
+<li><code>ls -la /home/&lt;username&gt;</code>
+<ul class="org-ul">
+<li>What does all this output mean?</li>
+<li>What changes when you leave out the <code>-la</code>?</li>
+<li>What does the hyphen do?</li>
+</ul></li>
+<li>Can you find the location of your desktop folder in your terminal?</li>
+<li>Can you change to that directory?
+<code>cd</code></li>
+<li>Find out where you are?
+<code>pwd</code></li>
+<li>Can you find out who the computer thinks you are, your user name?
+<code>whoami</code></li>
+<li>Find out how much free space you have on your computer disk.
+<code>df -h</code></li>
+<li>How do you get help for most of these commands?
+Usually <code>command --help</code> or (<code>-h</code>)</li>
+<li>How do you find the manual?
+<code>man ls</code></li>
+<li>Navigating
+<ol class="org-ol">
+<li>Paths: absolute and relative.</li>
+<li>What do those "dots" mean?</li>
+<li>What do those slashes mean?</li>
+<li>Tab is your friend.</li>
+<li>Try the up arrow too.</li>
+</ol></li>
+<li>File ownership
+<ol class="org-ol">
+<li>Make a text file from the command line.
+<code>touch /home/yourname/Documents/testText.txt</code></li>
+<li>Who owns it?</li>
+</ol></li>
+<li>Make a directory
+<code>mkdir /home/britt/Documents/myFirstDir/</code>
+Spaces are the enemy. Never use them, but if you have to, escape (<code>\</code>) them.</li>
+<li>Want more practice? Try some of the <a href="#org70a0233">resources</a> above.</li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-orgc5e9bff" class="outline-2">
+<h2 id="orgc5e9bff"><span class="section-number-2">5</span> Assessment</h2>
+</div>
+<div id="footnotes">
+<h2 class="footnotes">Footnotes: </h2>
+<div id="text-footnotes">
+
+<div class="footdef"><sup><a id="fn.1" class="footnum" href="#fnr.1">1</a></sup> <div class="footpara"><p class="footpara">
+<a href="https://www.howtogeek.com/235101/10-ways-to-open-the-command-prompt-in-windows-10/">CMD</a> 
+</p></div></div>
+
+<div class="footdef"><sup><a id="fn.2" class="footnum" href="#fnr.2">2</a></sup> <div class="footpara"><p class="footpara">
+<a href="https://docs.microsoft.com/en-us/powershell/scripting/getting-started/getting-started-with-windows-powershell?view=powershell-6">Power Shell</a>
+</p></div></div>
+
+
+</div>
+</div></div>
+<div id="postamble" class="status">
+<p class="author">Author: Britt Anderson</p>
+<p class="date">Created: 2020-09-01 Tue 14:49</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
