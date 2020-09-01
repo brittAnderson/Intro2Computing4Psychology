@@ -74,7 +74,3 @@
    This is like a standard installation, except when you start your computer it starts in Linux just like it starts in Windows/Mac now. I highly recommend this option. Many older computers run linux very well. Systems that were slow under windows can become quite perky with XUbuntu. If you have an old laptop or can find one in a family member's closet, or buy one for 150 CAD (the price of expensive textbooks in the old days). You can just install Linux to the computer and use it as a test, learning laptop and save your other device for your other classes and personal use. 
 
 
-
-    
-
-#  LocalWords:  ArchL
