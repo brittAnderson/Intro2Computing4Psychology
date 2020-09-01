@@ -1,3 +1,4 @@
+# -*- org-link-file-path-type: relative; -*-
 #+Title: Outline
 #+Author: Britt Anderson
 
@@ -10,6 +11,8 @@
      =git= is a program that allows you to do version control. /Github/ is one of the larger social coding platform: an online agora for sharing, finding, and collaborating. It uses =git= as its base version control program, but it does other things too. Start to learn a bit about /Github/ here.
   2. [[https://vimeo.com/450563176][Github signup and walkthrough screencast video]]
      To participate at Github you have to be a member. It is free. Once you have done so, /fork/ this repository.
+** Github Topic 
+   [[file:~/gitRepos/introComp4Psych/topics/githubIDBasics.org][Github Topic File]]
 * RStudio
 ** Rstudio on Windows and OSX
    This is a way to ([[https://vimeo.com/450563454][get started video)]] with some elements of programming without the need to install Linux, but it is more limited in its potential. Still, it may be a good starting point for some students to learn some of the tools and conventions before taking the plunge. 
@@ -26,6 +29,8 @@
    7. And export it to an html file that we can open in a web browser and that displays correctly. 
 
    For the detailed instructions on the above steps consult [[file:~/gitRepos/introComp4Psych/topics/rStudioWinMacFirstSteps.org][the first steps Rstudio file in the topics directory.]]
+*** Rstudio Win/Mac Topic File
+    [[file:../topics/rStudioWinMacFirstSteps.org][rStudioWinMacFirstSteps.org]]
 ** Rstudio with Ubuntu
    Don't do this until you have a working installation of Ubuntu (or
    alternative linux) working on your computer. This topic is intended
