@@ -61,7 +61,10 @@
 **** Github Basics
      [[*Github][Github ID and Forking Repositories]]
 * Terminal (aka the Command Line)
-
+  A brief survey of using the terminal (video: Introduction)
+  A demonstration of terminal commands basic (video)
+  A discussion of using Emacs for the [[file:../assessments/terminal.org][terminal assessment]] (video)
+  ([[file:../topics/intro2TheTerminal.org][topics file]])
 * Emacs 
 
 * Python
