@@ -2,8 +2,9 @@
 #+TITLE: Installing Linux
 
 * Your goal ...
-  is a _bootable_, _persistent_, Ubuntu 20.04 to a USB (note you can use an SD card and portable hard disc also, but they are not as widely used or as well documented).
+  is to install a _bootable_, _persistent_, Xubuntu 20.04 iso to a USB (note you can use an SD card and portable hard disc also, but they are not as widely used or as well documented).
 
+  But see: https://xkcd.com/456/
 * Overview
   For this topic we will install a new operating system to your computer. We will use a flavor of linux called "Ubuntu." Linux is the ~kernel~ of the operating system and all the flavors, also called distributions: distros for short, are sets of packages that were curated by the distribution's creators to give a look or facilitate an ease of use. Underneath they all run the some version of the same kernel (versions are specified numerically).
 
@@ -23,6 +24,7 @@
   - Why use Ubuntu? :: There are many different Linux distributions. Some of them are Debian, Archlinux, Fedora, OpenSuse, and NixOS. Linux is the kernel that powers the system. All the rest are different choices people make of the tools they want to wrap around that "engine." Ubuntu has the best developed set of tools for getting started, and so it has a wealth of documentation to help beginning users get started. That large pool of users can make it easier to find help on line or among your colleagues. However, many experts use it too. You are not losing any potential by using Ubuntu, but it does have a reputation of being a "heavy" distribution that makes larger demands on your processor. For older equipment XUbuntu and LUbuntu will put less resource demands on your system, but come at some expense of usability and appearance. Debian emphasizes free software. Fedora and OpenSuse are used more widely in industry and also in Europe. Archlinux has less support for the beginner, but can be easier to understand since many configurations are done through text files, and it has an excellent wiki. Even for other distros the Archlinux Wiki and Forums can be a good location for finding help. NixOS is a very different approach to Linux. It may well be the future, but as it breaks several of the common file conventions for Linux it is not recommended for newer users. I began with Ubuntu, but now run Archlinux on most of my lab and office computers. I have two machines that I am using Archlinux on to get familiarity with that flavor before transitioning my other computers over.
   - Xubuntu :: Because of my desire to support multiple older computers and running from a USB we will use Xubuntu, which is a little less memory and processing heavy. Most of the time you read Ubuntu you can substitute Xubuntu here. But feel free to try Ubuntu if you prefer the flagship brand. Almost everything we do will apply to both, although you may have to hunt and search a bit for the comparable icons and their locations. 
 
+  
 * Steps in Detail
   1. [[https://vimeo.com/448906706][A video introduction]].
   2. *Important Warning*
