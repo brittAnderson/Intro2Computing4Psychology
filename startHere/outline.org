@@ -47,7 +47,7 @@
 *** Install Xubuntu to a USB Topic
     [[file:../topics/installUbuntu.org][installUbuntu.org]]
 *** Dual Booting
-    [[file:~/gitRepos/introComp4Psych/topics/installUbuntu.org::*Dual Boot][Dual Boot]]
+    [[file:../topics/installUbuntu.org::*Dual Boot][Dual Boot]]
 *** Linux Only
     [[file:~/gitRepos/introComp4Psych/topics/installUbuntu.org::*Linux only][linux only]]
 ** Xubuntu Walkthrough
