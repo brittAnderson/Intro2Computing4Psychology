@@ -1,3 +1,4 @@
+# -*- org-link-file-path-type: relative; -*-
 #+TITLE: Installing Linux
 
 * Your goal ...
@@ -72,5 +73,7 @@
      [[https://docs.microsoft.com/en-us/windows/wsl/install-win10][This link]] comes from Microsoft (Sept 2020) and should be up-to-date. But note that WSL2 is in active development and things are expected to change. Make sure you are using current instructions, and also note that as of Sept 2020 WSL2 will *not* work for this course as you do not get easy access to the graphical tools we will sometimes use. 
 ** Linux only
    This is like a standard installation, except when you start your computer it starts in Linux just like it starts in Windows/Mac now. I highly recommend this option. Many older computers run linux very well. Systems that were slow under windows can become quite perky with XUbuntu. If you have an old laptop or can find one in a family member's closet, or buy one for 150 CAD (the price of expensive textbooks in the old days). You can just install Linux to the computer and use it as a test, learning laptop and save your other device for your other classes and personal use. 
-
+* Assessments
+  1. [[file:../assessments/installXubuntuAssessment.org][Verify Xubuntu Install]]
+  2. [[file:../assessments/installEmacs.org][Verify Package Installation (Emacs)]]
 
