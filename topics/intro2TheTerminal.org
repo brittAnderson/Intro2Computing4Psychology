@@ -2,6 +2,7 @@
 #+Title: Introduction to the Terminal
 
 * Find the terminal
+  (video: [[https://vimeo.com/channels/i2c4p/453837330][Introduction]])
   Different operating systems refer to the terminal differently. In Windows the =CMD.exe= [fn:1] command is an approximation to a terminal as is the =Power Shell= [fn:2]. 
 
   For OSX you navigate to you applications, find the folder "Utilities" and look in their for the terminal application. 
@@ -70,6 +71,7 @@
   5. [[https://medium.com/tech-tajawal/writing-shell-scripts-the-beginners-guide-4778e2c4f609][A More Detailed Treatment of Shell Scripting]]
 
 * Terminal Games
+  (video: [[https://vimeo.com/channels/i2c4p/453837142][Terminal Games]])
   In order to give you some structure for your self-directed learning, I have organized a few activities you might try and a few questions you might ask yourself. 
   1. ~ls -la /home/<username>~
      - What does all this output mean?
@@ -104,7 +106,8 @@
   12. Want more practice? Try some of the [[*Resources][resources]] above. 
 
 * Assessment
-  
+  (video: [[https://vimeo.com/channels/i2c4p/453837048][assessment]])
+  [[file:../assessments/terminal.org][terminal.org]]
 
 * Footnotes
 [fn:1] [[https://www.howtogeek.com/235101/10-ways-to-open-the-command-prompt-in-windows-10/][CMD]] 
