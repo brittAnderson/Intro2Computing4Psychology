@@ -1,4 +1,4 @@
-#! /usr/bin/env bash
+#!/bin/bash
 
 echo "This is an echo, echo, echo ... "
 name=`whoami`
