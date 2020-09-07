@@ -1,0 +1,85 @@
+# -*- org-link-file-path-type: relative; -*-
+#+Title: Emacs Topic Introduction
+* Goal
+  Introduce emacs and the rudiments of its use. We will build on these basics as we work through our additional exercises in coding and programming experiments and writing reports. 
+* What is Emacs
+  Emacs is the tool we will be leveraging to produce our reproducible research report, but it is much more. It is a highly extensible text editor that can make your life much easier through its auxilliary functions and capacities. 
+* Emacs is a text editor
+  Emacs began in some form in the early 1970s [fn:1]. It has been continually developed for 50 years and quite a bit of humor and myth has settled about it [fn:2]. Some people joke that it is an operating system masquerading as a text editor. Many people argue that it is overly complex and overly engineered, but it truly allows one to do a great deal within a single interface and a single environment, and I introduce it because I love it, but more importantly, because I think it is one of the easiest way to become functional with some of the key tools that allow you to generate a reproducible report [fn:3].
+* Emacs Basics
+** Modifier Keys
+   Your modifier keys may depend on your keyboard and operating system. Don't like what they are? [[https://www.x.org/releases/current/doc/man/man1/xmodmap.1.xhtml][Remap them]]. You use these simultaneously with other keys to invoke commands without using your mouse or menus. For example, to open a file you ~C-x C-f~. This means that you hold down the control key and press 'x'. Then you let up on both keys, press control and then simultaneously 'f' and let up on both. You are then prompted in the /minibuffer/ with a menu for the name and location of the new file. You can navigate the mini-buffer with by using backspace to delete and tab to move forward. 
+*** Ctrl
+    This is usually the <ctrl> key. Found on lower left (and sometimes also on lower right) of most keyboards.
+*** Meta
+    On windows and macs this is usually the <alt> key. Sometimes it is mapped to the super key, which has the windows logo or the curly square of macs. 
+** What Can You Do With Emacs
+   1. Write code
+   2. Execute code
+   3. Execute code within the confines of a document
+   4. Export the document as a webpage or pdf.
+   5. Read and annotate pdfs.
+   6. Manage your email.
+   7. Securely encrypt/decrypt and sign emails.
+   8. Edit the names of files in your directories.
+   9. Compress and decompress files.
+   10. Manage your bibliography.
+   11. Create citations.
+   12. Interface with the ~git~ version control system.
+   13. Talk remotely to servers. Copy and move files between computers as if the were merely separate directories on your own machine.
+   14. Manage a knowledge data base in plain text.
+   15. Keep your calendar, journal, agenda, and to-do list integrated.
+   16. Take notes in a rapid outline fashion.
+** Emacs Takes a Long Time to Learn
+   I learn new things in emacs everyday. Don't expect to do all those things at the beginning. You will just frustrate yourself. Pick some small things that you do regularly and try to learn how to do that in emacs. The rest will grow naturally as your comfort expands and you tackle new use cases. 
+*** First Things First
+    Learn the basics. Take the Emacs tutorial  ~Ctrl-h t~ (aka =C-h t=). Consult the Psychotherapist when needed (under help menu). Play a game - try ~M-x tetris~ .
+** Emacs is highly customizable
+   Just like linux distributions have package managers so does emacs. Usually your emacs customizations will be find in a /hidden/ directory (starts with a dot ('.') in your home directory. For example, =/home/britt/.emacs.d/=
+*** Where is your "init" file
+    Emacs tries to find an initialization file to see your customizations and what, if any, extra packages you may have installed. There are multiple places where it looks, and we want it to look in the right one. 
+    Do ~C-x d~. This will display your current directory. The first line shows you where you are. Move up or down as needed to get to your home directory. Look for a file called ~.emacs~. Navigate to it by ~C-n~ and ~C-p~ to move up and down. When you find it and the cursor is on it. Type a capital ~D~. Then confirm the delete. Then ~C-x d~ and tab to =~/.emacs.d/=. Type a plus sign ~+~. For the name of the new file type ~init.el.~
+*** The init.el file and packages
+    Emacs has it's own package system that allows you to greatly expand its functionality. You can learn more by reading the info file =C-h i=. If for some reason your info files are missing see this Stackoverflow question for hints on how to install [fn:4]. Many packages could be installed through the =apt= methods, but it is better not to mix and match package systems. Since there may well be packages you will eventually want that are not built by xubuntu you should probably use packages from the emacs system. There are two big package warehouses that are commonly used and go by the names "elpa" and "melpa". Here is how to get a basic package database available.
+    #+begin_src elisp :eval never :exports code
+    (require 'package)
+    (add-to-list 'package-archives '("melpa" ."http://melpa.org/packages/") t)
+    (package-initialize)
+    #+end_src
+    Now we can look for packages by running ~M-x package-list-packages~ *However* it is better to use the ~use-package~ system. Of course, the challenge is to get this working in the first place, so we will use the above command to get =use-package= and then use =use-package= from then on. This will allow you to keep the names of all your packages and customizations in one place. Let's see how this would work with a couple of test packages. We want to put the above, and the following into your =init.el= file
+
+    #+begin_src elisp :eval never :exports code
+    (use-package elpy
+    :ensure t
+    :init (elpy-enable))
+     
+    (use-package ess
+    :ensure t
+    )
+    #+end_src
+*** Program Your Editor
+    Emacs can be programmed with elisp code, it's own [[https://en.wikipedia.org/wiki/Lisp_(programming_language)][lisp]]. You can actually change the functions of your editor while using it. Usually, you don't really need to know elisp. You just need to have the confidence to cut and paste to the right location, usually our init.el file. 
+**** An example: Turn off the tool bar.
+     - To search for functions you can use the help ~C-h-f~. This will allow you to search for functions. Try the keyword menu and tab and see if you come across a likely contender (~menu-bar-showhide-tool-bar-menu-customize-disable~).
+     - Navigate to the scratch buffer. Put that function in parantheses. Move to the end. Type ~C-x C-e~. Did your tool bar go away?
+*** [[info:org#Top][Orgmode]]
+    1. What is it? About the best thing ever.
+    2. Make an outline. Keep a calendar. Add code to your documents. Make links. Include images.
+    3. Practice now:
+    Where is the help, remember? ~C-h i~
+    1. Learn to use the short cuts to open, save, and so on. That is one of the powers of the command line and similar style tools. Enhance your productivity and control. 
+    2. Create an outline.
+    3. Create a link
+    4. Insert an image
+    5. Export as a web page.
+    6. What would you need to export a pdf?
+       Try installing ~texlive-latex-base texlive-latex-extra~. If that doesn't work, repeat with ~texlive-latex-recommended~. If that doesn't fix the problem go with ~texlive-full~. This is big. Be patient.
+* Emacs Activity and Assessment
+  [[file:../assessments/emacsBeginningAssessment][Beginning Emacs Assessment]]
+* Footnotes
+
+[fn:1] https://www.emacswiki.org/emacs/EmacsHistory
+[fn:2] https://xkcd.com/378/
+[fn:3] https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.2006930
+[fn:4] https://emacs.stackexchange.com/questions/48211/emacs-manuals-are-missing-on-debian-ubuntu/48214#48214 To get this to work I enabled the non-free icon on the repositories, did  ~sudo apt install emacs-common-non-dfsg~ for all the documentation, and then ran as the super user the command to update the info directories. 
+
