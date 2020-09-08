@@ -66,7 +66,9 @@
   A discussion of using Emacs for the [[file:../assessments/terminal.org][terminal assessment]] (video: [[https://vimeo.com/channels/i2c4p/453837048][Terminal Assessment]])
   ([[file:../topics/intro2TheTerminal.org][topics file]])
 * Emacs 
-
+  See the potential of Emacs (video : [[https://vimeo.com/channels/i2c4p/455641662][Emacs Show and Tell]])
+  Work through the [[file:../topics/emacs.org][emacs beginning topic]] (video: [[https://vimeo.com/channels/i2c4p/455628993][Beginning Emacs]])
+  Complete the [[file:../assessments/emacsBeginningAssessment.org][Emacs Assessment]]
 * Python
 
 * R
