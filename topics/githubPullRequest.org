@@ -1,0 +1,82 @@
+# -*- org-link-file-path-type: relative; -*-
+#+Title: Github PullReqest and Remotes
+
+* Goal (video walk through)
+  To advance our knowledge of git and version control using the github social coding site as our laboratory. 
+* Overview
+  In an [[file:githubIDBasics.org][earlier topic]] we learned some of the basics of learning git and using it with github. Here we will learn what /push/, /pull/, and /remotes/ are all about. 
+* Not all repositories are git repositories
+** There are many other version control options and many other places to host them.
+*** Other version control system
+    1. [[https://www.mercurial-scm.org/][Mercurial]]
+    2. [[http://darcs.net/][Darcs]]
+    3. [[https://www.nongnu.org/cvs/][CVS]]
+    4. [[https://subversion.apache.org/][Subversion]]
+    Each has their own fans. CVS and Subversion are more legacy options, but you will see them. Darcs is more of an experiment than a broadly used system. Mercurial seems to be the cool kid, but doesn't have as much market share as git, but any one of them might be a good choice for you in the future. Main point: version contol is not only ~git~.
+*** Other Repositories
+    Github is a very popular place to host your publically accessible repository, but it is far from your only option.
+    1. [[https://osf.io/][OSF.io]]
+       For scientists OSF.io seeks to make itself a way to host scientific projects and their data. 
+       Trivia question? Do I have any repositories on Osf.io?
+    2. [[https://sourceforge.net/][Sourceforge]]
+       An oldie, but still used.
+    3. [[https://bitbucket.org/][Bitbucket]]
+    4. Gitlab
+       The university provides you with a gitlab account:  [[https://git.uwaterloo.ca]]
+    Main point: github is *not* your only option
+
+* Git and Linux
+  If you want to see one big advantage to using Linux try installing a program to let you easily manage git repositories on Windows. Then when you get frustrated try the following on your Xubuntu installation:
+  
+  #+begin_src sh :eval never
+  sudo apt install git
+  #+end_src
+
+* But first ...
+  Git wants to know who you are and how to get in contact with you. The first time you want to use git from the terminal you will have to specify this with the following
+
+  #+begin_src sh :eval never
+    git config --global user.name "John Doe"
+    git config --global user.email johndoe@example.com
+  #+end_src
+  Please don't actually use "John Doe". More on these configuration options can be found [[https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup][here]].
+
+* Git in Pictures
+  A few helpful illustrations to the distinction of clones, forks, pull, push, and pull request can be found [[https://www.toolsqa.com/git/difference-between-git-clone-and-git-fork/][here]].
+
+* Terms
+  - Fork :: A copy of one github repository to another *github* repository.
+  - Clone :: A copy of one *git* repository to another *git* repository. 
+             The first repository might be hosted on github, but the second one, the /cloned/ one exists on a local machine. In your case this is probably your laptop.
+  - Remote :: This is a repository that you are following. You will typically /pull/ from these, but your /push/ permissions may be limited depending on the distinctions between forks and clones, and whether you own the remote or someone else does. You can have more than one remote.
+  - Pull :: the transfer of information and changes *from* one repository incorporated into another. This is how you get the new information from a remote transported to a local repository that you control.
+  - Push :: this is the transfer of information *to* a repository you control (or have permissions to push to) from another repository that you control. This is often from your local laptop version to the hosted repository (your fork) on github. 
+  - Pull Request :: When you have information or changes that you think would be helpful to a remote you do *not* have push permissions for then you can request that the owner of that repository pull in your changes. This is a formal process called a pull request. It is primarily a github concept and not a git concept.
+  - Branch :: within a repository the development of the code may be proceeding in a few different directions at the same time. The principal production branch is conventionally called *master*. And the principal repository that is the main, shared one is called *origin*. We will not be working with branches in our course, but those terms do show up in commands. f
+
+  All of these "[[https://git-scm.com/book/en/v2/Git-Basics-Getting-a-Git-Repository][basics]]" are covered in detail in the book Pro Git (available on line). 
+
+* Using *Git* in Linux
+  Try to note when I use the word "git" and when I use the word "github". They are different things. 
+  
+** Making your first repository (aka "repo") on your laptop.
+   1. Open a terminal
+   2. Move (~cd~ or ~dir~) into your Desktop
+   3. type =git init myrepo=
+   4. Should see message from the terminal prompt that it has been created.
+   5. Feel free to delete (e.g. =rm -rf ./myrepo=)
+** Cloning a Course Repo
+   You should already have forked the two course repositories. If not, go back and [[file:../assessments/githubIDAssessment.org][do that]].
+   Then, on your laptop (Xubuntu):
+   1. Move to a directory where you want to keep things organized. I use =~/gitRepos/=. To make that directory you could do ~mkdir ~/gitRepos/~ and then ~cd~ to it. Verify you are there with ~pwd~. All this is happening /in the terminal./
+   2. Open a web browser and find your fork of Psych363. On that page there should be a button to clone it that will allow you to copy the command.
+   3. Go back to your terminal and paste it (usually =Ctrl-Shift v=). Hit <enter>.
+   4. You should see some activity that things are being copied.
+   5. =ls= to see you have a new directory in your =gitRepos= directory.
+   6. =cd= into this new directory and look around. Compare it to what you see when you look at your fork on github. 
+   For the assessment we will create more remotes and work on generating a pull request. 
+*** Magit
+    1. Emacs provides you with an interface for this called magit.
+    2. If you watched the [[https://vimeo.com/455628993#t=942s][emacs beginning video]] you will have seen the commands you need to add to your =init.el= file to get the =magit= package. If not, you can always take a look now.  
+    3. You will probably have to quit and then restart Emacs for the magit package to be visible.
+    4. Then you launch it by navigating (in Emacs) to the directory of your repository and typing: ~C-c m~ or ~M-x magit~ usually.
