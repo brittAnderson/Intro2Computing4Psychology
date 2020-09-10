@@ -7,7 +7,7 @@
 * Comment
   This course makes use of [[https://github.com][github]] for practicing how to use the version control program git. An important part of collaborating on code (or other material hosted on github, which might include text files) is to be able to give back or to alert the owner to a problem. This requires that you can both generate a *pull request* and that you can *open an issue.*
 
-* Steps (video illustrating steps)  
+* Steps ([[https://vimeo.com/channels/i2c4p/456349516][video: steps illustrated]])  
   1. Previously you should have /forked/ the psych363Practice repository.
   2. Next you will need to clone your fork to your laptop.
   3. Check that you have your fork as a /remote./

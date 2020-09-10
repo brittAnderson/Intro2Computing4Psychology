@@ -1,11 +1,12 @@
 # -*- org-link-file-path-type: relative; -*-
 #+Title: Github PullReqest and Remotes
 
-* Goal (video walk through)
+* Goal ([[https://vimeo.com/channels/i2c4p/456349826][video walk through]])
   To advance our knowledge of git and version control using the github social coding site as our laboratory. 
 * Overview
   In an [[file:githubIDBasics.org][earlier topic]] we learned some of the basics of learning git and using it with github. Here we will learn what /push/, /pull/, and /remotes/ are all about. 
 * Not all repositories are git repositories
+  (video: [[https://vimeo.com/channels/i2c4p/456349738][part1]])
 ** There are many other version control options and many other places to host them.
 *** Other version control system
     1. [[https://www.mercurial-scm.org/][Mercurial]]
@@ -66,6 +67,7 @@
    4. Should see message from the terminal prompt that it has been created.
    5. Feel free to delete (e.g. =rm -rf ./myrepo=)
 ** Cloning a Course Repo
+   (video: [[https://vimeo.com/channels/i2c4p/456349595][what is a repository and a remote?]])
    You should already have forked the two course repositories. If not, go back and [[file:../assessments/githubIDAssessment.org][do that]].
    Then, on your laptop (Xubuntu):
    1. Move to a directory where you want to keep things organized. I use =~/gitRepos/=. To make that directory you could do ~mkdir ~/gitRepos/~ and then ~cd~ to it. Verify you are there with ~pwd~. All this is happening /in the terminal./
@@ -75,8 +77,11 @@
    5. =ls= to see you have a new directory in your =gitRepos= directory.
    6. =cd= into this new directory and look around. Compare it to what you see when you look at your fork on github. 
    For the assessment we will create more remotes and work on generating a pull request. 
+   (video: [[https://vimeo.com/channels/i2c4p/456349516][working through the pull request assessment]])
 *** Magit
     1. Emacs provides you with an interface for this called magit.
     2. If you watched the [[https://vimeo.com/455628993#t=942s][emacs beginning video]] you will have seen the commands you need to add to your =init.el= file to get the =magit= package. If not, you can always take a look now.  
     3. You will probably have to quit and then restart Emacs for the magit package to be visible.
     4. Then you launch it by navigating (in Emacs) to the directory of your repository and typing: ~C-c m~ or ~M-x magit~ usually.
+* Extra
+  Xournal and Screenkeys - how do you get them and why is git/github relevant? ([[https://vimeo.com/channels/i2c4p/456349697][video]])
