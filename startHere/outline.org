@@ -4,41 +4,55 @@
 
 * Overview
   This file contains a list of topics and associated activities for teaching yourself how to use your computer for research. Below you will find a list of topics with links to the relevant files in the other directories in this repository. The most convenient way to navigate the links may be to fork this repository and then clone it to your own computer and work from there. The ordering below is used in my course at the University of Waterloo, but you are encouraged to depart from that structure and navigate your own path as your needs and interests dictate. Most of the topics are reasonably self-contained, but of course, some of the later topics may require earlier skills or make reference to earlier activities. 
-
-* Github
-  We will be studying version control later when we have set up our Ubuntu installation and can use the terminal (aka: command line). To prepare for that we will create a [[https://github.com][Github account]] and gain some basic familiarity with the Github workflow. 
-  1. [[https://vimeo.com/450563119][Intro to Github video]]
-     =git= is a program that allows you to do version control. /Github/ is one of the larger social coding platform: an online agora for sharing, finding, and collaborating. It uses =git= as its base version control program, but it does other things too. Start to learn a bit about /Github/ here.
-  2. [[https://vimeo.com/450563176][Github signup and walkthrough screencast video]]
-     To participate at Github you have to be a member. It is free. Once you have done so, /fork/ this repository.
-** Github Topic 
-   [[file:~/gitRepos/introComp4Psych/topics/githubIDBasics.org][Github Topic File]]
+** Videos
+   https://vimeo.com/channels/i2c4p/448900968
 * RStudio
 ** Rstudio on Windows and OSX
-   This is a way to ([[https://vimeo.com/450563454][get started video)]] with some elements of programming without the need to install Linux, but it is more limited in its potential. Still, it may be a good starting point for some students to learn some of the tools and conventions before taking the plunge. 
+   This is a way to get started with some elements of programming without the need to wait for you to install Linux. It is a good starting point for learning about the tools and conventions useful in coding, especially for statistical applications.
    For this beginning effort we will:
-   1. Download R ([[https://vimeo.com/450719112][downloadR video]])
-   2. Download RStudio ([[https://vimeo.com/450719047][downloadRStudio video]])
-   3. Verify they are working ([[https://vimeo.com/450719009][RStudio Walk-through video]])
-   4. Generate a simple Rmd file to see some of the basic components of the markdown syntax ([[https://vimeo.com/450718879][simpleRmdDemo video]])
+   1. Download R
+   2. Download RStudio
+   3. Verify they are working
+   4. Generate a simple Rmd file to see some of the basic components of the markdown syntax
    5. Add some simple computing constructs including a 
       - variable
       - for loop
       - function
    6. Produce an Rmd file from the above
    7. And export it to an html file that we can open in a web browser and that displays correctly. 
-
-   For the detailed instructions on the above steps consult [[file:~/gitRepos/introComp4Psych/topics/rStudioWinMacFirstSteps.org][the first steps Rstudio file in the topics directory.]]
-*** Rstudio Win/Mac Topic File
-    [[file:../topics/rStudioWinMacFirstSteps.org][rStudioWinMacFirstSteps.org]]
-** Rstudio with Ubuntu
-   Don't do this until you have a working installation of Ubuntu (or
-   alternative linux) working on your computer. This topic is intended
-   to start your R programming via a graphical inteface. After
-   familiarizing yourself with the basic features of the R language
-   and using a markdown dialect for mixing text and code we will
-   explore other editors for this function. Later modules will focus
-   in more detail on analysis and visualization.
+   For the detailed instructions on the above steps consult [[file:~/gitRepos/introComp4Psych/topics/rStudioWinMacFirstSteps.org][the first
+   steps Rstudio file in the topics directory.]]
+*** Warning
+    Don't try to use R in Linux until until you have a working
+    installation of Ubuntu (or alternative linux) working on your
+    computer. This will be handled below. This topic here is intended
+    to start your R programming via a graphical inteface. After
+    familiarizing yourself with the basic features of the R language
+    and using a markdown dialect for mixing text and code we will
+    explore other editors for this function. Later modules will focus
+    in more detail on analysis and visualization.
+** Files
+    1. [[file:../topics/rStudioWinMacFirstSteps.org][rStudioWinMacFirstSteps.org]]   
+    2. [[file:../assessments/rStudioInstallationWinMacAssessment.org][R Studio Installation Assessment]]
+    3. [[file:../assessments/rmd2htmlAssessment.org][Rmd to HTML Assessment]]
+** Videos
+   1. [[https://vimeo.com/450563454][Getting Started with RStudio]]
+   2. [[https://vimeo.com/450719112][Download R]]
+   3. [[https://vimeo.com/450719047][Downloading RStudio (Windows)]]
+   4. [[https://vimeo.com/450719009][RStudio Walk-through]]
+   5. [[https://vimeo.com/450718879][Demonstrating the Power of RMarkdown]]
+* Github Accounts and Forking Repositories
+  We will be studying version control later when we have set up our Ubuntu installation and can use the terminal (aka: command line). To prepare for that we will create a [[https://github.com][Github account]] and gain some basic familiarity with the Github workflow. 
+  1. Intro to Github
+     =git= is a program that allows you to do version control. /Github/ is one of the larger social coding platform: an online agora for sharing, finding, and collaborating. It uses =git= as its base version control program, but it does other things too. Start to learn a bit about /Github/ here.
+  2. Github signup and walkthrough
+     To participate at Github you have to be a member. It is free. Once you have done so, /fork/ this repository.
+** Files
+   1. [[file:~/gitRepos/introComp4Psych/topics/githubIDBasics.org][Github Topic File]]
+   2. [[file:../assessments/githubIDAssessment.org][Github ID Assessment]]
+** Videos
+   1. [[https://vimeo.com/450563119][Github Introduction]]
+   2. [[https://vimeo.com/450563176][Github Signup]]
 * Linux Basics
 ** Installing Linux to Your Own Computer
    In this topic you will install a version of Linux on your own machine to use throughout this course (and after, I hope). 
@@ -55,20 +69,62 @@
    [[https://vimeo.com/channels/i2c4p/453295883][First Boot Housekeeping Steps (video)]]
 ** Package Management
    [[https://vimeo.com/channels/i2c4p/453295879][Installing your first package (emacs) (video)]]
-* Version Control
-** Git
-*** Github
-**** Github Basics
-     [[*Github][Github ID and Forking Repositories]]
+** Files
+   1. [[file:../topics/installUbuntu.org][Installing Ubuntu Instructions]]
+   2. [[file:../assessments/installXubuntuAssessment.org][Xubuntu Installation Assessment]]
+** Videos
+   1. [[https://vimeo.com/448906706][Intro to Booting Linux]]
+   2. [[https://vimeo.com/448908272][How To Get To Your Boot Menu]]
+   3. [[https://vimeo.com/448908305][Booting Your Computer From a USB]]
+   4. [[https://vimeo.com/448908514][A Persistent USB ISO]]
+   5. [[https://vimeo.com/448908150][Downloading the Rufus Tool]]
+   6. [[https://vimeo.com/448908073][Getting the Xubuntu ISO]]
+   7. [[https://vimeo.com/448908151][Installing Xubuntu to the USB]]
+   8. [[https://vimeo.com/453034310][Explaining Your First USB Boot]]
+   9. [[https://vimeo.com/453295883][What To Do After Your First Linux Boot]]
+   10. [[https://vimeo.com/453295879][Installing Your First Package]]
+*** Lower Resolution Screen Grabs (some redundancy to the above)
+    1. [[https://vimeo.com/449006223][A Successful First Boot]]
+    2. [[https://vimeo.com/453049176][USB Boot Version 2]]
+    3. [[https://vimeo.com/453075287][Testing Persistence]]
+    4. [[https://vimeo.com/453075670][First Shutdown]]
+    5. [[https://vimeo.com/453049139][Sudo Apt Update]]
+    6. [[https://vimeo.com/453075607][Sudo Apt Upgrade]]
 * Terminal (aka the Command Line)
-  A brief survey of using the terminal (video: [[https://vimeo.com/channels/i2c4p/453837330][Introduction]])
-  A demonstration of terminal commands basic (video: [[https://vimeo.com/channels/i2c4p/453837142][Terminal Games]])
-  A discussion of using Emacs for the [[file:../assessments/terminal.org][terminal assessment]] (video: [[https://vimeo.com/channels/i2c4p/453837048][Terminal Assessment]])
-  ([[file:../topics/intro2TheTerminal.org][topics file]])
+  In this first look at the terminal (command line) I make a brief survey and show some common commands. 
+  The terminal is a text based interface to your computer. It can greatly simplify many common tasks and allow you to easily automate many mundane computational procedures. 
+** Files
+   1. [[file:../topics/intro2TheTerminal.org][Introduction to the Terminal]]
+   2. [[file:../assessments/terminal.org][Terminal Assessment]]
+** Videos
+   1. [[https://vimeo.com/453837330][An Introduction to the Terminal]]
+   2. [[https://vimeo.com/453837142][Terminal Games]]
+   3. [[https://vimeo.com/453837048][Terminal Assessment]]
 * Emacs 
-  See the potential of Emacs (video : [[https://vimeo.com/channels/i2c4p/455641662][Emacs Show and Tell]])
-  Work through the [[file:../topics/emacs.org][emacs beginning topic]] (video: [[https://vimeo.com/channels/i2c4p/455628993][Beginning Emacs]])
-  Complete the [[file:../assessments/emacsBeginningAssessment.org][Emacs Assessment]]
+  Emacs is a text editor that has been developed for fifty years. In addition to being a tool for writing it is also excellent for coding, programming, visualizing graphics and combining these into a single document that can easily be exported to web pages and pdf. Here we get a first glimpse of the program itself, some of its operational quirks, and a bit of show and tell of its power. Much of this power in contemporary emacs comes from orgmode, a mode that lets you do everything from making notes in outline to organizing your appointments and contacts. 
+** Files
+   1. [[file:../topics/emacs.org][Emacs]]
+   2. [[file:../assessments/emacsBeginningAssessment.org][Beginning Emacs Assessment]]
+** Videos
+   1. [[https://vimeo.com/455641662][Emacs Show and Tell]]
+   2. [[https://vimeo.com/455628993#t=942s][Beginning With Emacs]]
+* Version Control
+  Version control is a highly versatile and powerful to way to track changes, un-do them, and coordinate all this across multiple users in multiple locations. Here I introduce one particular program for version control, and a popular cloud platform designed to work with it. 
+** Git
+   Git is a program for version control, but there are others. Some of these are presented in the [[file:../topics/githubPullRequest.org][github pull request topic.]] There are also tools for working with and sharing git repositories. The most famous is github. 
+** Github
+   A large social coding site there are particular terms of art for git and github that are important to work with this 
+** Github Basics
+   To work through the assessment for issues and pull requests you will have first need to complete creating a github account and forking respositories ([[*Github][see above]])
+** Files
+   1. [[file:../topics/githubPullRequest.org][Some Background On Git and Pull Requests]]
+   2. [[file:../assessments/githubPullRequestAssmnt.org][The Pull Request Assessment]]
+** Videos
+   1. [[https://vimeo.com/456349826][An Introduction to Version Control]]
+   2. [[https://vimeo.com/456349738][Making a Pull Request Part 1]]
+   3. [[https://vimeo.com/456349595][A Pull Request Illustrated]]
+   4. [[https://vimeo.com/456349697][Github Enabled Tools]]
+   5. [[https://vimeo.com/456349516][The Github Pull Request Assessment Reviewed]]
 * Python
 
 * R
