@@ -125,8 +125,22 @@
    3. [[https://vimeo.com/456349595][A Pull Request Illustrated]]
    4. [[https://vimeo.com/456349697][Github Enabled Tools]]
    5. [[https://vimeo.com/456349516][The Github Pull Request Assessment Reviewed]]
-* Python
-
+* Beginning Programming (with Python as an example)
+  What is programming, and what are some of the basics of approach and terminology? Using python as a en example basic concepts such as variables, loops, indexing and assignments are illustrated. 
+** Files
+   1. [[file:../topics/beginningPython.org][Beginning Python]]
+*** Assessments
+    1. [[file:../assessments/forLoopPythonAssessment.org][For loop in python]].
+    2. [[file:../assessments/hangmanPython.org][Hangman Python]]
+** Videos
+*** Topics
+    1. What is programming?
+    2. Org-babel: blending text and code in Emacs.
+    3. Programming vocabulary.
+    4. Some Useful Tools
+*** Assessments
+    1. For loop in python
+    2. Hangman in Python
 * R
 ** Getting R/Rstudio for Linux
 
