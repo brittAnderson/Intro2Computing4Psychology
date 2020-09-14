@@ -1,0 +1,25 @@
+#+Title: Hangman in Python (starter kit)
+
+* Words of Encouragement
+  This is the first non-trivial thing we will have done in the programming line. Do not get too frustrated if it takes you several submissions to get things right. This is how we all get started, and it is how a lot of production ready code gets written (REPL - read eval print loop). It is *fine* to collaborate, but don't just turn in a working piece of code you got from someone, because that will give you points, but no education. Make sure you can write it yourself from scratch even if that is only after you have worked on it together with someone. 
+
+* Task
+  To write the beginning pieces of a hangman game in python. This version will [[https://en.wikipedia.org/wiki/Hard_coding][hard code]] the word to be guessed. It will not produce any sort of graphic, but merely ask for letters and report if the player spells out the word or not. 
+
+* Detail
+  1. Look up how to get user input from python on the command line.
+     Write a script that when run from the terminal (command line) asks for a word, and prints it out.
+  2. Write a function that takes as input a word. The function asks the user to guess a letter and returns *a list of* indices of the positions where the letter exists in the word. An empty list means the letter is never in the word. Otherwise the elements of this list are the indices where that letter is found. For example, if the word were tree and the letter "e" you would get back =[2,3]= from this function, but would get back =[]= if the letter were 's'.
+  3. Write a function that accepts as input a number which we will interpret as the maximum number of guesses a player is allowed. This function will use a word that you have hard coded as a constant and will loop through the guessing function above for max times or until all the letter in the word have been guessed.
+  4. If the max guesses are exceed type "You lose." and print out the word. If the user guesses all the letters print "You win". And exit the program.
+
+* Comments
+** How I Will Grade
+   I will run your program from the terminal, and it will work as above or it will not. If it does, I will give you full marks, if not, I will give partial credit and allow you to try and fix the mistakes. 
+** Hints
+   You might find it useful to learn about pythons =in= operator, and to think about how you might use the =enumerate= function we used in the [[file:forLoopPythonAssessment.org][for loop in python assessment]].
+   Remember to eliminate the letters from your word as they are guessed. For example if the word is tree, and I guess e, your word should be come "tr". That means you may find it easier to keep track of the indices that are *not* equal to the guessed letters.
+   If a brute force solution comes quickly think about re-writing your answer using a [[https://www.programiz.com/python-programming/list-comprehension][list comprehension]].
+   If you have more of a programming background try adding in some additional features of the game. Can you get a random word from the internet? Can you let the player give the word and the computer guess letters? Could you output where the guessed characters appear in the word before the player has to make their next guess. Could you generate some [[https://codegolf.stackexchange.com/questions/135936/ascii-hangman-in-progress][simple ascii art of the hangman character]]?
+
+   
