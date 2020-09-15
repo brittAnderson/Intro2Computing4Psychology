@@ -33,11 +33,13 @@
 
    We will want some basic text in our =init.el= file to make things work.
    #+begin_src elisp :eval never
+   (setq org-confirm-babel-evaluate nil)
+   (setq org-babel-python-command "python3")
      (org-babel-do-load-languages
-      'org-babel-load-languages
-      '((emacs-lisp . t) 
-	(R . t)
-	(python . t)))
+     'org-babel-load-languages
+     '((emacs-lisp . t) 
+     (R . t)
+     (python . t)))
    #+end_src
 
    Then you can create a source code block with
@@ -69,11 +71,7 @@
    #+End_src
 
    #+RESULTS:
-   : (0, 'b')
-   : (1, 'r')
-   : (2, 'i')
-   : (3, 't')
-   : (4, 't')
+
 
 
 ** Some programming vocabulary
