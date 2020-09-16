@@ -126,7 +126,7 @@
    4. [[https://vimeo.com/456349697][Github Enabled Tools]]
    5. [[https://vimeo.com/456349516][The Github Pull Request Assessment Reviewed]]
 * Beginning Programming (with Python as an example)
-  What is programming, and what are some of the basics of approach and terminology? Using python as a en example basic concepts such as variables, loops, indexing and assignments are illustrated. 
+  What is programming, and what are some of the basics of approach and terminology? Using python as a en example basic concepts such as variables, loops, indexing and assignments are illustrated. We will also begin to examine how we can mix code with text in Emacs in preparing to generate reproducible research reports that mix code, data, text, and references. Our tool for that is called org babel.
 ** Files
    1. [[file:../topics/beginningPython.org][Beginning Python]]
 *** Assessments
@@ -134,13 +134,12 @@
     2. [[file:../assessments/hangmanPython.org][Hangman Python]]
 ** Videos
 *** Topics
-    1. What is programming?
-    2. Org-babel: blending text and code in Emacs.
-    3. Programming vocabulary.
-    4. Some Useful Tools
+    1. [[https://vimeo.com/458286292][An intro]] to what is programming?
+    2. [[https://vimeo.com/458286273][What to think about]] _before_ you program.
+    3. [[https://vimeo.com/458285882][Org-babel]]: blending text and code in Emacs ( a longer one)
+    4. [[https://vimeo.com/458286198][Programming concepts]] and terminology.
 *** Assessments
-    1. For loop in python
-    2. Hangman in Python
+    1. [[https://vimeo.com/458286064][Hints and advice]] for completing "For loop in python" and  "Hangman in Python"
 * R
 ** Getting R/Rstudio for Linux
 
