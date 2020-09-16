@@ -17,8 +17,8 @@
 ** How I Will Grade
    I will run your program from the terminal, and it will work as above or it will not. If it does, I will give you full marks, if not, I will give partial credit and allow you to try and fix the mistakes. 
 ** Hints
-   You might find it useful to learn about pythons =in= operator, and to think about how you might use the =enumerate= function we used in the [[file:forLoopPythonAssessment.org][for loop in python assessment]].
-   Remember to eliminate the letters from your word as they are guessed. For example if the word is tree, and I guess e, your word should be come "tr". That means you may find it easier to keep track of the indices that are *not* equal to the guessed letters.
+   You might find it useful to learn about python's =in= operator, and to think about how you might use the =enumerate= function we used in the [[file:forLoopPythonAssessment.org][for loop in python assessment]].
+   Remember to eliminate the letters from your word as they are guessed. For example if the word is tree, and I guess e, your word should become "tr". That means you may find it easier to keep track of the indices that are *not* equal to the guessed letters.
    If a brute force solution comes quickly think about re-writing your answer using a [[https://www.programiz.com/python-programming/list-comprehension][list comprehension]].
    If you have more of a programming background try adding in some additional features of the game. Can you get a random word from the internet? Can you let the player give the word and the computer guess letters? Could you output where the guessed characters appear in the word before the player has to make their next guess. Could you generate some [[https://codegolf.stackexchange.com/questions/135936/ascii-hangman-in-progress][simple ascii art of the hangman character]]?
 
