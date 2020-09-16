@@ -73,7 +73,6 @@
    #+RESULTS:
 
 
-
 ** Some programming vocabulary
 *** Data often come in *Types*
     Some languages dynamically type where other statically type. Python tries to figure out whether you meant "1" to be a character or a numeral and may interpret it as either depending on context. That can make it easier for you to just get working and not worry about all the details. In a statically typed language you may have to tell your compiler or interpreter exactly how you want it to interpret a particular "1". This can make writing your code slower and more wordy, but gives you a lower risk of errors later on.
