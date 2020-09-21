@@ -143,11 +143,16 @@
 * R
 ** Getting R/Rstudio for Linux
 ** Repeating the Rmd exercises in Linux
+** Repeating Python exercises in R
 ** Files
+   1. [[file:../topics/beginningR.org][Beginning R]]
 ** Videos
+   1. Installing R/Rstudio on Linux (Xubuntu)
+   2. Beginning R Walkthrough
+   3. Assessment Comments
 * Data Handling
-** Working with Data R
-** Working with Data Python
+** Working with Data Python 
+*** The Pandas Package
 ** Comparison and Comments
 * Basic Plotting
 ** Plotting in R: A tale of two approachs
