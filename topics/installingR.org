@@ -1,0 +1,18 @@
+* Installing R
+** Really Simple or Just Simple
+   Installing R on Ubuntu is a straightforward ~sudo apt install r-base~. However, this Ubuntu package often trails the development of R by several months. That almost never matters for general use. However, if you are using a very new method, or one where the packages are being updated frequently you may want to track the repository maintained by the r-project. Adding a repository is another "apt" command, and not too difficult. I am using the Ubuntu package here. 
+   
+   More installation details can be found here: [[https://computingforgeeks.com/how-to-install-r-and-rstudio-on-ubuntu-debian-mint/][Link]].
+
+   This [[https://linuxize.com/post/how-to-install-r-on-ubuntu-20-04/][blog]] shows you how to add the CRAN (r-project) repository first. 
+** Another thing you may want
+   Many document conversions, those used by RStudio and many other applications, make use a wonderful swiss-army knife piece of software: [[https://pandoc.org/][pandoc]]. This is the PAN DOCument conversion tool. The latest version can be found on their [[https://github.com/jgm/pandoc/releases/tag/2.10.1][github page.]] "Deb" files are easy to install (in fact the =dpkg= tool is running under the hood of most of the =apt= installations we have been using). After downloading the deb file, and making sure you know where it is you would =cd= to that directory and run =sudo dpkg -i <the package name>=. Where "i" stands for install.
+* Installing RStudio
+  Should you install RStudio? It is a wonderful piece of software, but its graphical interface can shield you from knowing what the underlying tools are. This can impede your growth as an R user, and limit what you know to possible, and your ability to implement the cutting-edge or idiosyncratic analysis method. My advice is to learn the base R first, and then expand to RStudio if you find it convenient. But know that it is not necessary to use R. RStudio is a nice wrapper around software that are free for your use, and may be more convenient and flexible when used directly.
+
+  Opinions do differ on this though. Here are couple of links to further discussion and opinions on RStudio and the tidyverse versus base R.
+  [[https://github.com/matloff/TidyverseSkeptic][Should you?]]
+  [[https://news.ycombinator.com/item?id=20362626][More debate.]]
+* Simple demonstration of Rmd- > HTML Without RStudio
+  There are many inputs for "knitting". The one I prefer is Rnw which goes via LaTeX to pdf. It gives you exquisite control over the appearance of your final product. It may however be overkill for simple projects. 
+  In the [[https://vimeo.com/460262566][linked video]] near the end I show at the end how to generate an html output from an Rmd file without using RStudio just to show you how it is possible. 
