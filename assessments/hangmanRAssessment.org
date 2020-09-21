@@ -1,0 +1,23 @@
+#+Title: Hangman in R 
+
+* Words of Encouragement
+  This was hard in Python, and won't be trivial in R, but having done it once, the translation should be easier. But R is not as easy to text process as Python, so I will be expecting less full featured functions. Just demonstrate you understand the concepts of what we are trying to achieve. 
+* Task
+  To write the beginning pieces of a hangman game in R. This version will [[https://en.wikipedia.org/wiki/Hard_coding][hard code]] the word to be guessed. It will not produce any sort of graphic, but merely ask for letters and report if the player spells out the word or not.  Note that as R is harder to run as a program from the command line I will test your code by loading it into my R interpreter. The command for this is =source=.  I will download your =filename.R= and then I will =source(filename.R)=. Next, I will execute whatever function you tell me to. Remember, your script can contain comments so I should be able to tell what you want me to do just by reading your .R file. 
+* Detail (basically the same as before, with minor adaptations)
+  1. Get input from me, the user. 
+  2. Write a function that takes that input and and returns *a list of* indices of the positions where the input letter exists in your hard-coded word. An empty list means the letter is never in the word. Otherwise the elements of this list are the indices where that letter is found. For example, if the word were tree and the letter "e" you would get back =[1] 3 4= from this function. Remember that R starts counting from 1, not zero. , but would get back =integer(0)= if the letter were 's'. This weirdness tells you why R might be nicer for statistics, but not for text processing. Different task require different tools.
+  3. Write a function that loops through the above process a certain number of times.
+  4. Make the function terminate when all the letters are guessed or max number of guesses is exceeded.
+
+* Comments
+** How I Will Grade
+   I will load (source) your file and try to test the functions. If they basically work then you will get the credits. 
+** Hints
+   You might find the following R functions helpful:
+   1. which
+   2. strsplit
+   3. unlist
+   4. !=
+   5. Using a variable more than once, e.g. al[al != "e"]
+   
