@@ -142,23 +142,36 @@
     1. [[https://vimeo.com/458286064][Hints and advice]] for completing "For loop in python" and  "Hangman in Python"
 * R
 ** Getting R/Rstudio for Linux
-
+** Repeating the Rmd exercises in Linux
+** Files
+** Videos
 * Data Handling
-
+** Working with Data R
+** Working with Data Python
+** Comparison and Comments
 * Basic Plotting
-
+** Plotting in R: A tale of two approachs
+** Plotting in Python: An evolving experience
+** A slight digression on Jupyter Notebooks 
 * Programming Psychology Experiments
-
+** Many tool. Many Choices.
+*** Featured: Psychopy
+    1. Getting it.
+    2. Testing it.
+    3. Using it. 
 * Report Writing
-  
 ** Org, markdown, and related dialects and tools
-
 ** LaTeX
-
 ** Reference Management
-
 *** Biblatex (Bibtex)
-
 ** Mixing Code and Text
-
+** Files
+** Videos
 * Presentations
+** From Text File to Slideshow
+*** org-tree-slide
+*** beamer
+*** reveal-js
+*** And many more. 
+** Files
+** Videos
