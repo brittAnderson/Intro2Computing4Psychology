@@ -1,0 +1,30 @@
+#+Title: Accessing Data in R - Assessment
+
+* Task
+  Provide an org or Rmd file that demonstrates the following functions with the *cars* data set in R.
+* Goal/Purpose
+  Demonstrate some of the basic data processing tasks in R. 
+* Instructions
+** General
+   Using the built in data set *cars* demonstrate sorting and selection.
+** Detailed
+   Produce a Rmd or org file that executes each of the following processes or provides as a result the answer to the listed questions. 
+   - Sort (or ~order~) cars by the ~dist~ variable.
+   - Find the =mean= and =standard deviation= of the speed of the cars.
+   - Print the name of the other built-in data sets (this code may help)
+        #+begin_src R :export code :results hidden :eval never
+          library(help="datasets")
+        #+end_src
+   - Using any other data set find:
+     1. Print the column names?
+     2. Print how many rows?
+     3. Tell me what the /comment/ designator is for R?
+     4. Tell me what the ending extension is for an R script?
+
+* Comments
+** Hints
+   - To find the names of /columns/ in a data.frame try the =names= function (~names(cars)~).
+   - To get help you can type a *?* at the command line of the R interpreter.
+   - You may need to find an online resource you like for R help, for example to find out what the name of the function is for standard deviation. It is not "standard deviation", but something much shorter.
+   - Extensions: For instance "docx" is the extension for a word file and "py" is the extension for a python script. 
+
