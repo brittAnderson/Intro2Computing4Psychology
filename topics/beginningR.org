@@ -1,0 +1,293 @@
+# -*- org-link-file-path-type: relative; -*-
+* R
+  Some of the material here may repeat some of the material elsewhere. This is because I don't expect every student to follow the exact same path.
+** What is R
+   R is a programming language targeting data and its statistical analysis. 
+   
+   The [[https://doi.org/10.1080/10618600.1996.10474713][history of R]] is via a language called S and a version of Lisp called "Scheme." Thus, R occupies a rather unique place as a hybrid language. It has some functional features, while also having a lot of [[https://en.wikipedia.org/wiki/Domain-specific_language][domain specific]] terminology.  
+
+   It's main purpose is to help us process our data, and test our scientific ideas about the data and indirectly the intuitions and hypotheses we had that led us to collect the data in the first place as well as the choices we made for how the data was to be collected.
+** Making sure you have R
+*** Downloading R
+    Downloading and installing R on xubuntu is a one line command. Most linux distributions will have a version of R in their package collections. However, sometimes the R distribution will update faster than the linux package system tracks. Thus, it can be useful if you are using very new R tools or packages to follow a repository that more closely follows the R developers release cycles. 
+
+    To install the base version of R on Xubuntu using the standard repositories you do: ~sudo apt install r-base~. If you want to track an R repository you could add to your current repositories first. Some additional tools may be necessary. 
+    
+    #+begin_src sh :eval never
+    sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E298A3A825C0D65DFD57CBB651716619E084DAB9
+    sudo add-apt-repository 'deb https://cloud.r-project.org/bin/linux/ubuntu focal-cran40/'
+    #+end_src
+    
+    [[https://linuxize.com/post/how-to-install-r-on-ubuntu-20-04/][Source]]
+*** Testing Your R Installation from the Terminal
+    - open terminal
+    - type ~r~ then ~enter~
+    - type ~2 + 2 enter~
+    - Do you see 4?
+    - type ~quit()~ to exit.
+*** Test for R in Emacs
+     - ~M-x R~
+     - if this doesn't work install ~ESS~ for emacs (Emacs Speaks Statistics)
+     - Two choices:
+       - MELPA (emacs package manager)
+       - Ubuntu package: emacs-ess
+* R Coding Basics
+  Compare this material to that which was discussed for [[file:beginningPython.org::*Some programming vocabulary][Some programming vocabulary]] in python. 
+* Types
+  R has many of the same data types as python, but has some distinct ones as well. R makes a much greater use of lists where there are names and elements (rather like a python dictionary). Many built-in statistical functions will return S3 or S4 objects that don't have a directly comparable python equivalent. These special types in R facilitate being able to [[https://en.wikipedia.org/wiki/Pipeline_(computing)][pipe]] from one function to the next or to display concise summaries. 
+
+** Determining the type of an R variable is straightforward.
+
+  #+Name: typeof
+  #+Caption: Use the function ~typeof~ in R to determine the datatype of a variable. 
+  #+begin_src R :session *R363*
+    a = 1
+    typeof(a)
+  #+end_src
+
+  #+RESULTS:
+  : double
+
+** Lists and other data structures in R
+
+  #+Name: Lists and Tuples and Data Frames
+  #+Caption: Lists, Tuples, Data.Frames and Data.Tables
+  #+begin_src R *R363*
+    tpl = c(1,2)
+    lst = list("firstName" = 'Britt', "lastName" = 'Anderson')
+    df = data.frame('fn' = c("bob","jane","griffin"),"gndr" = c('m','f','o'))
+    df
+  #+end_src
+
+  #+RESULTS: Lists and Tuples and Data Frames
+  | bob     | m |
+  | jane    | f |
+  | griffin | o |
+
+** Data Frames
+   Data Frames are one of the killer features of R, and they have been
+  slower to move into the Python space (though there are equivalents
+  in active development). You may also hear of =data.tables= in R. For
+  your purpose now you can think of them as the same, though as your R
+  comfort grows you will want to return to this issue and better
+  understand the pros and cons of switching from =data.frames= to
+  =data.tables=. You can think of =data.frames= as sort of like spread
+  sheets. But they are much handier. For example:
+  
+     #+begin_src R :session *R363*
+       is.data.frame(cars)
+     #+end_src
+
+     #+RESULTS:
+     : TRUE
+  
+*** Selection by Booleans
+    In our python section we learned about _predicates_ (or [[file:beginningPython.org::*Conditionals][conditionals]]). These were tests that returned true or false and that we could use in _[[file:beginningPython.org::*While Loop][while loops]]_.
+    
+    How many cars are there that can go faster than 10, but not more than 20?
+    #+begin_src R :session *R363*
+    length(cars$dist[cars$speed > 10 & cars$speed < 20])
+    #+end_src
+
+     #+RESULTS:
+     : 29
+   
+     Can you do that easily in Excel?
+
+     Accessing Data in R Assessment
+      1. Sort (or ~order~) cars by the ~dist~ variable.
+      2. Find the mean and standard deviation of the speed of the cars.
+      3. Are there other datasets?
+         #+begin_src R :export code :results hidden :eval never :session *R363*
+           library(help="datasets")
+         #+end_src
+      4. Open any of the datasets that catches your eye.
+      5. What are the column names?
+      6. How many rows?
+      7. What is the /comment/ designator for R?
+      8. What is the ending extension of an R script?
+
+* Loops
+  This is a good example of where things are slightly different between python and R. R uses a more functional style and is sometimes called [[https://paulvanderlaken.com/2017/10/13/functional-programming-and-why-you-should-not-grow-vectors-in-r/][vectorizing]].
+** For Loop
+         #+Name: For Loop in R
+    #+begin_src R :session *R363* :exports both :results output
+           ml = seq(1:10)
+
+           for  (m in ml) {
+               print(ml)
+           }
+    #+end_src
+
+    #+RESULTS: For Loop in R
+    #+begin_example
+     [1]  1  2  3  4  5  6  7  8  9 10
+     [1]  1  2  3  4  5  6  7  8  9 10
+     [1]  1  2  3  4  5  6  7  8  9 10
+     [1]  1  2  3  4  5  6  7  8  9 10
+     [1]  1  2  3  4  5  6  7  8  9 10
+     [1]  1  2  3  4  5  6  7  8  9 10
+     [1]  1  2  3  4  5  6  7  8  9 10
+     [1]  1  2  3  4  5  6  7  8  9 10
+     [1]  1  2  3  4  5  6  7  8  9 10
+     [1]  1  2  3  4  5  6  7  8  9 10
+    #+end_example
+
+    Compare to the python code. Look for the ":" and the "{}"'s in both examples. You can see how your knowledge of looping in one language helps you understand looping in the other, but the details may be different.
+*** Test your understanding
+    1. Edit the above so that it prints the individual number each time it goes through the loop, and not the whole list.
+    2. Repeat the [[file:~/gitRepos/introComp4Psych/assessments/forLoopPythonAssessment.org][Python Assessment]] on for loops, but using R this time. I give you a working example below, but try on your own for a while first, then look at my code and try it line by line in your interpreter to get the feel for how things work in R. 
+       1. Create a list of at least 8 individual characters.
+       2. Make sure they are **not** in alphabetical order
+       3. Print the letters one at a time.
+       4. Print the letters sorted alphabetically one at a time, but /do not/ overwrite your original list.
+       5. Print the letters from both lists with a format command that says which position the letter is in.
+       6. String formatting is less nice in R! To help with this look for help on ~paste~ and ~sprintf~. To acccess the /help/ try ~?<commandname>~.
+   
+    #+Name: Loop Exercise R
+    #+begin_src R :exports both :results output :session *R363*
+      myName = "brittAnderson"
+      myList = unlist(strsplit(myName,""))
+
+      for (l in myList){
+        print(l)
+      }
+
+
+
+      for (l in myList[order(myList)]){
+        print(l)
+      }
+
+      i = 1
+      for (n in order(myList)){
+        t  <- sprintf("The %.0fth letter of myList is: %s, but is %s in the sorted list.",i,myList[i],myList[n])
+        print(t)
+        i = i+1  
+        }
+    #+end_src
+
+    #+RESULTS: Loop Exercise R
+    #+begin_example
+    [1] "b"
+    [1] "r"
+    [1] "i"
+    [1] "t"
+    [1] "t"
+    [1] "A"
+    [1] "n"
+    [1] "d"
+    [1] "e"
+    [1] "r"
+    [1] "s"
+    [1] "o"
+    [1] "n"
+    [1] "A"
+    [1] "b"
+    [1] "d"
+    [1] "e"
+    [1] "i"
+    [1] "n"
+    [1] "n"
+    [1] "o"
+    [1] "r"
+    [1] "r"
+    [1] "s"
+    [1] "t"
+    [1] "t"
+    [1] "The 1th letter of myList is: b, but is A in the sorted list."
+    [1] "The 2th letter of myList is: r, but is b in the sorted list."
+    [1] "The 3th letter of myList is: i, but is d in the sorted list."
+    [1] "The 4th letter of myList is: t, but is e in the sorted list."
+    [1] "The 5th letter of myList is: t, but is i in the sorted list."
+    [1] "The 6th letter of myList is: A, but is n in the sorted list."
+    [1] "The 7th letter of myList is: n, but is n in the sorted list."
+    [1] "The 8th letter of myList is: d, but is o in the sorted list."
+    [1] "The 9th letter of myList is: e, but is r in the sorted list."
+    [1] "The 10th letter of myList is: r, but is r in the sorted list."
+    [1] "The 11th letter of myList is: s, but is s in the sorted list."
+    [1] "The 12th letter of myList is: o, but is t in the sorted list."
+    [1] "The 13th letter of myList is: n, but is t in the sorted list."
+    #+end_example
+
+** While Loop
+*** Conditionals
+    #+begin_src R :exports code  :session *R363* :results output
+              if (2 == 3) {
+                  print("Wha.....?\n\n")
+              } else if (3 == 2) {
+                print("Now that is odd")
+              } else {
+                print("2 does not equal 3.")
+              }
+    #+end_src
+
+    #+RESULTS:
+    : [1] "2 does not equal 3."
+*** While (again)
+    #+begin_src R :exports both :session *R363* :results output
+              i = 0
+              while (i<=10) {
+                print(unlist(strsplit("brittAnderson",""))[i])
+                i = i+1
+              }
+        #+end_src
+
+        #+RESULTS:
+	#+begin_example
+	character(0)
+	[1] "b"
+	[1] "r"
+	[1] "i"
+	[1] "t"
+	[1] "t"
+	[1] "A"
+	[1] "n"
+	[1] "d"
+	[1] "e"
+	[1] "r"
+	#+end_example
+
+* Functions
+#+begin_src R :exports code  :session *R363*
+  myadd  <- function(x,y) {
+    return(x+y)
+    }
+#+end_src
+
+#+RESULTS:
+
+#+begin_src R :exports both :results output :session *R363*
+myadd(2,3)
+#+end_src
+
+#+RESULTS:
+: [1] 5
+
+** Class Exercise with Functions                                   :homework:
+   You will be required to turn this in, but you can get started now. 
+   1. Look up how to get user input from python on the command line.
+   2. Write a script that I will run on the command line with R. 
+   3. Your script should ask me to enter a word.
+   4. It will then print out the word.
+   5. Print out the sorted version one character at a time.
+   6. Ask me if I want to do it again (y/n). If 'y', repeat, and continue repeating until I answer 'n'.
+   7. If you want to try and rewrite your hangman program from earlier in R, that is quite acceptable too. The goal is to get your trying to write something in R.
+* Libraries for R:classdiscussion:
+  #+Name: Installing Packages in R
+  #+Caption: Package Installation Commands in R. Note the use of quotes differs.
+  #+begin_src R :session *R363* :export code :eval never
+  install.packages("data.table")
+  install.packages("ggplot2")
+  library(data.table)
+  library(ggplot2)
+  #+end_src
+** What are some popular libraries? 
+   Of particular note for us are:
+   1. knitr
+   2. rmarkdown
+   3. ggplot2
+   4. data.table
+   5. magrittr
+   6. devtools/githubinstall
+
