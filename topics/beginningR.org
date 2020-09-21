@@ -264,15 +264,6 @@ myadd(2,3)
 #+RESULTS:
 : [1] 5
 
-** Class Exercise with Functions                                   :homework:
-   You will be required to turn this in, but you can get started now. 
-   1. Look up how to get user input from python on the command line.
-   2. Write a script that I will run on the command line with R. 
-   3. Your script should ask me to enter a word.
-   4. It will then print out the word.
-   5. Print out the sorted version one character at a time.
-   6. Ask me if I want to do it again (y/n). If 'y', repeat, and continue repeating until I answer 'n'.
-   7. If you want to try and rewrite your hangman program from earlier in R, that is quite acceptable too. The goal is to get your trying to write something in R.
 * Libraries for R:classdiscussion:
   #+Name: Installing Packages in R
   #+Caption: Package Installation Commands in R. Note the use of quotes differs.
