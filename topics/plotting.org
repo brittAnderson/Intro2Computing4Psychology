@@ -1,0 +1,140 @@
+WORK-IN-PROGRESS ; Do not use
+* Session 7 Plotting in Python and R
+** General
+   Comment. While it is possible to do almost anything that you can do in one language in the other, some sorts of plots may be easier to produce in one than the other. In general, you are better using the language you know best, even if the library that you need is a bit complex. On the other hand, don't be a mono-programmer. If there is a great library that does exactly what you want in a new language, or one you know less well, consider learning enough to use it. Have a "get the job done" attitude rather than focusing on mastery. Too much changes too fast in this world for you to get too settled on any one language or approach. 
+** R
+   Base plot and ggplot are the two most common R libraries for plotting with ggplot seeming to have much of the current momentum. They have two different models behind them, one may fit your thinking better than the other. Use the one that seems to make most sense to you. But for today you will have to use them all.
+*** Create some variables that you will use. 
+    #+begin_src R :session *R363*
+      x <- 1:10
+      y1 <- x^2
+      y2  <- 2*y1
+      y3  <- rnorm(10)
+    #+end_src
+
+    #+RESULTS:
+    |   -1.08226574922534 |
+    |   0.399909090238271 |
+    |  -0.931151612279912 |
+    |   -1.81797366667796 |
+    |  -0.134322003648683 |
+    | -0.0122364881240144 |
+    |    1.59010193306452 |
+    |   0.538196390986885 |
+    |  -0.269621806027292 |
+    |  -0.810344425599908 |
+*** Base Plot
+    The two main commands you will use are ~plot~ and ~lines~. Be careful. There is a command ~line~ (no 's'). That is not what you will want here.
+    #+begin_src R :session *R363* :results graphics :exports both :file "baseplot1.png"
+    plot(x,y1)
+    #+end_src
+
+    #+RESULTS:
+    [[file:baseplot1.png]]
+**** Changing the look of base plot
+     You have multiple /hidden/ arguments you can use to change the look of the plot such as the symbols, whether it plots lines or dots, the color, the font size. Always remember to try the help command. Here is just one example.
+
+     #+begin_src R :session *R363* :results graphics replace :file "baseplot1.png"
+     plot(x,y1,type = 'b', frame = F, pch = 19, col = "red" , ylabel = "y", lty = 1, lwd = 3)
+     #+end_src
+
+     #+RESULTS:
+     [[file:baseplot1.png]]
+
+     How would you include this plot in another document?
+
+     #+Name: addlines
+     #+Caption: Our base plot with additional data series added.
+     #+begin_src R :session *R363* :results graphics :exports both :file "baseplot3.png"
+            plot(x,y1,type = 'b', frame = F, pch = 19, col = "red" , ylab = "y", lty = 1, lwd = 3)
+            lines(x,y2, pch = 18, col = "blue", type = "b" , lty = 2, lwd = 1)
+            lines(x,y3, pch = 17, col = "green" , type = "l", lty=3, lwd = 4)
+            legend("topleft", legend = c("Line 1", "Line 2", "Line 3"), col = c("red","blue","green"),
+                   lty = 1:3, cex = 0.8)
+    #+end_src
+
+     #+RESULTS: addlines
+     [[file:baseplot3.png]]
+     Who wants to try and recreate this in Excel or SPSS?
+
+
+*** Ggplot
+    =ggplot= uses a model where you build things up  bit by bit all in one line, and you can keep adding to the same object. For instance. 
+     
+    Note that people tend to say "ggplot", but they always mean =ggplot2". Note the number "2". 
+    #+begin_src R :session *R363* :results replace graphics :exports both :file "ggplot1.png" 
+             library(ggplot2)
+      p  <- ggplot(data = data.frame("x" = x, "y1" = y1, "y2" = y2, "y3" = y3), aes(x = x, y = y1, col= 'r'))
+      p <- p + geom_point() + geom_line() + theme(legend.position = c(0.2,0.65)) + geom_line(aes(x=x,y=y2, col = "blue")) + geom_line(aes(y=y3,col = "green"))
+      ggsave("ggplot1.png", width = 8, height = 5, units = "cm") 
+    #+end_src
+
+    #+RESULTS:
+    [[file:ggplot1.png]]
+
+*** Scatter Plots and Box Plots
+    1. Using the R data set ~mtcars~ create in both base plot and ggplot a scatterplot of *mpg* and *wt*. What would you expect this to show even before you plot it. Always good to know what you are looking for as a clue to test if something went wrong.
+    2. Using the R data set ~ToothGrowth~ generate boxplots for ~len~ and ~dose~. If you are feeling creative overlay the data points on top of the box plot. 
+     
+*** Lattice
+    [[https://stat.ethz.ch/R-manual/R-devel/library/lattice/html/Lattice.html][Lattice Plot Overview]]
+** Interaction Plots
+   What is an interaction plot and when would you like to use one?
+    
+   I am including this specifically because it was mentioned that is something that is hard to produce in SPSS, and the stats courses thought it could be useful. 
+*** Getting the data
+    Download the data from [[http://personality-project.org/r/datasets/heating.txt]]
+
+    Okay. It is a text file. Read that into pandas in Python.
+*** Pandas Read in Text
+    #+begin_src python :session *P363* 
+      import pandas as pd
+      url = "http://personality-project.org/r/datasets/heating.txt"
+      d = pd.read_csv(url, sep = "\t")
+      d.columns
+    #+end_src
+
+    #+RESULTS:
+    : Index(['therms', 'degreedays', 'Location', 'days', 'ddd', 'thermsd',
+    :        'thermsdd'],
+    :       dtype='object')
+
+    Did the last line to check if the data imported correctly. 
+
+    We want to get plots of degree days versus therms, but we want to do it separately for each type of house to see if there is an /interaction/. That is, is the relationship between degree days and therms different for the different types of houses. Types of houses /interacts/ with ~degreedays~ when we want to predict ~therms~. 
+
+    We will also use some additional python modules to help us make this easier, specifically ~scipy~, ~matplotlib~, and ~statsmodels~. These can be installed via ~pip~ (which we used at the beginning of the course). 
+
+    #+begin_src python :session *P363* :results value file :exports both
+      from statsmodels.graphics.factorplots import interaction_plot
+      from matplotlib import pyplot as plt
+      fig = interaction_plot(d['degreedays'],d['Location'],d['therms'])
+      plt.savefig("py-inter-plt.png")
+      "py-inter-plt.png"
+    #+end_src
+
+    #+RESULTS:
+    [[file:py-inter-plt.png]]
+
+    Of course this gives us a "connect" the dots sort of look to our data, because that is what we are doing. Plotting the raw data points. We would prefer to fit a line, a /best/ line to our data. We want to pick the line that runs through the data points and is as close as possible. The techniques for doing this, and the theory, come from your stats courses, but we can use those tools here without explanation just to get some practice with the libraries and functions that will later come in handy. 
+
+    #+begin_src python :session *P363* :results value file :exports both
+      from statsmodels.formula.api import ols
+      ols_d = ols(formula = "therms ~ degreedays * Location",data = d)
+      myfits = ols_d.fit()
+      plt.clf()
+      f = plt.figure()
+      a = f.gca()
+      interaction_plot(d['degreedays'],d['Location'],myfits.fittedvalues,plottype="line",ax = a)
+      a.legend = None
+      interaction_plot(d['degreedays'],d['Location'],d['therms'],plottype='scatter',ax = a)
+      plt.savefig("py-inter-fit-plt.png")
+      "py-inter-fit-plt.png"
+    #+end_src
+
+    #+RESULTS:
+    [[file:py-inter-fit-plt.png]]
+
+*** Comment for myself                                             :noexport:
+    For homework I can ask them to do the opposite. Plot the points and lines in python, and the interaction plot in R. Here is a page from which I got the example that shows a solution in base R. 
+    http://personality-project.org/r/r.plotregressions.html
