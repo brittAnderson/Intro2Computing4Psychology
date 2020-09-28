@@ -31,7 +31,7 @@ WORK IN PROGRESS - Don't use for now.
 
      For demonstration purposes we will get data from the Open Psychometrics project (I am using the humor questi. You could just go to the website and right click and download, but you could also use python to get the data. There are many methods for this and the one used here came from this [[https://www.simplifiedpython.net/python-download-file/][online post.]]
 
-     You will have to ~pip install requests~ to get the requests library
+     You will have to ~pip3 install requests~ to get the requests library
 
      Then you will want to be in the directory where you want the file to download. I am using a ~:session:~ in order to allow variables to persist across babel code blocks. 
 
