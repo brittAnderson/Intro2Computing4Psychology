@@ -1,0 +1,9 @@
+* This is a work in progress
+  Notes while I develop the full lesson plan.
+
+* Installing Psychopy
+  The [[https://www.psychopy.org/index.html][home page]]
+  The [[https://www.psychopy.org/download.html][process]]
+  What is *pip*.
+    Two links: [[https://www.w3schools.com/python/python_pip.asp][one]] [[https://realpython.com/what-is-pip/][two]]
+
