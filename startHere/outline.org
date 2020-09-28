@@ -155,9 +155,11 @@
    3. [[https://vimeo.com/460262930][Beginning R Walkthrough]]
    4. [[https://vimeo.com/460262936][Assessment Comments]]
 * Data Handling
-** Working with Data Python 
-*** The Pandas Package
-** Comparison and Comments
+** Working with Data Python
+*** Files
+    1. Topic: [[file:../topics/pythonData.org][Beginning Pandas]]
+    2. Assessment: [[file:../assessments/dataPandasAssessment.org][Pandas Assessment]]
+*** Videos
 * Basic Plotting
 ** Plotting in R: A tale of two approachs
 ** Plotting in Python: An evolving experience
