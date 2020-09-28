@@ -160,6 +160,12 @@
     1. Topic: [[file:../topics/pythonData.org][Beginning Pandas]]
     2. Assessment: [[file:../assessments/dataPandasAssessment.org][Pandas Assessment]]
 *** Videos
+    1. [[https://vimeo.com/462705773][Intro to the Module]]
+    2. [[https://vimeo.com/462705737][Installing Pandas]]
+    3. [[https://vimeo.com/462705724][Requesting Data with Python]]
+    4. [[https://vimeo.com/462705656][Unzipping Data with Python]]
+    5. [[https://vimeo.com/462705437][Reading in a CSV File with Pandas/Python]]
+    6. [[https://vimeo.com/462706049][Installing an Emacs Package to Improve Python]] Coding.
 * Basic Plotting
 ** Plotting in R: A tale of two approachs
 ** Plotting in Python: An evolving experience
