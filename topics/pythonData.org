@@ -61,28 +61,29 @@ WORK IN PROGRESS - Don't use for now.
       dpd.columns.values
     #+end_src
 
-    #+RESULTS:
-    | Q1 | Q2 | Q3 | Q4 | Q5 | Q6 | Q7 | Q8 | Q9 | Q10 | Q11 | Q12 | Q13 | Q14 | Q15 | Q16 | Q17 | Q18 | Q19 | Q20 | Q21 | Q22 | Q23 | Q24 | Q25 | Q26 | Q27 | Q28 | Q29 | Q30 | Q31 | Q32 | affiliative | selfenhancing | agressive | selfdefeating | age | gender | accuracy |
-**** Repeat the same inquiries as above, but with Pandas.
-     #+begin_src python :session *P363* 
-     len(dpd['Q1'])
-     #+end_src
-
-     #+RESULTS:
-     : 1071
+**** Repeating Things We Did In R With Pandas
+***** The length of a list
+      In R you would use the ~length~ command, but in python it is ~len~. Almost every language you will program in will have a command for finding the length, but the actual word may different or the syntax may be different.
       
-     #+begin_src python :session *P363*
-     dpdmg = dpd.copy()
-     dpdmg = dpdmg[dpdmg['gender'].isin([1,2])]
-     len(dpdmg['Q1'])
-     #+end_src
+      #+begin_src python :session *P363* 
+      len(dpd['Q1'])
+      #+end_src
 
-     #+RESULTS:
-     : 1058
+***** Using A Conditional
+      In R we did things like ~mydataframe$mydatacol~ to get a column of data from a data frame. In python the format looks more like a python dictionary.
+      
+      #+begin_src python :session *P363*
+      dpdmg = dpd.copy()
+      dpdmg = dpdmg[dpdmg['gender'].isin([1,2])]
+      len(dpdmg['Q1'])
+      #+end_src
 
-
-     What happens if you just select with ~in~? You keep the same number of rows, because you replace the ineligible data with NaNs (not a number). 
-
+      What happens if you just select with ~in~? You keep the same number of rows, because you replace the ineligible data with NaNs (not a number). 
 
 **** Functional Styles versus Object Orientation
-     Python is an object oriented language. Pandas creates a data.frame object (intended to mimic R), but it is not the same thing, and while most of the commands are achievable in either, they are not the same. The *dot* shows you we are accessing either an attribute or a method of an object. 
+     Python is an object oriented language. R is in a more eclectic style that  reflects its LISP origins. Object oriented languages have data structures: objects, that encapsulate both attributes (what objects are like) and methods (what objects can do). A list would have its contents, the items in the list, as its attributes, but would have the ability, a method, to report the length of its /self/ [fn:1]. The attributes and methods of a python object are often accessed by a name that includes a *dot* '~.~' like the ".isin" you see in the code snippet above. Pandas creates a /data.frame object/ (the name emphasizes its R heritage), but it is not the same thing, and while most of the commands are achievable in either, they are not the same. The *dot* shows you we are accessing either an attribute or a method of an object. 
+
+* Assessing Your Use of Pandas
+  
+* Footnotes
+  [fn:1] Self is in italics because this is the special name one often sees in object oriented code were the definition of an object is given. Self typically refers to the particular instance of an object as it is being made. 
