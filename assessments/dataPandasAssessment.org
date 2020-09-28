@@ -16,9 +16,8 @@
   Once you have the data in your interpreter, don't just rush through. Take some time to play with various pandas commands or exercises such as examples you can find [[https://www.w3resource.com/python-exercises/pandas/index-data-series.php][here]] to generally grow more familiar with the package.
 * Footnotes
 
-[fn:3] To make some nicer formatting and help available when using python from within emacs checkout the ~elpy~ [[https://elpy.readthedocs.io/en/latest/introduction.html#installation][package]]. 
-
 [fn:1] Or some other simple statistic appropriate to the data, e.g. if your data was /categorical/ you might give me the number of rows for each type of category.  
 [fn:2] An example of this is that if you had columns for heights and genders you could output the average height of men, women, and other. 
+[fn:3] To make some nicer formatting and help available when using python from within emacs checkout the ~elpy~ [[https://elpy.readthedocs.io/en/latest/introduction.html#installation][package]]. 
 
 
