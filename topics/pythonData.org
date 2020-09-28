@@ -14,7 +14,7 @@ WORK IN PROGRESS - Don't use for now.
     How to get Pandas?
     1. [[https://docs.continuum.io/anaconda/][Anaconda]] (Conda) - you will see this in a lot of documentation. This is a collection of packages for python that are curated to work well together and allow you to set up virutal environments (which protects your projects and their differing requirements from leading to conflicts with each other). Using =conda= is not hard, but it is another took, and it has its own learning curve, so it will not be used here. If you find yourself using python regularly and you are comfortable with how to install and use software and packages then I encourage you to read more Anaconda and decided if it is a python solution that will work for you.
     2. Xubuntu stable ~sudo apt-get install python3-pandas~.
-    3. Pip (PyPI) ~pip install pandas~
+    3. Pip (PyPI) ~pip3 install pandas~
 
     To try and get all our python packages from one source (and thereby reduce our chance for conflicts) we will use the =pip= method as that will work well with our subsequent installation of the =psychopy= package.
 *** Interactve Pandas
