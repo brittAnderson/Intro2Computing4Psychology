@@ -1,0 +1,17 @@
+#+Title: Plotting Assessment: R and Python
+
+* Task
+  1. Do exactly what we did in the topic, but reverse which language you use to each.
+  2. Use python functions to generate a sequence (for the x), a function to get a y from the x, and a random number generator to get y_randoms as long as the x and y values, and then generate a line and scatter plot for your x and y's and y_random's all on the same plot.
+  3. The interaction plot should be done with R
+
+* What to submit
+  An *.org file that includes code blocks for the plots (and the included files for the plots) that accomplish the assigned tasks. It should export to a nice html (see the example exported from the topic file in the [[file:~/warehouse/sdcard/gitRepos/Intro2Computing4Psychology/codeExamples/plottingExample/plottingRandPy.html][codeExamples]] subdirectory).
+
+
+* Hints
+  - R can read in data from a url as well as pandas. See [[https://stackoverflow.com/questions/6299220/access-a-url-and-read-data-with-r][this]]stack overflow question/answer.
+  - R has a [[https://www.rdocumentation.org/packages/stats/versions/3.6.2/topics/interaction.plot][built in function]] for interaction plots that might work.
+  - It might be easier with ~ggplot~. Here is a [[https://sebastiansauer.github.io/vis_interaction_effects/][blog]] showing how.
+  - [[https://docs.python.org/3/library/random.html][Random numbers]] are easy in python.
+  - What you need for [[https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.plot.line.html][plotting lines]] in python is shown in the interaction plot example - just skip the "ols" model part. 
