@@ -1,0 +1,573 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2020-09-29 Tue 10:37 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Plotting in R and Python</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="Britt Anderson" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<script type="text/javascript">
+// @license magnet:?xt=urn:btih:e95b018ef3580986a04669f1b5879592219e2a7a&dn=public-domain.txt Public Domain
+<!--/*--><![CDATA[/*><!--*/
+     function CodeHighlightOn(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.add("code-highlighted");
+         target.classList.add("code-highlighted");
+       }
+     }
+     function CodeHighlightOff(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.remove("code-highlighted");
+         target.classList.remove("code-highlighted");
+       }
+     }
+    /*]]>*///-->
+// @license-end
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">Plotting in R and Python</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#org73d4fe4">1. General Comment</a>
+<ul>
+<li><a href="#org2eb732f">1.1. R</a>
+<ul>
+<li><a href="#org3da1599">1.1.1. A first taste of plotting in R</a></li>
+<li><a href="#org49e7f25">1.1.2. Practice makes perfect</a></li>
+</ul>
+</li>
+<li><a href="#org32d8a86">1.2. Python</a>
+<ul>
+<li><a href="#org6574a8f">1.2.1. Interaction Plots</a></li>
+<li><a href="#org2b7009e">1.2.2. Getting the data</a></li>
+<li><a href="#orgbf3b061">1.2.3. Pandas Read in Text</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#orgfb23e38">2. Assessment</a></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org73d4fe4" class="outline-2">
+<h2 id="org73d4fe4"><span class="section-number-2">1</span> General Comment</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+While it may be <i>theoretically</i> possible to do anything that can be done in one computer language in another (after all <a href="https://www.felienne.com/archives/2974">Excel is Turing complete</a>) it may be <i>practically</i> easier in one language than another.   Thus you want to balance being a jack of all trades, but a master of none, with expertise that runs deep, but is narrow. My experience has been that knowing the basics of a few languages is better when you are trying to stitch something together. You can pull what is good from each and glue them together. You take pieces that are robust and have been well vetted and use your own glue code to create the pipeline for your one off or urgent need. However, for something that you will be using in the long term, or where you contemplate sharing with others, it may be better to dig deep and learn some of the specialist's knowledge in one particular programming language. This is another example of making your tools appropriate to your task. A jack-knife is handy to have, you can do almost anything with it, but is rarely the best tool for any job.
+</p>
+
+<p>
+This analogy is particulary apt when it comes to plotting. While I expect the situation to improve substantially in the next couple of years (it has improved greatly over the last few) plotting and data handling are currently much easier in R. Thus, even if you gather experimental data from python you will often find it more convenient to explore that data in an R environment. But it is good to know more than one way to do things, and to have your own experience for comparison. Here we will generate similar plots with both R and Python for you to draw your own conclusions.
+</p>
+</div>
+
+<div id="outline-container-org2eb732f" class="outline-3">
+<h3 id="org2eb732f"><span class="section-number-3">1.1</span> R</h3>
+<div class="outline-text-3" id="text-1-1">
+<p>
+Plotting in R is not one thing. There are at least three plotting libraries you could choose from in R, and two are very common. Base plot and ggplot are the two most common. They can do similar things, but take different approaches to how they conceive of plotting. With <i>base</i> you build up your plot line by line, entry by entry. With <i>ggplot</i> you create a description of your plot. It is easier to get nice plots quickly with <i>ggplot</i>. It is easier to tweak a plot to perfection in <i>base.</i> These are my personal preferences and I find that different users feel comfortable in the different libraries. You should try both and draw your own conclusions.
+</p>
+</div>
+<div id="outline-container-org3da1599" class="outline-4">
+<h4 id="org3da1599"><span class="section-number-4">1.1.1</span> A first taste of plotting in R</h4>
+<div class="outline-text-4" id="text-1-1-1">
+<p>
+First, make some pseudo-data. We can use <a href="https://www.math.csi.cuny.edu/Statistics/R/simpleR/stat007.html">the random number generators</a> of <code>R</code> to supply us some data for plotting. 
+</p>
+<div class="org-src-container">
+<pre class="src src-R">x <span style="color: #008b8b;">&lt;-</span> 1:10
+y1 <span style="color: #008b8b;">&lt;-</span> x^2
+y2  <span style="color: #008b8b;">&lt;-</span> 2*y1
+y3  <span style="color: #008b8b;">&lt;-</span> rnorm(10)
+</pre>
+</div>
+<p>
+We use <code>R</code>'s assignment operator to create a sequence from 1 to 10 for our x values and then create three different y values as deterministic or random values.
+</p>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-right" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-right">1.1155193078456</td>
+</tr>
+
+<tr>
+<td class="org-right">-1.26149565638421</td>
+</tr>
+
+<tr>
+<td class="org-right">-0.472076859621129</td>
+</tr>
+
+<tr>
+<td class="org-right">-0.498322432129203</td>
+</tr>
+
+<tr>
+<td class="org-right">0.0104548294267439</td>
+</tr>
+
+<tr>
+<td class="org-right">0.451173813711855</td>
+</tr>
+
+<tr>
+<td class="org-right">0.622084846935191</td>
+</tr>
+
+<tr>
+<td class="org-right">0.278968815229647</td>
+</tr>
+
+<tr>
+<td class="org-right">-1.22204406791649</td>
+</tr>
+
+<tr>
+<td class="org-right">0.473176010581218</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<ol class="org-ol">
+<li><a id="org271a5ac"></a>Base Plot<br />
+<div class="outline-text-5" id="text-1-1-1-1">
+<p>
+For base plot two primitive commands are <code>plot</code> and <code>lines</code>. Be careful. There is a command <code>line</code> (no 's'). That is not what you will want here.
+</p>
+<div class="org-src-container">
+<pre class="src src-R">plot(x,y1)
+</pre>
+</div>
+
+
+<div id="org15cf973" class="figure">
+<p><img src="baseplot1.png" alt="baseplot1.png" />
+</p>
+</div>
+</div>
+</li>
+
+
+
+
+<li><a id="orgd9efd9d"></a>Changing the look of base plot<br />
+<div class="outline-text-5" id="text-1-1-1-2">
+<p>
+You have multiple <i>hidden</i> arguments you can use to change the look of the plot such as the symbols, whether it plots lines or dots, the color, the font size. Always remember to try the help command. Here is just one example. Help is your friend here. Try <code>help(plot)</code> in your R console. 
+</p>
+
+<div class="org-src-container">
+<pre class="src src-R">plot(x,y1,type = <span style="color: #8b2252;">'b'</span>, frame = F, pch = 19, col = <span style="color: #8b2252;">"red"</span> , ylabel = <span style="color: #8b2252;">"y"</span>, lty = 1, lwd = 3)
+</pre>
+</div>
+
+<p>
+How would you include another data series in this plot?
+</p>
+
+<div class="org-src-container">
+<label class="org-src-name"><span class="listing-number">Listing 1: </span>Our base plot with additional data series added.</label><pre class="src src-R" id="org02a8a67">plot(x,y1,type = <span style="color: #8b2252;">'b'</span>, frame = F, pch = 19, col = <span style="color: #8b2252;">"red"</span> , ylab = <span style="color: #8b2252;">"y"</span>, lty = 1, lwd = 3)
+lines(x,y2, pch = 18, col = <span style="color: #8b2252;">"blue"</span>, type = <span style="color: #8b2252;">"b"</span> , lty = 2, lwd = 1)
+lines(x,y3, pch = 17, col = <span style="color: #8b2252;">"green"</span> , type = <span style="color: #8b2252;">"l"</span>, lty=3, lwd = 4)
+legend(<span style="color: #8b2252;">"topleft"</span>, legend = c(<span style="color: #8b2252;">"Line 1"</span>, <span style="color: #8b2252;">"Line 2"</span>, <span style="color: #8b2252;">"Line 3"</span>), col = c(<span style="color: #8b2252;">"red"</span>,<span style="color: #8b2252;">"blue"</span>,<span style="color: #8b2252;">"green"</span>),
+       lty = 1:3, cex = 0.8)
+</pre>
+</div>
+
+<p>
+To figure out what the <code>lines</code> are doing don't forget the help commands: <code>?lines</code>.
+</p>
+<p>
+<img src="baseplot3.png" alt="baseplot3.png" />
+Who wants to try and recreate this in Excel or SPSS? As a quick test can you change the color and line type of each series?
+</p>
+</div>
+</li>
+
+<li><a id="orge07a427"></a>ggplot<br />
+<div class="outline-text-5" id="text-1-1-1-3">
+<p>
+<code>ggplot</code> uses a model where you build things up  bit by bit all in one line, and you can keep adding to the same object. For instance. 
+</p>
+
+<p>
+Note that people tend to say "ggplot", but they always mean <code>ggplot2</code>. Note the number "2". If you do not have <code>ggplot</code> you will need to install it, and when you do you will note that <code>ggplot</code> requires a lot of other packages to function properly. One reason to prefer the base package is a greater simplicity of installation. However, once you move on beyond simple 2d line and scatter plots base plotting too grows more comples.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-R"><span style="color: #008b8b;">library</span>(ggplot2)
+p  <span style="color: #008b8b;">&lt;-</span> ggplot(data = data.frame(<span style="color: #8b2252;">"x"</span> = x, <span style="color: #8b2252;">"y1"</span> = y1, <span style="color: #8b2252;">"y2"</span> = y2, <span style="color: #8b2252;">"y3"</span> = y3), aes(x = x, y = y1, col= <span style="color: #8b2252;">'r'</span>))
+p <span style="color: #008b8b;">&lt;-</span> p + geom_point() + geom_line() + theme(legend.position = c(0.2,0.65)) + geom_line(aes(x=x,y=y2, col = <span style="color: #8b2252;">"blue"</span>)) + geom_line(aes(y=y3,col = <span style="color: #8b2252;">"green"</span>))
+ggsave(<span style="color: #8b2252;">"ggplot1.png"</span>, width = 8, height = 5, units = <span style="color: #8b2252;">"cm"</span>) 
+</pre>
+</div>
+
+
+<div id="org5fe173c" class="figure">
+<p><img src="ggplot1.png" alt="ggplot1.png" />
+</p>
+</div>
+
+<p>
+Notice that here we are saving the results of our calls to <code>ggplot</code> as a variable. We can either type that variable at the command line to see the plot, or we can use that variable to save our plot as a file. The style is quite different from the base plot above, and can be a bit harder to begin with. We are creating an object. Initially, in the line above where we first use ggplot we don't actually plot anything. We just create our plotting object and populate the data. Later on we use a method to plot this data with a particular syle, the point, and then again with the line.
+</p>
+
+
+<div id="org668495b" class="figure">
+<p><img src="ggplot1.png" alt="ggplot1.png" />
+</p>
+</div>
+</div>
+</li>
+</ol>
+</div>
+<div id="outline-container-org49e7f25" class="outline-4">
+<h4 id="org49e7f25"><span class="section-number-4">1.1.2</span> Practice makes perfect</h4>
+<div class="outline-text-4" id="text-1-1-2">
+<p>
+To get some hands on experience with plotting I suggest creating <a href="https://en.wikipedia.org/wiki/Scatter_plot">scatter plots</a> and <a href="https://en.wikipedia.org/wiki/Box_plot">box plots</a> with R using one of the built in data sets. 
+</p>
+<ol class="org-ol">
+<li>Using the R data set <code>mtcars</code> create in both base plot and ggplot a scatterplot of <b>mpg</b> and <b>wt</b>. What would you expect this to show even before you plot it. One way to make sure your code is doing what you want is to visualize what you expect. If that is not what you see then either your code is wrong or your understanding of the functions and what they do is wrong. Either way you know something is not right and you can set about fixing it.</li>
+<li>Using the R data set <code>ToothGrowth</code> generate boxplots for <code>len</code> and <code>dose</code>. If you are feeling creative overlay the data points on top of the box plot.
+Here are a couple of links to help you get started:
+<ol class="org-ol">
+<li><a href="http://www.sthda.com/english/wiki/box-plots-r-base-graphs">box-plots-r-base-graphs</a></li>
+<li><a href="http://www.sthda.com/english/wiki/scatter-plots-r-base-graphs">scatter-plots-r-base-graphs</a></li>
+<li><a href="http://www.sthda.com/english/wiki/qplot-quick-plot-with-ggplot2-r-software-and-data-visualization#scatter-plots">ggplot2-scatter-plots</a></li>
+<li><a href="http://www.sthda.com/english/wiki/ggplot2-box-plot-quick-start-guide-r-software-and-data-visualization">ggplot2-boxplots</a></li>
+</ol></li>
+</ol>
+</div>
+<ol class="org-ol">
+<li><a id="org49a9e34"></a>Lattice (the third, very powerful, plotting alternative for R)<br />
+<div class="outline-text-5" id="text-1-1-2-1">
+<p>
+<a href="https://stat.ethz.ch/R-manual/R-devel/library/lattice/html/Lattice.html">Lattice Plot Overview</a>
+When should you consider using <code>lattice</code>? When multivariate data are at play. One of the good examples of this that comes up often in psychology is the interaction plot. For analyses of variance you frequently encounter pairs of factors, say age and weight, that you want to plot against each other, and where you want to separate out the effect of a third factor on that relationship (e.g. gender). 
+</p>
+</div>
+</li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-org32d8a86" class="outline-3">
+<h3 id="org32d8a86"><span class="section-number-3">1.2</span> Python</h3>
+<div class="outline-text-3" id="text-1-2">
+<p>
+Python has many plotting libraries too. <a href="https://matplotlib.org/">Matplotlib</a> is very popular and the most well established. It is leveraged by the Pandas package to make plotting available from Pandas. Other plotting libraries worth checking out are <a href="https://seaborn.pydata.org/">Seaborn</a> and <a href="https://docs.bokeh.org/en/latest/">Bokeh</a>. Bokeh seeks to use the same graphics grammar as ggplot. Lastly, <a href="https://plotly.com/python/">Plotly</a> has become popular and can make interactive plots as well.
+</p>
+</div>
+
+<div id="outline-container-org6574a8f" class="outline-4">
+<h4 id="org6574a8f"><span class="section-number-4">1.2.1</span> Interaction Plots</h4>
+<div class="outline-text-4" id="text-1-2-1">
+<p>
+This example is included because SPSS, a common and powerful statistical package used by many psychologists, makes interaction plots difficult to achieve (or so I am told - I have never used SPSS). If you are taking an advanced statistics course knowing how to create these kinds of plots could be very useful. 
+</p>
+</div>
+</div>
+<div id="outline-container-org2b7009e" class="outline-4">
+<h4 id="org2b7009e"><span class="section-number-4">1.2.2</span> Getting the data</h4>
+<div class="outline-text-4" id="text-1-2-2">
+<p>
+For this example we will use the data from <a href="http://personality-project.org/r/datasets/heating.txt">http://personality-project.org/r/datasets/heating.txt</a>, but you don't need to download it manually. We can do this from within python itself. Instead of using the request library (a general library in python for making internet requests) we will use the <code>read_csv</code> functionality of pandas to read data from a url (universal resource locator - an address on the world wide web). <sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup>
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgbf3b061" class="outline-4">
+<h4 id="orgbf3b061"><span class="section-number-4">1.2.3</span> Pandas Read in Text</h4>
+<div class="outline-text-4" id="text-1-2-3">
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #a020f0;">import</span> pandas <span style="color: #a020f0;">as</span> pd
+<span style="color: #a0522d;">url</span> = <span style="color: #8b2252;">"http://personality-project.org/r/datasets/heating.txt"</span>
+<span style="color: #a0522d;">d</span> = pd.read_csv(url, sep = <span style="color: #8b2252;">"\t"</span>)
+d.columns
+</pre>
+</div>
+
+<p>
+For this exercise, we want to get plots of degree days versus therms, but we want to do it separately for each type of house to see if there is an <i>interaction</i>. That is, is the relationship between degree days and therms different for the different types of houses. Types of houses <i>interacts</i> with <code>degreedays</code> when we want to predict <code>therms</code>. 
+</p>
+
+<p>
+We will also use some additional python modules to help us make this easier, specifically <code>scipy</code>, <code>matplotlib</code>, and <code>statsmodels</code>. These can be installed via <code>pip</code>.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #a020f0;">from</span> statsmodels.graphics.factorplots <span style="color: #a020f0;">import</span> interaction_plot
+<span style="color: #a020f0;">from</span> matplotlib <span style="color: #a020f0;">import</span> pyplot <span style="color: #a020f0;">as</span> plt
+<span style="color: #a0522d;">fig</span> = interaction_plot(d[<span style="color: #8b2252;">'degreedays'</span>],d[<span style="color: #8b2252;">'Location'</span>],d[<span style="color: #8b2252;">'therms'</span>])
+plt.savefig(<span style="color: #8b2252;">"py-inter-plt.png"</span>)
+<span style="color: #8b2252;">"py-inter-plt.png"</span>
+</pre>
+</div>
+
+
+<div id="orge4d63db" class="figure">
+<p><img src="py-inter-plt.png" alt="py-inter-plt.png" />
+</p>
+</div>
+
+
+<p>
+This gives us a "connect-the-dots" sort of look to our data. We would prefer to <a href="https://en.wikipedia.org/wiki/Linear_least_squares">fit a line</a>, a <i>best</i> possible line, to our data. We want to pick the line that runs through the data points and is as close as possible (measured in the y direction) to all the data points. The techniques for doing this, and the theory, come from your stats courses, but we can use those tools here without explanation just to get some practice with the libraries and functions that will later come in handy. 
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #a020f0;">from</span> statsmodels.formula.api <span style="color: #a020f0;">import</span> ols
+<span style="color: #a0522d;">ols_d</span> = ols(formula = <span style="color: #8b2252;">"therms ~ degreedays * Location"</span>,data = d)
+<span style="color: #a0522d;">myfits</span> = ols_d.fit()
+plt.clf()
+<span style="color: #a0522d;">f</span> = plt.figure()
+<span style="color: #a0522d;">a</span> = f.gca()
+<span style="color: #a0522d;">ip1</span> = interaction_plot(d[<span style="color: #8b2252;">'degreedays'</span>],d[<span style="color: #8b2252;">'Location'</span>],myfits.fittedvalues,plottype=<span style="color: #8b2252;">"line"</span>,ax = a)
+<span style="color: #a0522d;">ip2</span> = interaction_plot(d[<span style="color: #8b2252;">'degreedays'</span>],d[<span style="color: #8b2252;">'Location'</span>],d[<span style="color: #8b2252;">'therms'</span>],plottype=<span style="color: #8b2252;">'scatter'</span>,ax = a)
+<span style="color: #a0522d;">lines</span>, <span style="color: #a0522d;">labels</span> = f.axes[0].get_legend_handles_labels()
+<span style="color: #a0522d;">a.legend_</span>=<span style="color: #008b8b;">None</span>
+f.legend(lines[0:3], labels[0:3], loc = <span style="color: #8b2252;">'upper left'</span>,bbox_to_anchor=(0.15,0.85))
+plt.savefig(<span style="color: #8b2252;">"py-inter-fit-plt.png"</span>)
+<span style="color: #8b2252;">"py-inter-fit-plt.png"</span>
+</pre>
+</div>
+
+<p>
+<img src="py-inter-fit-plt.png" alt="py-inter-fit-plt.png" />
+Note that figuring out how to get the legend only for the plot with the lines and not a redundant legend for the scatterplot, and to place it properly took me about an hour. This is not as easy a system to get started in as the <code>R</code> commands are. 
+</p>
+</div>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-orgfb23e38" class="outline-2">
+<h2 id="orgfb23e38"><span class="section-number-2">2</span> Assessment</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+The <a href="file:///home/britt/warehouse/sdcard/gitRepos/Intro2Computing4Psychology/assessments/plottingRandPyAssessment.html">assessment</a> will ask you to reverse the above. Create the R plots with Pandas and the Interaction plot with R.
+</p>
+</div>
+</div>
+<div id="footnotes">
+<h2 class="footnotes">Footnotes: </h2>
+<div id="text-footnotes">
+
+<div class="footdef"><sup><a id="fn.1" class="footnum" href="#fnr.1">1</a></sup> <div class="footpara"><p class="footpara">
+Notice that in this file we will execute both R code and Python code mixed with text. We will run  separate sessions of R and python that allow us to mix and share variables within the code blocks for each language.
+</p></div></div>
+
+
+</div>
+</div></div>
+<div id="postamble" class="status">
+<p class="author">Author: Britt Anderson</p>
+<p class="date">Created: 2020-09-29 Tue 10:37</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
