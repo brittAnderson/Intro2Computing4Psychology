@@ -16,27 +16,29 @@
     #+end_src
 
     #+RESULTS:
-    |   1.35877393806679 |
-    |  -1.83116873283792 |
-    |  -1.46627811976672 |
-    | -0.482763681507164 |
-    |  -1.20556712521922 |
-    |  -1.32703018294925 |
-    | -0.809852635982461 |
-    |  -1.47116167928324 |
-    | -0.468271629791287 |
-    |   0.89451136150746 |
+    |  -1.66792556943256 |
+    |  0.131489576785941 |
+    |  0.222237197418747 |
+    |  0.973923616827596 |
+    | 0.0221641196334654 |
+    |  0.309800575035849 |
+    |  0.029403923264418 |
+    |  0.951095773981935 |
+    |   3.95117289413318 |
+    |   1.30697242853247 |
 
     We use ~R~'s assignment operator to create a sequence from 1 to 10 for our x values and then create three different y values as deterministic or random values.
     
 **** Base Plot
      For base plot two primitive commands are ~plot~ and ~lines~. Be careful. There is a command ~line~ (no 's'). That is not what you will want here.
      #+begin_src R :session *R363* :results file graphics replace :exports both :file "~/Desktop/baseplot1.png"
-     plot(x,y1)
+     plot(x,y2)
      #+end_src
 
      #+RESULTS:
      [[file:~/Desktop/baseplot1.png]]
+
+
 
 
 
@@ -81,11 +83,8 @@
 
      #+RESULTS:
      [[file:~/Desktop/ggplot1.png]]
-
      Notice that here we are saving the results of our calls to ~ggplot~ as a variable. We can either type that variable at the command line to see the plot, or we can use that variable to save our plot as a file. The style is quite different from the base plot above, and can be a bit harder to begin with. We are creating an object. Initially, in the line above where we first use ggplot we don't actually plot anything. We just create our plotting object and populate the data. Later on we use a method to plot this data with a particular syle, the point, and then again with the line.
-     
-     #+RESULTS:
-     [[file:ggplot1.png]]
+
 *** Practice makes perfect
     To get some hands on experience with plotting I suggest creating [[https://en.wikipedia.org/wiki/Scatter_plot][scatter plots]] and [[https://en.wikipedia.org/wiki/Box_plot][box plots]] with R using one of the built in data sets. 
     1. Using the R data set ~mtcars~ create in both base plot and ggplot a scatterplot of *mpg* and *wt*. What would you expect this to show even before you plot it. One way to make sure your code is doing what you want is to visualize what you expect. If that is not what you see then either your code is wrong or your understanding of the functions and what they do is wrong. Either way you know something is not right and you can set about fixing it. 
@@ -161,7 +160,6 @@
      [[file:/home/britt/Desktop/py-inter-fit-plt.png]]
      Note that figuring out how to get the legend only for the plot with the lines and not a redundant legend for the scatterplot, and to place it properly took me about an hour. This is not as easy a system to get started in as the ~R~ commands are. 
 
-     
 * Assessment
   The [[file:~/gitRepos/Intro2Computing4Psychology/assessments/plottingRandPyAssessment.org][assessment]] will ask you to reverse the above. Create the R plots with Pandas and the Interaction plot with R.
 
