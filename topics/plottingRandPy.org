@@ -14,44 +14,47 @@
       y2  <- 2*y1
       y3  <- rnorm(10)
     #+end_src
+
+    #+RESULTS:
+    |   1.35877393806679 |
+    |  -1.83116873283792 |
+    |  -1.46627811976672 |
+    | -0.482763681507164 |
+    |  -1.20556712521922 |
+    |  -1.32703018294925 |
+    | -0.809852635982461 |
+    |  -1.47116167928324 |
+    | -0.468271629791287 |
+    |   0.89451136150746 |
+
     We use ~R~'s assignment operator to create a sequence from 1 to 10 for our x values and then create three different y values as deterministic or random values.
     
-    #+RESULTS:
-    |    1.1155193078456 |
-    |  -1.26149565638421 |
-    | -0.472076859621129 |
-    | -0.498322432129203 |
-    | 0.0104548294267439 |
-    |  0.451173813711855 |
-    |  0.622084846935191 |
-    |  0.278968815229647 |
-    |  -1.22204406791649 |
-    |  0.473176010581218 |
-
 **** Base Plot
      For base plot two primitive commands are ~plot~ and ~lines~. Be careful. There is a command ~line~ (no 's'). That is not what you will want here.
-     #+begin_src R :session *R363* :results file graphics replace :exports both :file "baseplot1.png"
+     #+begin_src R :session *R363* :results file graphics replace :exports both :file "~/Desktop/baseplot1.png"
      plot(x,y1)
      #+end_src
 
      #+RESULTS:
-     [[file:baseplot1.png]]
+     [[file:~/Desktop/baseplot1.png]]
+
+
 
 **** Changing the look of base plot
      You have multiple /hidden/ arguments you can use to change the look of the plot such as the symbols, whether it plots lines or dots, the color, the font size. Always remember to try the help command. Here is just one example. Help is your friend here. Try ~help(plot)~ in your R console. 
 
-     #+begin_src R :session *R363* :results file graphics replace :file "baseplot2.png"
+     #+begin_src R :session *R363* :results file graphics replace :file "~/Desktop/baseplot2.png"
      plot(x,y1,type = 'b', frame = F, pch = 19, col = "red" , ylabel = "y", lty = 1, lwd = 3)
      #+end_src
 
      #+RESULTS:
-     [[file:baseplot2.png]]
+     [[file:~/Desktop/baseplot2.png]]
 
      How would you include another data series in this plot?
 
      #+Name: addlines
      #+Caption: Our base plot with additional data series added.
-     #+begin_src R :session *R363* :results file graphics :exports both :file "baseplot3.png"
+     #+begin_src R :session *R363* :results file graphics :exports both :file "~/Desktop/baseplot3.png"
             plot(x,y1,type = 'b', frame = F, pch = 19, col = "red" , ylab = "y", lty = 1, lwd = 3)
             lines(x,y2, pch = 18, col = "blue", type = "b" , lty = 2, lwd = 1)
             lines(x,y3, pch = 17, col = "green" , type = "l", lty=3, lwd = 4)
@@ -61,7 +64,7 @@
 
     To figure out what the ~lines~ are doing don't forget the help commands: ~?lines~.
      #+RESULTS: addlines
-     [[file:baseplot3.png]]
+     [[file:~/Desktop/baseplot3.png]]
      Who wants to try and recreate this in Excel or SPSS? As a quick test can you change the color and line type of each series?
 
 **** ggplot
@@ -69,12 +72,15 @@
      
      Note that people tend to say "ggplot", but they always mean =ggplot2=. Note the number "2". If you do not have ~ggplot~ you will need to install it, and when you do you will note that ~ggplot~ requires a lot of other packages to function properly. One reason to prefer the base package is a greater simplicity of installation. However, once you move on beyond simple 2d line and scatter plots base plotting too grows more comples.
      
-     #+begin_src R :session *R363* :results file replace graphics :exports both :file "ggplot1.png" 
+     #+begin_src R :session *R363* :results file replace graphics :exports both :file "~/Desktop/ggplot1.png" 
        library(ggplot2)
        p  <- ggplot(data = data.frame("x" = x, "y1" = y1, "y2" = y2, "y3" = y3), aes(x = x, y = y1, col= 'r'))
        p <- p + geom_point() + geom_line() + theme(legend.position = c(0.2,0.65)) + geom_line(aes(x=x,y=y2, col = "blue")) + geom_line(aes(y=y3,col = "green"))
        ggsave("ggplot1.png", width = 8, height = 5, units = "cm") 
      #+end_src
+
+     #+RESULTS:
+     [[file:~/Desktop/ggplot1.png]]
 
      Notice that here we are saving the results of our calls to ~ggplot~ as a variable. We can either type that variable at the command line to see the plot, or we can use that variable to save our plot as a file. The style is quite different from the base plot above, and can be a bit harder to begin with. We are creating an object. Initially, in the line above where we first use ggplot we don't actually plot anything. We just create our plotting object and populate the data. Later on we use a method to plot this data with a particular syle, the point, and then again with the line.
      
@@ -102,7 +108,9 @@
     For this example we will use the data from [[http://personality-project.org/r/datasets/heating.txt]], but you don't need to download it manually. We can do this from within python itself. Instead of using the request library (a general library in python for making internet requests) we will use the ~read_csv~ functionality of pandas to read data from a url (universal resource locator - an address on the world wide web). [fn:1]
 
 *** Pandas Read in Text
-    #+begin_src python :session *P363* 
+    #+begin_src python :session *P363*
+      import os
+      os.chdir("/home/britt/Desktop")
       import pandas as pd
       url = "http://personality-project.org/r/datasets/heating.txt"
       d = pd.read_csv(url, sep = "\t")
@@ -114,6 +122,7 @@
     :        'thermsdd'],
     :       dtype='object')
 
+
     For this exercise, we want to get plots of degree days versus therms, but we want to do it separately for each type of house to see if there is an /interaction/. That is, is the relationship between degree days and therms different for the different types of houses. Types of houses /interacts/ with ~degreedays~ when we want to predict ~therms~. 
 
      We will also use some additional python modules to help us make this easier, specifically ~scipy~, ~matplotlib~, and ~statsmodels~. These can be installed via ~pip~.
@@ -122,12 +131,12 @@
        from statsmodels.graphics.factorplots import interaction_plot
        from matplotlib import pyplot as plt
        fig = interaction_plot(d['degreedays'],d['Location'],d['therms'])
-       plt.savefig("py-inter-plt.png")
-       "py-inter-plt.png"
+       plt.savefig("/home/britt/Desktop/py-inter-plt.png")
+       "/home/britt/Desktop/py-inter-plt.png"
      #+end_src
 
      #+RESULTS:
-     [[file:py-inter-plt.png]]
+     [[file:/home/britt/Desktop/py-inter-plt.png]]
 
 
      This gives us a "connect-the-dots" sort of look to our data. We would prefer to [[https://en.wikipedia.org/wiki/Linear_least_squares][fit a line]], a /best/ possible line, to our data. We want to pick the line that runs through the data points and is as close as possible (measured in the y direction) to all the data points. The techniques for doing this, and the theory, come from your stats courses, but we can use those tools here without explanation just to get some practice with the libraries and functions that will later come in handy. 
@@ -144,17 +153,17 @@
        lines, labels = f.axes[0].get_legend_handles_labels()
        a.legend_=None
        f.legend(lines[0:3], labels[0:3], loc = 'upper left',bbox_to_anchor=(0.15,0.85))
-       plt.savefig("py-inter-fit-plt.png")
-       "py-inter-fit-plt.png"
+       plt.savefig("/home/britt/Desktop/py-inter-fit-plt.png")
+       "/home/britt/Desktop/py-inter-fit-plt.png"
      #+end_src
 
      #+RESULTS:
-     [[file:py-inter-fit-plt.png]]
+     [[file:/home/britt/Desktop/py-inter-fit-plt.png]]
      Note that figuring out how to get the legend only for the plot with the lines and not a redundant legend for the scatterplot, and to place it properly took me about an hour. This is not as easy a system to get started in as the ~R~ commands are. 
 
      
 * Assessment
-  The [[file:~/warehouse/sdcard/gitRepos/Intro2Computing4Psychology/assessments/plottingRandPyAssessment.org][assessment]] will ask you to reverse the above. Create the R plots with Pandas and the Interaction plot with R.
+  The [[file:~/gitRepos/Intro2Computing4Psychology/assessments/plottingRandPyAssessment.org][assessment]] will ask you to reverse the above. Create the R plots with Pandas and the Interaction plot with R.
 
 * Footnotes
 
