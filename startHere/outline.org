@@ -168,14 +168,19 @@
     6. [[https://vimeo.com/462706049][Installing an Emacs Package to Improve Python]] Coding.
 * Basic Plotting
 ** Plotting in R: A tale of two approachs
+   R has two main contenders in the plotting domain: base and ggplot. This topic takes a look at both. 
 ** Plotting in Python: An evolving experience
-** A slight digression on Jupyter Notebooks 
-* Programming Psychology Experiments
-** Many tool. Many Choices.
-*** Featured: Psychopy
-    1. Getting it.
-    2. Testing it.
-    3. Using it. 
+   Plotting in python has come along way. The workhorse library is matplotlib. This library is demonstrated for making an interaction plot. 
+** A slight digression on Jupyter Notebooks  (Planned)
+*** Files
+    1. [[file:../topics/plottingRandPy.org][Plotting in R and Python]] (topic)
+    2. [[file:../assessments/plottingRandPyAssessment.org][Plotting in R and Python]] (assessment)
+*** Videos
+    1. [[https://vimeo.com/463525019][Intro to Plotting in R and Python]]
+    2. [[https://vimeo.com/463524914][First Steps with Base Plot in R]]
+    3. [[https://vimeo.com/463524870][Changing the Appearance of a Base R Plot]]
+    4. [[https://vimeo.com/463524796][Using GGPlot to Plot in R]]
+    5. [[https://vimeo.com/463524647][Python Plotting with Matplotlib]]
 * Report Writing
 ** Org, markdown, and related dialects and tools
 ** LaTeX
@@ -192,3 +197,9 @@
 *** And many more. 
 ** Files
 ** Videos
+* Programming Psychology Experiments
+** Many tool. Many Choices.
+*** Featured: Psychopy
+    1. Getting it.
+    2. Testing it.
+    3. Using it. 
