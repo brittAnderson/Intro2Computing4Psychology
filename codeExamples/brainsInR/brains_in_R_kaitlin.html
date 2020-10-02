@@ -1,0 +1,178 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html><head></head><body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container-fluid main-container">
+
+
+
+
+<div class="fluid-row">
+
+
+
+<h1 class="title toc-ignore">fsbrain examples</h1>
+<h4 class="author">Kaitlin Gaerlan</h4>
+<h4 class="date">01/10/2020</h4>
+
+</div>
+
+
+<div class="section level2">
+<h2>Installing fsbrain</h2>
+<p>The fsbrain package exists on <a rel="noopener" href="https://cran.r-project.org/package=fsbrain">CRAN</a> To install the package on rstudio, use the following code:</p>
+<pre class="r"><code>install.packages(&quot;fsbrain&quot;);</code></pre>
+<p>You might get a warning message that prompts you to install Rtools, but this package seems to work without it so you can just continue.</p>
+</div>
+<div class="section level2">
+<h2>Annotated Brain</h2>
+<p>Use the following code to load the fsbrain library and download the data needed for the visualizations:</p>
+<pre class="r"><code>library(&quot;fsbrain&quot;);
+fsbrain::download_optional_data();
+subjects_dir = fsbrain::get_optional_data_filepath(&quot;subjects_dir&quot;);
+subjects_list = c(&quot;subject1&quot;, &quot;subject2&quot;);
+subject_id = &#39;subject1&#39;;</code></pre>
+<p>You can now use this code to generate a visualization of the brain that divides it into different sections:</p>
+<pre class="r"><code>vis.subject.annot(subjects_dir, &#39;subject1&#39;, &#39;aparc&#39;, &#39;both&#39;, views=c(&#39;si&#39;));</code></pre>
+<p>A window should open with a brain like the one pictured below, but you should be able to grab it with your mouse and move it around.</p>
+<center>
+<div class="figure">
+<img src="javascript://" alt=""/>
+<p class="caption">Annotation Style</p>
+</div>
+</center>
+</div>
+<div class="section level2">
+<h2>Adding a colourbar</h2>
+<p>Using the same data from the first example, you can use this code to create an image that includes a colourbar. This graph is showing the range of thickness in the brain, but you can change the measure to something else like volume. You can also rotate this image once it’s generated.</p>
+<pre class="r"><code>rgloptions=list(&quot;windowRect&quot;=c(50, 50, 1000, 1000));     # larger plot
+surface = &#39;white&#39;;
+measure = &#39;thickness&#39;;
+vis.subject.morph.native(subjects_dir, subject_id, measure, &#39;both&#39;, views=c(&#39;si&#39;), rgloptions=rgloptions, draw_colorbar = TRUE);</code></pre>
+<center>
+<div class="figure">
+<img src="javascript://" alt=""/>
+<p class="caption">Colourbar Example</p>
+</div>
+</center>
+</div>
+<div class="section level2">
+<h2>Lightbox Slices</h2>
+<p>If you install and load the “magick” package, you can look at brain volume, which is visualized by brain slices using the code below.</p>
+<pre class="r"><code>install.packages(&quot;magick&quot;)
+library(&quot;magick&quot;)
+brain = subject.volume(subjects_dir, subject_id, &#39;brain&#39;) / 255;
+bounded_brain = vol.boundary.box(brain, apply=TRUE);
+volvis.lightbox(bounded_brain);</code></pre>
+<center>
+<div class="figure">
+<img src="javascript://" alt=""/>
+<p class="caption">Volume Slices</p>
+</div>
+</center>
+</div>
+<div class="section level2">
+<h2>Masks</h2>
+<p>You can mask certain areas to isolate others. Use the code below and then compare to the image generated from the very first example. You’ll notice that it’s the same image but with the green area isolated.</p>
+<pre class="r"><code>surface = &#39;white&#39;;
+hemi = &#39;both&#39;;
+atlas = &#39;aparc&#39;;
+region = &#39;bankssts&#39;;
+
+# Create a mask from a region of an annotation:
+lh_annot = subject.annot(subjects_dir, subject_id, &#39;lh&#39;, atlas);
+rh_annot = subject.annot(subjects_dir, subject_id, &#39;rh&#39;, atlas);
+lh_label = label.from.annotdata(lh_annot, region);
+rh_label = label.from.annotdata(rh_annot, region);
+lh_mask = mask.from.labeldata.for.hemi(lh_label, length(lh_annot$vertices));
+rh_mask = mask.from.labeldata.for.hemi(rh_label, length(rh_annot$vertices));
+
+# visualize it
+vis.mask.on.subject(subjects_dir, subject_id, lh_mask, rh_mask);</code></pre>
+<center>
+<div class="figure">
+<img src="javascript://" alt=""/>
+<p class="caption">Masks with Annotations</p>
+</div>
+</center>
+</div>
+<div class="section level2">
+<h2>Surface Options</h2>
+<p>For any visualization, you can add and change the “surface” parameter to change the texture of the brain. The past examples use “white” as default, but you can also use “pial” or “inflated”. The code below generates three different images of the same brain, with the three different surfaces.</p>
+<pre class="r"><code>vis.subject.morph.native(subjects_dir, subject_id, &#39;thickness&#39;, hemi=&#39;both&#39;, views=c(&#39;si&#39;))
+vis.subject.morph.native(subjects_dir, subject_id, &#39;thickness&#39;, hemi=&#39;both&#39;, views=c(&#39;si&#39;), surface=&#39;pial&#39;)
+vis.subject.morph.native(subjects_dir, subject_id, &#39;thickness&#39;, hemi=&#39;both&#39;, views=c(&#39;si&#39;), surface=&#39;inflated&#39;)</code></pre>
+</div>
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" src="/d2l/common/math/MathML.js?v=20.20.9.24432-85 "></script><script type="text/javascript">document.addEventListener('DOMContentLoaded', function() { D2LMathML.DesktopInit('https://s.brightspace.com/lib/mathjax/2.7.4/MathJax.js?config=MML_HTMLorMML','https://s.brightspace.com/lib/mathjax/2.7.4/MathJax.js?config=TeX-AMS-MML_HTMLorMML','130'); });</script></body></html>

@@ -1,0 +1,125 @@
+---
+title: "fsbrain examples"
+author: "Kaitlin Gaerlan"
+date: "01/10/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+chooseCRANmirror(graphics=FALSE, ind=1)
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Installing fsbrain
+
+The fsbrain package exists on [CRAN](https://cran.r-project.org/package=fsbrain)
+To install the package on rstudio, use the following code:
+
+```{r, eval=FALSE}
+
+install.packages("fsbrain");
+```
+
+You might get a warning message that prompts you to install Rtools, but this package seems to work without it so you can just continue.
+
+## Annotated Brain
+
+Use the following code to load the fsbrain library and download the data needed for the visualizations:
+
+```{r,}
+library("fsbrain");
+fsbrain::download_optional_data();
+subjects_dir = fsbrain::get_optional_data_filepath("subjects_dir");
+subjects_list = c("subject1", "subject2");
+subject_id = 'subject1';
+```
+
+You can now use this code to generate a visualization of the brain that divides it into different sections:
+
+```{r, eval=FALSE}
+vis.subject.annot(subjects_dir, 'subject1', 'aparc', 'both', views=c('si'));
+```
+
+A window should open with a brain like the one pictured below, but you should be able to grab it with your mouse and move it around.
+
+<center>
+
+![Annotation Style](brain2.JPG)
+
+</center>
+
+## Adding a colourbar
+
+Using the same data from the first example, you can use this code to create an image that includes a colourbar. This graph is showing the range of thickness in the brain, but you can change the measure to something else like volume. You can also rotate this image once it's generated.
+
+```{r, eval=FALSE}
+rgloptions=list("windowRect"=c(50, 50, 1000, 1000));     # larger plot
+surface = 'white';
+measure = 'thickness';
+vis.subject.morph.native(subjects_dir, subject_id, measure, 'both', views=c('si'), rgloptions=rgloptions, draw_colorbar = TRUE);
+```
+
+<center>
+
+![Colourbar Example](brain1.JPG)
+
+</center>
+
+## Lightbox Slices
+
+If you install and load the "magick" package, you can look at brain volume, which is visualized by brain slices using the code below.
+
+```{r, eval=FALSE}
+install.packages("magick")
+library("magick")
+brain = subject.volume(subjects_dir, subject_id, 'brain') / 255;
+bounded_brain = vol.boundary.box(brain, apply=TRUE);
+volvis.lightbox(bounded_brain);
+```
+
+<center>
+
+![Volume Slices](brain4.png)
+
+</center>
+
+## Masks
+
+You can mask certain areas to isolate others. Use the code below and then compare to the image generated from the very first example. You'll notice that it's the same image but with the green area isolated.
+
+```{r, eval=FALSE}
+
+surface = 'white';
+hemi = 'both';
+atlas = 'aparc';
+region = 'bankssts';
+
+# Create a mask from a region of an annotation:
+lh_annot = subject.annot(subjects_dir, subject_id, 'lh', atlas);
+rh_annot = subject.annot(subjects_dir, subject_id, 'rh', atlas);
+lh_label = label.from.annotdata(lh_annot, region);
+rh_label = label.from.annotdata(rh_annot, region);
+lh_mask = mask.from.labeldata.for.hemi(lh_label, length(lh_annot$vertices));
+rh_mask = mask.from.labeldata.for.hemi(rh_label, length(rh_annot$vertices));
+
+# visualize it
+vis.mask.on.subject(subjects_dir, subject_id, lh_mask, rh_mask);
+```
+
+<center>
+
+![Masks with Annotations](brain3.JPG)
+
+</center>
+
+## Surface Options
+
+For any visualization, you can add and change the "surface" parameter to change the texture of the brain. The past examples use "white" as default, but you can also use "pial" or "inflated". The code below generates three different images of the same brain, with the three different surfaces.
+
+```{r, eval=FALSE}
+vis.subject.morph.native(subjects_dir, subject_id, 'thickness', hemi='both', views=c('si'))
+vis.subject.morph.native(subjects_dir, subject_id, 'thickness', hemi='both', views=c('si'), surface='pial')
+vis.subject.morph.native(subjects_dir, subject_id, 'thickness', hemi='both', views=c('si'), surface='inflated')
+```
+
+
