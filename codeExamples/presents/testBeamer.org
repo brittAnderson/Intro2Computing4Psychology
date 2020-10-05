@@ -1,0 +1,60 @@
+#+options: ':nil *:t -:t ::t <:t H:2 \n:nil ^:t arch:headline
+#+options: author:t broken-links:nil c:nil creator:nil
+#+options: d:(not "LOGBOOK") date:t e:t email:nil f:t inline:t num:t
+#+options: p:nil pri:nil prop:nil stat:t tags:t tasks:t tex:t
+#+options: timestamp:t title:t toc:t todo:t |:t
+#+title: testBeamer
+#+date: <2019-12-03 Tue>
+#+author: Britt Anderson
+#+email: britt@uwaterloo.ca
+#+language: en
+#+select_tags: export
+#+exclude_tags: noexport
+#+creator: Emacs 26.3 (Org mode 9.2.6)
+#+latex_class: article
+#+latex_class_options:
+#+latex_header:
+#+latex_header_extra:
+#+description:
+#+keywords:
+#+subtitle:
+#+latex_compiler: pdflatex
+#+date: \today
+#+startup: beamer
+#+Latex_Class: beamer
+#+Latex_Class_Options: [bigger]
+#+Beamer_Frame_Level: 2
+
+* This is the title of my slide show
+
+** This is a slide
+Here is some important text.
+
+** Another side with some math
+$\Sigma_{i=1}^n i$
+
+
+** Let's look at some code
+
+   What is the correlation between height and weight in women? We can use the built in dataset =women= in R.
+
+   #+Begin_src R :exports both :results output
+   print(with(women,cor(height,weight)))
+   #+End_src 
+
+   #+RESULTS:
+   : [1] 0.9954948
+
+** Including a plot
+
+   #+Begin_src R :exports both :results value graphics :file test.png :height 200 :width 300
+      print(with(women,plot(height,weight)))
+   #+End_src
+
+   #+Caption: Scatterplot of Women's Heights and Weights
+   #+RESULTS:
+   [[file:test.png]]
+   
+
+
+
