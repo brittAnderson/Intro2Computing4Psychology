@@ -58,5 +58,5 @@ plot(x,y,type = 'b')
 
 
    
-#+latex: \bibliography{mytest}
+#+latex: \bibliography{test}
 
