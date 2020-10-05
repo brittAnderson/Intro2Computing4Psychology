@@ -1,0 +1,92 @@
+** Session 9 Report Writing
+
+*** Preliminaries
+    sudo apt install texlive-latex-recommended
+    sudo apt install texlive-latex-extra
+
+    
+    https://github.com/politza/pdf-tools
+    
+    explain what "aptitude" is. https://www.tecmint.com/difference-between-apt-and-aptitude/ You can just do "apt"
+    Make sure you have the -dev option.
+
+You may already have some, that is okay, just install the ones you don't. 
+    
+*** Writing a simple report
+    1. We will use emacs. Open it up.
+    2. We will use R.
+       In the future, you might prefer to use the ~knitr~ package. But I am sticking with this /org-babel/ so that I have one less new thing to introduce. However, it is an amazing [[https://yihui.name/knitr/][package]], that you may want to learn more about.
+    3. Testing
+       - If you have emacs correctly installed and a working latex installation than you should be able to open ~testLatex.org~ in emacs and type ~C-c C-e l p~ and you will see a new pdf file in your directory that you can open up (also in emacs).
+       - If you have R and ESS installed properly you can open up ~testRBabel.org~ in emacs and type ~C-c C-e l p~ and you will see a new pdf appear that has the code and graphic that you just processed. 
+*** Mixing Code and Text for reproducibility
+**** Intro
+     Org-mode in emacs is a version of a markdown language (other markdowns are github flavored markdown and R markdown). They all have the same basic goal of letting you type simple text and have something else behind the scenes necessary for producing a webpage or a pdf file. In addition, org-mode has a component /bable/ component that can also read and execute code putting pretty, formatted output into your final document. This week we will experiment with this capability.
+**** Getting started with Orgmode
+     1. Open emacs. Do you know what directory you are in? Try ~M-x pwd~ and look at the minibuffer. What does the "M" stand for in that command. What key does it mean?
+     2. Open a file and give it a name. Make the extension =.org=.
+     3. Type an asterisk (*) followed by a space and a name for your first header.
+        Ask me about shortcut keys if you want to work faster.
+     4. Save
+     5. ~C-c C-e t A~ You should see the output in a new buffer. Do the ~C-c C-e~ part again and look at all the different output options available.
+**** Getting help
+     Emacs (and orgmode) have good help. ~C-h i~. H is for help and i is for information. You could also use f for function or k for key. 
+**** Practice
+     1. Write some text that includes a bold word and an italics word.
+        Collaborate to figure out how to do this.
+     2. Make a list with numbers and reorder things.
+     3. Add a link to any website you want.
+     4. Export as a web page and open up the file in firefox and show that your link works.
+     5. Add a link to an image. 
+     6. Export the same basic file as a pdf. Verify the link works there too. Make sure you can see the picture.
+**** Source code
+     It is possible to put computer code in files and have it executed at the time the document is compiled. Of course this is not a program in the conventional sense. You will not be getting user input. What it is is a way for you to document fully what analyses were done and how they were done so that others can repeat fully your analysis. It allows you an easy way to update work when new files come in or as other changes to work appears. You will never again search for a missing image file when the images are made at the time the file is compiled.
+
+     There are "cookbooks" with numerous examples. 
+***** Reproducible Research/Literate Coding
+      These are two different, but mutually reinforcing concepts. [[https://en.wikipedia.org/wiki/Literate_programming][Literate coding]] is writing code where the emphasis is on embedding the pure code in a textual environment intended to have a human reader. The computer doesn't need the code explained by human users do, so right the code for them with ample explanations. By doing so, you make it easier for others to [[https://www.pnas.org/content/112/6/1645/][reproduce]] your work, and to make suggestions to improve it. 
+***** Testing the inclusion of source code
+      Open up the test file for babel and verify that you can get it to compile to pdf. Then change or add something. Since you already submitted some R content, you should be able to find some code you know works to test with. 
+***** Can you combine source code from multiple languages?
+      That depends on the tool. Rstudio is developed around R, but with org-babel you can combine multiple languages in one document. Add a src block for python and show that it too can be type set and output generated for a pdf. 
+***** Tables. 
+
+      Pretty much happens automatically. You may have to play with the /header/ arguments to get exactly the look you want. The /header/ arguments are those things appearing on the ~+#Begin_Src~ line. 
+
+      #+begin_src R :session *tableTest* :colnames yes :exports both
+        d <- data.frame(foo=c('a','b','n'), bar=c(1.0/3.0,22,32))
+        d
+      #+end_src
+
+      #+RESULTS:
+      | foo |               bar |
+      |-----+-------------------|
+      | a   | 0.333333333333333 |
+      | b   |                22 |
+      | n   |                32 |
+
+***** What is an inline result?
+      An inline result is one that appears at the correct place in the text. 
+
+      #+Begin_src R :session *R363* :exports none :results none
+      xinline = rnorm(100)
+      #+End_src 
+
+
+      The mean of src_R[:session *R363* :exports results :results raw]{length(xinline)} mean 0 normally distributed numbers is src_R[:session *R363* :exports results :results raw]{mean(xinline)}.
+
+***** Can I include references?
+      Yes. Of course you can. 
+
+****** Using bibtex
+       There are other, better, approaches (e.g. biblatex), but we will start with the bare bones method for demonstrating the basic capabilities.
+
+       Open up the test bib file and make sure you have the .bib file. Make sure they are both stored in the same directory and that you open the .org file in emacs. Then, if you have the right packages for latex installed, you should be able to ~C-c C-e l l~ to produce a file ending with .tex as an extension. Open this in emacs and then keep doing ~C-c C-c~ while reading the minibuffer and doing it until it tells you to stop. Then you should have a pdf with a correctly placed citation. 
+
+       
+****** Practice
+       Go to [[https://scholar.google.ca]] and set your preferences to show the export as bibtex link. Then grab any reference and add it to the .bib file. Then add a citation to the test file and recompile. Show that you can get the second reference to work.
+
+       
+*** Homework
+    Submitting a small .org file and .bib file that will compile correctly to a final pdf and that includes at least one source code block, one reference, one link, one plot, one inline usage, and a bibilography with at least one reference. 
