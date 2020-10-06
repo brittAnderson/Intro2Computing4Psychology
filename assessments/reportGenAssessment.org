@@ -21,6 +21,5 @@
      - one new citation other than the ones that were used in the example. 
        There are many ways to get references in the bibtex format. Scholar Google can export that format, and so will most of the major journal web pages.
 
-       
 * Comments
   I will evaluate submissions by compiling from org to pdf in my version of emacs. Either I will be able to produce a pdf of your report or I won't. If I can, and it meets all the requirements above then you will get full credit. 
