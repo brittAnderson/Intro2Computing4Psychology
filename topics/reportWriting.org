@@ -15,7 +15,7 @@
   To compare them for their ease of use and fit to your use case will require trying them all, eventually. For now we will focus on one particular method. 
 
 * Preliminaries
-  
+
 ** Latex
    [[https://en.wikipedia.org/wiki/LaTeX][LaTex]] is a type setting program. It is widely used in the mathematical and computing communities for its ability to produce precisely and correctly typeset mathematical notation. But it has grown well beyond those roots. We will use it as the method to go from a plain .tex file to a pdf file. 
 
