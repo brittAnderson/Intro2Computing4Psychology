@@ -182,13 +182,30 @@
     4. [[https://vimeo.com/463524796][Using GGPlot to Plot in R]]
     5. [[https://vimeo.com/463524647][Python Plotting with Matplotlib]]
 * Report Writing
+  To be able to produce a reproducible research report you need to be able to write and blend code, text, analysis, graphics, and references. In this topic we will use Emacs, orgmode, and Babel with help from LaTeX and R to demonstrate the use of all these features
 ** Org, markdown, and related dialects and tools
 ** LaTeX
 ** Reference Management
 *** Biblatex (Bibtex)
 ** Mixing Code and Text
 ** Files
+   1. [[file:../topics/reportWriting.org][Report Writing]] (topic)
+   2. [[file:../assessments/reportGenAssessment.org][Report Writing]] (assessment)
+   3. [[file:../codeExamples/reportGen/][Report Generation Practice Files]] (directory)
 ** Videos
+   1. [[https://vimeo.com/465412304][Introduction to Report Writing Topic]]
+   2. [[https://vimeo.com/465412227][What Is a Reproducible Research Report?]]
+   3. [[https://vimeo.com/465412148][What is LaTeX (and how do I get it)?]]
+   4. [[https://vimeo.com/465411974][Getting PdfTools for Emacs]]
+   5. [[https://vimeo.com/465411965][Demonstrating Report Writing (Basics)]]
+   6. [[https://vimeo.com/465411872][Demonstrating Report Writing (code and graphics)]]
+   7.  [[https://vimeo.com/465411716][Demonstrating Report Writing (citations/references)]]
+* Programming Psychology Experiments
+** Many tool. Many Choices.
+*** Featured: Psychopy
+    1. Getting it.
+    2. Testing it.
+    3. Using it. 
 * Presentations
 ** From Text File to Slideshow
 *** org-tree-slide
@@ -197,9 +214,3 @@
 *** And many more. 
 ** Files
 ** Videos
-* Programming Psychology Experiments
-** Many tool. Many Choices.
-*** Featured: Psychopy
-    1. Getting it.
-    2. Testing it.
-    3. Using it. 
