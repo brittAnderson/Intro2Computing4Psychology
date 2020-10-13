@@ -1,6 +1,15 @@
-* This is a work in progress
-  Notes while I develop the full lesson plan.
+#+Title: WIP: Programming Psychology Experiments in Python
 
+* Why Program Your Psychology Experiment
+  If you use a graphical environment you will be limited to the potential elements and structures that were envisioned by the developers of that graphical programming environment. While this will cover many of your use cases it will probably not cover all of them. The designers of these programs spend their time thinking about the most common uses. But that means if you try to do something particularly new or novel you may spend you time trying to figure out how to shoe horn your experimental idea into the limits of a graphical design language instead of using the design elements to meet our experimental requirements. If you can write your own code you will be able to augment the code output by graphical program. And if none of the pre-packaged experiments fit your needs you will be able to still build what you need to pursue your experimental ambitions. The question then becomes what language to use for programming your own experiments?
+* What language?
+** Python
+   As we have seen python is a widely popular programming language. It has good library support for a wide range of general programming needs and it can also be used for data analysis and plotting. Thus, time spent learning to program your experiments in python will also be useful for other scientific tasks such as plotting your data or analyzing your data. In addition, non-experimental computing work you may need to do will likely also be helped by knowing more python. But the above would also be true of other languages, e.g. R. So, again, why python?
+*** Domain support
+    While the reasons above make python a good first language to consider for any coding project the ultimate selection should also rest on whether there is good library support for your particular needs. In the case of psychology there is an excellent well supported library, [[https://www.psychopy.org][PsychoPy]].
+    Psychopy has the ability to make deploying complex visual stimuli relatively easy, and it can also be used as the basis for scaffolding other tools such as eye trackers and EEG machines. R does not have the same level of support. Other languages that do, such as [[https://www.mathworks.com/products/matlab.html][MatLab]] (with its [[http://psychtoolbox.org/][PsychToolbox]])are proprietary, and less general purpose though they are very powerful tools for modeling, simulation, and data analysis.
+    While any general purpose programming language could, in principle, work for this purpose. 
+** What about Javascript?
 * Installing Psychopy
   The [[https://www.psychopy.org/index.html][home page]]
   The [[https://www.psychopy.org/download.html][process]]
