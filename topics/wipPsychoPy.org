@@ -1,18 +1,100 @@
 #+Title: WIP: Programming Psychology Experiments in Python
 
 * Why Program Your Psychology Experiment
-  If you use a graphical environment you will be limited to the potential elements and structures that were envisioned by the developers of that graphical programming environment. While this will cover many of your use cases it will probably not cover all of them. The designers of these programs spend their time thinking about the most common uses. But that means if you try to do something particularly new or novel you may spend you time trying to figure out how to shoe horn your experimental idea into the limits of a graphical design language instead of using the design elements to meet our experimental requirements. If you can write your own code you will be able to augment the code output by graphical program. And if none of the pre-packaged experiments fit your needs you will be able to still build what you need to pursue your experimental ambitions. The question then becomes what language to use for programming your own experiments?
+  If you use a graphical environment to design your experiment you will be limited to the potential elements and structures that were envisioned by the developers of that graphical programming environment. While this will cover many popular cases, it will probably not cover all of them. The designers of these programs spend their time thinking about the most common uses. But that means if you try to do something particularly new or novel you may spend you time trying to figure out how to shoehorn your experimental idea into the limits of a graphical design language instead of using the design elements to meet your experimental requirements. If you can write your own code you will be able to augment the code output by a graphical program. And if none of the pre-packaged experiments fit your needs you will be able to build what you need to pursue your experimental ambitions. The question then becomes what language to use for programming your own experiments?
 * What language?
 ** Python
    As we have seen python is a widely popular programming language. It has good library support for a wide range of general programming needs and it can also be used for data analysis and plotting. Thus, time spent learning to program your experiments in python will also be useful for other scientific tasks such as plotting your data or analyzing your data. In addition, non-experimental computing work you may need to do will likely also be helped by knowing more python. But the above would also be true of other languages, e.g. R. So, again, why python?
 *** Domain support
     While the reasons above make python a good first language to consider for any coding project the ultimate selection should also rest on whether there is good library support for your particular needs. In the case of psychology there is an excellent well supported library, [[https://www.psychopy.org][PsychoPy]].
     Psychopy has the ability to make deploying complex visual stimuli relatively easy, and it can also be used as the basis for scaffolding other tools such as eye trackers and EEG machines. R does not have the same level of support. Other languages that do, such as [[https://www.mathworks.com/products/matlab.html][MatLab]] (with its [[http://psychtoolbox.org/][PsychToolbox]])are proprietary, and less general purpose though they are very powerful tools for modeling, simulation, and data analysis.
-    While any general purpose programming language could, in principle, work for this purpose. 
+    While any general purpose programming language could, in principle, work for any purpose when choosing a programming language for your project consider the following:
+    - access
+      Will you and your users have access? This might be relevant when using a language that is proprietary, has a small user base, or is difficult to install and use because of limited tooling. You might also want to try and think whether the trajectory of the language is one that leads you to believe it will be around in years to come,
+    - expertise & experience
+      Your project will go better if you are writing in a language you know and for which you have local sources that you can consult for advice,
+    - quality libraries
+      If someone has already largely solved your problem, then don't reinvent the wheel, but use your time to develop the modifications needed to fit your specific need.
 ** What about Javascript?
-* Installing Psychopy
-  The [[https://www.psychopy.org/index.html][home page]]
-  The [[https://www.psychopy.org/download.html][process]]
-  What is *pip*.
-    Two links: [[https://www.w3schools.com/python/python_pip.asp][one]] [[https://realpython.com/what-is-pip/][two]]
+   Writing in 2020 when many psychology labs are closed to in-person studies, the ability to design and deliver experiments remotely, on-line, has great appeal. [[https://www.javascript.com/][JavaScript]] is the language of active elements on the web, and therefore deserves definite consideration. There are good libraries for developing psychology experiments with JavaScript. The people who produce PsychoPy have a graphical front-end that generates javascript output ([[https://github.com/psychopy/psychojs][psychojs]]). And the closely named [[https://www.jspsych.org/][JSPsych]] has great support for writing code using the traditional elements of psychology.
+   However, I do not recommend javascript for two principal reasons. One, if you are a beginner, JavaScript adds another level of domain knowledge you need to code your experiment effectively. You have to have some familiarity with web browsers and what constitutes a web page. What is HTML and how is the web page, as a document, constructed (the DOM )? Learning all that at the same time makes for a higher hurdle. If that is your specific and urgent need then it certainly is doable, but it makes for a harder entreé to coding. Also, you won't be able to write the simple scripts and general purpose programs in javascript that you can in other languages. The expertise you develop in javascript may not transfer as directly to other languages and other types of applications. Your knowledge will be more selective, and more specific to the web. That is a large and popular area to be restricted to, but it is still narrower than I recommend for a first language.
+   The second consideration concerns longevity. I have yet to read a blog post or tech column by anyone who likes to program in javascript. They may exist, but they are drowned out by the haters who describe javascript programming as a necessity not a pleasure. It is hard enough to learn to code without adding the barrier of an unappealing language. Because javascript is such an unloved language people are looking for ways around it. In some sense HTML and JS may always be the initials of code for the web, but they may not be the languages you write your code in. You have seen already how RStudio and Orgmode can hide the need to write HTML behind a markup language. You write in plain text and you get HTML as the output. There are active efforts to shield you from the need to write javascript directly. As one example, [[https://elm-lang.org/][Elm]] is a language that compiles to javascript, but which you write with a different language. However, ~Elm~ is still close enough to programming for the web that all the knowledge of HTML and DOM is still beneficial.
+   Javascript and its limits have also built momentum for a successor language: [[https://webassembly.org/][Web Assembly]] (aka WASM). Web Assembly may well supersede much writing in javascript (even if javascript appears in the final compiled product), and web assembly makes it easier for computer scientists to produce _transpilers_: tools that allow you to code in one language and output code in another. Right now certain aspects of Python prevent easy transpilation from python to web assembly, but development is active and this may well not be the case in the near future. Thus, your expertise in python would allow you to work on general programs and may well allow you to code for the web more easily in the future. Therefore, I feel the first, best choice, for learning to code experiments for psychology right now is Python.
+* Programming Psychology Experiments With PsychoPy
+  Before we can use the psychopy library we have to install it. This used to be a big hurdle, but lately it has become much easier. 
+** Installing Psychopy
+   Instructions for installation of PsychoPy can be found via the [[https://www.psychopy.org/index.html][home page]]. Basically we can use `pip` to grab and install almost all the elements we need. First verify you have pip installed ~pip --version~ from the command line of a terminal will suffice. Then you can use it to grab psychopy and /almost/ all of its dependencies. There are a lot of them and this process will take some time. Be patient.
+   
+   #+begin_src sh :eval never
+   pip install psychopy
+   #+end_src
+
+   Note the instructions about getting a wx wheel. [[https://wxpython.org/][WX]] is a graphical user interface toolkit that psychopy uses for some elements. Psychopy recommends getting the wx kit you need (for us at this time it is ubuntu 20.04) from [[https://extras.wxpython.org/wxPython4/extras/linux/gtk3/][here.]] After you have downloaded and expanded that directory you will need to repeat the ~pip~ command, but be careful. Here you are installing a particular version and file. You need to follow your ~pip install~ command with the path that leads to the specific .whl file you just downloaded.
+
+   Everything may run at this point, but to get the best support for precise timing and sound the PsychoPy developers currently recommend installing some libraries from the Ubuntu repositories using your ~apt~ skills (~apt-get~ is a bit like ~apt~ and was the forerunner - you can just use ~apt~ in its place).
+
+   #+begin_src sh :eval never
+   sudo apt-get install libusb-1.0-0-dev portaudio19-dev libasound2-dev
+   #+end_src
+** What is ~pip~?
+   ~pip~ is a program for installing python packages. The python package installation procedure is a long, varied, and ever changing one, but for right now ~pip~ is an excellent choice that gets packages from a curated and vetted source. You can read more about it [[https://www.w3schools.com/python/python_pip.asp][here]] and [[https://realpython.com/what-is-pip/][here]].
+** Testing Your PsychoPy Installation
+*** Use the Psychopy Demos
+    Purpose: Demonstrate that you have psychopy installed and functioning
+      
+    Navigate to where installed. Look in (via terminal) =cd ~/.lib/python3.6/site-packages/psychopy/demos/coder/stimuli/=
+      
+    ~python3 face_jpg.py~
+
+    Run a few other demos.
+
+    Save one of the demos with a slightly altered name (so you don't overwrite the original). Open it up in your editor and change one tiny thing. Maybe the color of something or the size. Save it. Close. And then run your altered demo. 
+
+** Resources for Psychopy.
+   1. The authors of the Psychopy library have written an entire [[https://us.sagepub.com/en-us/nam/building-experiments-in-psychopy/book253480#contents][textbook]] on using python for psychology experiments that includes the online extensions. That is a good resource to pursue things after this course.
+   2. On the psychopy website is an [[https://www.psychopy.org/coder/coder.html][introduction]] to using the coder component of psychopy.
+   3. Searching online with ~psychopy tutorial~ will get you a variety of hits. Note that you want to emphasize the ~coder~ version. Maybe the ~builder~ will meet your needs, but better to start with the ~coder~ version and use the ~builder~ for efficiency. In many cases it will be harder to build a complex experiment in the ~builder~ than by directly using the ~coder~ version.
+
+***** Psychopy Exercise 
+      :NeedsTesting:
+      This demo still needs testing
+:END:
+      1. Open up a terminal.
+      2. Begin a python session
+      3. ~from psychopy import visual,core~
+      4. Create a window
+         ~mywin = visual.Window(size = (640,480))~
+      5. Test it
+         ~mywin.flip()~
+      6. Why is it called /flip/?
+      7. Add a red rectangle.
+         ~myrect = visual.Rect(mywin, linewidth = 0, fillcolor = "red", size = [.2,.2],pos=[0,0],units="norm")~
+      8. Draw it
+         ~myrect.draw()~
+      9. Show it
+         ~mywin.flip()~
+      10. Clean up and shut down in an orderly way
+          ~core.quit()~
+***** Extensions
+      To work on these examples you will want to consult the [[https://www.psychopy.org/api/api.html][psychopy API]] to see what functions do what, and what the arguments are that you need to supply. 
+      1. Change the color of the square.
+      2. Move the Square.
+      3. Add some text
+      4. Keep the window open for a certain amount of time, and then close it when that time has elapsed.
+      5. Run any of the demo programs you can find in the ~.../psychopy/demo/coder/stimuli/~ directory.
+      6. Change something in the demo you are running and see what the effect is.
+         Note you may want to save the original file with a new name and hack on the one with a new name. That way it will be easier to go back to the original if you break something.
+***** Simple Tutorials
+      [[https://www.psychopy.org/coder/tutorial1.html][Here]] is the first Psychopy tutorial 
+      
+      See if you can get this to work. 
+
+      Another idea: [[https://www.psychopy.org/coder/tutorial2.html][A formula for JND]]
+
+**** Homework (can start in class)
+     1. Provide me with a name of the basic variety or example of the experiment you intend to code (with at least one reference using that task).
+     2. Provide a written (not code) outline of what you will need to do to implement the task.
+     3. Provide links to any existing versions of the task that you hope to be able to adapt for your usage.
+     4. /Be very basic./ Simple recall. Simple reaction time. Stroop. Picture versus word memory. The goal is to get something minimal working to prove "proof-of-concept"; not to actually have a reliable experiment coded.
+
 
