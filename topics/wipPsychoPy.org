@@ -1,4 +1,4 @@
-#+Title: WIP: Programming Psychology Experiments in Python
+#+Title: Programming Psychology Experiments in Python
 
 * Why Program Your Psychology Experiment
   If you use a graphical environment to design your experiment you will be limited to the potential elements and structures that were envisioned by the developers of that graphical programming environment. While this will cover many popular cases, it will probably not cover all of them. The designers of these programs spend their time thinking about the most common uses. But that means if you try to do something particularly new or novel you may spend you time trying to figure out how to shoehorn your experimental idea into the limits of a graphical design language instead of using the design elements to meet your experimental requirements. If you can write your own code you will be able to augment the code output by a graphical program. And if none of the pre-packaged experiments fit your needs you will be able to build what you need to pursue your experimental ambitions. The question then becomes what language to use for programming your own experiments?
@@ -41,60 +41,57 @@
 ** Testing Your PsychoPy Installation
 *** Use the Psychopy Demos
     Purpose: Demonstrate that you have psychopy installed and functioning
-      
-    Navigate to where installed. Look in (via terminal) =cd ~/.lib/python3.6/site-packages/psychopy/demos/coder/stimuli/=
-      
-    ~python3 face_jpg.py~
 
-    Run a few other demos.
+    If you have psychopy correctly installed you should be able to run some of the demo programs to learn about its capabilities.
 
-    Save one of the demos with a slightly altered name (so you don't overwrite the original). Open it up in your editor and change one tiny thing. Maybe the color of something or the size. Save it. Close. And then run your altered demo. 
+    First, navigate to where the package is installed. Open a terminal and ~cd~ to the directory where the program installed. On my computer on (<2020-10-15 Thu>) this is: =~/.lib/python3.6/site-packages/psychopy/demos/coder/stimuli/=
 
+    If you run ~ls~ in this directory you will see all the demos. Run one. I particularily like     ~python3 face_jpg.py~. If that works try some more, then ...
+*** Activity
+    ... change something.
+
+    Open up one of the file in Emacs (or another text editor) and look at the python code. Try changing something and then running your new version.
+**** Tips
+     1. Don't directly edit the working file. Create a copy and edit that. That way if you mess something up you still have the original.
+     2. Start small. Change the window size for example or try to see if you can change the background color.
+     3. The *API* is your friend.
+	API stands for application program (or programmer) interface. It is your guide to what each function is, what it does, what it expects, and what, if anything, it outputs. The API for psychopy is [[https://www.psychopy.org/api/api.html][here.]] But every significant library will have something like this.
+
+     Moral: Never hesitate to look at the source code!	
+	
 ** Resources for Psychopy.
-   1. The authors of the Psychopy library have written an entire [[https://us.sagepub.com/en-us/nam/building-experiments-in-psychopy/book253480#contents][textbook]] on using python for psychology experiments that includes the online extensions. That is a good resource to pursue things after this course.
+   1. The authors of the Psychopy library have written an entire [[https://us.sagepub.com/en-us/nam/building-experiments-in-psychopy/book253480#contents][textbook]] on using python for psychology experiments that includes the online extensions. That is a good resource to pursue things after this course. It is focused more on the /builder/ interface than the /coder/ interface.
    2. On the psychopy website is an [[https://www.psychopy.org/coder/coder.html][introduction]] to using the coder component of psychopy.
    3. Searching online with ~psychopy tutorial~ will get you a variety of hits. Note that you want to emphasize the ~coder~ version. Maybe the ~builder~ will meet your needs, but better to start with the ~coder~ version and use the ~builder~ for efficiency. In many cases it will be harder to build a complex experiment in the ~builder~ than by directly using the ~coder~ version.
+** Psychopy Exercise 
+   This exercise is intended to give you a minimalist introduction to using the most basic elements of the psychopy library. The large ~psychopy~ package has several submodules. You can import them selectively, and then you don't have quite as much "bloat." That is what is going in the line that starts "from" below.
+   From there, have fun!
 
-***** Psychopy Exercise 
-      :NeedsTesting:
-      This demo still needs testing
-:END:
-      1. Open up a terminal.
-      2. Begin a python session
-      3. ~from psychopy import visual,core~
-      4. Create a window
-         ~mywin = visual.Window(size = (640,480))~
-      5. Test it
-         ~mywin.flip()~
-      6. Why is it called /flip/?
-      7. Add a red rectangle.
-         ~myrect = visual.Rect(mywin, linewidth = 0, fillcolor = "red", size = [.2,.2],pos=[0,0],units="norm")~
-      8. Draw it
-         ~myrect.draw()~
-      9. Show it
-         ~mywin.flip()~
-      10. Clean up and shut down in an orderly way
-          ~core.quit()~
-***** Extensions
-      To work on these examples you will want to consult the [[https://www.psychopy.org/api/api.html][psychopy API]] to see what functions do what, and what the arguments are that you need to supply. 
-      1. Change the color of the square.
-      2. Move the Square.
-      3. Add some text
-      4. Keep the window open for a certain amount of time, and then close it when that time has elapsed.
-      5. Run any of the demo programs you can find in the ~.../psychopy/demo/coder/stimuli/~ directory.
-      6. Change something in the demo you are running and see what the effect is.
-         Note you may want to save the original file with a new name and hack on the one with a new name. That way it will be easier to go back to the original if you break something.
-***** Simple Tutorials
-      [[https://www.psychopy.org/coder/tutorial1.html][Here]] is the first Psychopy tutorial 
-      
-      See if you can get this to work. 
+   1. Open up a terminal.
+   2. Begin a python session
+   3. ~from psychopy import visual,core~
+   4. Create a window
+      ~mywin = visual.Window(size = (640,480))~
+   5. Test it
+      ~mywin.flip()~
+   6. Why is it called /flip/?
+   7. Add a red rectangle.
+      ~myrect = visual.Rect(mywin, linewidth = 0, fillcolor = "red", size = [.2,.2],pos=[0,0],units="norm")~
+   8. Draw it
+      ~myrect.draw()~
+   9. Show it
+      ~mywin.flip()~
+   10. Clean up and shut down in an orderly way
+       ~core.quit()~
 
-      Another idea: [[https://www.psychopy.org/coder/tutorial2.html][A formula for JND]]
-
-**** Homework (can start in class)
-     1. Provide me with a name of the basic variety or example of the experiment you intend to code (with at least one reference using that task).
-     2. Provide a written (not code) outline of what you will need to do to implement the task.
-     3. Provide links to any existing versions of the task that you hope to be able to adapt for your usage.
-     4. /Be very basic./ Simple recall. Simple reaction time. Stroop. Picture versus word memory. The goal is to get something minimal working to prove "proof-of-concept"; not to actually have a reliable experiment coded.
-
+** Extending the Exercise
+   To do this you will probably need to consult the [[https://www.psychopy.org/api/api.html][psychopy API.]]
+   Can you?
+   1. Change the color of the square.
+   2. Move the Square.
+   3. Add some text
+   4. Keep the window open for a certain amount of time, and then close it when that time has elapsed.
+** Simple Tutorials from Psychopy
+   1. [[https://www.psychopy.org/coder/tutorial1.html][Here]] is the first
+   2. [[https://www.psychopy.org/coder/tutorial2.html][A formula for JND]]
 
