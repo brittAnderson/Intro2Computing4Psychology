@@ -1,0 +1,40 @@
+#+Title: Final Project
+
+* Task
+  Deliver a reproducible research report.
+  
+* Objective
+  Show that you have the coding and computer skills to implement an experiment in code, collect some (toy)data, analyze that data and produce a report that compiles all that material into a single pdf output, /and/ in a way that would allow another scientist to repeat your analysis and recompile your report.
+  
+* Details
+  1. I will get an org file that I can compile to produce the final report.
+  2. You will also upload the pdf file that you compiled to demonstrate your ability to compile the raw file.
+  3. You will also upload the .py file that executed the task you used for collecting data.
+  4. You will have collected data and saved that data in a /csv/ format and you will upload the csv data file.
+  5. Your org file will include:
+     1. Title
+     2. Date
+     3. Authors
+     4. Sections for each of the standard research report sections.[fn:1]
+     5. Your /methods/ section should include computational tools you used.
+     6. Your /results/ section must include the code for the analyses in the body of the org file so that I can recompile and reproduce the analyses. As a minimum you should include:
+	- some descriptive statistics (e.g. how many participants or total trials).
+	- at least one statistical test (e.g.  a t-test comparing the means of two groups or conditions). This will depend on the data you collect and the experiment you run.
+	- at least one plot (again, the code generating this plot must be in the research report org file; don't create it in photoshop or something and simply insert it).
+     7. Minimal /introduction/ and /discussion/ sections that must include at least one citation each.
+     8. The citations must appear in a /Reference/ section. I don't care about whether it is APA style or not.
+
+** Experiments You Can Pick From
+   Each team will conduct a different experiment. If you want to suggest something not on this list get my approval first. Even if you do select something from the list make sure some other group is not already doing it by writing to me first.
+   
+   1. [[https://en.wikipedia.org/wiki/Stroop_effect][Stroop Test]]
+   2. [[https://en.wikipedia.org/wiki/Pair_by_association][Paired Associate]]
+   3. [[https://en.wikipedia.org/wiki/Implicit-association_test][Implicit Association]]
+   4. [[https://en.wikipedia.org/wiki/Eriksen_flanker_task][Eriksen Flanker]]
+   5. [[https://en.wikipedia.org/wiki/Contextual_cueing_effect#/media/File:Contextual_cueing_example.png][Contextual Cuing]]
+   6. [[https://en.wikipedia.org/wiki/Deese%E2%80%93Roediger%E2%80%93McDermott_paradigm][False Memories]]
+   7. [[https://en.wikipedia.org/wiki/Sequence_learning][Sequence Learning]]
+
+* Footnotes
+
+[fn:1] Don't go overboard with the text in each of these sections. This final project is more about showing you have the skills to program an experiment, analyze the data, and combine it into a report, then it is the actual content of your data or the motivations for the experiment.  
