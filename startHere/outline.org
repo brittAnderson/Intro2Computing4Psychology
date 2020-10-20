@@ -224,3 +224,6 @@
 *** And many more. 
 ** Files
 ** Videos
+* Final Projects
+  Making a reproducible report. Putting it altogether.
+  Detailed instructions can be found [[file:../assessments/finalProjectAssessment.org][here]].
