@@ -1,0 +1,248 @@
+# -*- org-link-file-path-type: relative; -*-
+#+Title: Getting an Xubuntu Persistent USB on Macs
+#+Author: Britt Anderson
+#+Date: 13 January 2021
+
+* Comments
+  Read the regular installing [[file:installUbuntu.org][ubuntu file]] first. 
+
+* Macs and Linux
+  In general Mac's don't play as nice with linux as PCs and Windows based laptops. Older macs often do just fine, but Apple doesn't seem to provide the same support to the linux community with drivers for the hardware on their newest laptops. Also, some of the newer version of OSX, in an effort to protect users against malicious software, make it harder to download and install the tools needed for projects like these. So, if you can avoid using your Mac to make the USB. Once you get the USB made it will probably work fine (except maybe wifi, but there is a work around for that too).
+  
+* Choices
+  See the [[intro2MacLinuxUSB]] video for a spoken version of some of these same points. 
+
+** Get another computer
+   There are a lot of old laptops lying around in closets and basements. See if a friend or parent has an old one (within the last 10 years) that they thought was slow or underpowered and so replaced. That will work fine for you. Just burn the live media as described below and use install it to that computer. That will then be your course computer. It will probably work just fine, and in fact be much faster than trying to run it from a USB. Depending on your resources you can probably buy an old used laptop for 100 CAD or less (less than a textbook in the old days when we required those) that will also do the trick. 
+
+** Use Windows
+   You do this by *safely* getting a friend or family member who has a windows computer (laptop or desktop) to do it for you using the Windows procedures outlined elsewhere. Rufus seemed to work very well. In order for you to learn you want to be part of this process - even if only via a video phone call, but that will be enough. The USB once created should boot just fine on your Mac. 
+
+** Use a VM **NOT TESTED**
+   VM stands for virtual machine. For most of you this won't be an option because you don't know what any of this means. But each term I have one or two students who have virtualization software on their Macs. If you are one of them, and know how to use it, running Xubuntu in a VM will be just fine for this course, and using a VM will be a good learning experience.
+
+   - [[https://siytek.com/ubuntu-mac-virtualbox/][Using the Virtualbox VM software on a Mac to install Linux]]
+   - [[https://www.virtualbox.org/][The Virtualbox software]]
+** Dual Boot
+   There are lots of instructions for this. With this method you are installing the Xubuntu to your laptop's hard disk, and you will have the option to run either OSX or Xubuntu when you start. The challenge is making sure that you can actually boot into both after the installation. The easy way to avoid problems seems to be to use [[https://www.ianmaddaus.com/post/refind/][ReFind]]. I have tested this method with older Macs, but I don't find it particularly beginner friendly and if you mess it up you can lose data stored on your computer. Also, it has been made harder by newer security options on the latest versions of OSX.
+
+** Burning a Persistent USB on Mac - Easy Method
+   This method was tested by me at the end of 2020/start of 2021. Things change fast in the computing world so please be cautious if you try this a few years from when it was written.
+
+   
+*** Supplies
+    - Two (2) USBs
+      Recommend these be new and 8gb each.
+    - [[https://www.google.com/search?q=ethernet+cable&source=lnms&tbm=isch&sa=X&ved=2ahUKEwjg9oPXoZbuAhWiwOYKHVS4DB4Q_AUoAXoECB8QAw&biw=1366&bih=677][Ethernet cable]]
+      As mentioned the one really persistent problem is getting the wifi to work reliably. However, if you have a cable to connect to the ethernet you don't have to worry about that. Just plug in and you are good to go.
+    - A way to connect two USBs *simultaneously* to your Mac /AND/ the ethernet cable.
+      Most modern macs have a [[https://en.wikipedia.org/wiki/USB-C][USB-C]] connector. You can buy [[https://www.techradar.com/deals/best-usb-c-adapters][adapters]] that plug into that that will give you lots of connectivity options. I recommend having one of these for your mac regardless of whether you use it for making an XUbuntu USB device.
+
+*** Steps and Websites
+    1. From your running mac download the etcher disk flasher. You do not have to install this. You can open it directly from the .dmg and use it without installing.
+    2. Download the Xubuntu live CD.
+    3. Using Etcher burn the live xubuntu download to one of the two USBs. Remember which one.
+    4. Turn off your computer after this process is complete.
+    5. Restart with the USB plugged into your Mac (using the USB-C hub if necessary) while holding down the OPTION key. This should bring up a menu that will show you an orange "efi" icon in addition to your mac's hard disk. Using the arrow keys select the efi disk to boot (start) from.
+    6. Be patient. This will take awhile and some error messages may flash, but eventually you should see a screen listing options. You want to choose the Xubuntu live without installation option.
+    7. Be even more patient. This will take even longer.
+    8. Finally, you will see the purple Xubuntu desktop. Give yourself a high five.
+    9. Following the instructions [[https://help.ubuntu.com/community/mkusb][here]] to download ~mkusb~. You need to enter the following commands from a terminal. Watch the [[https://vimeo.com/453837142][terminal games video]] if you don't know what that looks like. 
+       #+Begin_src sh :eval never
+       sudo add-apt-repository ppa:mkusb/ppa  # and press Enter
+       apt update
+       sudo apt install mkusb usb-pack-efi
+       #+End_src
+
+       What you are doing here is adding a list of useful programs, refreshing the list of available programs, and then installing two programs we need for the next step. Don't bother upgrading all the out of date packages, because at this point no of the changes will persist after you shut down the computer.
+    10. Get a special [[https://phillw.net/isos/linux-tools/uefi-n-bios/dd_xubuntu-core-20.04-persistent-live-with-mkusb_7GB.img.xz][persistent Xubuntu version]] which you can read about [[https://help.ubuntu.com/community/mkusb/persistent][here]]. 
+	Yes you need to download xubuntu again and yes this version is different from the first one. It would probably work to use this one twice, but that is not what I tested.
+    11. Now you are ready to run ~mkusb~. I started mine from the terminal with ~sudo mkusb~. =sudo= means we are using the "super user" level privledges to change things. It is a safe guard to make sure you don't acidentally invoke potentially damaging commands. ~sudo~ can be thought of as "super user do".
+    12. Pick option "d" for ~dus~.
+    13. Next pick "clone".
+	This may be a bit confusing. If we were using a plain Ubuntu 20.04 we would pick the "p" option, but since we are using a distribution already built with persistence we are simply going to "clone" it.
+    14. Select the location of the special persistent version of xubuntu you downloaded.
+    15. Pick the "new", second, usb that you attached to the hub.
+    16. Let it do its things. This will take a while. Many little windows may pop up on your screen and even an occassional error message. Ignore them. Wait until the terminal says "Done". Then you can ...
+    17. Quit mkusb.
+    18. Now test for persistence.
+	1. Shutdown Xubuntu using the proper menu.
+	2. Remove the "live" disk from the hub, but leave the "new" persistent one attached.
+	3. Restart your mac with the Option key depressed and choose the efi disk to boot.
+	4. Wait...wait...wait.
+	5. Use any text editor you can find (mousepad should be available) to make a file to save to the desktop (your username will be xubuntu probably).
+	6. Shut down.
+	7. Restart as above.
+	8. Verify your file is still there.
+	9. Your done.
+	10. Do your happy dance. 
+   
+** Burning Xubuntu to USB Hard Method
+   Why use the hard method? Well this will work for a removeable hard drive or an sdcard or literally anything else you can figure out how to boot from. It will also expose you to a lot of the steps of the booting process and give you more experience with more tools. But it is another method that can *if you are not careful* overwrite data on your hard disk. You have to be careful when using this method, but it is well within the capabilities of a beginner. This is the method I walked people in class when we were able to work together in a live environment three years ago. 
+   :PROPERTIES:
+   :CUSTOM_ID: sec:orgc5688be
+   :END:
+The following instructions were cultivated from the following three
+webpages and represent a blend of their techniques:
+
+- [[https://forums.linuxmint.com/viewtopic.php?f=42&t=287353#p1590473]]
+
+- [[https://www.dionysopoulos.me/portable-ubuntu-on-usb-hdd/]]
+
+- [[https://superuser.com/questions/376470/how-to-reinstall-grub2-efi]]
+
+The first one is the most comprehensive, but there are useful ideas in
+both of the others. One thing to note is that if you are using a /BIOS/
+computer (that is a computer that is still booting with a true BIOS),
+then you can just use the Xubuntu USB without special fiddling. The only
+special things you need to do are to make sure you pick the usb for both
+the location for installing the OS *and* the location for the boot
+program.
+
+However, if you are using a UEFI system (and most of us are at this
+point) then a bug in the Ubuntu installation disk (which seems to have
+been around for ages) will not install the boot program to the USB you
+indicated, but rather will install it on to your home directory. That
+can make life difficult for all, and scary for the novice.
+
+I tried pretty much all the routines in the linux mint description, and
+not all of them worked reliably for me. They would usually work on the
+computer I used to generate them, but not on random other computers I
+tried to boot from. For that reason, I went with this hybrid method that
+seemed reliable for UEFI systems.
+
+*** Installation Instructions for Installing Xubuntu (and probably other
+-buntus) to a USB from a USB.
+    :PROPERTIES:
+    :CUSTOM_ID: sec:org1aa4178
+    :END:
+
+1.  You need at least two usbs to be able to be plugged in.
+
+2.  Boot the live Xubuntu disk. To do this you will first have to figure
+    out what special magic is needed to make your computer allow usb
+    booting. Each manufacturer and OS system has their own combination
+    of keys and boot start-up settings that are required. You have to
+    figure that out first, before starting here.
+
+3.  Make sure to open up the power management settings and make sure
+    nothing turns off or goes to sleep while you are doing this. Pay
+    attention to the =Display= tab. Even on power this will put your
+    screen to sleep, which can cause you to lose all your work. Set them
+    to "never" by dragging all the way to the left of the sliders.
+
+4.  After the live USB is booted (you selected Try Ubuntu) open a
+    terminal and launch =gparted=. Gparted is a program for partitioning
+    drives.
+
+5.  Make sure the device selected on gparted is the USB you want to
+    install the system to. You can use the size to help. The usb you
+    booted from will probably have type ISO 9600. If in doubt, plug in
+    the new USB after starting gparted and noting all the devices, and
+    then refresh devices and see which one is the new one.
+
+6.  Make a new =GPT= partition table for the USB. This will wipe out all
+    the data you have on that USB (or any other disc you incorrectly
+    set).
+
+7.  Make a 200 MB FAT32 partition.
+
+8.  Make the rest EXT4 for simplicity.
+
+9.  Apply those partitions so that you can ...
+
+10. Set the =efi= and =boot= flags for the 200 MB FAT32 parition. Use
+    the manage flags menu.
+
+11. Right click on that partition and click on the info tab. Write down
+    the UUID. It will probably be two four digit numbers separated by a
+    hyphen.
+
+12. Close gparted.
+
+13. Back in your terminal, run =ubiquity -b=. This will start the
+    installation program, but will not require you to install a boot
+    loader. You will do this manually later.
+
+14. Follow the screens until you get to where to install things. You
+    want =something else=.
+
+15. Chose the EXT4 partition of the USB you formatted for change. Select
+    it as an EXT4 and mount to "root" which is =/=. Do not format (you
+    already did that).
+
+16. Install the system.
+
+17. When it is done continue with "continue testing."
+
+18. For the rest of this I am assuming that your USB is /dev/sda and
+    your FAT32 partition is /dev/sda1. You need to replace those names
+    with the correct names of your partition for you system. If in
+    doubt, open up gparted again to verify what it is.
+
+19. Log on to your wifi and make sure you have network connectivity.
+    Ethernet is fine to if you have been using that.
+
+20. Open up your terminal. And enter the following commands:
+
+    #+BEGIN_EXAMPLE
+      sudo mount /dev/sda2 /mnt
+      mkdir /mnt/boot/efi
+      sudo mount /dev/sda1 /mnt/boot/efi
+      nano /mnt/etc/fstab
+    #+END_EXAMPLE
+
+    What you are doing here is "mounting" your USB at a particular mount
+    point on the booted live system. You will now be able to see those
+    partitions and write to them. First, you mount the root at the top,
+    and then you boot your boot system in its proper place in the
+    hierarchy. You may or may not need to create the directories.
+
+    The editing of =fstab= is to make sure that your system knows the
+    correct location for booting in the future. By using a universal
+    identifier your system should update properly.
+
+21. Edit the fstab to point to your usb's boot location thus: In the
+    file =fstab= comment out (with a /#/) any line for boot/efi and
+    replace the UUID part with the UUID you wrote down earlier making a
+    new line. This way you keep the old one to refer to if necessary
+    while making a new one. Your new one should look something like:
+    =UUID=0123-ABCD /boot/efi vfat defaults 0 1=
+
+22. Then you exit out of nano and resume in your terminal.
+
+    #+BEGIN_EXAMPLE
+      for i in /dev /dev/pts /proc /sys; do sudo mount -B $i /mnt/$i; done
+      sudo cp /etc/resolv.conf /mnt/etc/
+      modprobe efivars
+      sudo chroot /mnt
+    #+END_EXAMPLE
+
+    What you are doing here is giving your new usb access to
+    functionings of the current running system that it will need later
+    when we trick it into thinking that it is the root.
+
+23. Now we install the program we will use for booting =grub2=. We will
+    do this from a /chroot/ environment. Where we *ch* ange the *root*
+    so that we can put grub on /dev/sda and not on our hard disk
+
+24. ~apt install grub-efi ~
+
+25. If that did not work you may have to =apt update= first to populate
+    your list of software
+
+26. ~grub-install -d /usr/lib/grub/x86$_{\text{64}}$-efi
+    --efi-directory=/boot/efi/ --removable /dev/sda
+
+27. The removable bit is to help with the proper updating
+
+28. It may not be necessary to do a =update-grub= at this point, but I
+    was getting fatigued and did not thoroughly check. I just did one,
+    and it seemed to work.
+
+29. Need to exit chroot and then umount all the mounted directories. You
+    do this by =umount= in order all the things you =mount= ed before
+    and in the opposite order. Especially your /mnt/boot/efi which you
+    do not want to corrupt after all this.
+
+30. Then you should be able to boot your system on a uefi computer
