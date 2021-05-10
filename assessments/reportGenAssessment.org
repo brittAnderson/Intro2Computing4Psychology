@@ -13,7 +13,7 @@
      - Results
      - Conclusions
      - References
-  4. Just have the editings and some minimal text. The purpose here is to get a working skeleton of a file that you can use and adapt later on.
+  4. Just have the headings and some minimal text. The purpose here is to get a working skeleton of a file that you can use and adapt later on.
   5. Cut and paste from your earlier examples of Rmd and Org files using R and Python to have some analysis in the results section. Make sure it includes as a minimum:
      - one code block
      - one figure
