@@ -1,3 +1,4 @@
+# -*- org-link-file-path-type: relative; -*-
 * Data Handling in Python
   For a long time data handling and graph production in python lagged behind that of R. Data were collected in comma or tab separated ([[https://en.wikipedia.org/wiki/Comma-separated_values][CSV]]) formats or often in [[https://docs.python.org/3/library/pickle.html][pickle]] files. Pickled data was converted to a binary representation and had to be converted back to be read. These issues made it harder to use python in an interactive and interpreted environment for data analyis and many workers in psychology would collect their data with experiments coded in python (or other languages), and then use R as the language for statistical testing.
 
@@ -83,6 +84,6 @@
      Python is an object oriented language. R is in a more eclectic style that  reflects its LISP origins. Object oriented languages have data structures: objects, that encapsulate both attributes (what objects are like) and methods (what objects can do). A list would have its contents, the items in the list, as its attributes, but would have the ability, a method, to report the length of its /self/ [fn:1]. The attributes and methods of a python object are often accessed by a name that includes a *dot* '~.~' like the ".isin" you see in the code snippet above. Pandas creates a /data.frame object/ (the name emphasizes its R heritage), but it is not the same thing, and while most of the commands are achievable in either, they are not the same. The *dot* shows you we are accessing either an attribute or a method of an object. 
 
 * Assessing Your Use of Pandas
-  [[file:~/gitRepos/Intro2Computing4Psychology/assessments/dataPandasAssessment.org][Data Pandas Assessment]]
+  [[file:../assessments/dataPandasAssessment.org][Data Pandas Assessment]]
 * Footnotes
   [fn:1] Self is in italics because this is the special name one often sees in object oriented code were the definition of an object is given. Self typically refers to the particular instance of an object as it is being made. 
