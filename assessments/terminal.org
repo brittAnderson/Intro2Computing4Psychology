@@ -7,7 +7,7 @@
   
 ** Submit a file that answers the following questions:
    1. What is a terminal?
-   2. What shell are is your version of Xubuntu using?
+   2. What shell is your version of Xubuntu using?
    3. What is one other shell you might use?
    4. Give two reasons (not more) why one might want to use the terminal.
    5. I mentioned =ssh=. What does ssh stand for and how does it relate to the concept of a shell?
