@@ -1,7 +1,7 @@
 #+Title: Plotting Assessment: R and Python
 
 * Task
-  1. Do exactly what we did in the topic, but reverse which language you use to each.
+  1. Do exactly what we did in the topic, but reverse which language you use to do each.
   2. Use python functions to generate a sequence (for the x), a function to get a y from the x, and a random number generator to get y_randoms as long as the x and y values, and then generate a line and scatter plot for your x and y's and y_random's all on the same plot.
   3. The interaction plot should be done with R
 
