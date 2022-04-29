@@ -1,8 +1,8 @@
 # -*- org-link-file-path-type: relative; -*-
-#+TITLE: Installing Linux
+#+TITLE: Installing Linux 
 
 * Your goal ...
-  is to install a _bootable_, _persistent_, Xubuntu 20.04 iso to a USB (note you can use an SD card and portable hard disc also, but they are not as widely used or as well documented).
+  is to install a _bootable_, _persistent_, Linux operating system. I recommend Xubuntu 20.04 to get started. You can use a USB, sd card, dual boot, or single boot your laptop, but I /recommend/ the virtual machine route. 
 
   But see: https://xkcd.com/456/
 * Overview
@@ -13,7 +13,7 @@
 ** What operating system are you using now?
    Probably either Windows10 or OSX, but there are others. 
 
-* Summary of Steps
+* Summary of Steps :updateSpring2022:
   1. We will need to get a version of the Ubuntu operating system downloaded to our computer.
   2. We will need to copy that file to a USB drive (you can also use CDs, DVDs, SD cards and other devices, but our instructions here will focus on the USB). This will process will require us to take several smaller steps. 
   3. You will have to figure out how to *boot* your computer from the USB device.
