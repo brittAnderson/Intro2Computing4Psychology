@@ -13,33 +13,33 @@
 ** What operating system are you using now?
    Probably either Windows10/11 or OSX, but there are others. 
 
-* Summary of Steps :updateSpring2022:
+* Summary of Steps
   1. We will need to get a version of the Ubuntu operating system downloaded to our computer.
-  2. You may need an /iso/. This is a file that you can "burn" to a cd/rom, sdcard or usb. You can boot from it (you may need to get to your [[https://vimeo.com/channels/i2c4p/699876547][bios for this]]. Or look up the Mac command for booting from a peripheral. There are links below for getting this file. 
-  3. We will need to copy that file to a USB drive (you can also use CDs, DVDs, SD cards and other devices, but our instructions here will focus on the USB). This will process will require us to take several smaller steps. 
-  4. You will have to figure out how to *boot* your computer from the USB device.
-  5. Decide whether to install Ubuntu to your computer or to run it from the USB. The trade-offs will be discussed below, but I will assume you will be running a _persistent USB installation._
-  6. Verify your Ubuntu installation.
+  2. You may need an /iso/. This is a file that you can "burn" to a cd/rom, sdcard or usb. You can boot from it (you may need to get to your [[https://vimeo.com/channels/i2c4p/699876547][bios for this]]. Or look up the Mac command for booting from a peripheral. There are links below for getting this file.
+  3. You may need that file for your virtual machine (or if you choose one of the other methods). In the meantime you can boot from it to play with the linux operating system without installing anything. The downside of this is that none of your work will be saved.
+  4. Install the virtual machine software and then install the Xubuntu operating system. Verify you can use it. Save something. And that something is still there when you come back later. More on virtual machines below.
 
 * Justification for Ubuntu
-  - Why use Ubuntu? :: There are many different Linux distributions. Some of them are Debian, Archlinux, Fedora, OpenSuse, and NixOS. Linux is the kernel that powers the system. All the rest are different choices people make of the tools they want to wrap around that "engine." Ubuntu has the best developed set of tools for getting started, and so it has a wealth of documentation to help beginning users get started. That large pool of users can make it easier to find help on line or among your colleagues. However, many experts use it too. You are not losing any potential by using Ubuntu, but it does have a reputation of being a "heavy" distribution that makes larger demands on your processor. For older equipment XUbuntu and LUbuntu will put less resource demands on your system, but come at some expense of usability and appearance. Debian emphasizes free software. Fedora and OpenSuse are used more widely in industry and also in Europe. Archlinux has less support for the beginner, but can be easier to understand since many configurations are done through text files, and it has an excellent wiki. Even for other distros the Archlinux Wiki and Forums can be a good location for finding help. NixOS is a very different approach to Linux. It may well be the future, but as it breaks several of the common file conventions for Linux it is not recommended for newer users. I began with Ubuntu, but now run Archlinux on most of my lab and office computers. I have two machines that I am using Archlinux on to get familiarity with that flavor before transitioning my other computers over.
-  - Xubuntu :: Because of my desire to support multiple older computers and running from a USB we will use Xubuntu, which is a little less memory and processing heavy. Most of the time you read Ubuntu you can substitute Xubuntu here. But feel free to try Ubuntu if you prefer the flagship brand. Almost everything we do will apply to both, although you may have to hunt and search a bit for the comparable icons and their locations. 
+  - Why use Ubuntu? :: There are many different Linux distributions. Some of them are Debian, Archlinux, Fedora, OpenSuse, and NixOS. Linux is the kernel that powers the system. All the rest are different choices people make of the tools they want to wrap around that "engine." The Ubuntu family of distributions has the best developed set of tools for getting started, and so it has a wealth of documentation to help beginning users get started. That large pool of users can make it easier to find help on line or among your colleagues. However, many experts use it too. You are not losing any potential power by using Ubuntu, but it does have a reputation of being a "heavy" distribution that makes larger demands on your processor. For older equipment XUbuntu and LUbuntu will put less resource demands on your system. But these alternative, lighter, versions, come at the expense of usability and appearance. Debian is a linux distribution that emphasizes free software. Fedora and OpenSuse are used more widely in industry and also in Europe. Archlinux has less support for the beginner, but can be easier to understand since many configurations are done through text files, and it has an excellent wiki. Even for other distros the [[https://wiki.archlinux.org/][Archlinux Wiki]] and Forums can be a good location for finding help. NixOS is a very different approach to Linux. It may well be the future, but as it breaks several of the common file conventions for Linux it is not recommended for newer users. I began with Ubuntu, but now run Archlinux on most of my lab and office computers. The next flavor I plan to try is [[https://guix.gnu.org/][guix]].
+  - Xubuntu :: Because of my desire to support multiple older computers and running from a USBs or sdcards if necessary we will use Xubuntu, which is a little less memory and processing heavy. /Most/ (not always) of the time you read Ubuntu you can substitute Xubuntu in online help. But feel free to try Ubuntu if you prefer the flagship brand. Everything we do will for this course can be done with either. 
 
   
-* Steps in Detail
-  1. [[https://vimeo.com/448906706][A video introduction]].
-  2. *Important Warning*
+* Steps in Detail (Prior to Spring 2022)
+  1. *Important Note*. Please read.
+     I believe these instructions still work, and it is fine if you chose to follow them. You will learn a lot. *However* I am now recommending /virtual machines/. Please scroll down to the steps in detail for virtual machines unless you have a good reason to try this approach instead or you are just stubborn. 
+  2. [[https://vimeo.com/448906706][A video introduction]].
+  3. *Important Warning*
      If you find anything confusing and you decide to go to the Internet to look for help or videos make sure you pay attention to the *date* of the help/video. Things change rapidly. Videos from even one year ago may not be correct any longer. Certainly you should not use anything from more than three years ago without a very critical eye. There can be good information there, you just need to be increasingly careful the farther you go back in time. 
-  3. Buy a *new* USB
+  4. Buy a *new* USB
      You can try to re-purpose an old one, but it is much safer, and a better use of your time to invest in a new one, and not the cheapest one you can find. You will be using this USB as your hard disk with lots of write and re-write operations. You want a high-quality USB of a healthy size. It needs to be a minimum of 8 GB, but you will probably run out of space if you go that small. 32 GB should be enough without getting too costly. Don't go ridiculously large (512 MB or 1TB).
      [[https://vimeo.com/448908514][Video on Your USB Needs]]
-  4. Learn how to boot your computer from a USB ([[https://vimeo.com/448908272][video1: getting to your boot menu]] & [[https://vimeo.com/448908305][video2: boot menu walk-through]]).
+  5. Learn how to boot your computer from a USB ([[https://vimeo.com/448908272][video1: getting to your boot menu]] & [[https://vimeo.com/448908305][video2: boot menu walk-through]]).
      You should practice getting to your boot menu first. If you cannot figure out how to access it nothing you will do later will work. 
      Every computer manufacturer seems to do something different. You will have to search online for your computers make and model and some combination of how to boot to "Bios" or "UEFI" or "boot from USB".
      Some Hints that often work are: 
      - Mac OSX - start the computer with option key held down
      - Windows - F2 or F10 during the boot process - (look for a very briefly flashed screen and your computer does a full restart. There is often a very quick display that tells you which key to press to interrupt the start-up process). Another option is to tell Windows to boot from recovery mode. Find the "advanced" menu of the Windows Start Up menu (look in the "recovery" section of the start-up). Select from "another device". Some devices, like Surfaces, have other key combinations.
-  5. Get the Ubuntu 20.04 Live CD file ([[https://vimeo.com/448908073][video: getting Ubuntu ISO]])
+  6. Get the Ubuntu 20.04 Live CD file ([[https://vimeo.com/448908073][video: getting Ubuntu ISO]])
      Regardless of whether you currently use a Mac or Windows computer you will need to download a version of Ubuntu. You need an *ISO* version. Currently, I recommend [[http://mirror.csclub.uwaterloo.ca/xubuntu-releases/20.04/release/xubuntu-20.04.1-desktop-amd64.iso][Xbuntu 20.04 LTS (CS Club UWaterloo Mirror)]]. The most current long term support (LTS) changes from time to time. This is current as of this writing (<2020-09-01 Tue 06:34>). You will save this to the Desktop (or some other location where you can find it when needed below). 
      1. Live or Persistent?
 	You want *persistent*. This will allow you to keep your settings, software, and files between uses.
@@ -53,16 +53,16 @@
 	3. Concluding Rufus
 	   After Rufus finishes you will need to shut things down and reboot. 
            video: [[https://vimeo.com/448908366][after Rufus Finishes]] 
-  6. The test! After installation to the USB power off. Restart. Select you boot from USB option and see your linux installation. [[https://vimeo.com/channels/i2c4p/453034310][video: your first Xubuntu boot explained]] 
-  7. Test persistence
+  7. The test! After installation to the USB power off. Restart. Select you boot from USB option and see your linux installation. [[https://vimeo.com/channels/i2c4p/453034310][video: your first Xubuntu boot explained]] 
+  8. Test persistence
      Open _mousepad_ (or anything else you find that lets you edit a document) and save something trivial to your Desktop like a text file that says "Hello world." Save it. Power off. Restart your Ubuntu system and see if the file is still there. If so, you have done what you need to get a system working for this course.
      [[https://vimeo.com/453295883][video: testing persistence and other housekeeping]]
-  8. Prove you can install a package.
+  9. Prove you can install a package.
      1. Open the terminal.
      2. run ~sudo apt update~
      3. run ~sudo apt install emacs~
      4. Follow the instructions in [[file:../assessments/installEmacs.org][installEmacs]] assessments
-  9. Celebrate!
+  10. Celebrate!
 ** Comments
    The videos where you can watch my screen for the update and booting process can be found listed below. They are of lower quality since they require filming a computer screen by pointing a camera at it, but they do give you a sense of the amount of time things take and what the screens look like. This could be helpful as you work through the installation steps. 
 *** Lower Quality Videos Recorded of My Screen in Booting Process From USB
@@ -75,6 +75,28 @@
 ** Troubleshooting
    - I don't have a USB port? :: Do you have an SD card? If not, you will need a different computer.
    - My Mac doesn't start UNetbootin :: That may be an issue with your version of OSX. Check out his [[https://youtu.be/YwvDemR60vw][video]] for an example of a workaround. 
+* Steps in Detail - Virtual Machines
+Writing in Spring 2022 it has gotten easier to get a version of Linux running on both Windows and Macs. However, you have to pay attention to the version of software and the type of Mac you have.
+
+I am not providing instructions for any version of windows prior to Windows10 and the videos demonstrate for Windows 11.
+
+For Macs you need to know if you are using an /Intel/ mac or an /M1/ mac. Finding out is on you.
+** Windows 11
+1. Make sure hypervisor capacity is enabled in your [[https://vimeo.com/699876547][computer's bios]].
+2. Tell Windows 11 to use the [[https://vimeo.com/699876547][hypervisor]].
+3. [[https://vimeo.com/699876560][Install Ubuntu]].
+   These steps are illustrated in the linked videos.
+** Intel Macs
+1. [[https://vimeo.com/699876529][Get the Virtual Box virtualization software.]]
+2. Create the [[https://vimeo.com/699876529][virtual machine.]]
+3. Make sure you have the [[https://vimeo.com/699876505][xubuntu iso.]]
+4. [[https://vimeo.com/699876505][Install xubuntu]]  to your virtual machine.
+** M1 Macs
+1. [[https://vimeo.com/699876351][Get the UTM software and use it to install a ubuntu iso]].
+   The steps will be:
+   1. Get UTM.
+   2. Install Ubuntu Server
+   3. Use your Ubuntu Server installation to install the Xubuntu desktop.
 * Other Methods     
   You do not have to install and run Linux from a USB. Here are some other options you can consider.
 ** Dual Boot
