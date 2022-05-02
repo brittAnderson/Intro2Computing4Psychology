@@ -6,19 +6,20 @@
 
   But see: https://xkcd.com/456/
 * Overview
-  For this topic we will install a new operating system to your computer. We will use a flavor of linux called "Ubuntu." Linux is the ~kernel~ of the operating system and all the flavors, also called distributions: distros for short, are sets of packages that were curated by the distribution's creators to give a look or facilitate an ease of use. Underneath they all run the some version of the same kernel (versions are specified numerically).
+  For this topic we will install a new operating system to your computer. We will use a flavor of linux called "Ubuntu." Linux is the ~kernel~ of the operating system and all the flavors, also called distributions: distros for short; are sets of packages that were curated by the distribution's creators to give a look or facilitate an ease of use. Underneath they all run the some version of the same kernel (versions are specified numerically).
 
   There are [[*Other Methods][many ways]] to get Linux working on your computer and many varieties of Linux to try. If you are brave try dual-booting (there are lots of online resources - make sure you look at recent ones). If you have an older spare laptop why not make that your linux laptop and install only linux to it. As most new users are hesitant to make those big leaps, at least initially, for the following material I will assume that you want to run a Live version where you can try out Linux without installing anything to your personal computer. Thus, the material below describes mostly how to get a /persistent/ live USB with Ubuntu so that you can begin to use linux for the learning objectives of this course. 
 
 ** What operating system are you using now?
-   Probably either Windows10 or OSX, but there are others. 
+   Probably either Windows10/11 or OSX, but there are others. 
 
 * Summary of Steps :updateSpring2022:
   1. We will need to get a version of the Ubuntu operating system downloaded to our computer.
-  2. We will need to copy that file to a USB drive (you can also use CDs, DVDs, SD cards and other devices, but our instructions here will focus on the USB). This will process will require us to take several smaller steps. 
-  3. You will have to figure out how to *boot* your computer from the USB device.
-  4. Decide whether to install Ubuntu to your computer or to run it from the USB. The trade-offs will be discussed below, but I will assume you will be running a _persistent USB installation._
-  5. Verify your Ubuntu installation.
+  2. You may need an /iso/. This is a file that you can "burn" to a cd/rom, sdcard or usb. You can boot from it (you may need to get to your [[https://vimeo.com/channels/i2c4p/699876547][bios for this]]. Or look up the Mac command for booting from a peripheral. There are links below for getting this file. 
+  3. We will need to copy that file to a USB drive (you can also use CDs, DVDs, SD cards and other devices, but our instructions here will focus on the USB). This will process will require us to take several smaller steps. 
+  4. You will have to figure out how to *boot* your computer from the USB device.
+  5. Decide whether to install Ubuntu to your computer or to run it from the USB. The trade-offs will be discussed below, but I will assume you will be running a _persistent USB installation._
+  6. Verify your Ubuntu installation.
 
 * Justification for Ubuntu
   - Why use Ubuntu? :: There are many different Linux distributions. Some of them are Debian, Archlinux, Fedora, OpenSuse, and NixOS. Linux is the kernel that powers the system. All the rest are different choices people make of the tools they want to wrap around that "engine." Ubuntu has the best developed set of tools for getting started, and so it has a wealth of documentation to help beginning users get started. That large pool of users can make it easier to find help on line or among your colleagues. However, many experts use it too. You are not losing any potential by using Ubuntu, but it does have a reputation of being a "heavy" distribution that makes larger demands on your processor. For older equipment XUbuntu and LUbuntu will put less resource demands on your system, but come at some expense of usability and appearance. Debian emphasizes free software. Fedora and OpenSuse are used more widely in industry and also in Europe. Archlinux has less support for the beginner, but can be easier to understand since many configurations are done through text files, and it has an excellent wiki. Even for other distros the Archlinux Wiki and Forums can be a good location for finding help. NixOS is a very different approach to Linux. It may well be the future, but as it breaks several of the common file conventions for Linux it is not recommended for newer users. I began with Ubuntu, but now run Archlinux on most of my lab and office computers. I have two machines that I am using Archlinux on to get familiarity with that flavor before transitioning my other computers over.
