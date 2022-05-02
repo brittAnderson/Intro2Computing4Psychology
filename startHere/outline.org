@@ -63,7 +63,7 @@
     As I assume most new users will be hesitant to try and install a second operating system on their personal laptop they use for school and their personal work I am highlighting the use of Linux (Xubuntu) on a USB. You use the USB as your hard disk. You still use you computer's hardware (screen, keyboard, camera, etc), but the reading and writing of data takes place on the USB. It makes things slower, but you don't change your personal set up. Shut down. Remove USB. Start back up and you are back to where you are used to. It is a reasonable way to get started for experimenting and learning, but not an ideal way to run a system long-term. Consider converting to a more flexible and faster option in the future. Details of all the steps you have to take, and there are many, can be found in the [[file:../topics/installUbuntu.org][topics file]]. 
 *** Install Xubuntu to a USB Topic
     [[file:../topics/installUbuntu.org][installUbuntu.org]]
-    [[file:../topics/installingUbuntu_MacVersion.org][installingUbuntu_MacVersion.org]]
+    This ([[file:../topics/installingUbuntu_MacVersion.org][installingUbuntu_MacVersion.org]]) is an older file that may have some good hints still. It is here for historical reasons and for its links. As of Spring 2022 I think everything you need is in the regular installUbuntu.org file linked immediately above.
 *** Dual Booting
     [[file:../topics/installUbuntu.org::*Dual Boot][Dual Boot]]
 *** Linux Only
@@ -78,17 +78,27 @@
    2. [[file:../assessments/installXubuntuAssessment.org][Xubuntu Installation Assessment]]
 ** Videos
    1. [[https://vimeo.com/448906706][Intro to Booting Linux]]
-   2. [[https://vimeo.com/448908272][How To Get To Your Boot Menu]]
-   3. [[https://vimeo.com/448908305][Booting Your Computer From a USB]]
-   4. [[https://vimeo.com/448908514][A Persistent USB ISO]]
-   5. [[https://vimeo.com/448908150][Downloading the Rufus Tool]]
-   6. [[https://vimeo.com/448908073][Getting the Xubuntu ISO]]
-   7. [[https://vimeo.com/448908151][Installing Xubuntu to the USB]]
-   8. [[https://vimeo.com/499572407][Intro to Trying this On a Mac]]
-   9. [[https://vimeo.com/499617484][One method for the Mac]]
-   10. [[https://vimeo.com/453034310][Explaining Your First USB Boot]]
-   11. [[https://vimeo.com/453295883][What To Do After Your First Linux Boot]]
-   12. [[https://vimeo.com/453295879][Installing Your First Package]]
+   2. Virtual Machine Instructions from 2022
+      1. [[https://vimeo.com/699876547][Your computer's bios]].
+      2. Windows 11 [[https://vimeo.com/699876547][hypervisor]].
+      3. [[https://vimeo.com/699876560][Install Ubuntu]].
+      4. [[https://vimeo.com/699876529][Get the Virtual Box virtualization software.]]
+      5. [[https://vimeo.com/699876529][Create the virtual machine]]
+      6. [[https://vimeo.com/699876505][xubuntu iso.]]
+      7. [[https://vimeo.com/699876505][Install xubuntu to your virutal machine]]machine.
+      8. [[https://vimeo.com/699876351][Get the UTM software and use it to install a ubuntu iso]].
+   3. Older files from Prior to 2022. May still have some useful examples. 
+      1. [[https://vimeo.com/448908272][How To Get To Your Boot Menu]]
+      2. [[https://vimeo.com/448908305][Booting Your Computer From a USB]]
+      3. [[https://vimeo.com/448908514][A Persistent USB ISO]] 
+      4. [[https://vimeo.com/448908150][Downloading the Rufus Tool]]
+   4. [[https://vimeo.com/448908073][Getting the Xubuntu ISO]]
+   5. [[https://vimeo.com/448908151][Installing Xubuntu to the USB]]
+   6. [[https://vimeo.com/499572407][Intro to Trying this On a Mac]]
+   7. [[https://vimeo.com/499617484][One method for the Mac]]
+   8. [[https://vimeo.com/453034310][Explaining Your First USB Boot]]
+   9. [[https://vimeo.com/453295883][What To Do After Your First Linux Boot]]
+   10. [[https://vimeo.com/453295879][Installing Your First Package]]
 *** Lower Resolution Screen Grabs (some redundancy to the above)
     1. [[https://vimeo.com/449006223][A Successful First Boot]]
     2. [[https://vimeo.com/453049176][USB Boot Version 2]]
