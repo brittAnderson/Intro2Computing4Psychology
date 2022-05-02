@@ -16,4 +16,6 @@ Demonstrate that you have a functioning Linux installation and that you can use 
   
   If you want to try something fun open the file back up in emacs after doing the above. Then type ~C-c C-e h h~. ~C-c~ means typing the "Ctrl" key and the lower case "c" key simultaneously. The spaces between those instructions mean you have a sequence of four key chords to enter. If all goes well you have just created a web page of that file. You should be able to open it in your browser. To test, use the file browser in Xubuntu to navigate to the file with the name you used above, but now ending in ~.html~ and not the ~.org~ one. Double click and your web browser should open with that file displayed.
 
-  To get ahead of things and learn more about the org-mode utilities you just used you can search for emacs and orgmode online. Or type ~C-h i~ to open the information functionality and navigate to the orgmode chapter. 
+  To get ahead of things and learn more about the org-mode utilities you just used you can search for emacs and orgmode online. Or type ~C-h i~ to open the information functionality and navigate to the orgmode chapter.
+
+  And if you get stressed you can always consult Emacs' built in therapist with ~M-x doctor~.
