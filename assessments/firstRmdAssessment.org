@@ -10,4 +10,4 @@
      [[https://imgs.xkcd.com/comics/linux_user_at_best_buy.png]]
 
 * Comments
-  We will be using various markdown dialects to combine text, references, code, data, and analyses in making reproducible research reports. The goal of this assignment is to get you started on discovering and using some of the markdown conventions that will enable you to do so. 
+  We will be using various markdown dialects to combine text, references, code, data, and analyses in making reproducible research reports. The goal of this assignment is to get you started on discovering and using some of the markdown conventions that will enable you to do so. RStudio has a built in cheat sheet for markdown, but you can easily find [[https://en.wikipedia.org/wiki/Markdown][others]] on line. There are several different dialects of markdown. 
