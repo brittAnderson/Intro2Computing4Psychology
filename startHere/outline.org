@@ -56,7 +56,7 @@
 * Linux Basics
 ** Installing Linux to Your Own Computer
    In this topic you will install a version of Linux on your own machine to use throughout this course (and after, I hope). 
-*** Install Linux As A Virtual Machine :updateSpring2022:
+*** Install Linux As A Virtual Machine 
     This is the new, preferred method. There are a number of videos for Mac and Windows users on how to do this. Note *importantly* the rules are different depending on whether you are using an M1 mac or an Intel mac. Don't know? Well find out. A good workman knows their tools.
     [[file:../topics/installUbuntu.org::*Steps in Detail - Virtual Machines][Start here]] for more detailed instructions.
 *** Run from a USB (or SD card or external hard drive) *DEPRECATED*
@@ -127,7 +127,7 @@
 * Version Control
   Version control is a highly versatile and powerful to way to track changes, un-do them, and coordinate all this across multiple users in multiple locations. Here I introduce one particular program for version control, and a popular cloud platform designed to work with it. 
 ** Git
-   Git is a program for version control, but there are others. Some of these are presented in the [[file:../topics/githubPullRequest.org][github pull request topic.]] There are also tools for working with and sharing git repositories. The most famous is github. 
+Git is a program for version control, but there are others. Some of these are presented in the [[file:../topics/githubPullRequest.org][github pull request topic.]] There are also tools for working with and sharing git repositories. The most famous is github. 
 ** Github
    A large social coding site there are particular terms of art for git and github that are important to work with this 
 ** Github Basics
