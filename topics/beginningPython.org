@@ -265,6 +265,7 @@
     1. Spyder
     2. pyCharm
 **** [[https://realpython.com/emacs-the-best-python-editor/][Emacs as a python IDE]]
+     *For this course I recommend using emacs.*[fn:1]
      This is what you need to use for this course: emacs.
      1. Open up a blank file with a name that ends in .py
      2. Type in some lines (e.g. a = 2, b = 3, print(a+b))
@@ -284,3 +285,7 @@
     When you install software to your system there is always a chance that you will install packages that conflict with each other. One way to reduce the risk of this problem is to install your programs and packages into small isolated sandboxes. The idea is that each sandbox exists independent of each of the others and only sees the packages that are installed locally to it. [[https://docs.python.org/3/tutorial/venv.html][Virtual environments]] are a way to achieve this sandboxing, and python has built in tools to support this idea. The use of =venv= and similar ideas is beyond the scope of what we have time for here, but it is not overly complicated to set up and use. You should read further on this topic if you plan to use python more extensively in the future. Another related approach is to use [[https://www.geeksforgeeks.org/set-up-virtual-environment-for-python-using-anaconda/][conda/anaconda]].
 *** Beginning Python Assessment 2
     [[file:~/gitRepos/introComp4Psych/assessments/hangmanPython.org]]
+
+* Footnotes
+
+[fn:1] Why use emacs as your python ide? There is a lot to learn in this course. If you choose a different tool for every job you will greatly increase your cognitive load. By using emacs for everything you can gradually learn to use one tool and focus your thinking on the stuff you are trying to learn and not the tool you need to master it. That said, you may later on choose to use something other than Emacs. Fine. But at least you will be familiar with the Swiss Army Knife of computing. It may not be the best tool for every job, but you can use it to get almost anything done, and that is a handy tool to have in your kit.  
