@@ -266,7 +266,7 @@
     2. pyCharm
 **** [[https://realpython.com/emacs-the-best-python-editor/][Emacs as a python IDE]]
      *For this course I recommend using emacs.*[fn:1]
-     This is what you need to use for this course: emacs.
+     A simple demonstration of vanilla emacs.
      1. Open up a blank file with a name that ends in .py
      2. Type in some lines (e.g. a = 2, b = 3, print(a+b))
      3. Type C-c C-c on the first line.
@@ -275,7 +275,7 @@
      6. Keep C-c C-c'ing on each line and look at what is happening in your console.
      7. When your cursor is on a python word, like ~print~, look in the mode line.
      8. Try M-x linum-mode
-     9. Looking for something more full featured? Try =elpy=. Instructions to install found [[https://elpy.readthedocs.io/en/latest/introduction.html#installation][here]]. 
+     9. Looking for something more full featured? Try =elpy=. Instructions to install found [[file:emacsPythonIdeInstructions.org][here]]. 
 ** Pip to Install Libraries and Virtual Environments
    In general, try to use one packaging system for your installation. If you chose to get your packages via Ubuntu repositories (i.e. =apt=) then try to get as many from there as you can. 
    Otherwise the =pip= tool is convenient, though it will likely be superseded in the near future. 
