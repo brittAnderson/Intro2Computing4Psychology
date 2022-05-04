@@ -1,0 +1,40 @@
+* Preliminaries
+  To use Emacs as an IDE, or to do many other things with Emacs, you need to be able to install packages. Most of these will come internal to emacs, but some of them will come from your distribution.
+
+  
+* Creating your "init" file.
+  1. Open Emacs
+  2. Use ~C-x C-f~ to open a new file. You want it to be =~/.emacs.d/init.el=. Note the tilde means your home directory, and that ~.emacs.d~ will already exist. Everything matters with computers. Note that "dot" before the word .emacs.d.
+  3. You should make sure you have the following text in your init file.
+     #+begin_quote
+     (require 'package)
+     (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
+     (package-initialize)
+     #+end_quote
+     Watch out for trailing slashes and plurals. Any typos and you should see an error. You have to fix those before you can go on.
+* Test your init
+  Save the init.el file. Shut down emacs and restart. If you see no errors, great! If you do, fix.
+  Now try the command ~M-x package-refresh~. Watch what appears in the little mini-buffer at the bottom. If you miss something you can look at the ~*Messages*~ buffer to see what you missed. If you see anything about failing to download melpa then you have a problem to fix. 
+* Get the python virtual environment tools you need.
+  Virtual environments are a way to let programming languages work on your computer in isolation. Mistakes you make there or packages you install there will not pollute other parts of your system. You need to run the following in a terminal. 
+  #+begin_quote
+  sudo apt install python3-venv
+#+end_quote
+* Adding elpy and enabling.
+  Restart Emacs
+
+  Make sure you have refreshed your packages.
+
+  Run ~package-install RET elpy RET~
+
+  If it tells you it needs to install other components then let it.
+
+  Open up your init.el file again and add this below the package initialize line
+
+  ~(elpy enable)~
+* Test Again that Emacs is Error Free
+  Save your init file. Shutdown Emacs and restart. You should see no error messages. 
+* Test with python
+  Open a new file with a name such as ~test.py~ and type in a few basic commands. You should see nice color syntax highlighting and other features appear like magic. 
+* Comments
+  To get everything you might need to install additional packages such as ~pip~. You may also need to adjust your ~PATH~ by setting it in your ~.bashrc~ or other locations, but those can be lessons for another day. 
