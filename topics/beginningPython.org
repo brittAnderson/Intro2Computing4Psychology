@@ -31,7 +31,7 @@
    Org-babel is a way to include code in an org document and have it properly execute. 
    There is, of course, an Emacs manual : ~C-h i~ Search for org mode and in the org mode manual look for the "[[info:org#Library of Babel][Library of Babel]]".  A pretty extensive tutorial can be found [[https://github.com/erikriverson/org-mode-R-tutorial/blob/master/org-mode-R-tutorial.org][here]]. A more recent workshop gives examples [[http://www.howardism.org/Technical/Emacs/literate-programming-tutorial.html][here]].
 
-   We will want some basic text in our =init.el= file to make things work.
+   We will want some basic text in our =init.el= file to make things work. See [[file:emacsPythonIdeInstructions.org][here]] as well for some hints on getting started with your ~init.el~ file.
    #+begin_src elisp :eval never
    (setq org-confirm-babel-evaluate nil)
    (setq org-babel-python-command "python3")
@@ -50,7 +50,7 @@
    There are many optional arguments that can appear on the line with "Begin" that will affect how the output appears and how it gets updated. Many of these *header* arguments are different for different languages and are presented [[https://org-babel.readthedocs.io/en/latest/header-args/][here]]. 
 
 
-   Here is a functioning babel block for R
+   Here is a functioning babel block for R [fn:2]
    #+Begin_src R :exports both
    a = 2
    b = c(1,2)
@@ -72,10 +72,9 @@
 
    #+RESULTS:
 
-
 ** Some programming vocabulary
 *** Data often come in *Types*
-    Some languages dynamically type where other statically type. Python tries to figure out whether you meant "1" to be a character or a numeral and may interpret it as either depending on context. That can make it easier for you to just get working and not worry about all the details. In a statically typed language you may have to tell your compiler or interpreter exactly how you want it to interpret a particular "1". This can make writing your code slower and more wordy, but gives you a lower risk of errors later on.
+    Some languages dynamically type whereas other statically type. Python tries to figure out whether you meant "1" to be a character or a numeral and may interpret it as either depending on context. That can make it easier for you to just get working and not worry about all the details. In a statically typed language you may have to tell your compiler or interpreter exactly how you want it to interpret a particular "1". This can make writing your code slower and more wordy, but gives you a lower risk of errors later on.
 **** Some common [[https://docs.python.org/3/library/stdtypes.html][types]]
      - Integers :: 1, 2, ...
      - Doubles/Floats :: 10.3, pi; basically numbers that have decimal points. Thus, 1.000000 is not the same as the integer 1. 
@@ -141,7 +140,7 @@
       : 9
       : [1, 2, 3, 4]
 
-      The use of the =-1= as an index is a python trick for getting the last element in a list. Think of the list as a circle. If you count backwards from a list you will get to the beginning eventually (index 0) if you went back one more step (-1) you would circle back to the end of the list. Test what happens when you try -2. Does it keep going? A lot of learning how to program is exploring. 
+      The use of the =-1= as an index is a python trick for getting the last element in a list. Think of the list as a circle. If you count backwards from a list you will get to the beginning eventually (index 0) if you went back one more step (-1) you would circle back to the end of the list. Test what happens when you try -2. Does it keep going? A lot of learning how to program is just doing stuff to see what happens.
      
       #+Name: For Loop
       #+begin_src python :session *P363* :exports both :results output
@@ -175,9 +174,9 @@
       The 8th element was 9
       #+end_example
 **** While Loop
-     These are like for loops in that they do stuff over and over, but unlike for loops they do things indefinitely, until that is, you tell them to stop. How do you do that? You use a predicate that they test for each time through the loop. That means you need to specify a /predicate./
+     These are like ~for~ loops in that they do stuff over and over, but unlike ~for~ loops they do things indefinitely, until that is, you tell them to stop. How do you do that? You use a /predicate/ that they test for each time through the loop.
 **** Conditionals
-     This is where you test whether something is or is not ~True~. Note that Python, but not all computer languages, treats 0 as the same as False, and all non-zero values as True. 
+     This is where you test whether something is or is not ~True~. Note that Python, but not all computer languages, treats 0 the same as False, and all non-zero values as True. 
 
      #+begin_src python :exports code  :session *P363* :results output
        if (2 == 3):
@@ -214,7 +213,7 @@
          r
          s
          #+end_example
-
+	 
 *** Functions
     We encountered an earlier example of this in the [[file:rStudioWinMacFirstSteps.org::*Functions][Rmd lesson]]. Think
     of a function as a machine that grinds meat. You pour in a cow.
@@ -239,11 +238,11 @@
  : 5
 
 *** Beginning Python Assessment 1
-    [[file:~/gitRepos/introComp4Psych/assessments/forLoopPythonAssessment.org][For Loop Python Assessment]]
+    [[file:~/gitRepos/Intro2Computing4Psychology/assessments/forLoopPythonAssessment.org][For Loop Python Assessment]]
 *** Libraries
     Lots of people use python. Python has been around a long time. Almost anything you might think to do at this point has been done by someone else. Look for a library and use someone else's code if you can. Use your time and effort to perfect your particular project, not to reinvent the wheel. An advantage of popular libraries is that they are likely to have withstood the tests of many users and will be more robust and correct than something you are likely to write as a first effort. 
 **** What are some popular libraries?  
-     [[https://pythontips.com/2013/07/30/20-python-libraries-you-cant-live-without/][Here]] are 20 recommended ones.
+     [[https://pythontips.com/2013/07/30/20-python-libraries-you-cant-live-without/][Here]] are 20 recommended ones (and a more recent [[https://www.ubuntupit.com/best-python-libraries-and-packages-for-beginners/][list]]).
      
      Of particular note for us are:
      1. Numpy
@@ -287,5 +286,6 @@
     [[file:~/gitRepos/Intro2Computing4Psychology/assessments/hangmanPython.org][hangman and python assessment]]
 
 * Footnotes
+[fn:2] For this to work you will have to have R installed. If you have not done so already try ~sudo apt install r-base~ from a terminal, and then re-run the command.  
 
 [fn:1] Why use emacs as your python ide? There is a lot to learn in this course. If you choose a different tool for every job you will greatly increase your cognitive load. By using emacs for everything you can gradually learn to use one tool and focus your thinking on the stuff you are trying to learn and not the tool you need to master it. That said, you may later on choose to use something other than Emacs. Fine. But at least you will be familiar with the Swiss Army Knife of computing. It may not be the best tool for every job, but you can use it to get almost anything done, and that is a handy tool to have in your kit.  
