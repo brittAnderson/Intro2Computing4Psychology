@@ -278,13 +278,13 @@
      9. Looking for something more full featured? Try =elpy=. Instructions to install found [[file:emacsPythonIdeInstructions.org][here]]. 
 ** Pip to Install Libraries and Virtual Environments
    In general, try to use one packaging system for your installation. If you chose to get your packages via Ubuntu repositories (i.e. =apt=) then try to get as many from there as you can. 
-   Otherwise the =pip= tool is convenient, though it will likely be superseded in the near future. 
+   Otherwise the =pip= tool is convenient. 
 *** Pip
-    pip is the python install package program. There have been many ways to install python packages over the years and you will find a lot of tracks on the internet. There is a new system coming called wheel, but for now stick with pip (ubuntu also has many of these packages, but I find it better to try and not to mix package managers. Use your choice; mine is pip.
+    pip is the python install package program. There have been many ways to install python packages over the years and you will find a lot of tracks on the internet.  For now stick with pip (ubuntu also has many of these packages, but I find it better to try and not to mix package managers. Use your choice; mine is pip).
 *** Virtual Environments
     When you install software to your system there is always a chance that you will install packages that conflict with each other. One way to reduce the risk of this problem is to install your programs and packages into small isolated sandboxes. The idea is that each sandbox exists independent of each of the others and only sees the packages that are installed locally to it. [[https://docs.python.org/3/tutorial/venv.html][Virtual environments]] are a way to achieve this sandboxing, and python has built in tools to support this idea. The use of =venv= and similar ideas is beyond the scope of what we have time for here, but it is not overly complicated to set up and use. You should read further on this topic if you plan to use python more extensively in the future. Another related approach is to use [[https://www.geeksforgeeks.org/set-up-virtual-environment-for-python-using-anaconda/][conda/anaconda]].
 *** Beginning Python Assessment 2
-    [[file:~/gitRepos/introComp4Psych/assessments/hangmanPython.org]]
+    [[file:~/gitRepos/Intro2Computing4Psychology/assessments/hangmanPython.org][hangman and python assessment]]
 
 * Footnotes
 
