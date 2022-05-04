@@ -142,7 +142,7 @@ Git is a program for version control, but there are others. Some of these are pr
    4. [[https://vimeo.com/456349697][Github Enabled Tools]]
    5. [[https://vimeo.com/456349516][The Github Pull Request Assessment Reviewed]]
 * Beginning Programming (with Python as an example)
-  What is programming, and what are some of the basics of approach and terminology? Using python as a en example basic concepts such as variables, loops, indexing and assignments are illustrated. We will also begin to examine how we can mix code with text in Emacs in preparing to generate reproducible research reports that mix code, data, text, and references. Our tool for that is called org babel.
+  What is programming, and what are some of the basics of approach and terminology? Using python as an example basic concepts such as variables, loops, indexing and assignments are illustrated. We will also begin to examine how we can mix code with text in Emacs in preparing to generate reproducible research reports that mix code, data, text, and references. Our tool for that is called org babel.
 ** Files
    1. [[file:../topics/beginningPython.org][Beginning Python]]
 *** Assessments
