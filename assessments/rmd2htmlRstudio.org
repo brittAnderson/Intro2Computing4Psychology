@@ -1,4 +1,4 @@
-#+Title: Title - Assessment
+#+Title: Rmd to Html Assessment
 
 * Task
 Expand on your Rmd file submitted for Your First Rmd File to include additional material.
