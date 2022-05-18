@@ -16,7 +16,7 @@
     2. Make sure it is in .org format. To do this you will want to, 
        1. open Emacs.
        2. open a new file
-       3. save as with a suitable name and the extension ".org".
+       3. =save as= (you can try ~C-x C-s~) with a suitable name and the extension ".org".
        4. Give each question its own heading (start the line with a single "*" and a following space).
        5. Put your answer underneath this heading.
        6. Save.
