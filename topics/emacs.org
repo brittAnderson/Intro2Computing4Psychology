@@ -66,7 +66,7 @@
 
     Lastly, there are Emacs bundles where someone has decided to create a system that uses Emacs and contains already configured a selection of emacs packages that play well together. Many people find these a nice help when getting started. If you decide you want to keep trying emacs after this course, but find it hard to get started, then one of these two options ([[https://www.spacemacs.org/][spacemacs]] ; [[https://github.com/doomemacs/doomemacs][doomemacs]] )might be worth a look. If you are the kind of person who likes books for learning, check out Mastering Emacs. 
 *** Program Your Editor
-    Emacs can be programmed with elisp code, it's own [[https://en.wikipedia.org/wiki/Lisp_(programming_language)][lisp]]. You can actually change the functions of your editor while using it. Usually, you don't really need to know elisp. You just need to have the confidence to cut and paste to the right location, usually our init.el file. 
+    Emacs can be programmed with elisp code, it's own [[https://en.wikipedia.org/wiki/Lisp_(programming_language)][lisp]]. You can actually change the functions of your editor while using it. Usually, you don't really need to know elisp. You just need to have the confidence to cut and paste to the right location, usually your init.el file. 
 **** An example: Turn off the tool bar.
      - To search for functions you can use the help ~C-h-f~. This will allow you to search for functions. Try the keyword menu and tab and see if you come across a likely contender (~menu-bar-showhide-tool-bar-menu-customize-disable~).
      - Navigate to the scratch buffer. Put that function in parantheses. Move to the end. Type ~C-x C-e~. Did your tool bar go away?
@@ -83,7 +83,7 @@
     6. What would you need to export a pdf?
        Try installing ~texlive-latex-base texlive-latex-extra~. If that doesn't work, repeat with ~texlive-latex-recommended~. If that doesn't fix the problem go with ~texlive-full~. This is big. Be patient.
 * Emacs Activity and Assessment
-  [[file:../assessments/emacsBeginningAssessment][Beginning Emacs Assessment]]
+  [[file:../assessments/emacsBeginningAssessment.org][Beginning Emacs Assessment]]
 * Footnotes
 
 [fn:1] https://www.emacswiki.org/emacs/EmacsHistory
