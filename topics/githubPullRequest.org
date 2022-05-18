@@ -53,7 +53,7 @@
   - Pull :: the transfer of information and changes *from* one repository incorporated into another. This is how you get the new information from a remote transported to a local repository that you control.
   - Push :: this is the transfer of information *to* a repository you control (or have permissions to push to) from another repository that you control. This is often from your local laptop version to the hosted repository (your fork) on github. 
   - Pull Request :: When you have information or changes that you think would be helpful to a remote you do *not* have push permissions for then you can request that the owner of that repository pull in your changes. This is a formal process called a pull request. It is primarily a github concept and not a git concept.
-  - Branch :: within a repository the development of the code may be proceeding in a few different directions at the same time. The principal production branch is conventionally called *master*. And the principal repository that is the main, shared one is called *origin*. We will not be working with branches in our course, but those terms do show up in commands. f
+  - Branch :: within a repository the development of the code may be proceeding in a few different directions at the same time. The principal production branch is conventionally called *master*. And the principal repository that is the main, shared one is called *origin*. We will not be working with branches in our course, but those terms do show up in commands.
 
   All of these "[[https://git-scm.com/book/en/v2/Git-Basics-Getting-a-Git-Repository][basics]]" are covered in detail in the book Pro Git (available on line). 
 
@@ -64,14 +64,14 @@
    1. Open a terminal
    2. Move (~cd~ or ~dir~) into your Desktop
    3. type =git init myrepo=
-   4. Should see message from the terminal prompt that it has been created.
+   4. You should see message from the terminal prompt that it has been created.
    5. Feel free to delete (e.g. =rm -rf ./myrepo=)
 ** Cloning a Course Repo
    (video: [[https://vimeo.com/channels/i2c4p/456349595][what is a repository and a remote?]])
    You should already have forked the two course repositories. If not, go back and [[file:../assessments/githubIDAssessment.org][do that]].
    Then, on your laptop (Xubuntu):
    1. Move to a directory where you want to keep things organized. I use =~/gitRepos/=. To make that directory you could do ~mkdir ~/gitRepos/~ and then ~cd~ to it. Verify you are there with ~pwd~. All this is happening /in the terminal./
-   2. Open a web browser and find your fork of Psych363. On that page there should be a button to clone it that will allow you to copy the command.
+   2. Open a web browser and find *your fork* of Psych363. On that page there should be a button to clone it that will allow you to copy the command. It may be hidden. Look for a blue "code" button. Hitting that may open the dialogue that shows you the clone command.
    3. Go back to your terminal and paste it (usually =Ctrl-Shift v=). Hit <enter>.
    4. You should see some activity that things are being copied.
    5. =ls= to see you have a new directory in your =gitRepos= directory.
