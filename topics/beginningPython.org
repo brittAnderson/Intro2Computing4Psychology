@@ -61,7 +61,10 @@
    | 3 |
    | 4 |
 
-   And another for python
+
+   Note what we did there? We added the same number "2" to each of two other numbers that we put in a list.
+   
+   And another code block for python
 
    #+Begin_src python :results output :exports both
    myname = "britt"
@@ -71,6 +74,11 @@
    #+End_src
 
    #+RESULTS:
+   : (0, 'b')
+   : (1, 'r')
+   : (2, 'i')
+   : (3, 't')
+   : (4, 't')
 
 ** Some programming vocabulary
 *** Data often come in *Types*
@@ -100,7 +108,8 @@
     #+RESULTS:
     : 366
     
-    Here we treat the number of days in a regular year as a constant while allowing ~daysThisYear~ to be a variable which can change with a leap year. 
+
+Here we treat the number of days in a regular year as a constant while allowing ~daysThisYear~ to be a variable which can change with a leap year. 
 *** Assignment and Equality
     ~=~ is different from ~==~
 
@@ -273,13 +282,13 @@
      5. Fix it.
      6. Keep C-c C-c'ing on each line and look at what is happening in your console.
      7. When your cursor is on a python word, like ~print~, look in the mode line.
-     8. Try M-x linum-mode
+     8. Try ~M-x linum-mode~
      9. Looking for something more full featured? Try =elpy=. Instructions to install found [[file:emacsPythonIdeInstructions.org][here]]. 
 ** Pip to Install Libraries and Virtual Environments
    In general, try to use one packaging system for your installation. If you chose to get your packages via Ubuntu repositories (i.e. =apt=) then try to get as many from there as you can. 
    Otherwise the =pip= tool is convenient. 
 *** Pip
-    pip is the python install package program. There have been many ways to install python packages over the years and you will find a lot of tracks on the internet.  For now stick with pip (ubuntu also has many of these packages, but I find it better to try and not to mix package managers. Use your choice; mine is pip).
+    =pip= is the python install package program. There have been many ways to install python packages over the years and you will find a lot of tracks on the internet.  For now stick with pip (ubuntu also has many of these packages, but I find it better to try and not to mix package managers. Use your choice; mine is pip).
 *** Virtual Environments
     When you install software to your system there is always a chance that you will install packages that conflict with each other. One way to reduce the risk of this problem is to install your programs and packages into small isolated sandboxes. The idea is that each sandbox exists independent of each of the others and only sees the packages that are installed locally to it. [[https://docs.python.org/3/tutorial/venv.html][Virtual environments]] are a way to achieve this sandboxing, and python has built in tools to support this idea. The use of =venv= and similar ideas is beyond the scope of what we have time for here, but it is not overly complicated to set up and use. You should read further on this topic if you plan to use python more extensively in the future. Another related approach is to use [[https://www.geeksforgeeks.org/set-up-virtual-environment-for-python-using-anaconda/][conda/anaconda]].
 *** Beginning Python Assessment 2

@@ -12,7 +12,8 @@
     Downloading and installing R on xubuntu is a one line command. Most linux distributions will have a version of R in their package collections. However, sometimes the R distribution will update faster than the linux package system tracks. Thus, it can be useful if you are using very new R tools or packages to follow a repository that more closely follows the R developers release cycles. 
 
     To install the base version of R on Xubuntu using the standard repositories you do: ~sudo apt install r-base~. If you want to track an R repository you could add to your current repositories first. Some additional tools may be necessary. 
-    
+    #+Name: track cran r repo
+    #+Caption: They change the details often. See here https://cloud.r-project.org/bin/linux/ubuntu/ for latest instructions. 
     #+begin_src sh :eval never
     sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E298A3A825C0D65DFD57CBB651716619E084DAB9
     sudo add-apt-repository 'deb https://cloud.r-project.org/bin/linux/ubuntu focal-cran40/'
@@ -42,12 +43,13 @@
   #+Caption: Use the function ~typeof~ in R to determine the datatype of a variable. 
   #+begin_src R :session *R363*
     a = 1
-    typeof(a)
+   f typeof(a)
   #+end_src
 
-  #+RESULTS:
+  #+RESULTS: typeof
   : double
 
+  
 ** Lists and other data structures in R
 
   #+Name: Lists and Tuples and Data Frames
@@ -72,7 +74,7 @@
   comfort grows you will want to return to this issue and better
   understand the pros and cons of switching from =data.frames= to
   =data.tables=. You can think of =data.frames= as sort of like spread
-  sheets. But they are much handier. For example:
+  sheets. But they are much handier. For example, let's look at the cars data frame that comes as part of the base R installation. You can verify it is installed like this. 
   
      #+begin_src R :session *R363*
        is.data.frame(cars)
@@ -94,7 +96,12 @@
    
      Can you do that easily in Excel?
 
-     Accessing Data in R Assessment
+     What is going on here?
+     1. ~cars~ is the name of the data frame.
+     2. We access a /column/ of the data frame with the dollar sign notation ~cars$dist~. You can see the names of the columns in a data frame with ~names(cars)~.
+     3. We use the square brackets to /index/ the column of data we are interested in. Here we do not use specific numbers, but rather we use a /boolean/ to compare the values in a column and we only include the ~TRUE~ values. Here we ask for all the indices where the speed is greater than 10, but less than 20, and we use those indices to get the values for the ~dist~ column. 
+
+*** Accessing Data in R Assessment - Practice
       1. Sort (or ~order~) cars by the ~dist~ variable.
       2. Find the mean and standard deviation of the speed of the cars.
       3. Are there other datasets?
@@ -107,30 +114,30 @@
       7. What is the /comment/ designator for R?
       8. What is the ending extension of an R script?
 
-* Loops
+** Loops
   This is a good example of where things are slightly different between python and R. R uses a more functional style and is sometimes called [[https://paulvanderlaken.com/2017/10/13/functional-programming-and-why-you-should-not-grow-vectors-in-r/][vectorizing]].
-** For Loop
+*** For Loop
          #+Name: For Loop in R
     #+begin_src R :session *R363* :exports both :results output
            ml = seq(1:10)
 
            for  (m in ml) {
-               print(ml)
+               print(m)
            }
     #+end_src
 
     #+RESULTS: For Loop in R
     #+begin_example
-     [1]  1  2  3  4  5  6  7  8  9 10
-     [1]  1  2  3  4  5  6  7  8  9 10
-     [1]  1  2  3  4  5  6  7  8  9 10
-     [1]  1  2  3  4  5  6  7  8  9 10
-     [1]  1  2  3  4  5  6  7  8  9 10
-     [1]  1  2  3  4  5  6  7  8  9 10
-     [1]  1  2  3  4  5  6  7  8  9 10
-     [1]  1  2  3  4  5  6  7  8  9 10
-     [1]  1  2  3  4  5  6  7  8  9 10
-     [1]  1  2  3  4  5  6  7  8  9 10
+    [1] 1
+    [1] 2
+    [1] 3
+    [1] 4
+    [1] 5
+    [1] 6
+    [1] 7
+    [1] 8
+    [1] 9
+    [1] 10
     #+end_example
 
     Compare to the python code. Look for the ":" and the "{}"'s in both examples. You can see how your knowledge of looping in one language helps you understand looping in the other, but the details may be different.
@@ -265,6 +272,8 @@ myadd(2,3)
 : [1] 5
 
 * Libraries for R:classdiscussion:
+R too has its own package manager. You will usually want to let R manage its own packages. You do this from within R itself. Here are some code snippets showing this in practice.
+
   #+Name: Installing Packages in R
   #+Caption: Package Installation Commands in R. Note the use of quotes differs.
   #+begin_src R :session *R363* :export code :eval never

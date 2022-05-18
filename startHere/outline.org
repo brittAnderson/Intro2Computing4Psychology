@@ -171,7 +171,7 @@ Git is a program for version control, but there are others. Some of these are pr
    2. [[https://vimeo.com/460262566][Installing R/Rstudio on Linux (Xubuntu]])
    3. [[https://vimeo.com/460262930][Beginning R Walkthrough]]
    4. [[https://vimeo.com/460262936][Assessment Comments]]
-* Data Handling
+* Data Handling (editing here - ba s2022)
 ** Working with Data Python
 *** Files
     1. Topic: [[file:../topics/pythonData.org][Beginning Pandas]]

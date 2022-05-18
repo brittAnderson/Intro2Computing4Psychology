@@ -23,7 +23,7 @@
 * Adding elpy and enabling.
   Restart Emacs
 
-  Make sure you have refreshed your packages.
+  Make sure you have refreshed your packages (~M-x [[help:package-refresh-contents][package-refresh-contents]]~).
 
   Run ~package-install RET elpy RET~
 
