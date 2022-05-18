@@ -35,7 +35,7 @@
 *** First Things First
     Learn the basics. Take the Emacs tutorial  ~Ctrl-h t~ (aka =C-h t=). Consult the Psychotherapist when needed (under help menu). Play a game - try ~M-x tetris~ .
 ** Emacs is highly customizable
-   Just like linux distributions have package managers so does emacs. Usually your emacs customizations will be find in a /hidden/ directory (starts with a dot ('.') in your home directory. For example, =/home/britt/.emacs.d/=
+   Just like linux distributions have package managers so does emacs. Usually your emacs customizations will be found in a /hidden/ directory (starts with a dot ('.') in your home directory. For example, =/home/britt/.emacs.d/=
 *** Where is your "init" file
     Emacs tries to find an initialization file to see your customizations and what, if any, extra packages you may have installed. There are multiple places where it looks, and we want it to look in the right one. 
     Do ~C-x d~. This will display your current directory. The first line shows you where you are. Move up or down as needed to get to your home directory. Look for a file called ~.emacs~. Navigate to it by ~C-n~ and ~C-p~ to move up and down. When you find it and the cursor is on it. Type a capital ~D~. Then confirm the delete. Then ~C-x d~ and tab to =~/.emacs.d/=. Type a plus sign ~+~. For the name of the new file type ~init.el.~
