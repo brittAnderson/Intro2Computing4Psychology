@@ -13,7 +13,9 @@
    - Find the =mean= and =standard deviation= of the speed of the cars.
    - Print the name of the other built-in data sets (this code may help)
         #+begin_src R :export code :results hidden :eval never
-          library(help="datasets")
+	  for (i in data()$results[,3]) {
+	      print(i)
+	      }
         #+end_src
    - Using any other data set find:
      1. Print the column names?
