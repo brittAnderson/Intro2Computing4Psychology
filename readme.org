@@ -16,14 +16,21 @@
      1. a simple data collection (Psychopy),
      2. analysis, and
      3. generation of a reproducible report. 
-	
-  I have recorded a [[https://vimeo.com/448900968][brief video introduction]] to the course.
+
+
+  
+* Org Book
+In December 2022 I began work on collating the material into a sort of "book" using the ~org-publish~ functionality of emacs org-mode. The =org-book= branch tracks that effort. It also incorporates changes in the lessons that have been prompted by new features in the citation features of org-mode and many changes in the methods for installing linux on Windows and Mac laptops.
+
+  I have recorded a [[https://vimeo.com/448900968][brief video introduction]] to the course. Many of those lessons are out of date and the ordering is hard to divine (it is basically alphabetical), but I hope to provide an easier path to follow in this revision.
 
 * Invitation
 
   While the material was developed for students at the University of Waterloo, I hope that some of the material may be useful to others. Feel free to provide feedback, or suggest material for inclusion.
 
 * Organization of the Repository
+
+What follows is left from the =s22= branch. It will be updated as the revision proceeds. 
 
   - In the ~startHere~ directory there is an [[file:startHere/outline.org][outline]] with a path through the material. Other paths are certainly possible, and you are encouraged to just pick and chose what is relevant for you. If you find that you pick a topic and it requires something you skipped you can always backtrack and pick it up later. 
 
