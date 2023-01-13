@@ -3,7 +3,13 @@
 #+Author: Britt Anderson
 
 * Overview
-  This file contains a list of topics and associated activities for teaching yourself how to use your computer for research. Below you will find a list of topics with links to the relevant files in the other directories in this repository. The most convenient way to navigate the links may be to fork this repository and then clone it to your own computer and work from there. The ordering below is used in my course at the University of Waterloo, but you are encouraged to depart from that structure and navigate your own path as your needs and interests dictate. Most of the topics are reasonably self-contained, but of course, some of the later topics may require earlier skills or make reference to earlier activities. 
+  This is the /index/ file for finding your way through the course topics and activities.
+
+  Here is a test of my efforts to [[file:chapters/small.org][link]] to a file deeper in the course and to see if the code examples turn out okay.
+
+  
+
+This file contains a list of topics and associated activities for teaching yourself how to use your computer for research. Below you will find a list of topics with links to the relevant files in the other directories in this repository. The most convenient way to navigate the links may be to fork this repository and then clone it to your own computer and work from there. The ordering below is used in my course at the University of Waterloo, but you are encouraged to depart from that structure and navigate your own path as your needs and interests dictate. Most of the topics are reasonably self-contained, but of course, some of the later topics may require earlier skills or make reference to earlier activities. 
 ** Videos
    https://vimeo.com/channels/i2c4p/448900968
 * RStudio
@@ -20,7 +26,7 @@
       - function
    6. Produce an Rmd file from the above
    7. And export it to an html file that we can open in a web browser and that displays correctly. 
-   For the detailed instructions on the above steps consult [[file:../topics/rStudioWinMacFirstSteps.org][the first
+   For the detailed instructions on the above steps consult [[file:./topics/rStudioWinMacFirstSteps.org][the first
    steps Rstudio file in the topics directory.]]
 *** Warning
     Don't try to use R in Linux until until you have a working
@@ -32,7 +38,7 @@
     explore other editors for this function. Later modules will focus
     in more detail on analysis and visualization.
 ** Files
-    1. [[file:../topics/rStudioWinMacFirstSteps.org][rStudioWinMacFirstSteps.org]]   
+    1. [[file:./topics/rStudioWinMacFirstSteps.org][rStudioWinMacFirstSteps.org]]   
     2. [[file:../assessments/rStudioInstallationWinMacAssessment.org][R Studio Installation Assessment]]
     3. [[file:../assessments/firstRmdAssessment.org][Your first Rmd assessment]]
     4. [[file:../assessments/rmd2htmlRstudio.org][Rmd to Html Assessment]]
@@ -49,7 +55,7 @@
   2. Github signup and walkthrough
      To participate at Github you have to be a member. It is free. Once you have done so, /fork/ this repository.
 ** Files
-   1. [[file:../topics/githubIDBasics.org][Github Topic File]]
+   1. [[file:./topics/githubIDBasics.org][Github Topic File]]
    2. [[file:../assessments/githubIDAssessment.org][Github ID Assessment]]
 ** Videos
    1. [[https://vimeo.com/450563119][Github Introduction]]
@@ -59,23 +65,23 @@
    In this topic you will install a version of Linux on your own machine to use throughout this course (and after, I hope). 
 *** Install Linux As A Virtual Machine 
     This is the new, preferred method. There are a number of videos for Mac and Windows users on how to do this. Note *importantly* the rules are different depending on whether you are using an M1 mac or an Intel mac. Don't know? Well find out. A good workman knows their tools.
-    [[file:../topics/installUbuntu.org::*Steps in Detail - Virtual Machines][Start here]] for more detailed instructions.
+    [[file:./topics/installUbuntu.org::*Steps in Detail - Virtual Machines][Start here]] for more detailed instructions.
 *** Run from a USB (or SD card or external hard drive) *DEPRECATED*
-    As I assume most new users will be hesitant to try and install a second operating system on their personal laptop they use for school and their personal work I am highlighting the use of Linux (Xubuntu) on a USB. You use the USB as your hard disk. You still use you computer's hardware (screen, keyboard, camera, etc), but the reading and writing of data takes place on the USB. It makes things slower, but you don't change your personal set up. Shut down. Remove USB. Start back up and you are back to where you are used to. It is a reasonable way to get started for experimenting and learning, but not an ideal way to run a system long-term. Consider converting to a more flexible and faster option in the future. Details of all the steps you have to take, and there are many, can be found in the [[file:../topics/installUbuntu.org][topics file]]. 
+    As I assume most new users will be hesitant to try and install a second operating system on their personal laptop they use for school and their personal work I am highlighting the use of Linux (Xubuntu) on a USB. You use the USB as your hard disk. You still use you computer's hardware (screen, keyboard, camera, etc), but the reading and writing of data takes place on the USB. It makes things slower, but you don't change your personal set up. Shut down. Remove USB. Start back up and you are back to where you are used to. It is a reasonable way to get started for experimenting and learning, but not an ideal way to run a system long-term. Consider converting to a more flexible and faster option in the future. Details of all the steps you have to take, and there are many, can be found in the [[file:./topics/installUbuntu.org][topics file]]. 
 *** Install Xubuntu to a USB Topic
-    [[file:../topics/installUbuntu.org][installUbuntu.org]]
-    This ([[file:../topics/installingUbuntu_MacVersion.org][installingUbuntu_MacVersion.org]]) is an older file that may have some good hints still. It is here for historical reasons and for its links. As of Spring 2022 I think everything you need is in the regular installUbuntu.org file linked immediately above.
+    [[file:./topics/installUbuntu.org][installUbuntu.org]]
+    This ([[file:./topics/installingUbuntu_MacVersion.org][installingUbuntu_MacVersion.org]]) is an older file that may have some good hints still. It is here for historical reasons and for its links. As of Spring 2022 I think everything you need is in the regular installUbuntu.org file linked immediately above.
 *** Dual Booting
-    [[file:../topics/installUbuntu.org::*Dual Boot][Dual Boot]]
+    [[file:./topics/installUbuntu.org::*Dual Boot][Dual Boot]]
 *** Linux Only
-    [[file:../topics/installUbuntu.org::*Linux only][linux only]]
+    [[file:./topics/installUbuntu.org::*Linux only][linux only]]
 ** Xubuntu Walkthrough
    [[https://vimeo.com/channels/i2c4p/453034310][Explaining your first Xubuntu Boot (video)]]
    [[https://vimeo.com/channels/i2c4p/453295883][First Boot Housekeeping Steps (video)]]
 ** Package Management
    [[https://vimeo.com/channels/i2c4p/453295879][Installing your first package (emacs) (video)]]
 ** Files
-   1. [[file:../topics/installUbuntu.org][Installing Ubuntu Instructions]]
+   1. [[file:./topics/installUbuntu.org][Installing Ubuntu Instructions]]
    2. [[file:../assessments/installXubuntuAssessment.org][Xubuntu Installation Assessment]]
 ** Videos
    1. [[https://vimeo.com/448906706][Intro to Booting Linux]]
@@ -111,7 +117,7 @@
   In this first look at the terminal (command line) I make a brief survey and show some common commands. 
   The terminal is a text based interface to your computer. It can greatly simplify many common tasks and allow you to easily automate many mundane computational procedures. 
 ** Files
-   1. [[file:../topics/intro2TheTerminal.org][Introduction to the Terminal]]
+   1. [[file:./topics/intro2TheTerminal.org][Introduction to the Terminal]]
    2. [[file:../assessments/terminal.org][Terminal Assessment]]
 ** Videos
    1. [[https://vimeo.com/453837330][An Introduction to the Terminal]]
@@ -120,7 +126,7 @@
 * Emacs 
   Emacs is a text editor that has been developed for fifty years. In addition to being a tool for writing it is also excellent for coding, programming, visualizing graphics and combining these into a single document that can easily be exported to web pages and pdf. Here we get a first glimpse of the program itself, some of its operational quirks, and a bit of show and tell of its power. Much of this power in contemporary emacs comes from orgmode, a mode that lets you do everything from making notes in outline to organizing your appointments and contacts. 
 ** Files
-   1. [[file:../topics/emacs.org][Emacs]]
+   1. [[file:./topics/emacs.org][Emacs]]
    2. [[file:../assessments/emacsBeginningAssessment.org][Beginning Emacs Assessment]]
 ** Videos
    1. [[https://vimeo.com/455641662][Emacs Show and Tell]]
@@ -128,13 +134,13 @@
 * Version Control
   Version control is a highly versatile and powerful to way to track changes, un-do them, and coordinate all this across multiple users in multiple locations. Here I introduce one particular program for version control, and a popular cloud platform designed to work with it. 
 ** Git
-Git is a program for version control, but there are others. Some of these are presented in the [[file:../topics/githubPullRequest.org][github pull request topic.]] There are also tools for working with and sharing git repositories. The most famous is github. 
+Git is a program for version control, but there are others. Some of these are presented in the [[file:./topics/githubPullRequest.org][github pull request topic.]] There are also tools for working with and sharing git repositories. The most famous is github. 
 ** Github
    A large social coding site there are particular terms of art for git and github that are important to work with this 
 ** Github Basics
    To work through the assessment for issues and pull requests you will have first need to complete creating a github account and forking respositories ([[*Github][see above]])
 ** Files
-   1. [[file:../topics/githubPullRequest.org][Some Background On Git and Pull Requests]]
+   1. [[file:./topics/githubPullRequest.org][Some Background On Git and Pull Requests]]
    2. [[file:../assessments/githubPullRequestAssmnt.org][The Pull Request Assessment]]
 ** Videos
    1. [[https://vimeo.com/456349826][An Introduction to Version Control]]
@@ -145,7 +151,7 @@ Git is a program for version control, but there are others. Some of these are pr
 * Beginning Programming (with Python as an example)
   What is programming, and what are some of the basics of approach and terminology? Using python as an example basic concepts such as variables, loops, indexing and assignments are illustrated. We will also begin to examine how we can mix code with text in Emacs in preparing to generate reproducible research reports that mix code, data, text, and references. Our tool for that is called org babel.
 ** Files
-   1. [[file:../topics/beginningPython.org][Beginning Python]]
+   1. [[file:./topics/beginningPython.org][Beginning Python]]
 *** Assessments
     1. [[file:../assessments/forLoopPythonAssessment.org][For loop in python]].
     2. [[file:../assessments/hangmanPython.org][Hangman Python]]
@@ -162,8 +168,8 @@ Git is a program for version control, but there are others. Some of these are pr
 ** Repeating the Rmd exercises in Linux
 ** Repeating Python exercises in R
 ** Files
-   1. [[file:../topics/installingR.org][Installing R]]
-   2. [[file:../topics/beginningR.org][Beginning R]]
+   1. [[file:./topics/installingR.org][Installing R]]
+   2. [[file:./topics/beginningR.org][Beginning R]]
    3. [[file:../assessments/accessingDatainRAssessment.org][Accessing Data in R (assessment)]]
    4. [[file:../assessments/hangmanRAssessment.org][Hangman in R (assessment)]]
 ** Videos
@@ -174,7 +180,7 @@ Git is a program for version control, but there are others. Some of these are pr
 * Data Handling (editing here - ba s2022)
 ** Working with Data Python
 *** Files
-    1. Topic: [[file:../topics/pythonData.org][Beginning Pandas]]
+    1. Topic: [[file:./topics/pythonData.org][Beginning Pandas]]
     2. Assessment: [[file:../assessments/dataPandasAssessment.org][Pandas Assessment]]
 *** Videos
     1. [[https://vimeo.com/462705773][Intro to the Module]]
@@ -190,7 +196,7 @@ Git is a program for version control, but there are others. Some of these are pr
    Plotting in python has come along way. The workhorse library is matplotlib. This library is demonstrated for making an interaction plot. 
 ** A slight digression on Jupyter Notebooks  (Planned)
 *** Files
-    1. [[file:../topics/plottingRandPy.org][Plotting in R and Python]] (topic)
+    1. [[file:./topics/plottingRandPy.org][Plotting in R and Python]] (topic)
     2. [[file:../assessments/plottingRandPyAssessment.org][Plotting in R and Python]] (assessment)
 *** Videos
     1. [[https://vimeo.com/463525019][Intro to Plotting in R and Python]]
@@ -206,7 +212,7 @@ Git is a program for version control, but there are others. Some of these are pr
 *** Biblatex (Bibtex)
 ** Mixing Code and Text
 ** Files
-   1. [[file:../topics/reportWriting.org][Report Writing]] (topic)
+   1. [[file:./topics/reportWriting.org][Report Writing]] (topic)
    2. [[file:../assessments/reportGenAssessment.org][Report Writing]] (assessment)
    3. [[file:../codeExamples/reportGen/][Report Generation Practice Files]] (directory)
 ** Videos
@@ -226,12 +232,12 @@ Git is a program for version control, but there are others. Some of these are pr
      - How to install it
      - How to use it (Posner Demo)
 *** Files
-    1. [[file:../topics/installTestPsychopy.org][Programming Experiments & Installing and Testing Psychopy]] (topic file)
+    1. [[file:./topics/installTestPsychopy.org][Programming Experiments & Installing and Testing Psychopy]] (topic file)
     2. [[file:../assessments/psychopyAssessment.org][Coding the Posner Task]] (assessment file)
 *** Videos
     1. [[https://vimeo.com/469970965][Intro to Coding Experiments]]
     2. [[https://vimeo.com/469970967][Which Language to Use?]]
-    3. [[ https://vimeo.com/460262765][Installing and Testing Psychopy]]
+    3. [[https://vimeo.com/460262765][Installing and Testing Psychopy]]
     4. [[https://vimeo.com/469968313][Posner Demo Assessment Introduction]]
 * Presentations (Extra WIP)
 ** From Text File to Slideshow
