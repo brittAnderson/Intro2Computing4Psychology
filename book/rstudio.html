@@ -1,0 +1,491 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2023-01-13 Fri 13:18 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>RStudio</title>
+<meta name="author" content="Britt Anderson" />
+<meta name="generator" content="Org Mode" />
+<style>
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { }
+</style>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        displayAlign: "center",
+        displayIndent: "0em",
+
+        "HTML-CSS": { scale: 100,
+                        linebreaks: { automatic: "false" },
+                        webFont: "TeX"
+                       },
+        SVG: {scale: 100,
+              linebreaks: { automatic: "false" },
+              font: "TeX"},
+        NativeMML: {scale: 100},
+        TeX: { equationNumbers: {autoNumber: "AMS"},
+               MultLineWidth: "85%",
+               TagSide: "right",
+               TagIndent: ".8em"
+             }
+});
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">RStudio</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org92dde76">1. First Steps in Programming and Markdown: RStudio</a></li>
+<li><a href="#orge9105af">2. Overview Of The Steps To Be Taken</a>
+<ul>
+<li><a href="#org40a18b5">2.1. Download R</a></li>
+<li><a href="#org246ef17">2.2. Download RStudio</a></li>
+<li><a href="#orgffe2232">2.3. Verify That Both R and RStudio Are Working</a></li>
+<li><a href="#org3d83f1d">2.4. Generate and Rmd file; Try some simple programming; export a webpage</a>
+<ul>
+<li><a href="#org63fe132">2.4.1. A Video Example of Using RStudio</a></li>
+</ul>
+</li>
+<li><a href="#org98b10fe">2.5. Using R and RStudio</a>
+<ul>
+<li><a href="#org75f3674">2.5.1. Variables, Loops and Functions</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org015cf0c">3. Testing Yourself</a>
+<ul>
+<li><a href="#org7e0763a">3.1. First Rmd Assessment</a></li>
+<li><a href="#org3d186ac">3.2. Rmd Exported to Html Assessment</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org92dde76" class="outline-2">
+<h2 id="org92dde76"><span class="section-number-2">1.</span> First Steps in Programming and Markdown: RStudio</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+Programming means writing instructions for a computer. R is a common programming language that is designed for facilitating statistical analyses and visualizations. In order to make programming easier there are other programs called Integrated Development Environments (IDE) that provide an editor for writing, syntax checking to highlight important code features and facilitate catching errors. They may also allow for visualizations of results and looking up help and other documentation. For this chapter we will install the programming language R, the IDE Rstudio, and will learn how to use a simple markup language to combine text and code in a single document. The markup language we will use for this chapter is called <b>RMarkdown</b>.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orge9105af" class="outline-2">
+<h2 id="orge9105af"><span class="section-number-2">2.</span> Overview Of The Steps To Be Taken</h2>
+<div class="outline-text-2" id="text-2">
+<ol class="org-ol">
+<li>Download R</li>
+<li>Download RStudio</li>
+<li>Verify they are working</li>
+<li>Generate a simple Rmd file to see some of the basic components of the markdown syntax</li>
+<li>Add some simple computing constructs including a 
+<ul class="org-ul">
+<li>variable</li>
+<li>for loop</li>
+<li>function</li>
+</ul></li>
+<li>Produce an Rmd file from the above</li>
+<li>And export it to an html file that we can open in a web browser and that displays correctly.</li>
+</ol>
+</div>
+
+<div id="outline-container-org40a18b5" class="outline-3">
+<h3 id="org40a18b5"><span class="section-number-3">2.1.</span> Download R</h3>
+<div class="outline-text-3" id="text-2-1">
+<p>
+R is free statistical software. As it is a very popular language of academic statisticians many new and cutting edge statistical techniques are available for R users that are well vetted. The comprehensive R network (<a href="https://cran.r-project.org/">CRAN</a>) maintains download links and instructions. 
+</p>
+
+<p>
+The CRAN webpage also has links to <a href="https://cran.r-project.org/manuals.html">manuals</a> that are useful for learning more about the language and its functions. While there is great material elsewhere, and you can find it by internet searches, it is still advisable to start at CRAN first. You know that information is curated by the body that funds, develops, and supports the language. 
+</p>
+
+<p>
+This video walks through the <a href="https://vimeo.com/450719112">R download process</a>.
+</p>
+
+<iframe title="vimeo-player" src="https://player.vimeo.com/video/450719112?h=8245fb58e1" width="640" height="360" frameborder="0" allowfullscreen></iframe>
+</div>
+</div>
+
+<div id="outline-container-org246ef17" class="outline-3">
+<h3 id="org246ef17"><span class="section-number-3">2.2.</span> Download RStudio</h3>
+<div class="outline-text-3" id="text-2-2">
+<p>
+RStudio is not R. It is a development environment wrapped around R. You can use R without RStudio (that is the way I use it and what I recommend). However, RStudio does provide an easy way to get started. The people who make RStudio have a free desktop version that will provide all the functionality that we will need. They also make commercial tools that build on the basic RStudio functionality.
+</p>
+
+<ol class="org-ol">
+<li><a href="https://rstudio.com/products/rstudio/download/#download">Here</a> is where you can get RStudio. Choose the right version for your operating system and follow the instructions.</li>
+<li><p>
+This <a href="https://vimeo.com/450719047">video</a> shows a Rstudio download process:
+</p>
+<iframe src="https://player.vimeo.com/video/450719047?h=ad2b25da4c" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe></li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-orgffe2232" class="outline-3">
+<h3 id="orgffe2232"><span class="section-number-3">2.3.</span> Verify That Both R and RStudio Are Working</h3>
+<div class="outline-text-3" id="text-2-3">
+<p>
+The way to do this is to open the RStudio program and type in some simple equation such as \(2 + 2\) and it should print <code>4</code>.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org3d83f1d" class="outline-3">
+<h3 id="org3d83f1d"><span class="section-number-3">2.4.</span> Generate and Rmd file; Try some simple programming; export a webpage</h3>
+<div class="outline-text-3" id="text-2-4">
+<p>
+One of our course goals is to promote reproducible research. One of the ways you do this is by sharing the actual code you used for an analysis. Ideally this is embedded in the actual file you use to generate your report and manuscript. But you don't want the code showing in the finished version. Using a markup language to write the report allows you to accomplish all this. You write the article in text. You write the code for statistical tests and plots in the code. You blend the two together to produce a manuscript with the results of the code executed and embedded. You can share the raw file with anyone who wishes to repeat your analysis or edit it.
+</p>
+
+<p>
+RStudio supports several different ways of interacting with R and generating output. We will use the Rmd file, which stands for R Mark Down.
+</p>
+
+<p>
+We are using R because we will use the R language for our programming later on and markdown because we are using the R markdown syntax (there are other varieties of markdown with slight differences in syntax and functions) for telling RStudio how to format our export file when it runs the code and reads our program. We will use this below to make the file we open in our browser. In short, you will author a web page.
+</p>
+</div>
+
+<div id="outline-container-org63fe132" class="outline-4">
+<h4 id="org63fe132"><span class="section-number-4">2.4.1.</span> A Video Example of Using RStudio</h4>
+<div class="outline-text-4" id="text-2-4-1">
+<p>
+Pay attention to the difference between the <i>editor</i> window and the <i>console</i>. The console evaluates the code and prints out the answer. You can use it to test whether your R code does what you think it should be doing. The editor is where you mix the code with text. It lies static until you tell it to run a line, a block, or the entire document. It will then ouput the result (if there were no errors that you have to fix) in a viewer that is internal to RStudio. You want to be able to save that output somewhere (or know where RStudio saves it). Then you can open that file in your browser to see the full power of being able to write a simple text file and get produced a fully featured web page. 
+</p>
+
+<iframe src="https://player.vimeo.com/video/450719009?h=a948a7e251" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+<p><a href="https://vimeo.com/450719009">B3 : RStudio Walkthrough (i2c4p)</a> from <a href="https://vimeo.com/epistemic">Britt Anderson</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
+
+<iframe src="https://player.vimeo.com/video/450718879?h=67edf0e412" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+<p><a href="https://vimeo.com/450718879">B4 : Demonstrating the Power of RMarkdown (i2c4p)</a> from <a href="https://vimeo.com/epistemic">Britt Anderson</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org98b10fe" class="outline-3">
+<h3 id="org98b10fe"><span class="section-number-3">2.5.</span> Using R and RStudio</h3>
+<div class="outline-text-3" id="text-2-5">
+<p>
+Programming languages can look very different, but most of the common ones have the same basic constructs. If you familiarize yourself with these common constructs you will be able to get started more quickly, and more easily transition to other programming languages that might fit your future needs better.
+</p>
+</div>
+
+<div id="outline-container-org75f3674" class="outline-4">
+<h4 id="org75f3674"><span class="section-number-4">2.5.1.</span> Variables, Loops and Functions</h4>
+<div class="outline-text-4" id="text-2-5-1">
+</div>
+<ol class="org-ol">
+<li><a id="org0e3430e"></a>Variables<br />
+<div class="outline-text-5" id="text-2-5-1-1">
+<p>
+A <b>variable</b> is something that holds a value. A value doesn't have to be a number. It could be name, character, or a list of pupil diameters, of even some larger data structure. As the name implies a variable may vary in most programming languages. You could for instance use a variable to "count" how many times you have done an operation. Repeating an operation or action several times is often referred to as "looping."
+</p>
+
+<div class="org-src-container">
+<label class="org-src-name"><span class="listing-number">Listing 1: </span>Declaring a Variable in R. Note that this is typeset using a markup language call <code>orgmode</code> that is accessible in <code>emacs</code>, a text editing environment we will learn to use later in this course. If you look at the source code for this file you will see that this code is being executed to produce the final html file that you can view online.</label><pre class="src src-R" id="org15b9567">a = 3
+a = a + 1
+print(a)
+</pre>
+</div>
+
+<pre class="example">
+4
+</pre>
+</div>
+</li>
+
+<li><a id="org27f10cc"></a>Loops<br />
+<div class="outline-text-5" id="text-2-5-1-2">
+<p>
+Often we use programs to automate things that need to be done over and over again. In many statistical and experimental procedures this need for repetition is common. Consider  finding the mean reaction time for a large number of experimental participants who each completed a large number of experimental trials.
+</p>
+
+<p>
+When you have a task to do that needs to run until some condition is met you will often use a <code>while</code> loop. When you need to do something for a set number of time or through a list of items then you will typically use a <code>for</code> loop. A <code>for</code> loop iterates through a structure and executes the same code, the code in the <i>body</i> of the loop each time through. 
+</p>
+
+<div class="org-src-container">
+<label class="org-src-name"><span class="listing-number">Listing 2: </span>A For Loop in R</label><pre class="src src-R"><span style="color: #a020f0;">for</span> (i <span style="color: #a020f0;">in</span> seq(1,10)) {
+  print(i)
+}
+</pre>
+</div>
+
+<pre class="example" id="orgb3610b5">
+[1] 1
+[1] 2
+[1] 3
+[1] 4
+[1] 5
+[1] 6
+[1] 7
+[1] 8
+[1] 9
+[1] 10
+</pre>
+</div>
+</li>
+
+<li><a id="org6f299dc"></a>Functions<br />
+<div class="outline-text-5" id="text-2-5-1-3">
+<p>
+Functions in programming languages are black boxes for taking input and returning output. You, the author of the function, fill in the details of the black box, but we users only know what we feed in and what we get back. Each programming language has its own way of telling the processor what is and what is not a function. In R we use the keyword <code>function</code> and assign our code to a name that users can type to call our code. It also allows us to say what the input can be and to give names to the input that are used <b>locally</b> in our function.
+</p>
+
+<p>
+For example, let's say we want to know if a number is even. We can use R's built in function to tell us the remainder of a division. This function is an <i>infix</i> function as we put it INside its arguments. It uses the symbols <code>%%</code>. For example ~ 5 %% 2~ equals 1 because if you divide 5 by 2 you have 1 left over. 
+</p>
+
+<p>
+To know if a number is odd or even we only need to know if the remainder when divided by two is or is not zero. To do this we can use a <b>predicate</b>. A predicate is a test that comes back true or false depending on whether a condition is met. Putting this altogether we can write a function that evaluates if a number is odd. 
+</p>
+
+<div class="org-src-container">
+<label class="org-src-name"><span class="listing-number">Listing 3: </span>Defining a Function in R</label><pre class="src src-R"><span style="color: #0000ff;">isOdd</span> <span style="color: #008b8b;">&lt;-</span> <span style="color: #a020f0;">function</span>(n) {
+           <span style="color: #a020f0;">return</span>(n %% 2 != 0)
+}
+</pre>
+</div>
+
+<p>
+And then we can use our function in a test:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-R">print(isOdd(5))
+</pre>
+</div>
+
+<pre class="example">
+[1] TRUE
+</pre>
+
+
+<p>
+We could then use this output value to test whether to print the number by using an <code>if</code> statement.
+</p>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-org015cf0c" class="outline-2">
+<h2 id="org015cf0c"><span class="section-number-2">3.</span> Testing Yourself</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+Try to produce an Rmd file from the above examples and see if you can get it and export it to an html file that we can open in a web browser and that displays correctly. 
+</p>
+</div>
+
+<div id="outline-container-org7e0763a" class="outline-3">
+<h3 id="org7e0763a"><span class="section-number-3">3.1.</span> <a href="assets/assessments/firstRmdAssessment.html">First Rmd Assessment</a></h3>
+</div>
+<div id="outline-container-org3d186ac" class="outline-3">
+<h3 id="org3d186ac"><span class="section-number-3">3.2.</span> <a href="assets/assessments/rmd2htmlRstudio.html">Rmd Exported to Html Assessment</a></h3>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">Date: 2023-01-13 Fri 00:00</p>
+<p class="author">Author: Britt Anderson</p>
+<p class="date">Created: 2023-01-13 Fri 13:18</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

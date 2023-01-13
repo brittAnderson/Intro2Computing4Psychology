@@ -1,0 +1,21 @@
+#+TITLE: Install Package - Emacs Assessment
+
+* Task
+
+Demonstrate that you have a functioning Linux installation and that you can use the package management system. 
+
+* Details
+  1. Open up a terminal. In Xubuntu go to the upper left of your desktop and click the icon. Type terminal in the search bar and select the top option.
+  2. When the terminal opens type ~sudo apt update~ to update your list of currently available packages. This package manager works for Xubuntu, but will not be found on all Linux distributions.
+  3. Type ~sudo apt install emacs~
+  4. Follow the on screen instructions. When installation is complete type, in the same terminal window, ~emacs &~.
+  5. Emacs will open. Use the ~File~ menu to create a new file with a sensible name in the file itself type in your name and student id and save the file as type ~.org~. Make a note of where you save it, because you will need to ...
+  6. Log on to learn and submit the file. 
+
+* Comments
+  
+  If you want to try something fun open the file back up in emacs after doing the above. Then type ~C-c C-e h h~. ~C-c~ means typing the "Ctrl" key and the lower case "c" key simultaneously. The spaces between those instructions mean you have a sequence of four key chords to enter. If all goes well you have just created a web page of that file. You should be able to open it in your browser. To test, use the file browser in Xubuntu to navigate to the file with the name you used above, but now ending in ~.html~ and not the ~.org~ one. Double click and your web browser should open with that file displayed.
+
+  To get ahead of things and learn more about the org-mode utilities you just used you can search for emacs and orgmode online. Or type ~C-h i~ to open the information functionality and navigate to the orgmode chapter.
+
+  And if you get stressed you can always consult Emacs' built in therapist with ~M-x doctor~.

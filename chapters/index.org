@@ -1,0 +1,39 @@
+# -*- org-link-file-path-type: relative; -*-
+#+options: ':nil *:t -:t ::t <:t H:3 \n:nil ^:t arch:headline
+#+options: author:t broken-links:nil c:nil creator:nil
+#+options: d:(not "LOGBOOK") date:t e:t email:nil f:t inline:t num:t
+#+options: p:nil pri:nil prop:nil stat:t tags:t tasks:t tex:t
+#+options: timestamp:t title:t toc:t todo:t |:t
+#+title: Introduction
+#+date: <2023-01-13 Fri>
+#+author: Britt Anderson
+#+email: britt@uwaterloo.ca
+#+language: en
+#+select_tags: export
+#+exclude_tags: noexport
+#+creator: Emacs 28.2 (Org mode 9.6-pre)
+#+bibliography: /home/britt/gitRepos/Intro2Computing4Psychology/chapters/i2c4p.bib
+#+cite_export: csl assets/chicago-note-bibliography-16th-edition.csl
+
+
+* Welcome
+
+These are the course notes for Psych363 at the University of Waterloo: An Introduction to Computing for Psychology students.
+
+*Need more here. Just testing export for now*
+
+This is the /index/ file for finding your way through the course topics and activities.
+
+I recommend you follow the topics in the order below. Work through each chapter in sequence and make sure you understand the basics before moving on. This will remove much confusion.
+
+The videos that you will find linked are not mean to replace the written material. They are intended to supplement it. If you start with the videos things will take longer and you will learn less. If you start with the assignments and then just try to skim around how to solve them you will learn much less, spend much more time on the activity, and get much more frustrated.
+
+Read the chapter. Watch the Video. Try the Exercise.
+
+** Goals
+*stuff here*
+
+We will be using Linux, but the installation process can be tricky and time consuming for some. Starting with RStudio allows me to introduce some of the ideas and concepts for programming while not letting us get stuck waiting for you to install a new operating system.
+
+* Chapter RStudio
+[[file:rstudio.org][RStudio]]

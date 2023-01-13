@@ -1,0 +1,134 @@
+# -*- org-link-file-path-type: relative; -*-
+#+options: ':nil *:t -:t ::t <:t H:3 \n:nil ^:t arch:headline
+#+options: author:t broken-links:nil c:nil creator:nil
+#+options: d:(not "LOGBOOK") date:t e:t email:nil f:t inline:t num:t
+#+options: p:nil pri:nil prop:nil stat:t tags:t tasks:t tex:t
+#+options: timestamp:t title:t toc:t todo:t |:t
+#+title: RStudio
+#+date: <2023-01-13 Fri>
+#+author: Britt Anderson
+#+email: britt@uwaterloo.ca
+#+language: en
+#+select_tags: export
+#+exclude_tags: noexport
+#+creator: Emacs 28.2 (Org mode 9.6-pre)
+#+bibliography: /home/britt/gitRepos/Intro2Computing4Psychology/chapters/i2c4p.bib
+#+cite_export: csl assets/chicago-note-bibliography-16th-edition.csl
+
+* First Steps in Programming and Markdown: RStudio
+
+Programming means writing instructions for a computer. R is a common programming language that is designed for facilitating statistical analyses and visualizations. In order to make programming easier there are other programs called Integrated Development Environments (IDE) that provide an editor for writing, syntax checking to highlight important code features and facilitate catching errors. They may also allow for visualizations of results and looking up help and other documentation. For this chapter we will install the programming language R, the IDE Rstudio, and will learn how to use a simple markup language to combine text and code in a single document. The markup language we will use for this chapter is called *RMarkdown*.
+
+* Overview Of The Steps To Be Taken
+
+   1. Download R
+   2. Download RStudio
+   3. Verify they are working
+   4. Generate a simple Rmd file to see some of the basic components of the markdown syntax
+   5. Add some simple computing constructs including a 
+      - variable
+      - for loop
+      - function
+   6. Produce an Rmd file from the above
+   7. And export it to an html file that we can open in a web browser and that displays correctly. 
+
+** Download R
+   R is free statistical software. As it is a very popular language of academic statisticians many new and cutting edge statistical techniques are available for R users that are well vetted. The comprehensive R network ([[https://cran.r-project.org/][CRAN]]) maintains download links and instructions. 
+   
+   The CRAN webpage also has links to [[https://cran.r-project.org/manuals.html][manuals]] that are useful for learning more about the language and its functions. While there is great material elsewhere, and you can find it by internet searches, it is still advisable to start at CRAN first. You know that information is curated by the body that funds, develops, and supports the language. 
+
+   This video walks through the [[https://vimeo.com/450719112][R download process]].
+
+   #+begin_export html
+   <iframe title="vimeo-player" src="https://player.vimeo.com/video/450719112?h=8245fb58e1" width="640" height="360" frameborder="0" allowfullscreen></iframe>
+   #+end_export
+   
+** Download RStudio 
+   RStudio is not R. It is a development environment wrapped around R. You can use R without RStudio (that is the way I use it and what I recommend). However, RStudio does provide an easy way to get started. The people who make RStudio have a free desktop version that will provide all the functionality that we will need. They also make commercial tools that build on the basic RStudio functionality.
+   
+  1. [[https://rstudio.com/products/rstudio/download/#download][Here]] is where you can get RStudio. Choose the right version for your operating system and follow the instructions.    
+  2. This [[https://vimeo.com/450719047][video]] shows a Rstudio download process:
+     #+begin_export html
+     <iframe src="https://player.vimeo.com/video/450719047?h=ad2b25da4c" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+     #+end_export
+
+** Verify That Both R and RStudio Are Working
+   The way to do this is to open the RStudio program and type in some simple equation such as $2 + 2$ and it should print ~4~.
+
+** Generate and Rmd file; Try some simple programming; export a webpage
+One of our course goals is to promote reproducible research. One of the ways you do this is by sharing the actual code you used for an analysis. Ideally this is embedded in the actual file you use to generate your report and manuscript. But you don't want the code showing in the finished version. Using a markup language to write the report allows you to accomplish all this. You write the article in text. You write the code for statistical tests and plots in the code. You blend the two together to produce a manuscript with the results of the code executed and embedded. You can share the raw file with anyone who wishes to repeat your analysis or edit it.
+
+RStudio supports several different ways of interacting with R and generating output. We will use the Rmd file, which stands for R Mark Down.
+
+We are using R because we will use the R language for our programming later on and markdown because we are using the R markdown syntax (there are other varieties of markdown with slight differences in syntax and functions) for telling RStudio how to format our export file when it runs the code and reads our program. We will use this below to make the file we open in our browser. In short, you will author a web page.
+
+*** A Video Example of Using RStudio
+
+Pay attention to the difference between the /editor/ window and the /console/. The console evaluates the code and prints out the answer. You can use it to test whether your R code does what you think it should be doing. The editor is where you mix the code with text. It lies static until you tell it to run a line, a block, or the entire document. It will then ouput the result (if there were no errors that you have to fix) in a viewer that is internal to RStudio. You want to be able to save that output somewhere (or know where RStudio saves it). Then you can open that file in your browser to see the full power of being able to write a simple text file and get produced a fully featured web page. 
+
+#+begin_export html
+<iframe src="https://player.vimeo.com/video/450719009?h=a948a7e251" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+<p><a href="https://vimeo.com/450719009">B3 : RStudio Walkthrough (i2c4p)</a> from <a href="https://vimeo.com/epistemic">Britt Anderson</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
+#+end_export
+
+#+begin_export html
+<iframe src="https://player.vimeo.com/video/450718879?h=67edf0e412" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+<p><a href="https://vimeo.com/450718879">B4 : Demonstrating the Power of RMarkdown (i2c4p)</a> from <a href="https://vimeo.com/epistemic">Britt Anderson</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
+#+end_export
+
+** Using R and RStudio
+
+Programming languages can look very different, but most of the common ones have the same basic constructs. If you familiarize yourself with these common constructs you will be able to get started more quickly, and more easily transition to other programming languages that might fit your future needs better.
+
+*** Variables, Loops and Functions
+**** Variables
+    A *variable* is something that holds a value. A value doesn't have to be a number. It could be name, character, or a list of pupil diameters, of even some larger data structure. As the name implies a variable may vary in most programming languages. You could for instance use a variable to "count" how many times you have done an operation. Repeating an operation or action several times is often referred to as "looping."
+
+    #+Caption: Declaring a Variable in R. Note that this is typeset using a markup language call ~orgmode~ that is accessible in ~emacs~, a text editing environment we will learn to use later in this course. If you look at the source code for this file you will see that this code is being executed to produce the final html file that you can view online. 
+    #+Name: A Variable Demonstration
+    #+begin_src R :exports both
+      a = 3
+      a = a + 1
+      print(a)
+    #+end_src
+
+**** Loops
+    Often we use programs to automate things that need to be done over and over again. In many statistical and experimental procedures this need for repetition is common. Consider  finding the mean reaction time for a large number of experimental participants who each completed a large number of experimental trials.
+
+    When you have a task to do that needs to run until some condition is met you will often use a ~while~ loop. When you need to do something for a set number of time or through a list of items then you will typically use a ~for~ loop. A ~for~ loop iterates through a structure and executes the same code, the code in the /body/ of the loop each time through. 
+
+    #+Caption: A For Loop in R
+    #+begin_src R :exports both :results output
+      for (i in seq(1,10)) {
+        print(i)
+      }
+    #+end_src
+
+**** Functions
+    Functions in programming languages are black boxes for taking input and returning output. You, the author of the function, fill in the details of the black box, but we users only know what we feed in and what we get back. Each programming language has its own way of telling the processor what is and what is not a function. In R we use the keyword ~function~ and assign our code to a name that users can type to call our code. It also allows us to say what the input can be and to give names to the input that are used *locally* in our function.
+
+    For example, let's say we want to know if a number is even. We can use R's built in function to tell us the remainder of a division. This function is an /infix/ function as we put it INside its arguments. It uses the symbols ~%%~. For example ~ 5 %% 2~ equals 1 because if you divide 5 by 2 you have 1 left over. 
+
+    To know if a number is odd or even we only need to know if the remainder when divided by two is or is not zero. To do this we can use a *predicate*. A predicate is a test that comes back true or false depending on whether a condition is met. Putting this altogether we can write a function that evaluates if a number is odd. 
+
+    #+Caption: Defining a Function in R
+    #+begin_src R :exports code :results silent :session *isodd*
+	  isOdd <- function(n) {
+		     return(n %% 2 != 0)
+	  }
+    #+end_src
+    
+    And then we can use our function in a test:
+
+    #+begin_src R :exports both :results output :session *isodd*
+    print(isOdd(5))
+    #+end_src
+
+    We could then use this output value to test whether to print the number by using an =if= statement.
+
+    
+* Testing Yourself
+  Try to produce an Rmd file from the above examples and see if you can get it and export it to an html file that we can open in a web browser and that displays correctly. 
+    
+** [[file:assets/assessments/firstRmdAssessment.org][First Rmd Assessment]]
+** [[file:assets/assessments/rmd2htmlRstudio.org][Rmd Exported to Html Assessment]]

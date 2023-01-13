@@ -1,0 +1,29 @@
+#+Title: Psychopy Assessement
+
+* Task
+  Submit a .py file that demonstrates a minimal version of a single trial of a Posner cuing task.
+  
+* Objective
+  To familiarize yourself with the basic elements of the psychopy library and how to combine a few of them into something that could become a psychology experiment. We will use the [[https://en.wikipedia.org/wiki/Posner_cueing_task][Posner Cuing]] task for this project.
+
+* Detailed Instructions
+  Provide me with a python file that,
+  1. Imports the psychopy library elements (and any other necessary libraries) in order to,
+  2. Places a white cross (or plus sign) at the center of the screen. Make the cross white and the background gray. Imagine the cross is to be our "fixation spot."
+  3. After a delay a white square appears to the right or left of fixation (the side to be chose randomly on each trial).
+  4. 200 ms after the white square appears a black dot (or filled circle) appears either in the center of the white square or equidistant on the other side. The first if a "valid" cue condition, and the second is "invalid."
+  5. Require the user/participant to press the z button on the keyboard if the target (black dot) is on the left and the "/" key if the target is on the right.
+  6. After the keypress print to the screen which key was pressed and how much time elapsed between the appearance of the black dot and the key press. This is your reaction time (RT).
+  7. _Optional_ if that comes very quickly make a loop to do this ten times and write the results to a file rather than putting them on the screen.
+
+* Hints
+  The following psychopy objects may be useful.
+  1. Visual.window
+  2. Visual.TextStim
+  3. Visual.ShapeStim or Visual.Circle
+  4. Core.Quit
+  5. Clock.Clock
+  6. Clock.getTime
+  7. Clock.wait
+  8. Event.getKeys
+     

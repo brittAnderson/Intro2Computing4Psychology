@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2023-01-13 Fri 13:17 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Hangman in Python (starter kit)</title>
+<meta name="author" content="Britt Anderson" />
+<meta name="generator" content="Org Mode" />
+<style>
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { }
+</style>
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">Hangman in Python (starter kit)</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org26e33bc">1. Words of Encouragement</a></li>
+<li><a href="#orgc5ba36f">2. Task</a></li>
+<li><a href="#org7ba24bb">3. Detail - tackle this in steps.</a></li>
+<li><a href="#orgef7ff9c">4. Comments</a>
+<ul>
+<li><a href="#org1a6d345">4.1. How I Will Grade</a></li>
+<li><a href="#orgdf4308e">4.2. Hints</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org26e33bc" class="outline-2">
+<h2 id="org26e33bc"><span class="section-number-2">1.</span> Words of Encouragement</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+This is the first non-trivial thing we will have done in the programming line. Do not get too frustrated if it takes you several submissions to get things right.
+</p>
+
+<p>
+Remember our goal is to learn some programming basics, not to write a production quality game of hangman. It is better to spend your time perfecting your ability to get the basic pieces
+</p>
+
+<p>
+We all start as beginners. Be patient with yourself.
+</p>
+
+<p>
+It is <b>fine</b> to collaborate, but don't just turn in a working piece of code you got from someone, because while that will give you points, it will not provide you an education. Make sure you can write it yourself from scratch even if that is only after you have worked on it together with someone.
+</p>
+
+<p>
+How to work. I like the idea of having a console open on one side for testing and another editor window where I can write code. I write in one window. Test in the other, and go back and forth to get something I can use. Ask me to demo in class if you are not clear on what this is supposed to look like. 
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgc5ba36f" class="outline-2">
+<h2 id="orgc5ba36f"><span class="section-number-2">2.</span> Task</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+To write the beginning pieces of a hangman game in python. This version will <a href="https://en.wikipedia.org/wiki/Hard_coding">hard code</a> the word to be guessed. It will not produce any sort of graphic, You will ask the user for  letters and report if the player spells out the word or not. Depending on how fast you master that, I may suggest further improvements when you submit. 
+</p>
+</div>
+</div>
+
+<div id="outline-container-org7ba24bb" class="outline-2">
+<h2 id="org7ba24bb"><span class="section-number-2">3.</span> Detail - tackle this in steps.</h2>
+<div class="outline-text-2" id="text-3">
+<ol class="org-ol">
+<li>Look up how to get user input from python on the command line.
+Write a script<sup><a id="fnr.1" class="footref" href="#fn.1" role="doc-backlink">1</a></sup> that when run from the terminal (command line) asks for a word, and prints it out.</li>
+<li>Write a <code>function</code> that takes as input a word. The function asks the user to guess a letter and returns <b>a list of</b> indices of the positions where the letter exists in the word. An empty list means the letter is not to be found in the word. Otherwise, the elements of this list are the indices where that letter is found. For example, if the word were "tree" and the letter "e" was guessed you would get back <code>[2,3]</code> from this function, but you would get back <code>[]</code> if the user supplied the letter were "s".<sup><a id="fnr.2" class="footref" href="#fn.2" role="doc-backlink">2</a></sup></li>
+<li>Write a function that accepts as input a number, which we will interpret as the maximum number of guesses a player is allowed (call it <code>max_times</code>). This function will use a word that you have hard coded as a constant and will loop through the guessing function above for max<sub>times</sub> or until all the letter in the word have been guessed.</li>
+<li>If the number of user guesses is greater than <code>max_times</code> your program should print "You lose." If the user guesses all the letters print "You win". And exit the program.</li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-orgef7ff9c" class="outline-2">
+<h2 id="orgef7ff9c"><span class="section-number-2">4.</span> Comments</h2>
+<div class="outline-text-2" id="text-4">
+</div>
+<div id="outline-container-org1a6d345" class="outline-3">
+<h3 id="org1a6d345"><span class="section-number-3">4.1.</span> How I Will Grade</h3>
+<div class="outline-text-3" id="text-4-1">
+<p>
+I will run your program from the terminal, and it will work as above or it will not. If it does, I will give you full marks, if not, I will give partial credit and allow you to try and fix the mistakes. 
+</p>
+</div>
+</div>
+<div id="outline-container-orgdf4308e" class="outline-3">
+<h3 id="orgdf4308e"><span class="section-number-3">4.2.</span> Hints</h3>
+<div class="outline-text-3" id="text-4-2">
+<p>
+You might find it useful to learn about python's <code>in</code> operator, and to think about how you might use the <code>enumerate</code> function we used in the <a href="forLoopPythonAssessment.html">for loop in python assessment</a>.
+Remember to eliminate the letters from your word as they are guessed. For example if the word is tree, and I guess "e", your word should become "tr". That means you may find it easier to keep track of the indices that are <b>not</b> equal to the guessed letters.
+If a brute force solution comes quickly think about re-writing your answer using a <a href="https://www.programiz.com/python-programming/list-comprehension">list comprehension</a>.
+If you have more of a programming background try adding in some additional features of the game. Can you get a random word from the internet? Can you let the player give the word and the computer guess letters? Could you output where the guessed characters appear in the word before the player has to make their next guess. Could you generate some <a href="https://codegolf.stackexchange.com/questions/135936/ascii-hangman-in-progress">simple ascii art of the hangman character</a>?
+</p>
+</div>
+</div>
+</div>
+<div id="footnotes">
+<h2 class="footnotes">Footnotes: </h2>
+<div id="text-footnotes">
+
+<div class="footdef"><sup><a id="fn.1" class="footnum" href="#fnr.1" role="doc-backlink">1</a></sup> <div class="footpara" role="doc-footnote"><p class="footpara">
+A script is a file that ends with .py and that I can call from the terminal. If your script is named hangman.py then things should work when I do <code>python hangman.py</code> in my terminal window.
+</p></div></div>
+
+<div class="footdef"><sup><a id="fn.2" class="footnum" href="#fnr.2" role="doc-backlink">2</a></sup> <div class="footpara" role="doc-footnote"><p class="footpara">
+Why is it 2,3 and not 3,4? 
+</p></div></div>
+
+
+</div>
+</div></div>
+<div id="postamble" class="status">
+<p class="author">Author: Britt Anderson</p>
+<p class="date">Created: 2023-01-13 Fri 13:17</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

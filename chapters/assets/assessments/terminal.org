@@ -1,0 +1,36 @@
+#+Title: Terminal Assessment
+
+* Goal
+  Demonstrate basic knowledge about and usage of the terminal (aka: command line or shell). 
+
+* Tasks
+
+*Note* This assessment has two parts and asks for two separate files.
+  
+** Submit a file that answers the following questions:
+   1. What is a terminal?
+   2. What shell is your version of Xubuntu using?
+   3. What is one other shell you might use?
+   4. Give two reasons (not more) why one might want to use the terminal.
+   5. I mentioned =ssh=. What does ssh stand for and how does it relate to the concept of a shell?
+*** File Requirements
+    1. Make sure it has your name and student number on it.
+    2. Make sure it is in .org format. To do this you will want to, 
+       1. open Emacs.
+       2. open a new file
+       3. =save as= (you can try ~C-x C-s~) with a suitable name and the extension ".org".
+       4. Give each question its own heading (start the line with a single "*" and a following space).
+       5. Put your answer underneath this heading.
+       6. Save.
+       7. Upload to the "Terminal" dropbox on Learn.
+** Submit a file that does the following:
+   1. Can be run as a shell script.
+   2. Echos your name to the terminal.
+   3. Prints out the current directory.
+   4. Name this file as <yourLastName>_<yourStudentNumber>.sh
+   5. Upload to the "Terminal" dropbox on Learn.
+
+** Last Thoughts 
+   Enjoy the power the terminal provides, but don't go overboard. https://xkcd.com/196/
+
+

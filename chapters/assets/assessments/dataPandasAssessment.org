@@ -1,0 +1,23 @@
+#+Title: Practicing Pandas for Data Analysis
+
+* Task
+  You will
+  1. Download a data set in python
+  2. Unzip the data set
+  3. Tell me the names of all the columns
+  4. Tell me the length of one of the rows
+  5. And tell me the mean[fn:1] of one of the columns subset by rows[fn:2].
+
+* Requirements
+  Your submission will be either an org[fn:3] file with code blocks that let me execute each of these steps by myself interactively one at a time. Or a python script that I can run from the command line and that will perform each of these functions displaying its output to ~stdout~. Stdout is the linux name for printing to the screen in the terminal. For example, when you do ~ls~ to list the names of files in a directory you are directing to stdout. 
+  
+* Comments
+  Don't start by writing this as a script. That will almost certainly be too hard. Begin by doing this interactively, perhaps at a python interpreter until you get the code for a particular step done corrrectly. Then copy that code to your file and and test that it still works; that something did not get messed up in the copying and pasting.
+  Once you have the data in your interpreter, don't just rush through. Take some time to play with various pandas commands or exercises such as examples you can find [[https://www.w3resource.com/python-exercises/pandas/index-data-series.php][here]] to generally grow more familiar with the package.
+* Footnotes
+
+[fn:1] Or some other simple statistic appropriate to the data, e.g. if your data was /categorical/ you might give me the number of rows for each type of category.  
+[fn:2] An example of this is that if you had columns for heights and genders you could output the average height of men, women, and other. 
+[fn:3] To make some nicer formatting and help available when using python from within emacs checkout the ~elpy~ [[https://elpy.readthedocs.io/en/latest/introduction.html#installation][package]]. 
+
+
