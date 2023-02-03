@@ -37,3 +37,6 @@ We will be using Linux, but the installation process can be tricky and time cons
 
 * Chapter RStudio
 [[file:rstudio.org][RStudio]]
+
+* Chapter Version Control
+[[file:version-control.org][Version Control]]

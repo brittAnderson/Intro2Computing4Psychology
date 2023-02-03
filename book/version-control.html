@@ -1,0 +1,645 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2023-02-03 Fri 05:01 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Version Control</title>
+<meta name="author" content="Britt Anderson" />
+<meta name="generator" content="Org Mode" />
+<style>
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { }
+</style>
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">Version Control</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org3b98d70">1. Version Control</a></li>
+<li><a href="#orgb75d3de">2. Summary of Steps</a></li>
+<li><a href="#org89424a5">3. A Github Account</a>
+<ul>
+<li><a href="#org910683d">3.1. Get your id</a></li>
+<li><a href="#orgc6fc165">3.2. Sign in to your user account</a></li>
+</ul>
+</li>
+<li><a href="#orgdd32cfd">4. Look at the Github Guides</a>
+<ul>
+<li><a href="#orgb3be90e">4.1. Read the Hello World guide and create your first repository.</a></li>
+</ul>
+</li>
+<li><a href="#orgdae8398">5. Navigate to my Github respositories and Fork the Course Repository and Practice Repository</a>
+<ul>
+<li><a href="#orge9e1800">5.1. What is a "Fork"?</a></li>
+<li><a href="#org68e93d2">5.2. Fork the main course repository</a></li>
+<li><a href="#orgc9ad2f9">5.3. Fork the course practice respository</a></li>
+</ul>
+</li>
+<li><a href="#orgdb16511">6. Complete the github id assessment</a>
+<ul>
+<li><a href="#org9201754">6.1. Task</a></li>
+</ul>
+</li>
+<li><a href="#org161192b">7. More about Git, Github and Forking Repositories</a></li>
+<li><a href="#org6662365">8. Goal</a>
+<ul>
+<li><a href="#org97ae14a">8.1. Overview</a></li>
+</ul>
+</li>
+<li><a href="#orgc23bc04">9. Not all repositories are git repositories</a>
+<ul>
+<li><a href="#orge51ee72">9.1. There are many other version control options and many other places to host them.</a>
+<ul>
+<li><a href="#orgeb3a55f">9.1.1. Other version control system</a></li>
+<li><a href="#orgc34b5fa">9.1.2. Other Repositories</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org08140d1">10. Git and Linux</a></li>
+<li><a href="#orgbdee249">11. But first &#x2026;</a></li>
+<li><a href="#orgb0ed422">12. Git in Pictures</a></li>
+<li><a href="#org0af0de5">13. Terms</a></li>
+<li><a href="#org618cab4">14. Using <b>Git</b> in Linux</a>
+<ul>
+<li><a href="#orgfd1fe6f">14.1. Making your first repository (aka "repo") on your laptop.</a></li>
+<li><a href="#orgb0c6176">14.2. Cloning a Course Repo</a>
+<ul>
+<li><a href="#org693afa8">14.2.1. Magit</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#orgb239b23">15. Git Pull Request and Issues Assessment</a>
+<ul>
+<li><a href="#orgba59b45">15.1. Task</a></li>
+<li><a href="#org0a56151">15.2. Comment</a></li>
+<li><a href="#org8a3cb2d">15.3. Steps</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org3b98d70" class="outline-2">
+<h2 id="org3b98d70"><span class="section-number-2">1.</span> Version Control</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+This refers to a system of saving your work and recording what changes were made when. This allows you to revert (undo) individual changes you have made. You can think of a branching tree where each change marks a new sprig. You can prune some branches and leave others alone. The values of version control are the capability to undo, but also to explore since you can try out new changes that are easy to erase and start over. It also allows easy sharing and collaboration since each co-author can commit changes to the common document. Since you work locally you can choose to accept or reject others' changes into your version. All these capacities support research. You have a record of what you did when. You can easily update work as required while keeping thorough records. You can share and collaborate. And thus your work is reproducible by others. Developed in the software community the tools of version control are widely applicable to data management and co-authoring scientific reports. In this chapter you will learn to use one common version control software, <a href="https://git-scm.com/">git</a>, one social coding repository based on git, <a href="https://github.com">github</a>, and some of the basic terminology of version control.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgb75d3de" class="outline-2">
+<h2 id="orgb75d3de"><span class="section-number-2">2.</span> Summary of Steps</h2>
+<div class="outline-text-2" id="text-2">
+<ol class="org-ol">
+<li>Create a Github Account.</li>
+<li>Read the "Hello World" Github guide.</li>
+<li>Navigate to the <a href="https://github.com/brittAnderson/Intro2Computing4Psychology">course repository</a>.</li>
+<li><i>Fork</i> both the course repository and the <a href="https://github.com/brittAnderson/psych363Practice">practice repository</a> for the course.</li>
+<li>Generate a screen shot of your github home page after you have forked the course repositories.</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-org89424a5" class="outline-2">
+<h2 id="org89424a5"><span class="section-number-2">3.</span> A Github Account</h2>
+<div class="outline-text-2" id="text-3">
+<iframe src="https://player.vimeo.com/video/450563119?h=4cb2ec8cb5" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+<p><a href="https://vimeo.com/450563119">Bb1 : Introduction to Github (i2c4p)</a> from <a href="https://vimeo.com/epistemic">Britt Anderson</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
+
+<p>
+Science is collaborative and iterative. Computing projects, whether for industry or research, are usually too big for one person. Therefore, we benefit when there are tools to facilitate revision, reversion, recording, and sharing. <a href="https://github.com">Github</a> is a large social coding platform with high visibility. While there are other similar platforms (e.g, <a href="https://bitbucket.org/product">Bitbucket,</a> or <a href="https://gitlab.com/explore">Gitlab</a>) Github is convenient for our educational goals. While you do <b>not</b> need a Github account to use <code>git</code>, the version control software, <code>git</code> is used to manage your github projects. Therefore, you first need to create an account to use Github.
+</p>
+</div>
+<div id="outline-container-org910683d" class="outline-3">
+<h3 id="org910683d"><span class="section-number-3">3.1.</span> Get your id</h3>
+<div class="outline-text-3" id="text-3-1">
+<p>
+This is a straightfoward process. Navigate to <a href="https://github.com">Github</a> and complete the sign up process on the home page. You should use whatever email address is convenient, and you can chose whatever username is available, but think for a moment. If you are successful in this course at improving your computing skills the Github platform is something you may want to use professionally in the future; pick a username that won't embarass you later.
+</p>
+</div>
+</div>
+<div id="outline-container-orgc6fc165" class="outline-3">
+<h3 id="orgc6fc165"><span class="section-number-3">3.2.</span> Sign in to your user account</h3>
+<div class="outline-text-3" id="text-3-2">
+<p>
+You should see a blank page with a random geometric avatar and no activity or respositories. 
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-orgdd32cfd" class="outline-2">
+<h2 id="orgdd32cfd"><span class="section-number-2">4.</span> Look at the Github Guides</h2>
+<div class="outline-text-2" id="text-4">
+<iframe src="https://player.vimeo.com/video/450563176?h=438a094373" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+<p><a href="https://vimeo.com/450563176">Bb2 : Intro to Github Screencast (i2c4p)</a> from <a href="https://vimeo.com/epistemic">Britt Anderson</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
+<p>
+The <a href="https://guides.github.com/">Github Guides</a> will provide you with short introductions to the git terminology, the Github workflow, and how to create your first repository.
+</p>
+</div>
+<div id="outline-container-orgb3be90e" class="outline-3">
+<h3 id="orgb3be90e"><span class="section-number-3">4.1.</span> Read the Hello World guide and create your first repository.</h3>
+<div class="outline-text-3" id="text-4-1">
+<p>
+The <a href="https://guides.github.com/activities/hello-world/">hello world</a> guide will walk you through creating a repository. Even if you delete after creation go through these steps to learn what a repository is. 
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-orgdae8398" class="outline-2">
+<h2 id="orgdae8398"><span class="section-number-2">5.</span> Navigate to my Github respositories and Fork the Course Repository and Practice Repository</h2>
+<div class="outline-text-2" id="text-5">
+<p>
+My respositories are at: <a href="https://github.com/brittAnderson?tab=repositories">Britt's Repos</a>
+</p>
+</div>
+<div id="outline-container-orge9e1800" class="outline-3">
+<h3 id="orge9e1800"><span class="section-number-3">5.1.</span> What is a "Fork"?</h3>
+<div class="outline-text-3" id="text-5-1">
+<p>
+There is short github guide on the notion of a <a href="https://guides.github.com/activities/forking/">fork</a>. 
+</p>
+</div>
+</div>
+<div id="outline-container-org68e93d2" class="outline-3">
+<h3 id="org68e93d2"><span class="section-number-3">5.2.</span> Fork the main course repository</h3>
+<div class="outline-text-3" id="text-5-2">
+<p>
+When you fork the course repository you will enable <i>cloning</i> (to be covered later) your own local version on your home computer or laptop. Your fork will also give you access to your own copies of all files that you can edit or add to without affecting my copies. Your fork (and subsequently your clone) will give you a way to add changes back to my copies (if I accept your <i>pull request</i>) and easily incorporate new changes that I make into your version. 
+The main course repository is here: <a href="https://github.com/brittAnderson/Intro2Computing4Psychology">https://github.com/brittAnderson/Intro2Computing4Psychology</a>
+Note that there is a <code>readme</code> file on the landing page. This is created from the <code>readme.org</code> file that you can see in the list of code files right above. Open this up by clicking on it and make a local change to your version of the readme.org file. Maybe add a line that says this is your fork; something minor; and then <code>commit</code> that change. You should see the readme region change to reflect your change (you may have to refresh your browser). You will at this point have progressed through some of the core features of version control, but to practice some more &#x2026;
+</p>
+</div>
+</div>
+<div id="outline-container-orgc9ad2f9" class="outline-3">
+<h3 id="orgc9ad2f9"><span class="section-number-3">5.3.</span> Fork the course practice respository</h3>
+<div class="outline-text-3" id="text-5-3">
+<p>
+You can find that here: <a href="https://github.com/brittAnderson/psych363practice">https://github.com/brittAnderson/psych363practice</a>
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-orgdb16511" class="outline-2">
+<h2 id="orgdb16511"><span class="section-number-2">6.</span> Complete the github id assessment</h2>
+<div class="outline-text-2" id="text-6">
+</div>
+<div id="outline-container-org9201754" class="outline-3">
+<h3 id="org9201754"><span class="section-number-3">6.1.</span> Task</h3>
+<div class="outline-text-3" id="text-6-1">
+<ol class="org-ol">
+<li>Create a <a href="https://github.com/">github account</a>.</li>
+<li><b>Fork</b> the two course related repositories.
+<ol class="org-ol">
+<li><a href="https://github.com/brittAnderson/Intro2Computing4Psychology">Intro2Computing4Psychology</a></li>
+<li><a href="https://github.com/brittAnderson/psych363Practice">psych363Practice</a></li>
+</ol></li>
+<li>Submit a screen short of your github account with appropriate respositories created to the Dropbox on Learn.</li>
+</ol>
+</div>
+</div>
+</div>
+<div id="outline-container-org161192b" class="outline-2">
+<h2 id="org161192b"><span class="section-number-2">7.</span> More about Git, Github and Forking Repositories</h2>
+<div class="outline-text-2" id="text-7">
+<p>
+<code>git</code> is a program that allows you to do version control. <i>Github</i> is one of the larger social coding platform: an online agora for sharing, finding, and collaborating. It uses <code>git</code> as its base version control program, but it does other things too. We will now delve more into the details of using git including command line controls. 
+</p>
+</div>
+</div>
+<div id="outline-container-org6662365" class="outline-2">
+<h2 id="org6662365"><span class="section-number-2">8.</span> Goal</h2>
+<div class="outline-text-2" id="text-8">
+</div>
+<div id="outline-container-org97ae14a" class="outline-3">
+<h3 id="org97ae14a"><span class="section-number-3">8.1.</span> Overview</h3>
+<div class="outline-text-3" id="text-8-1">
+<p>
+In an <a href="githubIDBasics.html">earlier topic</a> we learned some of the basics of learning git and using it with github. Here we will learn what <i>push</i>, <i>pull</i>, and <i>remotes</i> are all about. 
+</p>
+
+
+<div style="padding:56.39% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/456349826?h=4cee6292e8&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Fa : Intro to Version Ctrl - Git (i2c4p)"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgc23bc04" class="outline-2">
+<h2 id="orgc23bc04"><span class="section-number-2">9.</span> Not all repositories are git repositories</h2>
+<div class="outline-text-2" id="text-9">
+<div style="padding:56.39% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/456349738?h=27f3a64ec9&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Fb : Github Pull Req part 1 (i2c4p)"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
+</div>
+
+<div id="outline-container-orge51ee72" class="outline-3">
+<h3 id="orge51ee72"><span class="section-number-3">9.1.</span> There are many other version control options and many other places to host them.</h3>
+<div class="outline-text-3" id="text-9-1">
+</div>
+<div id="outline-container-orgeb3a55f" class="outline-4">
+<h4 id="orgeb3a55f"><span class="section-number-4">9.1.1.</span> Other version control system</h4>
+<div class="outline-text-4" id="text-9-1-1">
+<ol class="org-ol">
+<li><a href="https://www.mercurial-scm.org/">Mercurial</a></li>
+<li><a href="http://darcs.net/">Darcs</a></li>
+<li><a href="https://www.nongnu.org/cvs/">CVS</a></li>
+<li><a href="https://subversion.apache.org/">Subversion</a></li>
+</ol>
+<p>
+Each has their own fans. CVS and Subversion are more legacy options, but you will see them. Darcs is more of an experiment than a broadly used system. Mercurial seems to be the cool kid, but doesn't have as much market share as git, but any one of them might be a good choice for you in the future. Main point: version contol is not only <code>git</code>.
+</p>
+</div>
+</div>
+<div id="outline-container-orgc34b5fa" class="outline-4">
+<h4 id="orgc34b5fa"><span class="section-number-4">9.1.2.</span> Other Repositories</h4>
+<div class="outline-text-4" id="text-9-1-2">
+<p>
+Github is a very popular place to host your publically accessible repository, but it is far from your only option.
+</p>
+<ol class="org-ol">
+<li><a href="https://osf.io/">OSF.io</a>
+For scientists OSF.io seeks to make itself a way to host scientific projects and their data. 
+Trivia question? Do I have any repositories on Osf.io?</li>
+<li><a href="https://sourceforge.net/">Sourceforge</a>
+An oldie, but still used.</li>
+<li><a href="https://bitbucket.org/">Bitbucket</a></li>
+<li>Gitlab
+The university provides you with a gitlab account:  <a href="https://git.uwaterloo.ca">https://git.uwaterloo.ca</a></li>
+</ol>
+<p>
+Main point: github is <b>not</b> your only option
+</p>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org08140d1" class="outline-2">
+<h2 id="org08140d1"><span class="section-number-2">10.</span> Git and Linux</h2>
+<div class="outline-text-2" id="text-10">
+<p>
+If you want to see one big advantage to using Linux try installing a program to let you easily manage git repositories on Windows. Then when you get frustrated try the following on your Ubuntu installation:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-sh">sudo apt install git
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgbdee249" class="outline-2">
+<h2 id="orgbdee249"><span class="section-number-2">11.</span> But first &#x2026;</h2>
+<div class="outline-text-2" id="text-11">
+<p>
+Git wants to know who you are and how to get in contact with you. The first time you want to use git from the terminal you will have to specify this with the following
+</p>
+
+<div class="org-src-container">
+<pre class="src src-sh">git config --global user.name <span style="color: #8b2252;">"John Doe"</span>
+git config --global user.email johndoe@example.com
+</pre>
+</div>
+<p>
+Please don't actually use "John Doe". More on these configuration options can be found <a href="https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup">here</a>.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgb0ed422" class="outline-2">
+<h2 id="orgb0ed422"><span class="section-number-2">12.</span> Git in Pictures</h2>
+<div class="outline-text-2" id="text-12">
+<p>
+A few helpful illustrations to the distinction of clones, forks, pull, push, and pull request can be found <a href="https://www.toolsqa.com/git/difference-between-git-clone-and-git-fork/">here</a>.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org0af0de5" class="outline-2">
+<h2 id="org0af0de5"><span class="section-number-2">13.</span> Terms</h2>
+<div class="outline-text-2" id="text-13">
+<dl class="org-dl">
+<dt>Fork</dt><dd>A copy of one github repository to another <b>github</b> repository.</dd>
+<dt>Clone</dt><dd>A copy of one <b>git</b> repository to another <b>git</b> repository. 
+The first repository might be hosted on github, but the second one, the <i>cloned</i> one exists on a local machine. In your case this is probably your laptop.</dd>
+<dt>Remote</dt><dd>This is a repository that you are following. You will typically <i>pull</i> from these, but your <i>push</i> permissions may be limited depending on the distinctions between forks and clones, and whether you own the remote or someone else does. You can have more than one remote.</dd>
+<dt>Pull</dt><dd>the transfer of information and changes <b>from</b> one repository incorporated into another. This is how you get the new information from a remote transported to a local repository that you control.</dd>
+<dt>Push</dt><dd>this is the transfer of information <b>to</b> a repository you control (or have permissions to push to) from another repository that you control. This is often from your local laptop version to the hosted repository (your fork) on github.</dd>
+<dt>Pull Request</dt><dd>When you have information or changes that you think would be helpful to a remote you do <b>not</b> have push permissions for then you can request that the owner of that repository pull in your changes. This is a formal process called a pull request. It is primarily a github concept and not a git concept.</dd>
+<dt>Branch</dt><dd>within a repository the development of the code may be proceeding in a few different directions at the same time. The principal production branch is conventionally called <b>master</b>. And the principal repository that is the main, shared one is called <b>origin</b>. We will not be working with branches in our course, but those terms do show up in commands.</dd>
+</dl>
+
+<p>
+All of these "<a href="https://git-scm.com/book/en/v2/Git-Basics-Getting-a-Git-Repository">basics</a>" are covered in detail in the book Pro Git (available on line). 
+</p>
+</div>
+</div>
+
+<div id="outline-container-org618cab4" class="outline-2">
+<h2 id="org618cab4"><span class="section-number-2">14.</span> Using <b>Git</b> in Linux</h2>
+<div class="outline-text-2" id="text-14">
+<p>
+Try to note when I use the word "git" and when I use the word "github". They are different things. 
+</p>
+</div>
+
+<div id="outline-container-orgfd1fe6f" class="outline-3">
+<h3 id="orgfd1fe6f"><span class="section-number-3">14.1.</span> Making your first repository (aka "repo") on your laptop.</h3>
+<div class="outline-text-3" id="text-14-1">
+<ol class="org-ol">
+<li>Open a terminal</li>
+<li>Move (<code>cd</code> or <code>dir</code>) into your Desktop</li>
+<li>type <code>git init myrepo</code></li>
+<li>You should see message from the terminal prompt that it has been created.</li>
+<li>Feel free to delete (e.g. <code>rm -rf ./myrepo</code>)</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-orgb0c6176" class="outline-3">
+<h3 id="orgb0c6176"><span class="section-number-3">14.2.</span> Cloning a Course Repo</h3>
+<div class="outline-text-3" id="text-14-2">
+<div style="padding:56.39% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/456349595?h=4b78ed9d6a&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Fc : Drawing to Understand Git and Github (i2c4p)"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
+
+<p>
+On your laptop (Ybuntu):
+</p>
+<ol class="org-ol">
+<li>Move to a directory where you want to keep things organized. I use <code>~/gitRepos/</code>. To make that directory you could do <code>mkdir ~/gitRepos/</code> and then <code>cd</code> to it. Verify you are there with <code>pwd</code>. All this is happening <i>in the terminal.</i></li>
+<li>Open a web browser and find <b>your fork</b> of Psych363. On that page there should be a button to clone it that will allow you to copy the command. It may be hidden. Look for a blue "code" button. Hitting that may open the dialogue that shows you the clone command.</li>
+<li>Go back to your terminal and paste it (usually <code>Ctrl-Shift v</code>). Hit &lt;enter&gt;.</li>
+<li>You should see some activity that things are being copied.</li>
+<li><code>ls</code> to see you have a new directory in your <code>gitRepos</code> directory.</li>
+<li><code>cd</code> into this new directory and look around. Compare it to what you see when you look at your fork on github.</li>
+</ol>
+<p>
+For the assessment we will create more remotes and work on generating a pull request.
+</p>
+
+<div style="padding:56.39% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/456349516?h=ed8c2e0af8&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Fe : Github Pull Request Assessment (i2c4p)"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
+</div>
+
+<div id="outline-container-org693afa8" class="outline-4">
+<h4 id="org693afa8"><span class="section-number-4">14.2.1.</span> Magit</h4>
+<div class="outline-text-4" id="text-14-2-1">
+<ol class="org-ol">
+<li>Emacs provides you with an interface for this called magit.</li>
+<li>If you watched the <a href="https://vimeo.com/455628993#t=942s">emacs beginning video</a> you will have seen the commands you need to add to your <code>init.el</code> file to get the <code>magit</code> package. If not, you can always take a look now.</li>
+<li>You will probably have to quit and then restart Emacs for the magit package to be visible.</li>
+<li>Then you launch it by navigating (in Emacs) to the directory of your repository and typing: <code>C-c m</code> or <code>M-x magit</code> usually.</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-orgb239b23" class="outline-2">
+<h2 id="orgb239b23"><span class="section-number-2">15.</span> Git Pull Request and Issues Assessment</h2>
+<div class="outline-text-2" id="text-15">
+</div>
+<div id="outline-container-orgba59b45" class="outline-3">
+<h3 id="orgba59b45"><span class="section-number-3">15.1.</span> Task</h3>
+<div class="outline-text-3" id="text-15-1">
+<ol class="org-ol">
+<li>Generate a pull request for the <a href="https://github.com/brittAnderson/psych363Practice">psych363Practice</a> repository on Github.</li>
+<li>Generate an issue for the psych363Practice repository.</li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-org0a56151" class="outline-3">
+<h3 id="org0a56151"><span class="section-number-3">15.2.</span> Comment</h3>
+<div class="outline-text-3" id="text-15-2">
+<p>
+This course makes use of <a href="https://github.com">github</a> for practicing how to use the version control program git. An important part of collaborating on code (or other material hosted on github, which might include text files) is to be able to give back or to alert the owner to a problem. This requires that you can both generate a <b>pull request</b> and that you can <b>open an issue.</b>
+</p>
+</div>
+</div>
+
+<div id="outline-container-org8a3cb2d" class="outline-3">
+<h3 id="org8a3cb2d"><span class="section-number-3">15.3.</span> Steps</h3>
+<div class="outline-text-3" id="text-15-3">
+<ol class="org-ol">
+<li>Previously you should have <i>forked</i> the psych363Practice repository.</li>
+<li>Next you will need to clone your fork to your laptop.</li>
+<li>Check that you have your fork as a <i>remote.</i></li>
+<li>Add <b>my original</b> version of the repository as a second remote.</li>
+<li>To make sure you have the latest code, including all the other pulls generated by other students in the course you will want to:
+<ol class="org-ol">
+<li><i>Pull</i> from <b>my original</b> repo.</li>
+<li>Accept and merge the changes if necessary.</li>
+<li><i>Push</i> these new changes to <b>your fork</b> on github.</li>
+<li>Verify the new changes made it there by looking at your fork in your browser. You may have to refresh your browser to see the changes.</li>
+<li>Now, in the <code>gitnames</code> subdirectory add a file with &lt;yourfirstname&gt;.txt. Put some simple sentence in it.</li>
+<li><b>Add</b> this file.</li>
+<li><b>Commit</b> this change.</li>
+<li><i>Push</i> to your fork.</li>
+<li>In your web browser initiate a <b>pull request.</b></li>
+</ol></li>
+<li>When I receive your pull request I will accept it and give you half credit for this assignment (if you are a UWloo student).</li>
+<li>Next, open an <i>issue.</i> Just give it a simple title and make a simple statement. Our goal is to practice the process. Note the number of your issue and upload this number to the dropbox with your github name so I can match issues and pull requests to students.</li>
+</ol>
+
+<p>
+Important Note: To help each other learn how to use git, github, and
+the material of this course, whether or not you are a UWaterloo
+student, use the <a href="https://github.com/brittAnderson/Intro2Computing4Psychology/issues">issue function in the Intro2Computing4Psychology</a>
+repository to report your problems and confusions. That issue record
+will persist for future visitors to the repo who have the same
+question see how we dealt with it.
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">Date: 2023-02-03 Fri 00:00</p>
+<p class="author">Author: Britt Anderson</p>
+<p class="date">Created: 2023-02-03 Fri 05:01</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

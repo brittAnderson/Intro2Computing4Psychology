@@ -1,0 +1,195 @@
+# -*- org-link-file-path-type: relative; -*-
+#+options: ':nil *:t -:t ::t <:t H:3 \n:nil ^:t arch:headline
+#+options: author:t broken-links:nil c:nil creator:nil
+#+options: d:(not "LOGBOOK") date:t e:t email:nil f:t inline:t num:t
+#+options: p:nil pri:nil prop:nil stat:t tags:t tasks:t tex:t
+#+options: timestamp:t title:t toc:t todo:t |:t
+#+title: Version Control
+#+date: <2023-02-03 Fri>
+#+author: Britt Anderson
+#+email: britt@uwaterloo.ca
+#+language: en
+#+select_tags: export
+#+exclude_tags: noexport
+#+creator: Emacs 28.2 (Org mode 9.6-pre)
+#+bibliography: /home/britt/gitRepos/Intro2Computing4Psychology/chapters/i2c4p.bib
+#+cite_export: csl assets/chicago-note-bibliography-16th-edition.csl
+
+* Version Control
+This refers to a system of saving your work and recording what changes were made when. This allows you to revert (undo) individual changes you have made. You can think of a branching tree where each change marks a new sprig. You can prune some branches and leave others alone. The values of version control are the capability to undo, but also to explore since you can try out new changes that are easy to erase and start over. It also allows easy sharing and collaboration since each co-author can commit changes to the common document. Since you work locally you can choose to accept or reject others' changes into your version. All these capacities support research. You have a record of what you did when. You can easily update work as required while keeping thorough records. You can share and collaborate. And thus your work is reproducible by others. Developed in the software community the tools of version control are widely applicable to data management and co-authoring scientific reports. In this chapter you will learn to use one common version control software, [[https://git-scm.com/][git]], one social coding repository based on git, [[https://github.com][github]], and some of the basic terminology of version control.
+
+* Summary of Steps
+  1. Create a Github Account. 
+  2. Read the "Hello World" Github guide. 
+  3. Navigate to the [[https://github.com/brittAnderson/Intro2Computing4Psychology][course repository]].
+  4. /Fork/ both the course repository and the [[https://github.com/brittAnderson/psych363Practice][practice repository]] for the course.
+  5. Generate a screen shot of your github home page after you have forked the course repositories. 
+* A Github Account
+#+begin_export html
+<iframe src="https://player.vimeo.com/video/450563119?h=4cb2ec8cb5" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+<p><a href="https://vimeo.com/450563119">Bb1 : Introduction to Github (i2c4p)</a> from <a href="https://vimeo.com/epistemic">Britt Anderson</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
+#+end_export
+
+Science is collaborative and iterative. Computing projects, whether for industry or research, are usually too big for one person. Therefore, we benefit when there are tools to facilitate revision, reversion, recording, and sharing. [[https://github.com][Github]] is a large social coding platform with high visibility. While there are other similar platforms (e.g, [[https://bitbucket.org/product][Bitbucket,]] or [[https://gitlab.com/explore][Gitlab]]) Github is convenient for our educational goals. While you do *not* need a Github account to use ~git~, the version control software, ~git~ is used to manage your github projects. Therefore, you first need to create an account to use Github.
+** Get your id   
+    This is a straightfoward process. Navigate to [[https://github.com][Github]] and complete the sign up process on the home page. You should use whatever email address is convenient, and you can chose whatever username is available, but think for a moment. If you are successful in this course at improving your computing skills the Github platform is something you may want to use professionally in the future; pick a username that won't embarass you later.
+** Sign in to your user account
+   You should see a blank page with a random geometric avatar and no activity or respositories. 
+* Look at the Github Guides
+#+begin_export html
+<iframe src="https://player.vimeo.com/video/450563176?h=438a094373" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+<p><a href="https://vimeo.com/450563176">Bb2 : Intro to Github Screencast (i2c4p)</a> from <a href="https://vimeo.com/epistemic">Britt Anderson</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
+#+end_export
+   The [[https://guides.github.com/][Github Guides]] will provide you with short introductions to the git terminology, the Github workflow, and how to create your first repository.
+** Read the Hello World guide and create your first repository.
+   The [[https://guides.github.com/activities/hello-world/][hello world]] guide will walk you through creating a repository. Even if you delete after creation go through these steps to learn what a repository is. 
+* Navigate to my Github respositories and Fork the Course Repository and Practice Repository
+My respositories are at: [[https://github.com/brittAnderson?tab=repositories][Britt's Repos]]
+** What is a "Fork"?
+    There is short github guide on the notion of a [[https://guides.github.com/activities/forking/][fork]]. 
+** Fork the main course repository
+   When you fork the course repository you will enable /cloning/ (to be covered later) your own local version on your home computer or laptop. Your fork will also give you access to your own copies of all files that you can edit or add to without affecting my copies. Your fork (and subsequently your clone) will give you a way to add changes back to my copies (if I accept your /pull request/) and easily incorporate new changes that I make into your version. 
+   The main course repository is here: https://github.com/brittAnderson/Intro2Computing4Psychology
+   Note that there is a ~readme~ file on the landing page. This is created from the ~readme.org~ file that you can see in the list of code files right above. Open this up by clicking on it and make a local change to your version of the readme.org file. Maybe add a line that says this is your fork; something minor; and then ~commit~ that change. You should see the readme region change to reflect your change (you may have to refresh your browser). You will at this point have progressed through some of the core features of version control, but to practice some more ...
+** Fork the course practice respository
+   You can find that here: https://github.com/brittAnderson/psych363practice
+* Complete the github id assessment
+** Task
+  1. Create a [[https://github.com/][github account]].
+  2. *Fork* the two course related repositories.
+     A. [[https://github.com/brittAnderson/Intro2Computing4Psychology][Intro2Computing4Psychology]]
+     B. [[https://github.com/brittAnderson/psych363Practice][psych363Practice]]
+  3. Submit a screen short of your github account with appropriate respositories created to the Dropbox on Learn.
+* More about Git, Github and Forking Repositories
+=git= is a program that allows you to do version control. /Github/ is one of the larger social coding platform: an online agora for sharing, finding, and collaborating. It uses =git= as its base version control program, but it does other things too. We will now delve more into the details of using git including command line controls. 
+* Goal
+** Overview
+  In an [[file:githubIDBasics.org][earlier topic]] we learned some of the basics of learning git and using it with github. Here we will learn what /push/, /pull/, and /remotes/ are all about. 
+
+
+#+begin_export html
+<div style="padding:56.39% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/456349826?h=4cee6292e8&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Fa : Intro to Version Ctrl - Git (i2c4p)"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
+#+end_export
+
+* Not all repositories are git repositories
+
+#+begin_export html
+<div style="padding:56.39% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/456349738?h=27f3a64ec9&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Fb : Github Pull Req part 1 (i2c4p)"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
+#+end_export
+
+** There are many other version control options and many other places to host them.
+*** Other version control system
+    1. [[https://www.mercurial-scm.org/][Mercurial]]
+    2. [[http://darcs.net/][Darcs]]
+    3. [[https://www.nongnu.org/cvs/][CVS]]
+    4. [[https://subversion.apache.org/][Subversion]]
+    Each has their own fans. CVS and Subversion are more legacy options, but you will see them. Darcs is more of an experiment than a broadly used system. Mercurial seems to be the cool kid, but doesn't have as much market share as git, but any one of them might be a good choice for you in the future. Main point: version contol is not only ~git~.
+*** Other Repositories
+    Github is a very popular place to host your publically accessible repository, but it is far from your only option.
+    1. [[https://osf.io/][OSF.io]]
+       For scientists OSF.io seeks to make itself a way to host scientific projects and their data. 
+       Trivia question? Do I have any repositories on Osf.io?
+    2. [[https://sourceforge.net/][Sourceforge]]
+       An oldie, but still used.
+    3. [[https://bitbucket.org/][Bitbucket]]
+    4. Gitlab
+       The university provides you with a gitlab account:  [[https://git.uwaterloo.ca]]
+    Main point: github is *not* your only option
+
+* Git and Linux
+  If you want to see one big advantage to using Linux try installing a program to let you easily manage git repositories on Windows. Then when you get frustrated try the following on your Ubuntu installation:
+  
+  #+begin_src sh :eval never
+  sudo apt install git
+  #+end_src
+
+* But first ...
+  Git wants to know who you are and how to get in contact with you. The first time you want to use git from the terminal you will have to specify this with the following
+
+  #+begin_src sh :eval never
+    git config --global user.name "John Doe"
+    git config --global user.email johndoe@example.com
+  #+end_src
+  Please don't actually use "John Doe". More on these configuration options can be found [[https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup][here]].
+
+* Git in Pictures
+  A few helpful illustrations to the distinction of clones, forks, pull, push, and pull request can be found [[https://www.toolsqa.com/git/difference-between-git-clone-and-git-fork/][here]].
+
+* Terms
+  - Fork :: A copy of one github repository to another *github* repository.
+  - Clone :: A copy of one *git* repository to another *git* repository. 
+             The first repository might be hosted on github, but the second one, the /cloned/ one exists on a local machine. In your case this is probably your laptop.
+  - Remote :: This is a repository that you are following. You will typically /pull/ from these, but your /push/ permissions may be limited depending on the distinctions between forks and clones, and whether you own the remote or someone else does. You can have more than one remote.
+  - Pull :: the transfer of information and changes *from* one repository incorporated into another. This is how you get the new information from a remote transported to a local repository that you control.
+  - Push :: this is the transfer of information *to* a repository you control (or have permissions to push to) from another repository that you control. This is often from your local laptop version to the hosted repository (your fork) on github. 
+  - Pull Request :: When you have information or changes that you think would be helpful to a remote you do *not* have push permissions for then you can request that the owner of that repository pull in your changes. This is a formal process called a pull request. It is primarily a github concept and not a git concept.
+  - Branch :: within a repository the development of the code may be proceeding in a few different directions at the same time. The principal production branch is conventionally called *master*. And the principal repository that is the main, shared one is called *origin*. We will not be working with branches in our course, but those terms do show up in commands.
+
+  All of these "[[https://git-scm.com/book/en/v2/Git-Basics-Getting-a-Git-Repository][basics]]" are covered in detail in the book Pro Git (available on line). 
+
+* Using *Git* in Linux
+  Try to note when I use the word "git" and when I use the word "github". They are different things. 
+  
+** Making your first repository (aka "repo") on your laptop.
+   1. Open a terminal
+   2. Move (~cd~ or ~dir~) into your Desktop
+   3. type =git init myrepo=
+   4. You should see message from the terminal prompt that it has been created.
+   5. Feel free to delete (e.g. =rm -rf ./myrepo=)
+** Cloning a Course Repo
+
+#+begin_export html
+<div style="padding:56.39% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/456349595?h=4b78ed9d6a&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Fc : Drawing to Understand Git and Github (i2c4p)"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
+#+end_export
+
+On your laptop (Ybuntu):
+   1. Move to a directory where you want to keep things organized. I use =~/gitRepos/=. To make that directory you could do ~mkdir ~/gitRepos/~ and then ~cd~ to it. Verify you are there with ~pwd~. All this is happening /in the terminal./
+   2. Open a web browser and find *your fork* of Psych363. On that page there should be a button to clone it that will allow you to copy the command. It may be hidden. Look for a blue "code" button. Hitting that may open the dialogue that shows you the clone command.
+   3. Go back to your terminal and paste it (usually =Ctrl-Shift v=). Hit <enter>.
+   4. You should see some activity that things are being copied.
+   5. =ls= to see you have a new directory in your =gitRepos= directory.
+   6. =cd= into this new directory and look around. Compare it to what you see when you look at your fork on github. 
+   For the assessment we will create more remotes and work on generating a pull request.
+
+   #+begin_export html
+   <div style="padding:56.39% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/456349516?h=ed8c2e0af8&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Fe : Github Pull Request Assessment (i2c4p)"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
+#+end_export
+
+*** Magit
+    1. Emacs provides you with an interface for this called magit.
+    2. If you watched the [[https://vimeo.com/455628993#t=942s][emacs beginning video]] you will have seen the commands you need to add to your =init.el= file to get the =magit= package. If not, you can always take a look now.  
+    3. You will probably have to quit and then restart Emacs for the magit package to be visible.
+    4. Then you launch it by navigating (in Emacs) to the directory of your repository and typing: ~C-c m~ or ~M-x magit~ usually.
+* Git Pull Request and Issues Assessment
+** Task
+  1. Generate a pull request for the [[https://github.com/brittAnderson/psych363Practice][psych363Practice]] repository on Github.
+  2. Generate an issue for the psych363Practice repository. 
+
+** Comment
+  This course makes use of [[https://github.com][github]] for practicing how to use the version control program git. An important part of collaborating on code (or other material hosted on github, which might include text files) is to be able to give back or to alert the owner to a problem. This requires that you can both generate a *pull request* and that you can *open an issue.*
+
+** Steps
+  1. Previously you should have /forked/ the psych363Practice repository.
+  2. Next you will need to clone your fork to your laptop.
+  3. Check that you have your fork as a /remote./
+  4. Add *my original* version of the repository as a second remote.
+  5. To make sure you have the latest code, including all the other pulls generated by other students in the course you will want to:
+     1. /Pull/ from *my original* repo.
+     2. Accept and merge the changes if necessary.
+     3. /Push/ these new changes to *your fork* on github.
+     4. Verify the new changes made it there by looking at your fork in your browser. You may have to refresh your browser to see the changes.
+     5. Now, in the =gitnames= subdirectory add a file with <yourfirstname>.txt. Put some simple sentence in it.
+     6. *Add* this file.
+     7. *Commit* this change.
+     8. /Push/ to your fork.
+     9. In your web browser initiate a *pull request.*
+  6. When I receive your pull request I will accept it and give you half credit for this assignment (if you are a UWloo student).
+  7. Next, open an /issue./ Just give it a simple title and make a simple statement. Our goal is to practice the process. Note the number of your issue and upload this number to the dropbox with your github name so I can match issues and pull requests to students. 
+
+Important Note: To help each other learn how to use git, github, and
+the material of this course, whether or not you are a UWaterloo
+student, use the [[https://github.com/brittAnderson/Intro2Computing4Psychology/issues][issue function in the Intro2Computing4Psychology]]
+repository to report your problems and confusions. That issue record
+will persist for future visitors to the repo who have the same
+question see how we dealt with it.
+

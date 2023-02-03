@@ -1,6 +1,5 @@
 #+TITLE: Contents
 
-- [[file:small.org][small]]
 - [[file:rstudio.org][RStudio]]
-- [[file:intro.org][Introduction]]
 - [[file:index.org][Introduction]]
+- [[file:version-control.org][Version Control Github PullReqest and Remotes]]
