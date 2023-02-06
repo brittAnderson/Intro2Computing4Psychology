@@ -1,0 +1,1 @@
+I have not ported over <2023-02-06 Mon> all the text from these files to the chapters/book version. Need to come back and verify one at a time that this is done then delete each one as complete. 
