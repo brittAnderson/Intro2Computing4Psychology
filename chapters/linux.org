@@ -1,0 +1,164 @@
+# -*- org-link-file-path-type: relative; -*-
+#+options: ':nil *:t -:t ::t <:t H:3 \n:nil ^:t arch:headline
+#+options: author:t broken-links:nil c:nil creator:nil
+#+options: d:(not "LOGBOOK") date:t e:t email:nil f:t inline:t num:t
+#+options: p:nil pri:nil prop:nil stat:t tags:t tasks:t tex:t
+#+options: timestamp:t title:t toc:t todo:t |:t
+#+title: Linux
+#+date: <2023-02-06 Mon>
+#+author: Britt Anderson
+#+email: britt@uwaterloo.ca
+#+language: en
+#+select_tags: export
+#+exclude_tags: noexport
+#+creator: Emacs 28.2 (Org mode 9.6-pre)
+#+bibliography: /home/britt/gitRepos/Intro2Computing4Psychology/chapters/i2c4p.bib
+#+cite_export: csl assets/chicago-note-bibliography-16th-edition.csl
+
+** Goals and Objectives
+Scientific computing moves in advance of consumer adoption. To be able to take full advantage of your computer as a research tool you may need to install software or applications that require new tools or techniques or that are not /user friendly./ In fact, the main consumer operating systems: Windows and OSX may not meet your needs out-of-the-box. By installing and using Linux you will learn and practice installing software that should prepare you for the day when you need some program or some computational tool that is not available through an app store. Or when you need to figure out how to do something completely novel with your machine. 
+
+** Installing Linux to Your Own Computer
+There are a few different methods for getting Linux to run on your computer. All of them pose challenges. Any of the are acceptable, *but I will recommend using a virtual machine*. The other methods are summarized here, and you are welcome to try them if you wish. They will work just fine. But they are also methods that require a bit more patience, benfit from some experience, and involve a greater risk of data loss.
+
+I will summarize the different approaches for installing the Linux operating system (OS) to your computer below, and the follow with more specific instructions.
+
+*** Linux Only
+When you do this you will irrevocably erase everything on your computer's hard disk and you will *only* have linux. This is the easiest method *if* you have a laptop accessible that you do not need for another purpose. With all the computers we have all bought over the years this is not so far fetched. Even a ten year old laptop will probably be just fine.  One of the computers I used to develop this course dated from 2011 (Lenovo X220T).
+
+*** Dual Boot
+   With this set up you have more than one operating system. You can use your usual Windows or Mac operating system, but if you choose, when you start, you can opt to use the Linux system you installed.
+   If you have a Windows laptop this is not particularly hard to get working, but there is some risk when you /partition/ your hard drive. You will need be pay close attention to that step.
+
+   If you have an older Mac with the Intel chip this is also not too hard. The same cautions apply and you will need to follow slightly different directions.
+
+   If you have a Mac with an M1 or M2 chip this is not advised at this time (Spring 2023). There is active work porting the Linux operating system to the newer Mac hardware, but is it still a bit early for the novice user in my opinion. You can track progress of the [[https://asahilinux.org/][Asahi Linux]] project if you are interested in this. 
+
+   Contact me if you want to try this method and I will point you to some example instructions.
+   
+*** Run from a USB (or SD card or external hard drive) *DEPRECATED*
+This is the method that does the least to your laptop and so there is the least risk of data loss. It is also the *hardest*, most technically demanding, and has the highest concentration of black magic (where you will be typing incantations you don't understand just to make things work). Thus I call this method "deprecated." If you are adventurous, have some spare time, of just curious feel free to give it a go, but for most of you I think the Virtual Machine method will be just as safe and technically easier.
+
+Most of the Linux distributions have a "live" version that can be run from a USB, bu those live versions do not allow persistent data. That means anything you write or download will be lost when you power down. It is fine therefore to try out a new distribution of linux to see if you like the look and feel, but not ideal if you want to do work. Also, since USB and SD cards were not made with the intention of being used daily as the host of the operating system they are more prone to catastrophic failure where the card gets corrupted and you lose all your saved files. Your computer will be fine, but not the data that you have saved only to the USB or SD card.
+
+If you want to try this method you will want a new USB, and you should ask me to point you to directions. I have them in an older branch of this course, but they are not linked here to decrease the risk of someone accidentally trying an old or outdated method or using the Mac method when the need the Windows version or vice versa. 
+
+*** Install Linux As A Virtual Machine
+
+    This is the  method I prefer as of Spring 2023. There are a number of videos for Mac and Windows users on how to do this on the Internet. Pay careful attention to the dates. Things are changing rapidly in this space and what worked a few years ago may not work well now. Note *the rules are different depending on whether you are using an M1/M2 mac or an Intel mac* or a Window machine. Don't know which you have? Well, find out. A good workman knows their tools.
+
+    *IMPORTANT* For all these methods and regardless of your machine make sure you have fully update Windows or OSX to the latest available version. This means Windows 11 where possible and Ventura (13) on Macs. 
+    
+**** Windows
+In order to use a virtual machine on Windows you need to make sure that the BIOS permits virtualization. Your BIOS is the basic input output system that starts up even before your operating system starts to tell your computer where to find essential start up files and to make sure that the hardware is set up to correctly use and communicate with the available software. Getting to the BIOS is generally unique to your laptop's make and model and you will have to look up how to enter the BIOS for your laptop yourself. Sometimes the default settings for Windows machines can obstruct your ability to do this. You may need to turn of Smart Boot and Quick Boot features. But try first without fiddling with those settings. 
+
+Once you can do that the following video will show you the virtualization settings you need to enable. 
+
+#+begin_export html
+     <iframe src="https://player.vimeo.com/video/699876547?h=ff9f485432" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+<p><a href="https://vimeo.com/699876547">Cag: Getting to the BIOS on windows (i2c4p)</a> from <a href="https://vimeo.com/epistemic">Britt Anderson</a> on <a href="https://vimeo.com">Vimeo</a>.</p>/
+#+end_export
+
+The tool that you need to run a virtual machine on Windows (and you can run VMs for operating systems other than Linux) requires a tool called hypervisor. This may not be on by default. The next video shows you how to make sure you have hypervisor enabled. 
+
+#+begin_export html
+<div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/699876590?h=709cf65afc&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Cah : enabling hyper-v on windows 11 (i2c4p)"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
+#+end_export
+
+After that you should install Ubuntu (or Xubuntu). These are two different versions of Linux which have a slightly different look and feel. Ubuntu is the more resource intensive of all the 'buntu flavors, but it is also the one with greatest user base so it is often the one with the best support and the most available information for troubleshooting problems. If you get Ubuntu working you could always create a new virtual machine for a different version of Linux later.
+
+#+begin_export html
+<iframe src="https://player.vimeo.com/video/699876560?h=e5e983d44f" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+<p><a href="https://vimeo.com/699876560">Cai : Installing Ubuntu as a VM on Windows 11 (i2c4p)</a> from <a href="https://vimeo.com/epistemic">Britt Anderson</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
+#+end_export
+
+
+**** MAC OSX (INTEL)
+For Macintosh computer/laptops with intel based chips we can use a virtual machine software called virtual box. It is like the hypervisor described above for Windows. It is free and open and is a good choice. 
+
+#+begin_export html
+<iframe src="https://player.vimeo.com/video/699876529?h=0f778aebe5" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+<p><a href="https://vimeo.com/699876529">Caa: Intel Mac Get Virtual Box (i2c4p)</a> from <a href="https://vimeo.com/epistemic">Britt Anderson</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
+#+end_export
+
+After you have installed the software (and you really want to make sure that you have updated your machine to the latest version of the OSX operating system and that you have a reasonable amout of hard disk space available (at least 32 gigs and ideally closer to 64) you will need to create the virtual machine. It is the virtual machine that we will install Linux to.
+
+#+begin_export html
+<iframe src="https://player.vimeo.com/video/699876515?h=0e9c87982a" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+<p><a href="https://vimeo.com/699876515">Cab: intel macs make a virtual machine with virtual box (i2c4p)</a> from <a href="https://vimeo.com/epistemic">Britt Anderson</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
+#+end_export
+
+And as your final step you will install either Xubuntu or Ubuntu, and that will require getting and downloading a copy. 
+
+#+begin_export html
+<iframe src="https://player.vimeo.com/video/699876505?h=09c73a6f4b" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+<p><a href="https://vimeo.com/699876505">Cac: you are going to need a xubuntu iso (i2c4p)</a> from <a href="https://vimeo.com/epistemic">Britt Anderson</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
+#+end_export
+
+And as our final step in the process will install our linux operating system to the VM.
+
+#+begin_export html
+<iframe src="https://player.vimeo.com/video/699876484?h=d1be87592f" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+<p><a href="https://vimeo.com/699876484">Cad: intel mac - install Xubuntu to your VM (i2c4p)</a> from <a href="https://vimeo.com/epistemic">Britt Anderson</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
+#+end_export
+
+      
+**** MAC OSX (ARM, ie M1 or M2)
+In some ways the newer macs make things harder, in others easier. You will have many less options to get a VM going and fewer choices, at this time, for linux versions, but the method for getting a Ubuntu VM installed is quite slick, and simpler than the Intel mac.
+
+#+begin_export html
+<iframe src="https://player.vimeo.com/video/699876351?h=83652013e4" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+<p><a href="https://vimeo.com/699876351">Caf: M1 Mac VM instructions (i2c4p)</a> from <a href="https://vimeo.com/epistemic">Britt Anderson</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
+#+end_export
+
+** Xubuntu Walkthrough
+   When you start up your Linux desktop for the first time you may wonder what to do to get started. In the following video I show you a basic walkthrough of a first boot and I demo this on Xubuntu. The steps are similar for Ubuntu. In addition, you will hear me mention starting from a USB. This video was made when I was using that method, but you can just ignore the USB talk. It will be basically the same once you have started U(Xu)buntu on your VM. 
+
+A couple of steps that I demonstrate is how to turn off the power management features so that your computer does not go to sleep during updates. You can always turn them back on later.
+
+Next I illustrate updating all the software to the latest and greatest using terminal commands. We will see more about the terminal later, but you will basically type what you see in the video to get started.
+
+   #+begin_export html
+   <iframe title="vimeo-player" src="https://player.vimeo.com/video/453295883?h=a8b4a1dff6" width="640" height="360" frameborder="0" allowfullscreen></iframe>
+#+end_export
+
+** Package Management
+
+Any particular program that you want to run in modern times probably requires several other pieces of software to be available on your computer. Thus, to install a program you usually have to install a /package/, which is that collection of pieces of code and their /dependencies/: the things they depend on to work. Of course, those dependencies are software too and they may also have dependencies. Some software you download and run will require downloading many pieces of software. A /package manager/ is a convenient tool to make this job easier. Different Linux distributions use different package managers. The terminal based package manager that we will be using in this course is =apt=. The course also makes extensive use of a text processing program called =emacs= and so we will download =emacs= as our first package. The steps for doing that are demonstrated in the following video. 
+
+#+begin_export html
+<iframe title="vimeo-player" src="https://player.vimeo.com/video/453295879?h=155efb04ef" width="640" height="360" frameborder="0" allowfullscreen></iframe>
+#+end_export
+
+* Assessments
+
+** Installing Linux
+  
+  Demonstrate that you have installed Ubuntu to your computer. If you are one of my uwaterloo students you will do this by uploading a screen shot of your Ubuntu desktop to the Learn Dropbox. Have something open where you can type in your name and student id so that I can verify who is who. 
+
+*** Comments
+  
+  There are [[https://linuxconfig.org/how-to-take-a-screenshot-on-ubuntu-20-04-focal-fossa-linux][screen capture tools]] available for your Ubuntu installation.
+
+
+** Install Emacs Package 
+
+*** Task
+
+Demonstrate that you have a functioning Linux installation and that you can use the package management system. 
+
+*** Details
+  1. Open up a terminal. In Xubuntu go to the upper left of your desktop and click the icon. Type terminal in the search bar and select the top option.
+  2. When the terminal opens type ~sudo apt update~ to update your list of currently available packages. This package manager works for Xubuntu, but will not be found on all Linux distributions.
+  3. Type ~sudo apt install emacs~
+  4. Follow the on screen instructions. When installation is complete type, in the same terminal window, ~emacs &~.
+  5. Emacs will open. Use the ~File~ menu to create a new file with a sensible name in the file itself type in your name and student id and save the file as type ~.org~. Make a note of where you save it, because you will need to ...
+  6. Log on to learn and submit the file. 
+
+*** Comments
+  
+  If you want to try something fun open the file back up in emacs after doing the above. Then type ~C-c C-e h h~. ~C-c~ means typing the "Ctrl" key and the lower case "c" key simultaneously. The spaces between those instructions mean you have a sequence of four key chords to enter. If all goes well you have just created a web page of that file. You should be able to open it in your browser. To test, use the file browser in Xubuntu to navigate to the file with the name you used above, but now ending in ~.html~ and not the ~.org~ one. Double click and your web browser should open with that file displayed.
+
+  To get ahead of things and learn more about the org-mode utilities you just used you can search for emacs and orgmode online. Or type ~C-h i~ to open the information functionality and navigate to the orgmode chapter.
+
+  And if you get stressed you can always consult Emacs' built in therapist with ~M-x doctor~.
