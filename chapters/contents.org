@@ -3,3 +3,4 @@
 - [[file:rstudio.org][RStudio]]
 - [[file:index.org][Introduction]]
 - [[file:version-control.org][Version Control Github PullReqest and Remotes]]
+- [[file:linux.org][Linux]]
