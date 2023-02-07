@@ -1,0 +1,134 @@
+# -*- org-link-file-path-type: relative; -*-
+#+options: ':nil *:t -:t ::t <:t H:3 \n:nil ^:t arch:headline
+#+options: author:t broken-links:nil c:nil creator:nil
+#+options: d:(not "LOGBOOK") date:t e:t email:nil f:t inline:t num:t
+#+options: p:nil pri:nil prop:nil stat:t tags:t tasks:t tex:t
+#+options: timestamp:t title:t toc:t todo:t |:t
+#+title: Emacs
+#+date: <2023-02-03 Fri>
+#+author: Britt Anderson
+#+email: britt@uwaterloo.ca
+#+language: en
+#+select_tags: export
+#+exclude_tags: noexport
+#+creator: Emacs 28.2 (Org mode 9.6-pre)
+#+bibliography: /home/britt/gitRepos/Intro2Computing4Psychology/chapters/i2c4p.bib
+#+cite_export: csl assets/chicago-note-bibliography-16th-edition.csl
+
+* Goal
+  Introduce emacs and the rudiments of its use. We will build on these basics as we work through our additional exercises in coding and programming experiments and writing reports. 
+* What is Emacs
+  Emacs is the tool we will be leveraging to produce our reproducible research report, but it is much more. It is a highly extensible text editor that can make your life much easier through its auxilliary functions and capacities. 
+* Emacs is a text editor
+  Emacs began in some form in the early 1970s [fn:1]. It has been continually developed for 50 years and quite a bit of humor and myth has settled about it [fn:2]. Some people joke that it is an operating system masquerading as a text editor. Many people argue that it is overly complex and overly engineered, but it truly allows one to do a great deal within a single interface and a single environment, and I introduce it because I love it, but more importantly, because I think it is one of the easiest way to become functional with some of the key tools that allow you to generate a reproducible report [fn:3]. As confirmation of its versatility this whole book is written and assembled using emacs org mode (see [[info:org#Publishing][org#Publishing]] - if you open this link in emacs (from the .org file) using =C-c C-o= it will take you to the "info" page, which is includes the emacs documentation).
+* Emacs Basics
+
+As you read the rest of this file you may want to also skim the following video where I try to explain in more detail how the key commands and the Emacs interface works at a basic level.
+
+#+begin_export html
+<iframe src="https://player.vimeo.com/video/455628993?h=5f55d099d6" width="640" height="361" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+<p><a href="https://vimeo.com/455628993">Eb : Beginning With Emacs</a> from <a href="https://vimeo.com/epistemic">Britt Anderson</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
+#+end_export
+
+** Modifier Keys
+   Your modifier keys may depend on your keyboard and operating system. Don't like what they are? [[https://www.x.org/releases/current/doc/man/man1/xmodmap.1.xhtml][Remap them]]. You use these simultaneously with other keys to invoke commands without using your mouse or menus. For example, to open a file you ~C-x C-f~. This means that you hold down the control key and press 'x'. Then you let up on both keys, press control and then simultaneously 'f' and let up on both. You are then prompted in the /minibuffer/ with a menu for the name and location of the new file. You can navigate the mini-buffer by using backspace to delete and tab to move forward. 
+*** Ctrl
+    This is usually the <ctrl> key. Found on lower left (and sometimes also on lower right) of most keyboards.
+*** Meta
+    On windows and macs this is usually the <alt> key. Sometimes it is mapped to the super key, which has the windows logo or the curly square of macs. 
+** What Can You Do With Emacs
+   1. Write code
+   2. Execute code
+   3. Execute code within the confines of a document
+   4. Export the document as a webpage or pdf.
+   5. Read and annotate pdfs.
+   6. Manage your email.
+   7. Securely encrypt/decrypt and sign emails.
+   8. Edit the names of files in your directories.
+   9. Compress and decompress files.
+   10. Manage your bibliography.
+   11. Create citations.
+   12. Interface with the ~git~ version control system.
+   13. Talk remotely to servers. Copy and move files between computers as if the were merely separate directories on your own machine.
+   14. Manage a knowledge data base in plain text.
+   15. Keep your calendar, journal, agenda, and to-do list integrated.
+   16. Take notes in a rapid outline fashion.
+
+   #+Caption: A brief video exploring some of the above opportunities of Emacs
+   #+begin_export html
+   <iframe src="https://player.vimeo.com/video/455641662?h=516b5b0020" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+<p><a href="https://vimeo.com/455641662">Emacs Show and Tell</a> from <a href="https://vimeo.com/epistemic">Britt Anderson</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
+
+#+end_export
+** Emacs Takes a Long Time to Learn
+   I learn new things in emacs everyday. Don't expect to do all those things at the beginning. You will just frustrate yourself. Pick some small things that you do regularly and try to learn how to do that in emacs. The rest will grow naturally as your comfort expands and you tackle new use cases. 
+*** First Things First
+    Learn the basics. Take the Emacs tutorial  ~Ctrl-h t~ (aka =C-h t=). Consult the Psychotherapist when needed (under help menu). Play a game - try ~M-x tetris~ .
+** Emacs is highly customizable
+   Just like linux distributions have package managers so does emacs. Usually your emacs customizations will be found in a /hidden/ directory (starts with a dot ('.') in your home directory. For example, =/home/britt/.emacs.d/=
+*** Where is your "init" file
+    Emacs tries to find an initialization file to see your customizations and what, if any, extra packages you may have installed. There are multiple places where it looks, and we want it to look in the right one. 
+    Do ~C-x d~. This will display your current directory. The first line shows you where you are. Move up or down as needed to get to your home directory. Look for a file called ~.emacs~. Navigate to it by ~C-n~ and ~C-p~ to move up and down. When you find it and the cursor is on it. Type a capital ~D~. Then confirm the delete. Then ~C-x d~ and tab to =~/.emacs.d/=. Type a plus sign ~+~. For the name of the new file type ~init.el.~
+*** The init.el file and packages
+    Emacs has it's own package system that allows you to greatly expand its functionality. You can learn more by reading the info file =C-h i=. If for some reason your info files are missing see this Stackoverflow question for hints on how to install [fn:4]. Many packages could be installed through the =apt= methods, but it is better not to mix and match package systems. Since there may well be packages you will eventually want that are not built by xubuntu you should probably use packages from the emacs system. The big package warehouse that most emacs users rely on is called "melpa". Here is how to get a basic package database available.
+    #+begin_src emacslisp :eval never :exports code
+    (require 'package)
+    (add-to-list 'package-archives '("melpa" ."http://melpa.org/packages/") t)
+    (package-initialize)
+    #+end_src
+    Now we can look for packages by running ~M-x package-list-packages~
+*** Additional Tools for Package Management with Emacs
+    The easiest way to get started with Emacs packages is to install packages via the ~package-list-packages~. In that pane that opens up you can search for a package (using ~C-s~) and then type an "i" to install it.
+
+    As you become more comfortable with Emacs, if in fact you ever do, you might want to consider other ways to manage your package. I quite like [[https://suvratapte.com/configuring-emacs-from-scratch-use-package/][use-package]] as it allowed me to write down what packages and customizations I was using in a single place. Then I could use that file on a new computer to fairly easily get the same set-up. Here is an example of how one might use the =use-package= system:
+
+    #+begin_src emacslisp :eval never :exports code
+    (use-package elpy
+    :ensure t
+    :init (elpy-enable))
+     
+    (use-package ess
+    :ensure t
+    )
+    #+end_src
+
+    If you become even more expert you may want to manage and compile your emacs packages directly from source. For that you might want to manage packages with [[https://github.com/radian-software/straight.el][straight.el]]. This is definitely a more advanced package management system, and should wait until you feel comfortable using Emacs.
+
+    Lastly, there are Emacs bundles where someone has decided to create a system that uses Emacs and contains an already configured selection of emacs packages that play well together. Many people find these a nice help when getting started. If you decide you want to keep trying emacs after this course, but find it hard to get started, then one of these two options ([[https://www.spacemacs.org/][spacemacs]] ; [[https://github.com/doomemacs/doomemacs][doomemacs]] ) might be worth a look. If you are the kind of person who likes books for learning, check out [[https://www.masteringemacs.org/][Mastering Emacs]]. 
+*** Program Your Editor
+    Emacs can be programmed with elisp code, it's own [[https://en.wikipedia.org/wiki/Lisp_(programming_language)][lisp]]. You can actually change the functions of your editor while using it. Usually, you don't really need to know elisp. You just need to have the confidence to cut and paste to the right location, usually you =init.el= file. 
+**** An example: Turn off the tool bar.
+     - To search for functions you can use the help ~C-h-f~. This will allow you to search for functions. Try the keyword menu and tab and see if you come across a likely contender (~menu-bar-showhide-tool-bar-menu-customize-disable~).
+     - Navigate to the scratch buffer. Put that function in parantheses. Move to the end. Type ~C-x C-e~. Did your tool bar go away?
+*** [[info:org#Top][Orgmode]]
+    1. What is it? About the best thing ever.
+    2. Make an outline. Keep a calendar. Add code to your documents. Make links. Include images.
+    3. Practice now:
+    Where is the help, remember? ~C-h i~
+    1. Learn to use the short cuts to open, save, and so on. That is one of the powers of the command line and similar style tools. Enhance your productivity and control. 
+    2. Create an outline.
+    3. Create a link
+    4. Insert an image
+    5. Export as a web page.
+    6. What would you need to export a pdf?
+       You will probably need some extra packages from Ubuntu to do this. Emacs will rely on external packages to compile the "LaTeX" intermediate to a pdf. 
+       Try installing ~texlive-latex-base texlive-latex-extra~. If that doesn't work, repeat with ~texlive-latex-recommended~. If that doesn't fix the problem go with ~texlive-full~. This is big package. Be patient.
+* Emacs Activities and Assessments
+** Task
+  Create and submit an .org file edited in emacs. We will recreat the original [[file:rstudio.org::*First Rmd Assessment][First Rmd Assessment]] using this alternative markup syntax. 
+** General Instructions
+  1. Create an org file in emacs using your name as the file name.
+  2. Create a major heading for you identifying information and put your name in bold and your student id in italics.
+  3. Create a functioning link to a favorite website relevant to science or research.
+  4. Create an inline link to an image from the web that will appear in your exported version.
+  5. Verify that when you export your org file =C-c C-e h h= to html that you can open your html output and that it shows the properly configured output.
+
+
+* Footnotes
+
+[fn:1] https://www.emacswiki.org/emacs/EmacsHistory
+[fn:2] https://xkcd.com/378/
+[fn:3] https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.2006930
+[fn:4] https://emacs.stackexchange.com/questions/48211/emacs-manuals-are-missing-on-debian-ubuntu/48214#48214 To get this to work I enabled the non-free icon on the repositories, did  ~sudo apt install emacs-common-non-dfsg~ for all the documentation, and then ran as the super user the command to update the info directories. 
+
+

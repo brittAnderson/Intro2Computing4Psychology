@@ -1,0 +1,505 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2023-02-07 Tue 08:03 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Emacs</title>
+<meta name="author" content="Britt Anderson" />
+<meta name="generator" content="Org Mode" />
+<style>
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { }
+</style>
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">Emacs</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#orga22152e">1. Goal</a></li>
+<li><a href="#orgac6f85a">2. What is Emacs</a></li>
+<li><a href="#org75206fd">3. Emacs is a text editor</a></li>
+<li><a href="#org3b9f001">4. Emacs Basics</a>
+<ul>
+<li><a href="#org7fcd5d4">4.1. Modifier Keys</a>
+<ul>
+<li><a href="#orgf9eac44">4.1.1. Ctrl</a></li>
+<li><a href="#org9b4fe56">4.1.2. Meta</a></li>
+</ul>
+</li>
+<li><a href="#orge34d0e3">4.2. What Can You Do With Emacs</a></li>
+<li><a href="#org35aee0a">4.3. Emacs Takes a Long Time to Learn</a>
+<ul>
+<li><a href="#org3a4a2c6">4.3.1. First Things First</a></li>
+</ul>
+</li>
+<li><a href="#org8220320">4.4. Emacs is highly customizable</a>
+<ul>
+<li><a href="#orga0d1028">4.4.1. Where is your "init" file</a></li>
+<li><a href="#orga0f8862">4.4.2. The init.el file and packages</a></li>
+<li><a href="#orgb5b94f6">4.4.3. Additional Tools for Package Management with Emacs</a></li>
+<li><a href="#orgcca4a00">4.4.4. Program Your Editor</a></li>
+<li><a href="#org1be0b85">4.4.5. Orgmode</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#orgc60b814">5. Emacs Activities and Assessments</a>
+<ul>
+<li><a href="#org63ec49c">5.1. Task</a></li>
+<li><a href="#orgfe1e419">5.2. General Instructions</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orga22152e" class="outline-2">
+<h2 id="orga22152e"><span class="section-number-2">1.</span> Goal</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+Introduce emacs and the rudiments of its use. We will build on these basics as we work through our additional exercises in coding and programming experiments and writing reports. 
+</p>
+</div>
+</div>
+<div id="outline-container-orgac6f85a" class="outline-2">
+<h2 id="orgac6f85a"><span class="section-number-2">2.</span> What is Emacs</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+Emacs is the tool we will be leveraging to produce our reproducible research report, but it is much more. It is a highly extensible text editor that can make your life much easier through its auxilliary functions and capacities. 
+</p>
+</div>
+</div>
+<div id="outline-container-org75206fd" class="outline-2">
+<h2 id="org75206fd"><span class="section-number-2">3.</span> Emacs is a text editor</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+Emacs began in some form in the early 1970s <sup><a id="fnr.1" class="footref" href="#fn.1" role="doc-backlink">1</a></sup>. It has been continually developed for 50 years and quite a bit of humor and myth has settled about it <sup><a id="fnr.2" class="footref" href="#fn.2" role="doc-backlink">2</a></sup>. Some people joke that it is an operating system masquerading as a text editor. Many people argue that it is overly complex and overly engineered, but it truly allows one to do a great deal within a single interface and a single environment, and I introduce it because I love it, but more importantly, because I think it is one of the easiest way to become functional with some of the key tools that allow you to generate a reproducible report <sup><a id="fnr.3" class="footref" href="#fn.3" role="doc-backlink">3</a></sup>. As confirmation of its versatility this whole book is written and assembled using emacs org mode (see <a href="https://www.gnu.org/software/emacs/manual/html_mono/org.html#Publishing">org#Publishing</a> - if you open this link in emacs (from the .org file) using <code>C-c C-o</code> it will take you to the "info" page, which is includes the emacs documentation).
+</p>
+</div>
+</div>
+<div id="outline-container-org3b9f001" class="outline-2">
+<h2 id="org3b9f001"><span class="section-number-2">4.</span> Emacs Basics</h2>
+<div class="outline-text-2" id="text-4">
+<p>
+As you read the rest of this file you may want to also skim the following video where I try to explain in more detail how the key commands and the Emacs interface works at a basic level.
+</p>
+
+<iframe src="https://player.vimeo.com/video/455628993?h=5f55d099d6" width="640" height="361" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+<p><a href="https://vimeo.com/455628993">Eb : Beginning With Emacs</a> from <a href="https://vimeo.com/epistemic">Britt Anderson</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
+</div>
+
+<div id="outline-container-org7fcd5d4" class="outline-3">
+<h3 id="org7fcd5d4"><span class="section-number-3">4.1.</span> Modifier Keys</h3>
+<div class="outline-text-3" id="text-4-1">
+<p>
+Your modifier keys may depend on your keyboard and operating system. Don't like what they are? <a href="https://www.x.org/releases/current/doc/man/man1/xmodmap.1.xhtml">Remap them</a>. You use these simultaneously with other keys to invoke commands without using your mouse or menus. For example, to open a file you <code>C-x C-f</code>. This means that you hold down the control key and press 'x'. Then you let up on both keys, press control and then simultaneously 'f' and let up on both. You are then prompted in the <i>minibuffer</i> with a menu for the name and location of the new file. You can navigate the mini-buffer by using backspace to delete and tab to move forward. 
+</p>
+</div>
+<div id="outline-container-orgf9eac44" class="outline-4">
+<h4 id="orgf9eac44"><span class="section-number-4">4.1.1.</span> Ctrl</h4>
+<div class="outline-text-4" id="text-4-1-1">
+<p>
+This is usually the &lt;ctrl&gt; key. Found on lower left (and sometimes also on lower right) of most keyboards.
+</p>
+</div>
+</div>
+<div id="outline-container-org9b4fe56" class="outline-4">
+<h4 id="org9b4fe56"><span class="section-number-4">4.1.2.</span> Meta</h4>
+<div class="outline-text-4" id="text-4-1-2">
+<p>
+On windows and macs this is usually the &lt;alt&gt; key. Sometimes it is mapped to the super key, which has the windows logo or the curly square of macs. 
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-orge34d0e3" class="outline-3">
+<h3 id="orge34d0e3"><span class="section-number-3">4.2.</span> What Can You Do With Emacs</h3>
+<div class="outline-text-3" id="text-4-2">
+<ol class="org-ol">
+<li>Write code</li>
+<li>Execute code</li>
+<li>Execute code within the confines of a document</li>
+<li>Export the document as a webpage or pdf.</li>
+<li>Read and annotate pdfs.</li>
+<li>Manage your email.</li>
+<li>Securely encrypt/decrypt and sign emails.</li>
+<li>Edit the names of files in your directories.</li>
+<li>Compress and decompress files.</li>
+<li>Manage your bibliography.</li>
+<li>Create citations.</li>
+<li>Interface with the <code>git</code> version control system.</li>
+<li>Talk remotely to servers. Copy and move files between computers as if the were merely separate directories on your own machine.</li>
+<li>Manage a knowledge data base in plain text.</li>
+<li>Keep your calendar, journal, agenda, and to-do list integrated.</li>
+<li>Take notes in a rapid outline fashion.</li>
+</ol>
+
+   <iframe src="https://player.vimeo.com/video/455641662?h=516b5b0020" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+<p><a href="https://vimeo.com/455641662">Emacs Show and Tell</a> from <a href="https://vimeo.com/epistemic">Britt Anderson</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
+</div>
+</div>
+<div id="outline-container-org35aee0a" class="outline-3">
+<h3 id="org35aee0a"><span class="section-number-3">4.3.</span> Emacs Takes a Long Time to Learn</h3>
+<div class="outline-text-3" id="text-4-3">
+<p>
+I learn new things in emacs everyday. Don't expect to do all those things at the beginning. You will just frustrate yourself. Pick some small things that you do regularly and try to learn how to do that in emacs. The rest will grow naturally as your comfort expands and you tackle new use cases. 
+</p>
+</div>
+<div id="outline-container-org3a4a2c6" class="outline-4">
+<h4 id="org3a4a2c6"><span class="section-number-4">4.3.1.</span> First Things First</h4>
+<div class="outline-text-4" id="text-4-3-1">
+<p>
+Learn the basics. Take the Emacs tutorial  <code>Ctrl-h t</code> (aka <code>C-h t</code>). Consult the Psychotherapist when needed (under help menu). Play a game - try <code>M-x tetris</code> .
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org8220320" class="outline-3">
+<h3 id="org8220320"><span class="section-number-3">4.4.</span> Emacs is highly customizable</h3>
+<div class="outline-text-3" id="text-4-4">
+<p>
+Just like linux distributions have package managers so does emacs. Usually your emacs customizations will be found in a <i>hidden</i> directory (starts with a dot ('.') in your home directory. For example, <code>/home/britt/.emacs.d/</code>
+</p>
+</div>
+<div id="outline-container-orga0d1028" class="outline-4">
+<h4 id="orga0d1028"><span class="section-number-4">4.4.1.</span> Where is your "init" file</h4>
+<div class="outline-text-4" id="text-4-4-1">
+<p>
+Emacs tries to find an initialization file to see your customizations and what, if any, extra packages you may have installed. There are multiple places where it looks, and we want it to look in the right one. 
+Do <code>C-x d</code>. This will display your current directory. The first line shows you where you are. Move up or down as needed to get to your home directory. Look for a file called <code>.emacs</code>. Navigate to it by <code>C-n</code> and <code>C-p</code> to move up and down. When you find it and the cursor is on it. Type a capital <code>D</code>. Then confirm the delete. Then <code>C-x d</code> and tab to <code>~/.emacs.d/</code>. Type a plus sign <code>+</code>. For the name of the new file type <code>init.el.</code>
+</p>
+</div>
+</div>
+<div id="outline-container-orga0f8862" class="outline-4">
+<h4 id="orga0f8862"><span class="section-number-4">4.4.2.</span> The init.el file and packages</h4>
+<div class="outline-text-4" id="text-4-4-2">
+<p>
+Emacs has it's own package system that allows you to greatly expand its functionality. You can learn more by reading the info file <code>C-h i</code>. If for some reason your info files are missing see this Stackoverflow question for hints on how to install <sup><a id="fnr.4" class="footref" href="#fn.4" role="doc-backlink">4</a></sup>. Many packages could be installed through the <code>apt</code> methods, but it is better not to mix and match package systems. Since there may well be packages you will eventually want that are not built by xubuntu you should probably use packages from the emacs system. The big package warehouse that most emacs users rely on is called "melpa". Here is how to get a basic package database available.
+</p>
+<div class="org-src-container">
+<pre class="src src-emacslisp">(require 'package)
+(add-to-list 'package-archives '("melpa" ."http://melpa.org/packages/") t)
+(package-initialize)
+</pre>
+</div>
+<p>
+Now we can look for packages by running <code>M-x package-list-packages</code>
+</p>
+</div>
+</div>
+<div id="outline-container-orgb5b94f6" class="outline-4">
+<h4 id="orgb5b94f6"><span class="section-number-4">4.4.3.</span> Additional Tools for Package Management with Emacs</h4>
+<div class="outline-text-4" id="text-4-4-3">
+<p>
+The easiest way to get started with Emacs packages is to install packages via the <code>package-list-packages</code>. In that pane that opens up you can search for a package (using <code>C-s</code>) and then type an "i" to install it.
+</p>
+
+<p>
+As you become more comfortable with Emacs, if in fact you ever do, you might want to consider other ways to manage your package. I quite like <a href="https://suvratapte.com/configuring-emacs-from-scratch-use-package/">use-package</a> as it allowed me to write down what packages and customizations I was using in a single place. Then I could use that file on a new computer to fairly easily get the same set-up. Here is an example of how one might use the <code>use-package</code> system:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-emacslisp">(use-package elpy
+:ensure t
+:init (elpy-enable))
+
+(use-package ess
+:ensure t
+)
+</pre>
+</div>
+
+<p>
+If you become even more expert you may want to manage and compile your emacs packages directly from source. For that you might want to manage packages with <a href="https://github.com/radian-software/straight.el">straight.el</a>. This is definitely a more advanced package management system, and should wait until you feel comfortable using Emacs.
+</p>
+
+<p>
+Lastly, there are Emacs bundles where someone has decided to create a system that uses Emacs and contains an already configured selection of emacs packages that play well together. Many people find these a nice help when getting started. If you decide you want to keep trying emacs after this course, but find it hard to get started, then one of these two options (<a href="https://www.spacemacs.org/">spacemacs</a> ; <a href="https://github.com/doomemacs/doomemacs">doomemacs</a> ) might be worth a look. If you are the kind of person who likes books for learning, check out <a href="https://www.masteringemacs.org/">Mastering Emacs</a>. 
+</p>
+</div>
+</div>
+<div id="outline-container-orgcca4a00" class="outline-4">
+<h4 id="orgcca4a00"><span class="section-number-4">4.4.4.</span> Program Your Editor</h4>
+<div class="outline-text-4" id="text-4-4-4">
+<p>
+Emacs can be programmed with elisp code, it's own <a href="https://en.wikipedia.org/wiki/Lisp_(programming_language)">lisp</a>. You can actually change the functions of your editor while using it. Usually, you don't really need to know elisp. You just need to have the confidence to cut and paste to the right location, usually you <code>init.el</code> file. 
+</p>
+</div>
+<ol class="org-ol">
+<li><a id="org058d1d1"></a>An example: Turn off the tool bar.<br />
+<div class="outline-text-5" id="text-4-4-4-1">
+<ul class="org-ul">
+<li>To search for functions you can use the help <code>C-h-f</code>. This will allow you to search for functions. Try the keyword menu and tab and see if you come across a likely contender (<code>menu-bar-showhide-tool-bar-menu-customize-disable</code>).</li>
+<li>Navigate to the scratch buffer. Put that function in parantheses. Move to the end. Type <code>C-x C-e</code>. Did your tool bar go away?</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+<div id="outline-container-org1be0b85" class="outline-4">
+<h4 id="org1be0b85"><span class="section-number-4">4.4.5.</span> <a href="https://www.gnu.org/software/emacs/manual/html_mono/org.html#Top">Orgmode</a></h4>
+<div class="outline-text-4" id="text-4-4-5">
+<ol class="org-ol">
+<li>What is it? About the best thing ever.</li>
+<li>Make an outline. Keep a calendar. Add code to your documents. Make links. Include images.</li>
+<li>Practice now:</li>
+</ol>
+<p>
+Where is the help, remember? <code>C-h i</code>
+</p>
+<ol class="org-ol">
+<li>Learn to use the short cuts to open, save, and so on. That is one of the powers of the command line and similar style tools. Enhance your productivity and control.</li>
+<li>Create an outline.</li>
+<li>Create a link</li>
+<li>Insert an image</li>
+<li>Export as a web page.</li>
+<li>What would you need to export a pdf?
+You will probably need some extra packages from Ubuntu to do this. Emacs will rely on external packages to compile the "LaTeX" intermediate to a pdf. 
+Try installing <code>texlive-latex-base texlive-latex-extra</code>. If that doesn't work, repeat with <code>texlive-latex-recommended</code>. If that doesn't fix the problem go with <code>texlive-full</code>. This is big package. Be patient.</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-orgc60b814" class="outline-2">
+<h2 id="orgc60b814"><span class="section-number-2">5.</span> Emacs Activities and Assessments</h2>
+<div class="outline-text-2" id="text-5">
+</div>
+<div id="outline-container-org63ec49c" class="outline-3">
+<h3 id="org63ec49c"><span class="section-number-3">5.1.</span> Task</h3>
+<div class="outline-text-3" id="text-5-1">
+<p>
+Create and submit an .org file edited in emacs. We will recreat the original <a href="rstudio.html#org18a031b">First Rmd Assessment</a> using this alternative markup syntax. 
+</p>
+</div>
+</div>
+<div id="outline-container-orgfe1e419" class="outline-3">
+<h3 id="orgfe1e419"><span class="section-number-3">5.2.</span> General Instructions</h3>
+<div class="outline-text-3" id="text-5-2">
+<ol class="org-ol">
+<li>Create an org file in emacs using your name as the file name.</li>
+<li>Create a major heading for you identifying information and put your name in bold and your student id in italics.</li>
+<li>Create a functioning link to a favorite website relevant to science or research.</li>
+<li>Create an inline link to an image from the web that will appear in your exported version.</li>
+<li>Verify that when you export your org file <code>C-c C-e h h</code> to html that you can open your html output and that it shows the properly configured output.</li>
+</ol>
+</div>
+</div>
+</div>
+<div id="footnotes">
+<h2 class="footnotes">Footnotes: </h2>
+<div id="text-footnotes">
+
+<div class="footdef"><sup><a id="fn.1" class="footnum" href="#fnr.1" role="doc-backlink">1</a></sup> <div class="footpara" role="doc-footnote"><p class="footpara">
+<a href="https://www.emacswiki.org/emacs/EmacsHistory">https://www.emacswiki.org/emacs/EmacsHistory</a>
+</p></div></div>
+
+<div class="footdef"><sup><a id="fn.2" class="footnum" href="#fnr.2" role="doc-backlink">2</a></sup> <div class="footpara" role="doc-footnote"><p class="footpara">
+<a href="https://xkcd.com/378/">https://xkcd.com/378/</a>
+</p></div></div>
+
+<div class="footdef"><sup><a id="fn.3" class="footnum" href="#fnr.3" role="doc-backlink">3</a></sup> <div class="footpara" role="doc-footnote"><p class="footpara">
+<a href="https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.2006930">https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.2006930</a>
+</p></div></div>
+
+<div class="footdef"><sup><a id="fn.4" class="footnum" href="#fnr.4" role="doc-backlink">4</a></sup> <div class="footpara" role="doc-footnote"><p class="footpara">
+<a href="https://emacs.stackexchange.com/questions/48211/emacs-manuals-are-missing-on-debian-ubuntu/48214#48214">https://emacs.stackexchange.com/questions/48211/emacs-manuals-are-missing-on-debian-ubuntu/48214#48214</a> To get this to work I enabled the non-free icon on the repositories, did  <code>sudo apt install emacs-common-non-dfsg</code> for all the documentation, and then ran as the super user the command to update the info directories. 
+</p></div></div>
+
+
+</div>
+</div></div>
+<div id="postamble" class="status">
+<p class="date">Date: 2023-02-03 Fri 00:00</p>
+<p class="author">Author: Britt Anderson</p>
+<p class="date">Created: 2023-02-07 Tue 08:03</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

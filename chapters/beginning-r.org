@@ -1,0 +1,29 @@
+# -*- org-link-file-path-type: relative; -*-
+#+options: ':nil *:t -:t ::t <:t H:3 \n:nil ^:t arch:headline
+#+options: author:t broken-links:nil c:nil creator:nil
+#+options: d:(not "LOGBOOK") date:t e:t email:nil f:t inline:t num:t
+#+options: p:nil pri:nil prop:nil stat:t tags:t tasks:t tex:t
+#+options: timestamp:t title:t toc:t todo:t |:t
+#+title: RStudio
+#+date: <2023-01-13 Fri>
+#+author: Britt Anderson
+#+email: britt@uwaterloo.ca
+#+language: en
+#+select_tags: export
+#+exclude_tags: noexport
+#+creator: Emacs 28.2 (Org mode 9.6-pre)
+#+bibliography: /home/britt/gitRepos/Intro2Computing4Psychology/chapters/i2c4p.bib
+#+cite_export: csl assets/chicago-note-bibliography-16th-edition.csl
+
+Need to include files and embed videos
+
+# ** Files
+#    1. [[file:./topics/installingR.org][Installing R]]
+#    2. [[file:./topics/beginningR.org][Beginning R]]
+#    3. [[file:../assessments/accessingDatainRAssessment.org][Accessing Data in R (assessment)]]
+#    4. [[file:../assessments/hangmanRAssessment.org][Hangman in R (assessment)]]
+# ** Videos
+#    1. [[https://vimeo.com/460263215][Introduction to this Module]]
+#    2. [[https://vimeo.com/460262566][Installing R/Rstudio on Linux (Xubuntu]])
+#    3. [[https://vimeo.com/460262930][Beginning R Walkthrough]]
+#    4. [[https://vimeo.com/460262936][Assessment Comments]]
