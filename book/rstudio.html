@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-02-03 Fri 04:31 -->
+<!-- 2023-02-07 Tue 08:03 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>RStudio</title>
@@ -242,8 +242,18 @@
 </li>
 <li><a href="#orgb70e9da">3. Testing Yourself</a>
 <ul>
-<li><a href="#orga2cb31a">3.1. First Rmd Assessment</a></li>
-<li><a href="#org31ae9d6">3.2. Rmd Exported to Html Assessment</a></li>
+<li><a href="#org18a031b">3.1. First Rmd Assessment</a>
+<ul>
+<li><a href="#org392e52a">3.1.1. Tasks</a></li>
+</ul>
+</li>
+<li><a href="#org51cc8d7">3.2. Rmd Export to HTML Assessment</a>
+<ul>
+<li><a href="#org9aec27b">3.2.1. Task</a></li>
+<li><a href="#org32c1828">3.2.2. Goal/Purpose</a></li>
+<li><a href="#org01c4e16">3.2.3. Instructions</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -416,6 +426,25 @@ When you have a task to do that needs to run until some condition is met you wil
 [1] 9
 [1] 10
 </pre>
+
+<p>
+Org-babel is a way to include code in an org document and have it properly execute. 
+There is, of course, an Emacs manual : <code>C-h i</code> Search for org mode and in the org mode manual look for the "<a href="https://www.gnu.org/software/emacs/manual/html_mono/org.html#Library-of-Babel">Library of Babel</a>".  A pretty extensive tutorial can be found <a href="https://github.com/erikriverson/org-mode-R-tutorial/blob/master/org-mode-R-tutorial.org">here</a>. A more recent workshop gives examples <a href="http://www.howardism.org/Technical/Emacs/literate-programming-tutorial.html">here</a>.
+</p>
+
+<p>
+We will want some basic text in our <code>init.el</code> file to make things work. See <a href="emacsPythonIdeInstructions.html">here</a> as well for some hints on getting started with your <code>init.el</code> file.
+</p>
+<div class="org-src-container">
+<pre class="src src-elisp">(<span style="color: #a020f0;">setq</span> org-confirm-babel-evaluate nil)
+(<span style="color: #a020f0;">setq</span> org-babel-python-command <span style="color: #8b2252;">"python3"</span>)
+  (org-babel-do-load-languages
+  'org-babel-load-languages
+  '((emacs-lisp . t) 
+  (R . t)
+  (python . t)))
+</pre>
+</div>
 </div>
 </li>
 
@@ -473,18 +502,99 @@ Try to produce an Rmd file from the above examples and see if you can get it and
 </p>
 </div>
 
-<div id="outline-container-orga2cb31a" class="outline-3">
-<h3 id="orga2cb31a"><span class="section-number-3">3.1.</span> <a href="assets/assessments/firstRmdAssessment.html">First Rmd Assessment</a></h3>
+<div id="outline-container-org18a031b" class="outline-3">
+<h3 id="org18a031b"><span class="section-number-3">3.1.</span> First Rmd Assessment</h3>
+<div class="outline-text-3" id="text-3-1">
 </div>
-<div id="outline-container-org31ae9d6" class="outline-3">
-<h3 id="org31ae9d6"><span class="section-number-3">3.2.</span> <a href="assets/assessments/rmd2htmlRstudio.html">Rmd Exported to Html Assessment</a></h3>
+<div id="outline-container-org392e52a" class="outline-4">
+<h4 id="org392e52a"><span class="section-number-4">3.1.1.</span> Tasks</h4>
+<div class="outline-text-4" id="text-3-1-1">
+<p>
+Create and save an Rmd file making use of basic markdown conventions.
+</p>
+<ol class="org-ol">
+<li>Put your name in <b>bold</b>.</li>
+<li>Put your student ID or other value in <i>italic</i>.</li>
+<li>A functioning link to a page on the web like <a href="https://brittlab.uwaterloo.ca">brittlab</a></li>
+<li><p>
+An image link that will inline on export. For example:
+</p>
+
+
+<div id="org9b0cbdc" class="figure">
+<p><img src="https://imgs.xkcd.com/comics/linux_user_at_best_buy.png" alt="linux_user_at_best_buy.png" />
+</p>
+</div></li>
+</ol>
+</div>
+
+<ol class="org-ol">
+<li><a id="org0445b2b"></a>Comments<br />
+<div class="outline-text-5" id="text-3-1-1-1">
+<p>
+We will be using various markdown dialects to combine text, references, code, data, and analyses in making reproducible research reports. The goal of this assignment is to get you started on discovering and using some of the markdown conventions that will enable you to do so. RStudio has a built in cheat sheet for markdown, but you can easily find <a href="https://en.wikipedia.org/wiki/Markdown">others</a> on line. There are several different dialects of markdown. 
+</p>
+</div>
+</li>
+</ol>
+</div>
+</div>
+
+
+
+<div id="outline-container-org51cc8d7" class="outline-3">
+<h3 id="org51cc8d7"><span class="section-number-3">3.2.</span> Rmd Export to HTML Assessment</h3>
+<div class="outline-text-3" id="text-3-2">
+</div>
+<div id="outline-container-org9aec27b" class="outline-4">
+<h4 id="org9aec27b"><span class="section-number-4">3.2.1.</span> Task</h4>
+<div class="outline-text-4" id="text-3-2-1">
+<p>
+Expand on your Rmd file submitted for Your First Rmd File to include additional material.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org32c1828" class="outline-4">
+<h4 id="org32c1828"><span class="section-number-4">3.2.2.</span> Goal/Purpose</h4>
+<div class="outline-text-4" id="text-3-2-2">
+<p>
+Markdown allows you to use plain text to give instructions to a <i>compiler</i> to assemble a file with appropriate formatting. My assembling an html file with code and links from a markdown starter file you will see the basics of this approach.
+</p>
+
+<ol class="org-ol">
+<li>A simple function definition (illustrations and examples will be provided in the lessons).</li>
+
+<li>A code block using your function to produce output.</li>
+
+<li>A for loop that counts from 1 to 10 and prints the even numbers.</li>
+</ol>
+
+<p>
+Your submission should include both the Rmd file and the compiled html file produced in RStudio (see lessons for example of what these terms mean and what I am looking for).
+</p>
+</div>
+</div>
+
+<div id="outline-container-org01c4e16" class="outline-4">
+<h4 id="org01c4e16"><span class="section-number-4">3.2.3.</span> Instructions</h4>
+<div class="outline-text-4" id="text-3-2-3">
+<ol class="org-ol">
+<li>Take your Rmd file from the first Rmd assessment as a starting point.</li>
+<li>Add a code block with a simple function definition.</li>
+<li>Add another code block using your function to produce output.</li>
+<li>Add a code block that executes a <code>for</code> loop that counts from 1 to 10 and prints the even numbers.</li>
+<li>Submit both the Rmd file and the compiled html file produced in RStudio (you get the html by using the <code>knit to html</code> button in RStudio.</li>
+</ol>
+</div>
+</div>
 </div>
 </div>
 </div>
 <div id="postamble" class="status">
 <p class="date">Date: 2023-01-13 Fri 00:00</p>
 <p class="author">Author: Britt Anderson</p>
-<p class="date">Created: 2023-02-03 Fri 04:31</p>
+<p class="date">Created: 2023-02-07 Tue 08:03</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

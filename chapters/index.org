@@ -43,3 +43,14 @@ We will be using Linux, but the installation process can be tricky and time cons
 
 * Linux
 [[file:linux.org][Linux]]
+
+* Emacs
+[[file:emacs.org][Emacs]]
+
+* Beginning Python
+[[file:beginning-python.org][Beginning Python]]
+
+IAMHERE
+
+* Beginning R
+[[file:beginning-r.org][Beginnning R]]
