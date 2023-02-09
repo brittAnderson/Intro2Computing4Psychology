@@ -2,6 +2,7 @@
 
 - [[file:rstudio.org][RStudio]]
 - [[file:index.org][Introduction]]
+- [[file:beginning-r.org][Beginning R]]
 - [[file:version-control.org][Version Control Github PullReqest and Remotes]]
 - [[file:emacs.org][Emacs]]
 - [[file:linux.org][Linux]]

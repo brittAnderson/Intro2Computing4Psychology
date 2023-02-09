@@ -50,7 +50,11 @@ We will be using Linux, but the installation process can be tricky and time cons
 * Beginning Python
 [[file:beginning-python.org][Beginning Python]]
 
-IAMHERE
+
 
 * Beginning R
 [[file:beginning-r.org][Beginnning R]]
+
+IAMHERE
+* 
+

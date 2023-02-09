@@ -4,7 +4,7 @@
 #+options: d:(not "LOGBOOK") date:t e:t email:nil f:t inline:t num:t
 #+options: p:nil pri:nil prop:nil stat:t tags:t tasks:t tex:t
 #+options: timestamp:t title:t toc:t todo:t |:t
-#+title: RStudio
+#+title: Beginning R
 #+date: <2023-01-13 Fri>
 #+author: Britt Anderson
 #+email: britt@uwaterloo.ca
@@ -15,15 +15,337 @@
 #+bibliography: /home/britt/gitRepos/Intro2Computing4Psychology/chapters/i2c4p.bib
 #+cite_export: csl assets/chicago-note-bibliography-16th-edition.csl
 
-Need to include files and embed videos
+* Objectives and Overview
+TBD
 
-# ** Files
-#    1. [[file:./topics/installingR.org][Installing R]]
-#    2. [[file:./topics/beginningR.org][Beginning R]]
-#    3. [[file:../assessments/accessingDatainRAssessment.org][Accessing Data in R (assessment)]]
-#    4. [[file:../assessments/hangmanRAssessment.org][Hangman in R (assessment)]]
-# ** Videos
-#    1. [[https://vimeo.com/460263215][Introduction to this Module]]
-#    2. [[https://vimeo.com/460262566][Installing R/Rstudio on Linux (Xubuntu]])
-#    3. [[https://vimeo.com/460262930][Beginning R Walkthrough]]
-#    4. [[https://vimeo.com/460262936][Assessment Comments]]
+#+begin_export html
+<div style="padding:56.39% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/460263215?h=f91db2a2dc" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
+<p><a href="https://vimeo.com/460263215">Ha : Introduction to Working with R (i2c4p)</a> from <a href="https://vimeo.com/epistemic">Britt Anderson</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
+<p>Introduces the Goals of this Segment of the Course: Using R</p>
+#+end_export
+
+* Rstudio is not R
+R is a computer programming language. Rstudio is an integrated development environment that facilitates writing R code and in interacting with data as well as exporting documents that mix text, code, and other the output of analyses, both statistical and visual. RStudio is /opinionated./ This means that it makes certain choices to facilitate the ease of user interaction. For many users those are sensible choice, but our task is to develop the skills to create an environments that favor our choices and that allow us to adapt them  if they are not met or they change. For that reason I emphasize interacting with R directly and using a different environment for writing, evaluating, and exporting R code.
+
+* Installing R
+   Installing R on Ubuntu is a straightforward ~sudo apt install r-base~. However, this Ubuntu package often trails the development of R by several months. That almost never matters for general use. However, if you are using a very new method, or one where the packages are being updated frequently you may want to track the repository maintained by the r-project. Adding a repository is another "apt" command, and not too difficult. I am using the Ubuntu package here. 
+   
+   More installation details can be found here: [[https://computingforgeeks.com/how-to-install-r-and-rstudio-on-ubuntu-debian-mint/][Link]].
+
+   [[*Detailed Installation Instructions][Below]] I show you some more detailed instructions.
+   
+   This [[https://linuxize.com/post/how-to-install-r-on-ubuntu-20-04/][blog]] shows you how to add the CRAN (r-project) repository first. 
+** Another thing you may want
+   Many document conversions, those used by RStudio and many other applications, make use of a wonderful swiss-army knife piece of software: [[https://pandoc.org/][pandoc]]. This is the PAN DOCument conversion tool. The latest version can be found on their [[https://github.com/jgm/pandoc/releases/tag/2.10.1][github page.]] "Deb" files are easy to install (in fact the =dpkg= tool is running under the hood of most of the =apt= installations we have been using). After downloading the deb file, and making sure you know where it is, you would =cd= to that directory and run =sudo dpkg -i <the package name>=. Where "i" stands for install.
+* Installing RStudio
+  Should you install RStudio? It is a wonderful piece of software, but its graphical interface can shield you from knowing what the underlying tools are. This can impede your growth as an R user, and your ability to implement the cutting-edge or idiosyncratic analysis method you may need in the future. My advice is to learn the base R first, and then expand to RStudio if you find it convenient. 
+
+  Opinions differ on the R or RStudio choice. Here are couple of links to further discussion and opinions on RStudio and the tidyverse versus base R.
+  [[https://github.com/matloff/TidyverseSkeptic][Should you?]]
+  [[https://news.ycombinator.com/item?id=20362626][More debate.]]
+
+#+begin_export html
+<div style="padding:56.39% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/460262566?h=dfa81af922" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
+<p><a href="https://vimeo.com/460262566">Hb : Installing R on Linux (Xubuntu; i2c4p)</a> from <a href="https://vimeo.com/epistemic">Britt Anderson</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
+<p>Demonstrating the R installation process on Xubuntu and some early versions of how to test out if your installation is functioning and if it is talking to Emacs.</p>
+#+end_export
+  
+* Simple demonstration of Rmd- > HTML Without RStudio
+  There are many inputs for "knitting". The one I prefer is Rnw which goes via LaTeX to pdf. You don't have to know too much about that processing route for the moment, but it gives you a lot of future flexibility. It gives you exquisite control over the appearance of your final product. It may however be overkill for simple projects. 
+
+* More: What is R
+   R is a programming language targeting data and its statistical analysis. 
+   
+   The [[https://doi.org/10.1080/10618600.1996.10474713][history of R]] is via a language called S and a version of Lisp called "Scheme." Thus, R occupies a rather unique place as a hybrid language. It has some functional features, while also having a lot of [[https://en.wikipedia.org/wiki/Domain-specific_language][domain specific]] terminology.  
+
+   It's main purpose is to help us process our data, and test our scientific ideas about the data and indirectly the intuitions and hypotheses we had that led us to collect the data in the first place as well as the choices we made for how the data was to be collected.
+* Detailed Installation Instructions
+** Downloading R
+    Downloading and installing R on (X)ubuntu is a one line command. Most other linux distributions will also have R in their package collections. However, sometimes the R distribution will update faster than the Linux package system tracks. Thus, it can be useful if you are using very new R tools or packages to follow a repository that more closely follows the R developers release cycles. 
+
+    To install the base version of R on Xubuntu using the standard repositories you do: ~sudo apt install r-base~. If you want to track an R repository you could add to your current repositories first. Some additional tools may be necessary. 
+    #+Name: track cran r repo
+    #+Caption: They change the details often. See here https://cloud.r-project.org/bin/linux/ubuntu/ for latest instructions. 
+    #+begin_src sh :eval never
+    sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E298A3A825C0D65DFD57CBB651716619E084DAB9
+    sudo add-apt-repository 'deb https://cloud.r-project.org/bin/linux/ubuntu focal-cran40/'
+    #+end_src
+    
+    [[https://linuxize.com/post/how-to-install-r-on-ubuntu-20-04/][Source]]
+** Testing Your R Installation from the Terminal
+Always test! You can apply this philosophy in multiple ways at multiple times in programming, but the basic idea is that before you do a bunch of hard work verify that what you have will do what you want with as simple a test case as you can. This Minimal Reproducible test case is something you can easily share if you need to seek help figuring out how to solve a bug or other programming problem.
+
+In our case we can,
+    - open the terminal
+    - type ~r~ then ~enter~
+    - type ~2 + 2 enter~
+    - And verify we  see 4
+    - Then you can type ~quit()~ to exit the R interpreter.
+** Test for R in Emacs
+This assumes you have opened emacs.
+     - ~M-x R~
+     - if this doesn't work install ~ESS~ for emacs (Emacs Speaks Statistics)
+     - Two choices:
+       - MELPA (emacs package manager)
+       - Ubuntu package: emacs-ess
+
+* R Coding Basics
+  Compare this material to that which was discussed for [[file:beginning-python.org::*Some programming vocabulary][programming vocabulary]] in Python. You should see a lot of similarities. This will be true for most languages you run into. Don't bind yourself to one language or try to force every square problem into the same round programming hole. Use the tool matched to the job. Once you get basic fluency with one language you will be able to fairly easily map to a new language. Of course it does pay to use one language predominantly so as to get expertise, but you should always be asking yourself when is the convenience of using what you know superseded by the facilities offered elsewhere. 
+* Types
+  R has many of the same data types as Python, but has some distinct ones as well. R makes a much greater use of lists where there are names and elements (rather like a Python dictionary). Many built-in statistical functions will return S3 or S4 objects that don't have a directly comparable Python equivalent. These special types in R facilitate being able to [[https://en.wikipedia.org/wiki/Pipeline_(computing)][pipe]] from one function to the next or to display concise summaries. 
+
+** Determining the type of an R variable is straightforward.
+
+  #+Name: typeof
+  #+Caption: Use the function ~typeof~ in R to determine the datatype of a variable. 
+  #+begin_src R :session *beginR*
+    a = 1
+   f typeof(a)
+  #+end_src
+
+  
+** Lists and other data structures in R
+
+  #+Name: Lists and Tuples and Data Frames
+  #+Caption: Lists, Tuples, Data.Frames and Data.Tables
+  #+begin_src R *beginR*
+    tpl = c(1,2)
+    lst = list("firstName" = 'Britt', "lastName" = 'Anderson')
+    df = data.frame('fn' = c("bob","jane","griffin"),"gndr" = c('m','f','o'))
+    df
+  #+end_src
+
+
+** Data Frames
+Data Frames are one of the killer features of R, and they have been
+slower to move into the Python space (though there are equivalents in
+active development). You may also hear of =data.tables= in R. For your
+purpose now you can think of them as the same, though as your R
+comfort grows you will want to return to this issue and better
+understand the pros and cons of switching from =data.frames= to
+=data.tables=. You can think of =data.frames= as sort of like spread
+sheets. But they are much handier. For example, let's look at the cars
+data frame that comes as part of the base R installation. You can
+verify it is installed like this.
+  
+     #+begin_src R :session *beginR*
+       is.data.frame(cars)
+     #+end_src
+
+*** Selection by Booleans
+In our Python section we learned about _predicates_ (or [[file:beginning-python.org::*Conditionals][conditionals]]). These were tests that returned true or false and that we could use in [[file:beginning-python.org::*While Loop][while loops]].
+    
+How many cars are there that can go faster than 10, but not more than 20?
+    #+begin_src R :session *beginR*
+    length(cars$dist[cars$speed > 10 & cars$speed < 20])
+    #+end_src
+
+
+Can you do that easily in Excel?
+
+What is going on here?
+     1. ~cars~ is the name of the data frame.
+     2. We access a /column/ of the data frame with the dollar sign notation ~cars$dist~. You can see the names of the columns in a data frame with ~names(cars)~.
+     3. We use the square brackets to /index/ the column of data we are interested in. Here we do not use specific numbers, but rather we use a /boolean/ to compare the values in a column and we only include the ~TRUE~ values. Here we ask for all the indices where the speed is greater than 10, but less than 20, and we use those indices to get the values for the ~dist~ column. 
+
+*** Accessing Data in R Assessment - Practice
+      1. Sort (or ~order~) cars by the ~dist~ variable.
+      2. Find the mean and standard deviation of the speed of the cars.
+      3. Are there other datasets?
+         #+begin_src R :export code :results hidden :eval never :session *beginR*
+           library(help="datasets")
+         #+end_src
+      4. Open any of the datasets that catches your eye.
+      5. What are the column names?
+      6. How many rows?
+      7. What is the /comment/ designator for R?
+      8. What is the ending extension of an R script?
+
+** Loops
+  This is a good example of where things are slightly different between Python and R. R uses a more functional style and is sometimes called [[https://paulvanderlaken.com/2017/10/13/functional-programming-and-why-you-should-not-grow-vectors-in-r/][vectorizing]].
+*** For Loop
+         #+Name: For Loop in R
+    #+begin_src R :session *beginR* :exports both :results output
+           ml = seq(1:10)
+
+           for  (m in ml) {
+               print(m)
+           }
+    #+end_src
+
+Compare to the Python code. Look for the ":" and the "{}"'s in both examples. You can see how your knowledge of looping in one language helps you understand looping in the other, but the details may be different.
+*** Test your understanding
+    1. Edit the above so that it prints the individual number each time it goes through the loop, and not the whole list.
+    2. Repeat the [[file:~/gitRepos/introComp4Psych/assessments/forLoopPythonAssessment.org][Python Assessment]] on for loops, but using R this time. I give you a working example below, but try on your own for a while first, then look at my code and try it line by line in your interpreter to get the feel for how things work in R. 
+       1. Create a list of at least 8 individual characters.
+       2. Make sure they are **not** in alphabetical order
+       3. Print the letters one at a time.
+       4. Print the letters sorted alphabetically one at a time, but /do not/ overwrite your original list.
+       5. Print the letters from both lists with a format command that says which position the letter is in.
+       6. String formatting is less nice in R! To help with this look for help on ~paste~ and ~sprintf~. To acccess the /help/ try ~?<commandname>~.
+   
+    #+Name: Loop Exercise R
+    #+begin_src R :exports both :results output :session *beginR*
+      myName = "brittAnderson"
+      myList = unlist(strsplit(myName,""))
+
+      for (l in myList){
+        print(l)
+      }
+
+
+
+      for (l in myList[order(myList)]){
+        print(l)
+      }
+
+      i = 1
+      for (n in order(myList)){
+        t  <- sprintf("The %.0fth letter of myList is: %s, but is %s in the sorted list.",i,myList[i],myList[n])
+        print(t)
+        i = i+1  
+        }
+    #+end_src
+
+** While Loop
+*** Conditionals
+    #+begin_src R :exports code  :session *beginR* :results output
+              if (2 == 3) {
+                  print("Wha.....?\n\n")
+              } else if (3 == 2) {
+                print("Now that is odd")
+              } else {
+                print("2 does not equal 3.")
+              }
+    #+end_src
+
+    #+RESULTS:
+    : [1] "2 does not equal 3."
+*** While (again)
+    #+begin_src R :exports both :session *beginR* :results output
+              i = 0
+              while (i<=10) {
+                print(unlist(strsplit("brittAnderson",""))[i])
+                i = i+1
+              }
+        #+end_src
+
+        #+RESULTS:
+	#+begin_example
+	character(0)
+	[1] "b"
+	[1] "r"
+	[1] "i"
+	[1] "t"
+	[1] "t"
+	[1] "A"
+	[1] "n"
+	[1] "d"
+	[1] "e"
+	[1] "r"
+	#+end_example
+
+* Functions
+#+begin_src R :exports code  :session *beginR*
+  myadd  <- function(x,y) {
+    return(x+y)
+    }
+#+end_src
+
+#+begin_src R :exports both :results output :session *beginR*
+myadd(2,3)
+#+end_src
+
+* Libraries for R
+R too has its own package manager. You will usually want to let R manage its own packages. You do this from within R itself. Here are some code snippets showing this in practice.
+
+  #+Name: Installing Packages in R
+  #+Caption: Package Installation Commands in R. Note the use of quotes differs.
+  #+begin_src R :session *beginR* :export code :eval never
+  install.packages("data.table")
+  install.packages("ggplot2")
+  library(data.table)
+  library(ggplot2)
+  #+end_src
+** What are some popular libraries? 
+   Of particular note for us are:
+   1. knitr
+   2. rmarkdown
+   3. ggplot2
+   4. data.table
+   5. magrittr
+   6. devtools/githubinstall
+
+* Walking Through Some of R's Features
+#+begin_export html
+<div style="padding:56.39% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/460262930?h=894daf7c20" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
+<p><a href="https://vimeo.com/460262930">Hc : Walking Through the R Topic (i2c4p)</a> from <a href="https://vimeo.com/epistemic">Britt Anderson</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
+<p>A video tour of ideas and concepts from the R topic file. I accidentally let this one go long (almost 1/2 hour). You may want to view it in parts as you read through the material.</p>
+#+end_export
+
+* Assessing your R Skills
+
+#+begin_export html
+<div style="padding:56.39% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/460262936?h=62002be41d" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
+<p><a href="https://vimeo.com/460262936">Hd : Hints for the R Assessments (i2c4p)</a> from <a href="https://vimeo.com/epistemic">Britt Anderson</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
+<p>The R assessments ask you to work with data frames and do some text processing. I give some pointers and hints to how to approach this process.</p>
+#+end_export
+
+
+** Accessing Data in R - Assessment
+
+*** Task
+  Provide an org or Rmd file that demonstrates the following functions with the *cars* data set in R.
+*** Goal/Purpose
+  Demonstrate some of the basic data processing tasks in R. 
+*** Instructions
+**** General
+   Using the built in data set *cars* demonstrate sorting and selection.
+**** Detailed
+   Produce a Rmd or org file that executes each of the following processes or provides as a result the answer to the listed questions. 
+   - Sort (or ~order~) cars by the ~dist~ variable.
+   - Find the =mean= and =standard deviation= of the speed of the cars.
+   - Print the name of the other built-in data sets (this code may help)
+        #+begin_src R :export code :results hidden :eval never
+	  for (i in data()$results[,3]) {
+	      print(i)
+	      }
+        #+end_src
+   - Using any other data set find:
+     1. Print the column names?
+     2. Print how many rows?
+     3. Tell me what the /comment/ designator is for R?
+     4. Tell me what the ending extension is for an R script?
+
+*** Comments
+*** Hints
+   - To find the names of /columns/ in a data.frame try the =names= function (~names(cars)~).
+   - To get help you can type a *?* at the command line of the R interpreter.
+   - You may need to find an online resource you like for R help, for example to find out what the name of the function is for standard deviation. It is not "standard deviation", but something much shorter.
+   - Extensions: For instance "docx" is the extension for a word file and "py" is the extension for a python script. 
+
+** Hangman in R 
+
+*** Words of Encouragement
+  This was hard in Python, and won't be trivial in R, but having done it once, the translation should be easier. But R is not as nice when processing text as is Python to text process as Python. So, I will be expecting less full featured functions. Just demonstrate you understand the concepts of what we are trying to achieve. 
+*** Task
+  To write the beginning pieces of a hangman game in R. This version will [[https://en.wikipedia.org/wiki/Hard_coding][hard code]] the word to be guessed. It will not produce any sort of graphic, but merely ask for letters and report if the player spells out the word or not.  Note that as R is harder to run as a program from the command line I will test your code by loading it into my R interpreter. The command for this is =source=.  I will download your =filename.R= and then I will =source(filename.R)=. Next, I will execute whatever function you tell me to. Remember, your script can contain comments so I should be able to tell what you want me to do just by reading your .R file. 
+*** Detail (basically the same as before, with minor adaptations)
+  1. Get input from me, the user. 
+  2. Write a function that takes that input and and returns *a list of* indices of the positions where the input letter exists in your hard-coded word. An empty list means the letter is never in the word. Otherwise the elements of this list are the indices where that letter is found. For example, if the word were tree and the letter "e" you would get back =[1] 3 4= from this function. Remember that R starts counting from 1, not zero. , but would get back =integer(0)= if the letter were 's'. This weirdness tells you why R might be nicer for statistics, but not for text processing. Different task require different tools.
+  3. Write a function that loops through the above process a certain number of times.
+  4. Make the function terminate when all the letters are guessed or max number of guesses is exceeded.
+
+*** Comments
+*** How I Will Grade
+   I will load (source) your file and try to test the functions. If they basically work then you will get the credits. 
+*** Hints
+   You might find the following R functions helpful:
+   1. which
+   2. strsplit
+   3. unlist
+   4. !=
+   5. Using a variable more than once, e.g. al[al != "e"]
+   
+
+

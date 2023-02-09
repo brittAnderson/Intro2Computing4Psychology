@@ -1,0 +1,943 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2023-02-09 Thu 09:06 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Beginning R</title>
+<meta name="author" content="Britt Anderson" />
+<meta name="generator" content="Org Mode" />
+<style>
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { }
+</style>
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">Beginning R</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#orge5430fd">1. Objectives and Overview</a></li>
+<li><a href="#org90ea014">2. Rstudio is not R</a></li>
+<li><a href="#org27ae3fb">3. Installing R</a>
+<ul>
+<li><a href="#orgb154be8">3.1. Another thing you may want</a></li>
+</ul>
+</li>
+<li><a href="#org33d2ecd">4. Installing RStudio</a></li>
+<li><a href="#orgb4606cc">5. Simple demonstration of Rmd- &gt; HTML Without RStudio</a></li>
+<li><a href="#orgfdb9a53">6. More: What is R</a></li>
+<li><a href="#org0500761">7. Detailed Installation Instructions</a>
+<ul>
+<li><a href="#org40d1e73">7.1. Downloading R</a></li>
+<li><a href="#org28564e9">7.2. Testing Your R Installation from the Terminal</a></li>
+<li><a href="#org4343051">7.3. Test for R in Emacs</a></li>
+</ul>
+</li>
+<li><a href="#org69bd454">8. R Coding Basics</a></li>
+<li><a href="#orgb31ec7e">9. Types</a>
+<ul>
+<li><a href="#org44c85c3">9.1. Determining the type of an R variable is straightforward.</a></li>
+<li><a href="#org24ff797">9.2. Lists and other data structures in R</a></li>
+<li><a href="#org293aa80">9.3. Data Frames</a>
+<ul>
+<li><a href="#org94edd57">9.3.1. Selection by Booleans</a></li>
+<li><a href="#org5dc9e52">9.3.2. Accessing Data in R Assessment - Practice</a></li>
+</ul>
+</li>
+<li><a href="#org2fd78f7">9.4. Loops</a>
+<ul>
+<li><a href="#org52e4b5f">9.4.1. For Loop</a></li>
+<li><a href="#org0fa4f2d">9.4.2. Test your understanding</a></li>
+</ul>
+</li>
+<li><a href="#org712bb5a">9.5. While Loop</a>
+<ul>
+<li><a href="#orga9e0a83">9.5.1. Conditionals</a></li>
+<li><a href="#org73cfbb2">9.5.2. While (again)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org4b268cf">10. Functions</a></li>
+<li><a href="#orge8f025f">11. Libraries for R</a>
+<ul>
+<li><a href="#org19a9937">11.1. What are some popular libraries?</a></li>
+</ul>
+</li>
+<li><a href="#org3fa6b47">12. Walking Through Some of R's Features</a></li>
+<li><a href="#orge3f6804">13. Assessing your R Skills</a>
+<ul>
+<li><a href="#orga8440b9">13.1. Accessing Data in R - Assessment</a>
+<ul>
+<li><a href="#org994053d">13.1.1. Task</a></li>
+<li><a href="#org402be01">13.1.2. Goal/Purpose</a></li>
+<li><a href="#org0a9bf84">13.1.3. Instructions</a></li>
+<li><a href="#org38f638b">13.1.4. Comments</a></li>
+<li><a href="#orgb82d867">13.1.5. Hints</a></li>
+</ul>
+</li>
+<li><a href="#org03c93d1">13.2. Hangman in R</a>
+<ul>
+<li><a href="#orgb8f10c4">13.2.1. Words of Encouragement</a></li>
+<li><a href="#orgf08bcf7">13.2.2. Task</a></li>
+<li><a href="#org90858a6">13.2.3. Detail (basically the same as before, with minor adaptations)</a></li>
+<li><a href="#orgd73e9b5">13.2.4. Comments</a></li>
+<li><a href="#org42adfa6">13.2.5. How I Will Grade</a></li>
+<li><a href="#org92a4c49">13.2.6. Hints</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orge5430fd" class="outline-2">
+<h2 id="orge5430fd"><span class="section-number-2">1.</span> Objectives and Overview</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+TBD
+</p>
+
+<div style="padding:56.39% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/460263215?h=f91db2a2dc" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
+<p><a href="https://vimeo.com/460263215">Ha : Introduction to Working with R (i2c4p)</a> from <a href="https://vimeo.com/epistemic">Britt Anderson</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
+<p>Introduces the Goals of this Segment of the Course: Using R</p>
+</div>
+</div>
+
+<div id="outline-container-org90ea014" class="outline-2">
+<h2 id="org90ea014"><span class="section-number-2">2.</span> Rstudio is not R</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+R is a computer programming language. Rstudio is an integrated development environment that facilitates writing R code and in interacting with data as well as exporting documents that mix text, code, and other the output of analyses, both statistical and visual. RStudio is <i>opinionated.</i> This means that it makes certain choices to facilitate the ease of user interaction. For many users those are sensible choice, but our task is to develop the skills to create an environments that favor our choices and that allow us to adapt them  if they are not met or they change. For that reason I emphasize interacting with R directly and using a different environment for writing, evaluating, and exporting R code.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org27ae3fb" class="outline-2">
+<h2 id="org27ae3fb"><span class="section-number-2">3.</span> Installing R</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+Installing R on Ubuntu is a straightforward <code>sudo apt install r-base</code>. However, this Ubuntu package often trails the development of R by several months. That almost never matters for general use. However, if you are using a very new method, or one where the packages are being updated frequently you may want to track the repository maintained by the r-project. Adding a repository is another "apt" command, and not too difficult. I am using the Ubuntu package here. 
+</p>
+
+<p>
+More installation details can be found here: <a href="https://computingforgeeks.com/how-to-install-r-and-rstudio-on-ubuntu-debian-mint/">Link</a>.
+</p>
+
+<p>
+<a href="#org0500761">Below</a> I show you some more detailed instructions.
+</p>
+
+<p>
+This <a href="https://linuxize.com/post/how-to-install-r-on-ubuntu-20-04/">blog</a> shows you how to add the CRAN (r-project) repository first. 
+</p>
+</div>
+<div id="outline-container-orgb154be8" class="outline-3">
+<h3 id="orgb154be8"><span class="section-number-3">3.1.</span> Another thing you may want</h3>
+<div class="outline-text-3" id="text-3-1">
+<p>
+Many document conversions, those used by RStudio and many other applications, make use of a wonderful swiss-army knife piece of software: <a href="https://pandoc.org/">pandoc</a>. This is the PAN DOCument conversion tool. The latest version can be found on their <a href="https://github.com/jgm/pandoc/releases/tag/2.10.1">github page.</a> "Deb" files are easy to install (in fact the <code>dpkg</code> tool is running under the hood of most of the <code>apt</code> installations we have been using). After downloading the deb file, and making sure you know where it is, you would <code>cd</code> to that directory and run <code>sudo dpkg -i &lt;the package name&gt;</code>. Where "i" stands for install.
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org33d2ecd" class="outline-2">
+<h2 id="org33d2ecd"><span class="section-number-2">4.</span> Installing RStudio</h2>
+<div class="outline-text-2" id="text-4">
+<p>
+Should you install RStudio? It is a wonderful piece of software, but its graphical interface can shield you from knowing what the underlying tools are. This can impede your growth as an R user, and your ability to implement the cutting-edge or idiosyncratic analysis method you may need in the future. My advice is to learn the base R first, and then expand to RStudio if you find it convenient. 
+</p>
+
+<p>
+Opinions differ on the R or RStudio choice. Here are couple of links to further discussion and opinions on RStudio and the tidyverse versus base R.
+<a href="https://github.com/matloff/TidyverseSkeptic">Should you?</a>
+<a href="https://news.ycombinator.com/item?id=20362626">More debate.</a>
+</p>
+
+<div style="padding:56.39% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/460262566?h=dfa81af922" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
+<p><a href="https://vimeo.com/460262566">Hb : Installing R on Linux (Xubuntu; i2c4p)</a> from <a href="https://vimeo.com/epistemic">Britt Anderson</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
+<p>Demonstrating the R installation process on Xubuntu and some early versions of how to test out if your installation is functioning and if it is talking to Emacs.</p>
+</div>
+</div>
+
+<div id="outline-container-orgb4606cc" class="outline-2">
+<h2 id="orgb4606cc"><span class="section-number-2">5.</span> Simple demonstration of Rmd- &gt; HTML Without RStudio</h2>
+<div class="outline-text-2" id="text-5">
+<p>
+There are many inputs for "knitting". The one I prefer is Rnw which goes via LaTeX to pdf. You don't have to know too much about that processing route for the moment, but it gives you a lot of future flexibility. It gives you exquisite control over the appearance of your final product. It may however be overkill for simple projects. 
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgfdb9a53" class="outline-2">
+<h2 id="orgfdb9a53"><span class="section-number-2">6.</span> More: What is R</h2>
+<div class="outline-text-2" id="text-6">
+<p>
+R is a programming language targeting data and its statistical analysis. 
+</p>
+
+<p>
+The <a href="https://doi.org/10.1080/10618600.1996.10474713">history of R</a> is via a language called S and a version of Lisp called "Scheme." Thus, R occupies a rather unique place as a hybrid language. It has some functional features, while also having a lot of <a href="https://en.wikipedia.org/wiki/Domain-specific_language">domain specific</a> terminology.  
+</p>
+
+<p>
+It's main purpose is to help us process our data, and test our scientific ideas about the data and indirectly the intuitions and hypotheses we had that led us to collect the data in the first place as well as the choices we made for how the data was to be collected.
+</p>
+</div>
+</div>
+<div id="outline-container-org0500761" class="outline-2">
+<h2 id="org0500761"><span class="section-number-2">7.</span> Detailed Installation Instructions</h2>
+<div class="outline-text-2" id="text-7">
+</div>
+<div id="outline-container-org40d1e73" class="outline-3">
+<h3 id="org40d1e73"><span class="section-number-3">7.1.</span> Downloading R</h3>
+<div class="outline-text-3" id="text-7-1">
+<p>
+Downloading and installing R on (X)ubuntu is a one line command. Most other linux distributions will also have R in their package collections. However, sometimes the R distribution will update faster than the Linux package system tracks. Thus, it can be useful if you are using very new R tools or packages to follow a repository that more closely follows the R developers release cycles. 
+</p>
+
+<p>
+To install the base version of R on Xubuntu using the standard repositories you do: <code>sudo apt install r-base</code>. If you want to track an R repository you could add to your current repositories first. Some additional tools may be necessary. 
+</p>
+<div class="org-src-container">
+<label class="org-src-name"><span class="listing-number">Listing 1: </span>They change the details often. See here <a href="https://cloud.r-project.org/bin/linux/ubuntu/">https://cloud.r-project.org/bin/linux/ubuntu/</a> for latest instructions.</label><pre class="src src-sh" id="orgbe3c62b">sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E298A3A825C0D65DFD57CBB651716619E084DAB9
+sudo add-apt-repository <span style="color: #8b2252;">'deb https://cloud.r-project.org/bin/linux/ubuntu focal-cran40/'</span>
+</pre>
+</div>
+
+<p>
+<a href="https://linuxize.com/post/how-to-install-r-on-ubuntu-20-04/">Source</a>
+</p>
+</div>
+</div>
+<div id="outline-container-org28564e9" class="outline-3">
+<h3 id="org28564e9"><span class="section-number-3">7.2.</span> Testing Your R Installation from the Terminal</h3>
+<div class="outline-text-3" id="text-7-2">
+<p>
+Always test! You can apply this philosophy in multiple ways at multiple times in programming, but the basic idea is that before you do a bunch of hard work verify that what you have will do what you want with as simple a test case as you can. This Minimal Reproducible test case is something you can easily share if you need to seek help figuring out how to solve a bug or other programming problem.
+</p>
+
+<p>
+In our case we can,
+</p>
+<ul class="org-ul">
+<li>open the terminal</li>
+<li>type <code>r</code> then <code>enter</code></li>
+<li>type <code>2 + 2 enter</code></li>
+<li>And verify we  see 4</li>
+<li>Then you can type <code>quit()</code> to exit the R interpreter.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org4343051" class="outline-3">
+<h3 id="org4343051"><span class="section-number-3">7.3.</span> Test for R in Emacs</h3>
+<div class="outline-text-3" id="text-7-3">
+<p>
+This assumes you have opened emacs.
+</p>
+<ul class="org-ul">
+<li><code>M-x R</code></li>
+<li>if this doesn't work install <code>ESS</code> for emacs (Emacs Speaks Statistics)</li>
+<li>Two choices:
+<ul class="org-ul">
+<li>MELPA (emacs package manager)</li>
+<li>Ubuntu package: emacs-ess</li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org69bd454" class="outline-2">
+<h2 id="org69bd454"><span class="section-number-2">8.</span> R Coding Basics</h2>
+<div class="outline-text-2" id="text-8">
+<p>
+Compare this material to that which was discussed for <a href="beginning-python.html#org40401ab">programming vocabulary</a> in Python. You should see a lot of similarities. This will be true for most languages you run into. Don't bind yourself to one language or try to force every square problem into the same round programming hole. Use the tool matched to the job. Once you get basic fluency with one language you will be able to fairly easily map to a new language. Of course it does pay to use one language predominantly so as to get expertise, but you should always be asking yourself when is the convenience of using what you know superseded by the facilities offered elsewhere. 
+</p>
+</div>
+</div>
+<div id="outline-container-orgb31ec7e" class="outline-2">
+<h2 id="orgb31ec7e"><span class="section-number-2">9.</span> Types</h2>
+<div class="outline-text-2" id="text-9">
+<p>
+R has many of the same data types as Python, but has some distinct ones as well. R makes a much greater use of lists where there are names and elements (rather like a Python dictionary). Many built-in statistical functions will return S3 or S4 objects that don't have a directly comparable Python equivalent. These special types in R facilitate being able to <a href="https://en.wikipedia.org/wiki/Pipeline_(computing)">pipe</a> from one function to the next or to display concise summaries. 
+</p>
+</div>
+
+<div id="outline-container-org44c85c3" class="outline-3">
+<h3 id="org44c85c3"><span class="section-number-3">9.1.</span> Determining the type of an R variable is straightforward.</h3>
+<div class="outline-text-3" id="text-9-1">
+<div class="org-src-container">
+<label class="org-src-name"><span class="listing-number">Listing 2: </span>Use the function <code>typeof</code> in R to determine the datatype of a variable.</label><pre class="src src-R" id="orga38b40d"> a = 1
+f typeof(a)
+</pre>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-org24ff797" class="outline-3">
+<h3 id="org24ff797"><span class="section-number-3">9.2.</span> Lists and other data structures in R</h3>
+<div class="outline-text-3" id="text-9-2">
+<div class="org-src-container">
+<label class="org-src-name"><span class="listing-number">Listing 3: </span>Lists, Tuples, Data.Frames and Data.Tables</label><pre class="src src-R" id="orgcf1ae6b">tpl = c(1,2)
+lst = list(<span style="color: #8b2252;">"firstName"</span> = <span style="color: #8b2252;">'Britt'</span>, <span style="color: #8b2252;">"lastName"</span> = <span style="color: #8b2252;">'Anderson'</span>)
+df = data.frame(<span style="color: #8b2252;">'fn'</span> = c(<span style="color: #8b2252;">"bob"</span>,<span style="color: #8b2252;">"jane"</span>,<span style="color: #8b2252;">"griffin"</span>),<span style="color: #8b2252;">"gndr"</span> = c(<span style="color: #8b2252;">'m'</span>,<span style="color: #8b2252;">'f'</span>,<span style="color: #8b2252;">'o'</span>))
+df
+</pre>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-org293aa80" class="outline-3">
+<h3 id="org293aa80"><span class="section-number-3">9.3.</span> Data Frames</h3>
+<div class="outline-text-3" id="text-9-3">
+<p>
+Data Frames are one of the killer features of R, and they have been
+slower to move into the Python space (though there are equivalents in
+active development). You may also hear of <code>data.tables</code> in R. For your
+purpose now you can think of them as the same, though as your R
+comfort grows you will want to return to this issue and better
+understand the pros and cons of switching from <code>data.frames</code> to
+<code>data.tables</code>. You can think of <code>data.frames</code> as sort of like spread
+sheets. But they are much handier. For example, let's look at the cars
+data frame that comes as part of the base R installation. You can
+verify it is installed like this.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-R">is.data.frame(cars)
+</pre>
+</div>
+</div>
+
+<div id="outline-container-org94edd57" class="outline-4">
+<h4 id="org94edd57"><span class="section-number-4">9.3.1.</span> Selection by Booleans</h4>
+<div class="outline-text-4" id="text-9-3-1">
+<p>
+In our Python section we learned about <span class="underline">predicates</span> (or <a href="beginning-python.html#orgf0bd655">conditionals</a>). These were tests that returned true or false and that we could use in <a href="beginning-python.html#org1557161">while loops</a>.
+</p>
+
+<p>
+How many cars are there that can go faster than 10, but not more than 20?
+</p>
+<div class="org-src-container">
+<pre class="src src-R">length(cars$dist[cars$speed &gt; 10 &amp; cars$speed &lt; 20])
+</pre>
+</div>
+
+
+<p>
+Can you do that easily in Excel?
+</p>
+
+<p>
+What is going on here?
+</p>
+<ol class="org-ol">
+<li><code>cars</code> is the name of the data frame.</li>
+<li>We access a <i>column</i> of the data frame with the dollar sign notation <code>cars$dist</code>. You can see the names of the columns in a data frame with <code>names(cars)</code>.</li>
+<li>We use the square brackets to <i>index</i> the column of data we are interested in. Here we do not use specific numbers, but rather we use a <i>boolean</i> to compare the values in a column and we only include the <code>TRUE</code> values. Here we ask for all the indices where the speed is greater than 10, but less than 20, and we use those indices to get the values for the <code>dist</code> column.</li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-org5dc9e52" class="outline-4">
+<h4 id="org5dc9e52"><span class="section-number-4">9.3.2.</span> Accessing Data in R Assessment - Practice</h4>
+<div class="outline-text-4" id="text-9-3-2">
+<ol class="org-ol">
+<li>Sort (or <code>order</code>) cars by the <code>dist</code> variable.</li>
+<li>Find the mean and standard deviation of the speed of the cars.</li>
+<li><p>
+Are there other datasets?
+</p>
+<div class="org-src-container">
+<pre class="src src-R"><span style="color: #008b8b;">library</span>(help=<span style="color: #8b2252;">"datasets"</span>)
+</pre>
+</div></li>
+<li>Open any of the datasets that catches your eye.</li>
+<li>What are the column names?</li>
+<li>How many rows?</li>
+<li>What is the <i>comment</i> designator for R?</li>
+<li>What is the ending extension of an R script?</li>
+</ol>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org2fd78f7" class="outline-3">
+<h3 id="org2fd78f7"><span class="section-number-3">9.4.</span> Loops</h3>
+<div class="outline-text-3" id="text-9-4">
+<p>
+This is a good example of where things are slightly different between Python and R. R uses a more functional style and is sometimes called <a href="https://paulvanderlaken.com/2017/10/13/functional-programming-and-why-you-should-not-grow-vectors-in-r/">vectorizing</a>.
+</p>
+</div>
+<div id="outline-container-org52e4b5f" class="outline-4">
+<h4 id="org52e4b5f"><span class="section-number-4">9.4.1.</span> For Loop</h4>
+<div class="outline-text-4" id="text-9-4-1">
+<div class="org-src-container">
+<pre class="src src-R" id="orgb2a0eb3">ml = seq(1:10)
+
+<span style="color: #a020f0;">for</span>  (m <span style="color: #a020f0;">in</span> ml) {
+    print(m)
+}
+</pre>
+</div>
+
+<pre class="example" id="orgf5d1d8b">
+[1] 1
+[1] 2
+[1] 3
+[1] 4
+[1] 5
+[1] 6
+[1] 7
+[1] 8
+[1] 9
+[1] 10
+</pre>
+
+<p>
+Compare to the Python code. Look for the ":" and the "{}"'s in both examples. You can see how your knowledge of looping in one language helps you understand looping in the other, but the details may be different.
+</p>
+</div>
+</div>
+<div id="outline-container-org0fa4f2d" class="outline-4">
+<h4 id="org0fa4f2d"><span class="section-number-4">9.4.2.</span> Test your understanding</h4>
+<div class="outline-text-4" id="text-9-4-2">
+<ol class="org-ol">
+<li>Edit the above so that it prints the individual number each time it goes through the loop, and not the whole list.</li>
+<li>Repeat the <a href="file:///home/britt/gitRepos/introComp4Psych/assessments/forLoopPythonAssessment.html">Python Assessment</a> on for loops, but using R this time. I give you a working example below, but try on your own for a while first, then look at my code and try it line by line in your interpreter to get the feel for how things work in R. 
+<ol class="org-ol">
+<li>Create a list of at least 8 individual characters.</li>
+<li>Make sure they are <b><b>not</b></b> in alphabetical order</li>
+<li>Print the letters one at a time.</li>
+<li>Print the letters sorted alphabetically one at a time, but <i>do not</i> overwrite your original list.</li>
+<li>Print the letters from both lists with a format command that says which position the letter is in.</li>
+<li>String formatting is less nice in R! To help with this look for help on <code>paste</code> and <code>sprintf</code>. To acccess the <i>help</i> try <code>?&lt;commandname&gt;</code>.</li>
+</ol></li>
+</ol>
+
+<div class="org-src-container">
+<pre class="src src-R" id="org658080f">myName = <span style="color: #8b2252;">"brittAnderson"</span>
+myList = unlist(strsplit(myName,<span style="color: #8b2252;">""</span>))
+
+<span style="color: #a020f0;">for</span> (l <span style="color: #a020f0;">in</span> myList){
+  print(l)
+}
+
+
+
+<span style="color: #a020f0;">for</span> (l <span style="color: #a020f0;">in</span> myList[order(myList)]){
+  print(l)
+}
+
+i = 1
+<span style="color: #a020f0;">for</span> (n <span style="color: #a020f0;">in</span> order(myList)){
+  t  <span style="color: #008b8b;">&lt;-</span> sprintf(<span style="color: #8b2252;">"The %.0fth letter of myList is: %s, but is %s in the sorted list."</span>,i,myList[i],myList[n])
+  print(t)
+  i = i+1  
+  }
+</pre>
+</div>
+
+<pre class="example" id="org2a81094">
+[1] "b"
+[1] "r"
+[1] "i"
+[1] "t"
+[1] "t"
+[1] "A"
+[1] "n"
+[1] "d"
+[1] "e"
+[1] "r"
+[1] "s"
+[1] "o"
+[1] "n"
+[1] "A"
+[1] "b"
+[1] "d"
+[1] "e"
+[1] "i"
+[1] "n"
+[1] "n"
+[1] "o"
+[1] "r"
+[1] "r"
+[1] "s"
+[1] "t"
+[1] "t"
+[1] "The 1th letter of myList is: b, but is A in the sorted list."
+[1] "The 2th letter of myList is: r, but is b in the sorted list."
+[1] "The 3th letter of myList is: i, but is d in the sorted list."
+[1] "The 4th letter of myList is: t, but is e in the sorted list."
+[1] "The 5th letter of myList is: t, but is i in the sorted list."
+[1] "The 6th letter of myList is: A, but is n in the sorted list."
+[1] "The 7th letter of myList is: n, but is n in the sorted list."
+[1] "The 8th letter of myList is: d, but is o in the sorted list."
+[1] "The 9th letter of myList is: e, but is r in the sorted list."
+[1] "The 10th letter of myList is: r, but is r in the sorted list."
+[1] "The 11th letter of myList is: s, but is s in the sorted list."
+[1] "The 12th letter of myList is: o, but is t in the sorted list."
+[1] "The 13th letter of myList is: n, but is t in the sorted list."
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org712bb5a" class="outline-3">
+<h3 id="org712bb5a"><span class="section-number-3">9.5.</span> While Loop</h3>
+<div class="outline-text-3" id="text-9-5">
+</div>
+<div id="outline-container-orga9e0a83" class="outline-4">
+<h4 id="orga9e0a83"><span class="section-number-4">9.5.1.</span> Conditionals</h4>
+<div class="outline-text-4" id="text-9-5-1">
+<div class="org-src-container">
+<pre class="src src-R"><span style="color: #a020f0;">if</span> (2 == 3) {
+    print(<span style="color: #8b2252;">"Wha.....?\n\n"</span>)
+} <span style="color: #a020f0;">else</span> <span style="color: #a020f0;">if</span> (3 == 2) {
+  print(<span style="color: #8b2252;">"Now that is odd"</span>)
+} <span style="color: #a020f0;">else</span> {
+  print(<span style="color: #8b2252;">"2 does not equal 3."</span>)
+}
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org73cfbb2" class="outline-4">
+<h4 id="org73cfbb2"><span class="section-number-4">9.5.2.</span> While (again)</h4>
+<div class="outline-text-4" id="text-9-5-2">
+<div class="org-src-container">
+<pre class="src src-R">i = 0
+<span style="color: #a020f0;">while</span> (i&lt;=10) {
+  print(unlist(strsplit(<span style="color: #8b2252;">"brittAnderson"</span>,<span style="color: #8b2252;">""</span>))[i])
+  i = i+1
+}
+</pre>
+</div>
+
+<pre class="example" id="orgd3c3874">
+character(0)
+[1] "b"
+[1] "r"
+[1] "i"
+[1] "t"
+[1] "t"
+[1] "A"
+[1] "n"
+[1] "d"
+[1] "e"
+[1] "r"
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org4b268cf" class="outline-2">
+<h2 id="org4b268cf"><span class="section-number-2">10.</span> Functions</h2>
+<div class="outline-text-2" id="text-10">
+<div class="org-src-container">
+<pre class="src src-R"><span style="color: #0000ff;">myadd</span>  <span style="color: #008b8b;">&lt;-</span> <span style="color: #a020f0;">function</span>(x,y) {
+  <span style="color: #a020f0;">return</span>(x+y)
+  }
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-R">myadd(2,3)
+</pre>
+</div>
+
+<pre class="example">
+[1] 5
+</pre>
+</div>
+</div>
+
+<div id="outline-container-orge8f025f" class="outline-2">
+<h2 id="orge8f025f"><span class="section-number-2">11.</span> Libraries for R</h2>
+<div class="outline-text-2" id="text-11">
+<p>
+R too has its own package manager. You will usually want to let R manage its own packages. You do this from within R itself. Here are some code snippets showing this in practice.
+</p>
+
+<div class="org-src-container">
+<label class="org-src-name"><span class="listing-number">Listing 4: </span>Package Installation Commands in R. Note the use of quotes differs.</label><pre class="src src-R" id="org6865627">install.packages(<span style="color: #8b2252;">"data.table"</span>)
+install.packages(<span style="color: #8b2252;">"ggplot2"</span>)
+<span style="color: #008b8b;">library</span>(data.table)
+<span style="color: #008b8b;">library</span>(ggplot2)
+</pre>
+</div>
+</div>
+<div id="outline-container-org19a9937" class="outline-3">
+<h3 id="org19a9937"><span class="section-number-3">11.1.</span> What are some popular libraries?</h3>
+<div class="outline-text-3" id="text-11-1">
+<p>
+Of particular note for us are:
+</p>
+<ol class="org-ol">
+<li>knitr</li>
+<li>rmarkdown</li>
+<li>ggplot2</li>
+<li>data.table</li>
+<li>magrittr</li>
+<li>devtools/githubinstall</li>
+</ol>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org3fa6b47" class="outline-2">
+<h2 id="org3fa6b47"><span class="section-number-2">12.</span> Walking Through Some of R's Features</h2>
+<div class="outline-text-2" id="text-12">
+<div style="padding:56.39% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/460262930?h=894daf7c20" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
+<p><a href="https://vimeo.com/460262930">Hc : Walking Through the R Topic (i2c4p)</a> from <a href="https://vimeo.com/epistemic">Britt Anderson</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
+<p>A video tour of ideas and concepts from the R topic file. I accidentally let this one go long (almost 1/2 hour). You may want to view it in parts as you read through the material.</p>
+</div>
+</div>
+
+<div id="outline-container-orge3f6804" class="outline-2">
+<h2 id="orge3f6804"><span class="section-number-2">13.</span> Assessing your R Skills</h2>
+<div class="outline-text-2" id="text-13">
+<div style="padding:56.39% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/460262936?h=62002be41d" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
+<p><a href="https://vimeo.com/460262936">Hd : Hints for the R Assessments (i2c4p)</a> from <a href="https://vimeo.com/epistemic">Britt Anderson</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
+<p>The R assessments ask you to work with data frames and do some text processing. I give some pointers and hints to how to approach this process.</p>
+</div>
+
+
+<div id="outline-container-orga8440b9" class="outline-3">
+<h3 id="orga8440b9"><span class="section-number-3">13.1.</span> Accessing Data in R - Assessment</h3>
+<div class="outline-text-3" id="text-13-1">
+</div>
+<div id="outline-container-org994053d" class="outline-4">
+<h4 id="org994053d"><span class="section-number-4">13.1.1.</span> Task</h4>
+<div class="outline-text-4" id="text-13-1-1">
+<p>
+Provide an org or Rmd file that demonstrates the following functions with the <b>cars</b> data set in R.
+</p>
+</div>
+</div>
+<div id="outline-container-org402be01" class="outline-4">
+<h4 id="org402be01"><span class="section-number-4">13.1.2.</span> Goal/Purpose</h4>
+<div class="outline-text-4" id="text-13-1-2">
+<p>
+Demonstrate some of the basic data processing tasks in R. 
+</p>
+</div>
+</div>
+<div id="outline-container-org0a9bf84" class="outline-4">
+<h4 id="org0a9bf84"><span class="section-number-4">13.1.3.</span> Instructions</h4>
+<div class="outline-text-4" id="text-13-1-3">
+</div>
+<ol class="org-ol">
+<li><a id="orgd6842c8"></a>General<br />
+<div class="outline-text-5" id="text-13-1-3-1">
+<p>
+Using the built in data set <b>cars</b> demonstrate sorting and selection.
+</p>
+</div>
+</li>
+<li><a id="org895aea7"></a>Detailed<br />
+<div class="outline-text-5" id="text-13-1-3-2">
+<p>
+Produce a Rmd or org file that executes each of the following processes or provides as a result the answer to the listed questions. 
+</p>
+<ul class="org-ul">
+<li>Sort (or <code>order</code>) cars by the <code>dist</code> variable.</li>
+<li>Find the <code>mean</code> and <code>standard deviation</code> of the speed of the cars.</li>
+<li><p>
+Print the name of the other built-in data sets (this code may help)
+</p>
+<div class="org-src-container">
+<pre class="src src-R"><span style="color: #a020f0;">for</span> (i <span style="color: #a020f0;">in</span> data()$results[,3]) {
+    print(i)
+    }
+</pre>
+</div></li>
+<li>Using any other data set find:
+<ol class="org-ol">
+<li>Print the column names?</li>
+<li>Print how many rows?</li>
+<li>Tell me what the <i>comment</i> designator is for R?</li>
+<li>Tell me what the ending extension is for an R script?</li>
+</ol></li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+
+<div id="outline-container-org38f638b" class="outline-4">
+<h4 id="org38f638b"><span class="section-number-4">13.1.4.</span> Comments</h4>
+</div>
+<div id="outline-container-orgb82d867" class="outline-4">
+<h4 id="orgb82d867"><span class="section-number-4">13.1.5.</span> Hints</h4>
+<div class="outline-text-4" id="text-13-1-5">
+<ul class="org-ul">
+<li>To find the names of <i>columns</i> in a data.frame try the <code>names</code> function (<code>names(cars)</code>).</li>
+<li>To get help you can type a <b>?</b> at the command line of the R interpreter.</li>
+<li>You may need to find an online resource you like for R help, for example to find out what the name of the function is for standard deviation. It is not "standard deviation", but something much shorter.</li>
+<li>Extensions: For instance "docx" is the extension for a word file and "py" is the extension for a python script.</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org03c93d1" class="outline-3">
+<h3 id="org03c93d1"><span class="section-number-3">13.2.</span> Hangman in R</h3>
+<div class="outline-text-3" id="text-13-2">
+</div>
+<div id="outline-container-orgb8f10c4" class="outline-4">
+<h4 id="orgb8f10c4"><span class="section-number-4">13.2.1.</span> Words of Encouragement</h4>
+<div class="outline-text-4" id="text-13-2-1">
+<p>
+This was hard in Python, and won't be trivial in R, but having done it once, the translation should be easier. But R is not as nice when processing text as is Python to text process as Python. So, I will be expecting less full featured functions. Just demonstrate you understand the concepts of what we are trying to achieve. 
+</p>
+</div>
+</div>
+<div id="outline-container-orgf08bcf7" class="outline-4">
+<h4 id="orgf08bcf7"><span class="section-number-4">13.2.2.</span> Task</h4>
+<div class="outline-text-4" id="text-13-2-2">
+<p>
+To write the beginning pieces of a hangman game in R. This version will <a href="https://en.wikipedia.org/wiki/Hard_coding">hard code</a> the word to be guessed. It will not produce any sort of graphic, but merely ask for letters and report if the player spells out the word or not.  Note that as R is harder to run as a program from the command line I will test your code by loading it into my R interpreter. The command for this is <code>source</code>.  I will download your <code>filename.R</code> and then I will <code>source(filename.R)</code>. Next, I will execute whatever function you tell me to. Remember, your script can contain comments so I should be able to tell what you want me to do just by reading your .R file. 
+</p>
+</div>
+</div>
+<div id="outline-container-org90858a6" class="outline-4">
+<h4 id="org90858a6"><span class="section-number-4">13.2.3.</span> Detail (basically the same as before, with minor adaptations)</h4>
+<div class="outline-text-4" id="text-13-2-3">
+<ol class="org-ol">
+<li>Get input from me, the user.</li>
+<li>Write a function that takes that input and and returns <b>a list of</b> indices of the positions where the input letter exists in your hard-coded word. An empty list means the letter is never in the word. Otherwise the elements of this list are the indices where that letter is found. For example, if the word were tree and the letter "e" you would get back <code>[1] 3 4</code> from this function. Remember that R starts counting from 1, not zero. , but would get back <code>integer(0)</code> if the letter were 's'. This weirdness tells you why R might be nicer for statistics, but not for text processing. Different task require different tools.</li>
+<li>Write a function that loops through the above process a certain number of times.</li>
+<li>Make the function terminate when all the letters are guessed or max number of guesses is exceeded.</li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-orgd73e9b5" class="outline-4">
+<h4 id="orgd73e9b5"><span class="section-number-4">13.2.4.</span> Comments</h4>
+</div>
+<div id="outline-container-org42adfa6" class="outline-4">
+<h4 id="org42adfa6"><span class="section-number-4">13.2.5.</span> How I Will Grade</h4>
+<div class="outline-text-4" id="text-13-2-5">
+<p>
+I will load (source) your file and try to test the functions. If they basically work then you will get the credits. 
+</p>
+</div>
+</div>
+<div id="outline-container-org92a4c49" class="outline-4">
+<h4 id="org92a4c49"><span class="section-number-4">13.2.6.</span> Hints</h4>
+<div class="outline-text-4" id="text-13-2-6">
+<p>
+You might find the following R functions helpful:
+</p>
+<ol class="org-ol">
+<li>which</li>
+<li>strsplit</li>
+<li>unlist</li>
+<li>!=</li>
+<li>Using a variable more than once, e.g. al[al != "e"]</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">Date: 2023-01-13 Fri 00:00</p>
+<p class="author">Author: Britt Anderson</p>
+<p class="date">Created: 2023-02-09 Thu 09:06</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
