@@ -7,3 +7,4 @@
 - [[file:emacs.org][Emacs]]
 - [[file:linux.org][Linux]]
 - [[file:beginning-python.org][Beginning Python]]
+- [[file:working-with-data-in-python.org][Working With Data in Python]]

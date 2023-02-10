@@ -55,6 +55,9 @@ We will be using Linux, but the installation process can be tricky and time cons
 * Beginning R
 [[file:beginning-r.org][Beginnning R]]
 
-IAMHERE
-* 
+* Working With Data in Python
+[[file:working-with-data-in-python.org][Working with data in Python]]
+
+* Basic Plotting
+[[file:basic-plotting.org][Basic Plotting]]
 
