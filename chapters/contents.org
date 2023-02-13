@@ -8,3 +8,4 @@
 - [[file:linux.org][Linux]]
 - [[file:beginning-python.org][Beginning Python]]
 - [[file:working-with-data-in-python.org][Working With Data in Python]]
+- [[file:basic-plotting.org][Basic Plotting with R and Python]]

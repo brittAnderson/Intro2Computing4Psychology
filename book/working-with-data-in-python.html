@@ -1,0 +1,502 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2023-02-10 Fri 08:27 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Working With Data in Python</title>
+<meta name="author" content="Britt Anderson" />
+<meta name="generator" content="Org Mode" />
+<style>
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { }
+</style>
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">Working With Data in Python</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org7c0a24a">1. Working with Data Python</a>
+<ul>
+<li><a href="#orgb8530d4">1.1. Some additional sources</a>
+<ul>
+<li><a href="#org90b4806">1.1.1. Pandas Books</a></li>
+<li><a href="#orgce59f2c">1.1.2. Blogs</a></li>
+</ul>
+</li>
+<li><a href="#orgc374781">1.2. Data handling in Python</a>
+<ul>
+<li><a href="#org84db6e6">1.2.1. Pandas</a></li>
+<li><a href="#org29cc7d1">1.2.2. Interactve Pandas</a></li>
+<li><a href="#orgc353eda">1.2.3. Getting Your Data Into Python</a></li>
+<li><a href="#org348ea0f">1.2.4. Repeating Things We Did In R With Pandas</a></li>
+<li><a href="#org5b2e734">1.2.5. Functional Styles versus Object Orientation</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#orgd83dee9">2. Assessing Your Use of Pandas</a>
+<ul>
+<li><a href="#orga5e6c87">2.1. Task</a></li>
+<li><a href="#org3206fd7">2.2. Requirements</a></li>
+<li><a href="#org90dfd2d">2.3. Comments</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org7c0a24a" class="outline-2">
+<h2 id="org7c0a24a"><span class="section-number-2">1.</span> Working with Data Python</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+For a long time data handling and graph production in python lagged behind that of R. Data were collected in comma or tab separated (<a href="https://en.wikipedia.org/wiki/Comma-separated_values">CSV</a>) formats or often in <a href="https://docs.python.org/3/library/pickle.html">pickle</a> files. Pickled data was textual data converted to a binary representation and had to be converted back to be read. These issues made it harder to use python in an interactive and interpreted environment for data analyis and many workers in psychology would collect their data with experiments coded in python (or other languages), and then use R as the language for statistical testing.
+</p>
+
+<p>
+However, over the last few years the scientific python community has expanded its options for both graphing and data handling markedly, and working entirely in python is increasingly a viable option. The most widely used python library for handling data is <a href="https://pandas.pydata.org/">Pandas</a>. In many respects it has a similar look and feel to the <code>data.frame</code> style of data analysis used in R. However, there are definite syntactic and implementation differences. While a familiarity with R and data.frames is a good base for beginning to use Pandas there will remain a lot of concrete specfics to learn to use python effectively. In this topic a few of the pandas basics are demonstrated. In addition to the illustrations here, there are numerous online tutorials and blogs that explain pandas in more detail, and with many more examples.
+</p>
+
+<div style="padding:56.39% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/462705773?h=1b5d393026" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
+<p><a href="https://vimeo.com/462705773">Ia : Intro to Using Pandas (i2c4p)</a> from <a href="https://vimeo.com/epistemic">Britt Anderson</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
+<p>This module gives an overview of using python to request data via the internet; unzip a data file; and load that data into python with pandas for exploratory analysis.</p>
+</div>
+
+<div id="outline-container-orgb8530d4" class="outline-3">
+<h3 id="orgb8530d4"><span class="section-number-3">1.1.</span> Some additional sources</h3>
+<div class="outline-text-3" id="text-1-1">
+</div>
+<div id="outline-container-org90b4806" class="outline-4">
+<h4 id="org90b4806"><span class="section-number-4">1.1.1.</span> Pandas Books</h4>
+<div class="outline-text-4" id="text-1-1-1">
+<ul class="org-ul">
+<li><a href="https://www.chapters.indigo.ca/en-ca/books/python-for-data-analysis-data/9781449319793-item.html">Python for Data Analysis</a> - This book is available for online reading to University of Waterloo students.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgce59f2c" class="outline-4">
+<h4 id="orgce59f2c"><span class="section-number-4">1.1.2.</span> Blogs</h4>
+<div class="outline-text-4" id="text-1-1-2">
+<ul class="org-ul">
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/getting_started/tutorials.html">Community Tutorials</a></li>
+<li><a href="https://www.learnpython.org/en/Pandas_Basics">Learn Python</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-orgc374781" class="outline-3">
+<h3 id="orgc374781"><span class="section-number-3">1.2.</span> Data handling in Python</h3>
+<div class="outline-text-3" id="text-1-2">
+<div style="padding:56.39% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/462705737?h=8f04df6247" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
+<p><a href="https://vimeo.com/462705737">Ib : Installing Pandas (i2c4p)</a> from <a href="https://vimeo.com/epistemic">Britt Anderson</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
+<p>There are several methods for installing Pandas. In this video I demonstrate one of the: using pip</p>
+</div>
+<div id="outline-container-org84db6e6" class="outline-4">
+<h4 id="org84db6e6"><span class="section-number-4">1.2.1.</span> Pandas</h4>
+<div class="outline-text-4" id="text-1-2-1">
+<p>
+How to get Pandas?
+</p>
+<ol class="org-ol">
+<li><a href="https://docs.continuum.io/anaconda/">Anaconda</a> (Conda) - you will see this in a lot of documentation. This is a collection of packages for python that are curated to work well together and allow you to set up virutal environments (which protects your projects and their differing requirements from leading to conflicts with each other). Using <code>conda</code> is not hard, but it is another took, and it has its own learning curve, so it will not be used here. If you find yourself using python regularly and you are comfortable with how to install and use software and packages then I encourage you to read more Anaconda and decided if it is a python solution that will work for you.</li>
+<li>Xubuntu stable <code>sudo apt-get install python3-pandas</code>.</li>
+<li>Pip (PyPI) <code>pip3 install pandas</code></li>
+</ol>
+
+<p>
+To try and get all our python packages from one source (and thereby reduce our chance for conflicts) we will use the <code>pip</code> method as that will work well with our subsequent installation of the <code>psychopy</code> package.
+</p>
+</div>
+</div>
+<div id="outline-container-org29cc7d1" class="outline-4">
+<h4 id="org29cc7d1"><span class="section-number-4">1.2.2.</span> Interactve Pandas</h4>
+<div class="outline-text-4" id="text-1-2-2">
+<p>
+Python is an interpreted language. You can use Python from an interpreter much as you used R in an R console (or RStudio).
+</p>
+</div>
+</div>
+<div id="outline-container-orgc353eda" class="outline-4">
+<h4 id="orgc353eda"><span class="section-number-4">1.2.3.</span> Getting Your Data Into Python</h4>
+<div class="outline-text-4" id="text-1-2-3">
+<div style="padding:56.39% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/462705724?h=dc0c22cba8" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
+<p><a href="https://vimeo.com/462705724">Ic : Using Python to Request Data from the Internet (i2c4p)</a> from <a href="https://vimeo.com/epistemic">Britt Anderson</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
+<p>This video demonstrates some of the steps below for getting day from Python. It uses the request library.</p>
+
+<p>
+Before you can get data into python, you have to get data.
+</p>
+
+<p>
+There are a large number of sources for data online that you can use to explore different tools and analyses.
+</p>
+<ol class="org-ol">
+<li><a href="https://openpsychometrics.org/_rawdata/">Open Psychometrics</a></li>
+<li><a href="https://www.apa.org/research/responsible/data-links">Data Links from the APA</a></li>
+<li><a href="https://data.world/datasets/psychology">Data World</a></li>
+<li><a href="https://www.kaggle.com/tags/psychology">The Kaggle Competition</a>
+Kaggle competitions allow you to make data analysis a competitive sport.</li>
+</ol>
+
+<p>
+For demonstration purposes we will get data from the Open Psychometrics project (I am using the humor questi. You could just go to the website and right click and download, but you could also use python to get the data. There are many methods for this and the one used here came from this <a href="https://www.simplifiedpython.net/python-download-file/">online post.</a>
+</p>
+
+<p>
+You will have to <code>pip3 install requests</code> to get the requests library
+</p>
+
+<p>
+Then you will want to be in the directory where you want the file to download. I am using a <code>:session:</code> in order to allow variables to persist across babel code blocks. 
+</p>
+
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #a020f0;">import</span> requests
+<span style="color: #a0522d;">url</span> = <span style="color: #8b2252;">"http://openpsychometrics.org/_rawdata/HSQ.zip"</span>
+<span style="color: #a0522d;">r</span> = requests.get(url)
+<span style="color: #a0522d;">filename</span> = url.split(<span style="color: #8b2252;">'/'</span>)[-1] <span style="color: #b22222;"># </span><span style="color: #b22222;">-1 gets us the last item of a list, in this case the filenamel</span>
+<span style="color: #a020f0;">with</span> <span style="color: #483d8b;">open</span>(filename,<span style="color: #8b2252;">'wb'</span>) <span style="color: #a020f0;">as</span> output_file:
+    output_file.write(r.content)
+</pre>
+</div>
+
+<div style="padding:56.39% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/462705656?h=a84dbf071f" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
+<p><a href="https://vimeo.com/462705656">Id : How to Use Python Unzip functions (12c4p)</a> from <a href="https://vimeo.com/epistemic">Britt Anderson</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
+<p>Using the python unzip library.</p>
+
+<p>
+This file is a "zip" file. For a zip file the data have been compressed to save space. There are many other compression types available. Tar is fairly common. Rar is rare. Python also has facilities to unzip files.  Why bother using all these tools rather than doing everything manually? Well, for one thing you could script it. Why waste your time clicking random buttons. Let the computer do the work. 
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #a020f0;">import</span> zipfile
+<span style="color: #a020f0;">with</span> zipfile.ZipFile(<span style="color: #8b2252;">'./HSQ.zip'</span>, <span style="color: #8b2252;">'r'</span>) <span style="color: #a020f0;">as</span> zip_ref:
+    zip_ref.extractall(<span style="color: #8b2252;">'.'</span>) ; <span style="color: #b22222;"># </span><span style="color: #b22222;">what does "." mean in this context?</span>
+</pre>
+</div>
+
+
+<div style="padding:56.39% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/462705437?h=931966f828" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
+<p><a href="https://vimeo.com/462705437">Ie : Getting Data into Pandas (i2c4p)</a> from <a href="https://vimeo.com/epistemic">Britt Anderson</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
+<p>Reading in a csv data file to a python interactive session with Pandas.</p>
+
+<div class="org-src-container">
+<pre class="src src-python">You have to <span style="color: #a020f0;">import</span> pandas to use it. 
+<span style="color: #b22222;">#</span><span style="color: #b22222;">+begin_src python :session *dataPython* :results value</span>
+  <span style="color: #a020f0;">import</span> pandas <span style="color: #a020f0;">as</span> pd
+  <span style="color: #a0522d;">dpd</span> = pd.read_csv(<span style="color: #8b2252;">"./HSQ/data.csv"</span>)
+  dpd.columns.values
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org348ea0f" class="outline-4">
+<h4 id="org348ea0f"><span class="section-number-4">1.2.4.</span> Repeating Things We Did In R With Pandas</h4>
+<div class="outline-text-4" id="text-1-2-4">
+</div>
+<ol class="org-ol">
+<li><a id="org1a65179"></a>The length of a list<br />
+<div class="outline-text-5" id="text-1-2-4-1">
+<p>
+In R you would use the <code>length</code> command, but in python it is <code>len</code>. Almost every language you will program in will have a command for finding the length, but the actual word may different or the syntax may be different.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #483d8b;">len</span>(dpd[<span style="color: #8b2252;">'Q1'</span>])
+</pre>
+</div>
+</div>
+</li>
+
+<li><a id="org2e223fa"></a>Using a Conditional<br />
+<div class="outline-text-5" id="text-1-2-4-2">
+<p>
+In R we did things like <code>mydataframe$mydatacol</code> to get a column of data from a data frame. In python the format looks more like a python dictionary.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #a0522d;">dpdmg</span> = dpd.copy()
+<span style="color: #a0522d;">dpdmg</span> = dpdmg[dpdmg[<span style="color: #8b2252;">'gender'</span>].isin([1,2])]
+<span style="color: #483d8b;">len</span>(dpdmg[<span style="color: #8b2252;">'Q1'</span>])
+</pre>
+</div>
+
+<p>
+What happens if you just select with <code>in</code>? You keep the same number of rows, because you replace the ineligible data with NaNs (not a number). 
+</p>
+</div>
+</li>
+</ol>
+</div>
+
+<div id="outline-container-org5b2e734" class="outline-4">
+<h4 id="org5b2e734"><span class="section-number-4">1.2.5.</span> Functional Styles versus Object Orientation</h4>
+<div class="outline-text-4" id="text-1-2-5">
+<p>
+Python is an object oriented language. R is in a more eclectic style that  reflects its LISP origins. Object oriented languages have data structures: objects, that encapsulate both attributes (what objects are like) and methods (what objects can do). A list would have its contents, the items in the list, as its attributes, but would have the ability, a method, to report the length of its <i>self</i> <sup><a id="fnr.1" class="footref" href="#fn.1" role="doc-backlink">1</a></sup>. The attributes and methods of a python object are often accessed by a name that includes a <b>dot</b> '<code>.</code>' like the ".isin" you see in the code snippet above. Pandas creates a <i>data.frame object</i> (the name emphasizes its R heritage), but it is not the same thing, and while most of the commands are achievable in either, they are not the same. The <b>dot</b> shows you we are accessing either an attribute or a method of an object. 
+</p>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgd83dee9" class="outline-2">
+<h2 id="orgd83dee9"><span class="section-number-2">2.</span> Assessing Your Use of Pandas</h2>
+<div class="outline-text-2" id="text-2">
+</div>
+<div id="outline-container-orga5e6c87" class="outline-3">
+<h3 id="orga5e6c87"><span class="section-number-3">2.1.</span> Task</h3>
+<div class="outline-text-3" id="text-2-1">
+<p>
+You will
+</p>
+<ol class="org-ol">
+<li>Download a data set in python</li>
+<li>Unzip the data set</li>
+<li>Tell me the names of all the columns</li>
+<li>Tell me the length of one of the rows</li>
+<li>And tell me the mean<sup><a id="fnr.2" class="footref" href="#fn.2" role="doc-backlink">2</a></sup> of one of the columns subset by rows<sup><a id="fnr.3" class="footref" href="#fn.3" role="doc-backlink">3</a></sup>.</li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-org3206fd7" class="outline-3">
+<h3 id="org3206fd7"><span class="section-number-3">2.2.</span> Requirements</h3>
+<div class="outline-text-3" id="text-2-2">
+<p>
+Your submission will be either an org<sup><a id="fnr.4" class="footref" href="#fn.4" role="doc-backlink">4</a></sup> file with code blocks that let me execute each of these steps by myself interactively one at a time. Or a python script that I can run from the command line and that will perform each of these functions displaying its output to <code>stdout</code>. Stdout is the linux name for printing to the screen in the terminal. For example, when you do <code>ls</code> to list the names of files in a directory you are directing to stdout. 
+</p>
+</div>
+</div>
+
+<div id="outline-container-org90dfd2d" class="outline-3">
+<h3 id="org90dfd2d"><span class="section-number-3">2.3.</span> Comments</h3>
+<div class="outline-text-3" id="text-2-3">
+<p>
+Don't start by writing this as a script. That will almost certainly be too hard. Begin by doing this interactively, perhaps at a python interpreter until you get the code for a particular step done corrrectly. Then copy that code to your file and and test that it still works; that something did not get messed up in the copying and pasting.
+Once you have the data in your interpreter, don't just rush through. Take some time to play with various pandas commands or exercises such as examples you can find <a href="https://www.w3resource.com/python-exercises/pandas/index-data-series.php">here</a> to generally grow more familiar with the package.
+</p>
+</div>
+</div>
+</div>
+<div id="footnotes">
+<h2 class="footnotes">Footnotes: </h2>
+<div id="text-footnotes">
+
+<div class="footdef"><sup><a id="fn.1" class="footnum" href="#fnr.1" role="doc-backlink">1</a></sup> <div class="footpara" role="doc-footnote"><p class="footpara">
+Self is in italics because this is the special name one often sees in object oriented code were the definition of an object is given. Self typically refers to the particular instance of an object as it is being made. 
+</p></div></div>
+
+<div class="footdef"><sup><a id="fn.2" class="footnum" href="#fnr.2" role="doc-backlink">2</a></sup> <div class="footpara" role="doc-footnote"><p class="footpara">
+Or some other simple statistic appropriate to the data, e.g. if your data was <i>categorical</i> you might give me the number of rows for each type of category.  
+</p></div></div>
+
+<div class="footdef"><sup><a id="fn.3" class="footnum" href="#fnr.3" role="doc-backlink">3</a></sup> <div class="footpara" role="doc-footnote"><p class="footpara">
+An example of this is that if you had columns for heights and genders you could output the average height of men, women, and other. 
+</p></div></div>
+
+<div class="footdef"><sup><a id="fn.4" class="footnum" href="#fnr.4" role="doc-backlink">4</a></sup> <div class="footpara" role="doc-footnote"><p class="footpara">
+To make some nicer formatting and help available when using python from within emacs checkout the <code>elpy</code> <a href="https://elpy.readthedocs.io/en/latest/introduction.html#installation">package</a>.
+</p>
+<div style="padding:56.39% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/462706049?h=3d1ebf93de" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
+<p><a href="https://vimeo.com/462706049">Ec : Installing the Elpy package (i2c4p)</a> from <a href="https://vimeo.com/epistemic">Britt Anderson</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
+<p>Installing the elpy package. A bit about installing packages in emacs generally, and a specific package to help with python code formatting and syntax.</p></div></div>
+
+
+</div>
+</div></div>
+<div id="postamble" class="status">
+<p class="date">Date: 2023-02-09 Thu 00:00</p>
+<p class="author">Author: Britt Anderson</p>
+<p class="date">Created: 2023-02-10 Fri 08:27</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
