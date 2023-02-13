@@ -1,0 +1,51 @@
+# -*- org-link-file-path-type: relative; -*-
+#+Title: Readme for Emacs Init
+
+* Purpose
+  To provide a minimal emacs init example.
+
+* Emacs initialization
+  This is the process emacs follows when it starts. All computers and all programs have something similar. Emacs reads a file to see what to do when it starts. It has coded into it where to look for those files and what they are called. Most contemporary advice is to use =~/.emacs.d/init.el= as the initialization file. For that to work you may have to get rid of =~/.emacs= first. 
+
+* The init file
+  A [[file:init.el][minimal version]] of an emacs init file is found in this same directory.
+
+  
+* Testing (requires an internet connection)
+  1. Copy the init file as instructed in the commented points numbered 1 to 5 in the init file.
+  2. *If* you get no errors then delete those commented lines and save the file. Close emacs. Restart.
+  3. *If* you still have no errors run,
+     =M-x package-list-packages=
+
+     This should refresh the list of packages. Now you can search for (=C-s=) "use-package". When you find it mark it with an "i" for installation, and then an "x" for execute. You should see stuff happening that is the installation.
+  4. If that worked without errors open up your init file and uncomment (delete the two semi-colons) the lines for the magit package. Save. Now when you close and restart emacs it should install the magit package. You should see no errors.
+** Orgmode and Org Babel
+   If you have the above working then you will want to be able to have the right functions set up for using orgmode that the course requires. That will involve some additional elisp code to be cut and pasted into your init.el file. Here is the code you need (the stuff between the begin and end lines):
+
+   #+begin_src elisp :eval never
+     (setq org-confirm-babel-evaluate nil)
+     (setq org-babel-python-command "python3")
+       (org-babel-do-load-languages
+       'org-babel-load-languages
+       '((emacs-lisp . t) 
+       (R . t)
+       (python . t)))
+#+end_src
+
+You may need to save, and restart emacs for this to take effect.
+** Using Emacs and Org for Running R and Python
+   In addition to what you do in emacs you need to have installed R and python to your computer first. Then, if you want some nice syntax highlighting for python install the =elpy= package. And to be able to run =R= inside emacs install the ess package. Below are the two "use-package" snippets you will need to add to your init.el file to get them downloaded and installed the next time you start emacs[fn:1].
+
+#+begin_src elisp :eval never
+     (use-package elpy
+     :ensure t
+     :init (elpy-enable))
+ 
+     (use-package ess
+     :ensure t
+     )
+   #+end_src
+
+* Footnotes
+
+[fn:1] There are ways to trigger this installation without restarting emacs all the time, but that is a safe way to start and helps you see when you have made an error. Then when you start emacs it will warn you if there is a syntax error in your start-up (init) script.  

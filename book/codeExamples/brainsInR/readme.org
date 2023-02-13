@@ -1,0 +1,4 @@
+* Read-me
+
+A student in the Fall 2020 offering did a Rmd file on using the Brains in R toolbox. The Rmd file and exported HTML are saved here as an example.
+

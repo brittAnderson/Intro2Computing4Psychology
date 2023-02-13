@@ -1,0 +1,60 @@
+#+options: ':nil *:t -:t ::t <:t H:3 \n:nil ^:t arch:headline
+#+options: author:t broken-links:nil c:nil creator:nil
+#+options: d:(not "LOGBOOK") date:t e:t email:nil f:t inline:t num:t
+#+options: p:nil pri:nil prop:nil stat:t tags:t tasks:t tex:t
+#+options: timestamp:t title:t toc:t todo:t |:t
+#+title: testRBabel
+#+author: Britt Anderson
+#+email: britt@uwaterloo.ca
+#+language: en
+#+select_tags: export
+#+exclude_tags: noexport
+#+creator: Emacs 26.3 (Org mode 9.2.6)
+#+latex_class: article
+#+latex_class_options:
+#+latex_header:
+#+latex_header_extra:
+#+description:
+#+keywords:
+#+subtitle:
+#+latex_compiler: pdflatex
+#+date: \today
+
+This is to test your installation of the files and programs needed to make a simple report. To compile to pdf use ~C-c C-e l p~.
+
+This loads an R library
+#+Begin_src R :session *testR*
+library(random)
+#+End_src
+
+#+RESULTS:
+| random    |
+| stats     |
+| graphics  |
+| grDevices |
+| utils     |
+| datasets  |
+| methods   |
+| base      |
+
+
+Now we will see if we can some source code and a simple plot for our export.
+
+#+begin_src R :session *testR* :exports both
+x = 1:10
+y = rnorm(10)
+print(mean(y))
+#+end_src
+
+#+RESULTS:
+: 0.149571258953334
+
+#+begin_src R :session *testR* :exports both :results graphics :file "simplePlot.png"
+plot(x,y,type = 'b')
+#+end_src
+
+#+RESULTS:
+[[file:simplePlot.png]]
+
+
+

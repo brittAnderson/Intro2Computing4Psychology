@@ -62,9 +62,9 @@ We will be using Linux, but the installation process can be tricky and time cons
 [[file:basic-plotting.org][Basic Plotting]]
 
 * Report Writing
-[[file:.#report-writing.org][Report Writing]]
+[[file:report-writing.org][Report Writing]]
 
-
+IAMHERE
 # * Programming Psychology Experiments
 # ** Many tools. Many Choices.
 # ** Which language should you use?

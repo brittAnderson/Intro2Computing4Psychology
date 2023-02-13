@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-02-13 Mon 08:19 -->
+<!-- 2023-02-13 Mon 11:16 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Basic Plotting with R and Python</title>
@@ -307,18 +307,12 @@ mapply(<span style="color: #a020f0;">function</span> (x,y,z,q) {c(x,y,z,q)}, xs,
 </pre>
 </div>
 
-<pre class="example" id="org3cf5519">
-	   [,1]     [,2]        [,3]       [,4]      [,5]      [,6]       [,7]
-[1,]  1.0000000 2.000000  3.00000000  4.0000000  5.000000  6.000000  7.0000000
-[2,]  1.0000000 4.000000  9.00000000 16.0000000 25.000000 36.000000 49.0000000
-[3,]  2.0000000 8.000000 18.00000000 32.0000000 50.000000 72.000000 98.0000000
-[4,] -0.8496032 1.104791  0.05929334 -0.8283228  0.241403 -0.958375 -0.1177828
-	    [,8]       [,9]       [,10]
-[1,]   8.0000000   9.000000  10.0000000
-[2,]  64.0000000  81.000000 100.0000000
-[3,] 128.0000000 162.000000 200.0000000
-[4,]   0.2202309  -1.398232   0.2025579
+<pre class="example">
+Error: object 'x' not found
+Error: object 'y1' not found
+Error in mapply(function(x, y, z, q) { : object 'ysquare' not found
 </pre>
+
 
 
 <p>
@@ -343,7 +337,7 @@ For base plot two primitive commands are <code>plot</code> and <code>lines</code
 </div>
 
 
-<div id="org154dfb2" class="figure">
+<div id="org44cc42a" class="figure">
 <p><img src="./baseplot1.png" alt="baseplot1.png" />
 </p>
 </div>
@@ -374,7 +368,7 @@ How would you include another data series in this plot?
 </p>
 
 <div class="org-src-container">
-<label class="org-src-name"><span class="listing-number">Listing 1: </span>Our base plot with additional data series added.</label><pre class="src src-R" id="org17e155b">plot(x,y1,type = <span style="color: #8b2252;">'b'</span>, frame = F, pch = 19, col = <span style="color: #8b2252;">"red"</span> , ylab = <span style="color: #8b2252;">"y"</span>, lty = 1, lwd = 3)
+<label class="org-src-name"><span class="listing-number">Listing 1: </span>Our base plot with additional data series added.</label><pre class="src src-R" id="org7127ec3">plot(x,y1,type = <span style="color: #8b2252;">'b'</span>, frame = F, pch = 19, col = <span style="color: #8b2252;">"red"</span> , ylab = <span style="color: #8b2252;">"y"</span>, lty = 1, lwd = 3)
 lines(x,y2, pch = 18, col = <span style="color: #8b2252;">"blue"</span>, type = <span style="color: #8b2252;">"b"</span> , lty = 2, lwd = 1)
 lines(x,y3, pch = 17, col = <span style="color: #8b2252;">"green"</span> , type = <span style="color: #8b2252;">"l"</span>, lty=3, lwd = 4)
 legend(<span style="color: #8b2252;">"topleft"</span>, legend = c(<span style="color: #8b2252;">"Line 1"</span>, <span style="color: #8b2252;">"Line 2"</span>, <span style="color: #8b2252;">"Line 3"</span>), col = c(<span style="color: #8b2252;">"red"</span>,<span style="color: #8b2252;">"blue"</span>,<span style="color: #8b2252;">"green"</span>),
@@ -383,7 +377,7 @@ legend(<span style="color: #8b2252;">"topleft"</span>, legend = c(<span style="c
 </div>
 
 
-<div id="org7127ec3" class="figure">
+<div id="orgaf92937" class="figure">
 <p><img src="./baseplot3.png" alt="baseplot3.png" />
 </p>
 </div>
@@ -421,7 +415,7 @@ ggsave(<span style="color: #8b2252;">"ggplot1.png"</span>, width = 8, height = 5
 </div>
 
 
-<div id="org1ed504f" class="figure">
+<div id="org787355d" class="figure">
 <p><img src="./ggplot1.png" alt="ggplot1.png" />
 </p>
 </div>
@@ -539,7 +533,7 @@ f
 </div>
 
 
-<div id="org576a956" class="figure">
+<div id="orgf63c4b4" class="figure">
 <p><img src="example-os.png" alt="example-os.png" />
 </p>
 </div>
@@ -567,7 +561,7 @@ fn
 </div>
 
 
-<div id="org44cc42a" class="figure">
+<div id="orge46e22a" class="figure">
 <p><img src="./py-inter-fit-plt.png" alt="py-inter-fit-plt.png" />
 </p>
 </div>
@@ -645,7 +639,7 @@ Notice that in this file we will execute both R code and Python code mixed with 
 <div id="postamble" class="status">
 <p class="date">Date: 2023-02-10 Fri 00:00</p>
 <p class="author">Author: Britt Anderson</p>
-<p class="date">Created: 2023-02-13 Mon 08:19</p>
+<p class="date">Created: 2023-02-13 Mon 11:16</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

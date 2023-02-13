@@ -1,0 +1,62 @@
+#+options: ':nil *:t -:t ::t <:t H:3 \n:nil ^:t arch:headline
+#+options: author:t broken-links:nil c:nil creator:nil
+#+options: d:(not "LOGBOOK") date:t e:t email:nil f:t inline:t num:t
+#+options: p:nil pri:nil prop:nil stat:t tags:t tasks:t tex:t
+#+options: timestamp:t title:t toc:t todo:t |:t
+#+title: testRBabel
+#+author: Britt Anderson
+#+email: britt@uwaterloo.ca
+#+language: en
+#+select_tags: export
+#+exclude_tags: noexport
+#+creator: Emacs 26.3 (Org mode 9.2.6)
+#+latex_class: article
+#+latex_class_options:
+#+latex_header: \bibliographystyle{plain}
+#+latex_header_extra:
+#+description:
+#+keywords:
+#+subtitle:
+#+latex_compiler: pdflatex
+#+date: \today
+
+
+
+
+This is to test your installation of the files and programs needed to make a simple report. To compile to pdf use ~C-c C-e l p~.
+
+This loads an R library
+#+Begin_src R :session *testR*
+library(random)
+#+End_src
+
+
+Now we will see if we can some source code and a simple plot for our export.
+
+#+begin_src R :session *testR* :exports both
+x = 1:10
+y = rnorm(10)
+print(mean(y))
+#+end_src
+
+#+RESULTS:
+: 0.18479671870621
+
+#+begin_src R :session *testR* :exports both :results graphics :file "simplePlot.png"
+plot(x,y,type = 'b')
+#+end_src
+
+** Testing Citations
+   
+   This stackexchange [[https://tex.stackexchange.com/questions/114864/how-to-get-bibtex-to-work-with-org-mode-latex-export][question]] may be useful if you have trouble getting things to work. 
+
+   And the ta in the class wrote this article \cite{turpin2019bullshit}
+
+
+   I wrote a book about using computers in psychology \cite{anderson2014computational}.
+
+
+
+   
+#+latex: \bibliography{test}
+

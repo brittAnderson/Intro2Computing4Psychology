@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-02-07 Tue 08:04 -->
+<!-- 2023-02-13 Mon 11:16 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Beginning Python</title>
@@ -244,19 +244,19 @@
 <ul>
 <li><a href="#orgf479126">3.1. For Loop with Python</a>
 <ul>
-<li><a href="#org450e5e1">3.1.1. Task</a></li>
+<li><a href="#org1c7f1f7">3.1.1. Task</a></li>
 <li><a href="#orgd74a078">3.1.2. What it should look like</a></li>
 <li><a href="#orgb6551a9">3.1.3. Detailed Instructions</a></li>
-<li><a href="#org096fcf4">3.1.4. Comments</a></li>
-<li><a href="#org295264d">3.1.5. How I Will Grade</a></li>
+<li><a href="#org723d544">3.1.4. Comments</a></li>
+<li><a href="#org8b3ba8e">3.1.5. How I Will Grade</a></li>
 </ul>
 </li>
 <li><a href="#org4c9b81e">3.2. Hangman in Python (starter kit)</a>
 <ul>
 <li><a href="#org24b0073">3.2.1. Words of Encouragement</a></li>
-<li><a href="#org1c7f1f7">3.2.2. Task</a></li>
+<li><a href="#org22c6f98">3.2.2. Task</a></li>
 <li><a href="#org395e11e">3.2.3. Detail - tackle this in steps.</a></li>
-<li><a href="#org723d544">3.2.4. Comments</a></li>
+<li><a href="#orgd15ca97">3.2.4. Comments</a></li>
 </ul>
 </li>
 </ul>
@@ -412,7 +412,7 @@ We will want some basic text in our <code>init.el</code> file to make things wor
 Then you can create a source code block with
 </p>
 
-<pre class="example" id="org6143f56">
+<pre class="example" id="org26223f2">
 
 #+Begin_src &lt;langname&gt; :exports code
 &lt;code here ... code here&gt;
@@ -563,20 +563,20 @@ We saw a quick demonstration of this above. The intuition remains that of a reci
 </p>
 </div>
 <ol class="org-ol">
-<li><a id="org960b4e0"></a>For Loop<br />
+<li><a id="org53ff477"></a>For Loop<br />
 <div class="outline-text-5" id="text-2-5-4-1">
 <p>
 Python refers to things called "iterables." To iterate is another way of saying something you can keep doing the same thing over and over to. Imagine a bowl of ice cream. It is "eatable". You take one spoon, and keep taking spoonfuls until the bowl is empty. 
 </p>
 </div>
 <ol class="org-ol">
-<li><a id="orge3aabd1"></a>Indexing<br />
+<li><a id="org7831d4f"></a>Indexing<br />
 <div class="outline-text-6" id="text-2-5-4-1-1">
 <p>
 You can get the location of an element in a list by referring to its <i>index</i>. Think of the row or column number in a spread sheet program, but indexes can be more powerful, and can be nested easily. In many programming languages, but sadly not all, indexes start at 0. Different programming languages will have slightly different syntax. 
 </p>
 <div class="org-src-container">
-<pre class="src src-python" id="orged24ab3"><span style="color: #a0522d;">nameDict</span> = {<span style="color: #8b2252;">'firstName'</span> : <span style="color: #8b2252;">'Britt'</span>, <span style="color: #8b2252;">'lastName'</span> : <span style="color: #8b2252;">'Anderson'</span>}
+<pre class="src src-python" id="orge3aabd1"><span style="color: #a0522d;">nameDict</span> = {<span style="color: #8b2252;">'firstName'</span> : <span style="color: #8b2252;">'Britt'</span>, <span style="color: #8b2252;">'lastName'</span> : <span style="color: #8b2252;">'Anderson'</span>}
 <span style="color: #a0522d;">mylist</span> = <span style="color: #483d8b;">list</span>(<span style="color: #483d8b;">range</span>(1,10))
 
 <span style="color: #483d8b;">print</span>(nameDict[<span style="color: #8b2252;">'firstName'</span>])
@@ -605,7 +605,7 @@ The use of the <code>-1</code> as an index is a python trick for getting the las
 </p>
 
 <div class="org-src-container">
-<pre class="src src-python" id="orgb2bd2e7"><span style="color: #a020f0;">for</span> ml <span style="color: #a020f0;">in</span> mylist:
+<pre class="src src-python" id="org960b4e0"><span style="color: #a020f0;">for</span> ml <span style="color: #a020f0;">in</span> mylist:
     <span style="color: #483d8b;">print</span>(ml)
 
 
@@ -614,7 +614,7 @@ The use of the <code>-1</code> as an index is a python trick for getting the las
 </pre>
 </div>
 
-<pre class="example" id="orge1281d1">
+<pre class="example" id="org5743e08">
 1
 2
 3
@@ -857,8 +857,8 @@ I have found that these assignments are where many people feel like things start
 <h3 id="orgf479126"><span class="section-number-3">3.1.</span> For Loop with Python</h3>
 <div class="outline-text-3" id="text-3-1">
 </div>
-<div id="outline-container-org450e5e1" class="outline-4">
-<h4 id="org450e5e1"><span class="section-number-4">3.1.1.</span> Task</h4>
+<div id="outline-container-org1c7f1f7" class="outline-4">
+<h4 id="org1c7f1f7"><span class="section-number-4">3.1.1.</span> Task</h4>
 <div class="outline-text-4" id="text-3-1-1">
 <p>
 Write a function that will print a list of characters unsorted, sorted, and combined. To complete this task you will need to be familiar with how to write a <b>for loop</b>, use python's <b>indexing</b>, and also how to use the <a href="https://realpython.com/python-formatted-output/">print format command</a> <sup><a id="fnr.3" class="footref" href="#fn.3" role="doc-backlink">3</a></sup> 
@@ -888,12 +888,12 @@ I run your function with "trib". It prints t, r, i, b, then prints b, i, r, t, a
 </div>
 </div>
 
-<div id="outline-container-org096fcf4" class="outline-4">
-<h4 id="org096fcf4"><span class="section-number-4">3.1.4.</span> Comments</h4>
+<div id="outline-container-org723d544" class="outline-4">
+<h4 id="org723d544"><span class="section-number-4">3.1.4.</span> Comments</h4>
 <div class="outline-text-4" id="text-3-1-4">
 </div>
 <ol class="org-ol">
-<li><a id="org98f85af"></a>Hints<br />
+<li><a id="orgc04ebf5"></a>Hints<br />
 <div class="outline-text-5" id="text-3-1-4-1">
 <p>
 Remember not to re-invent the wheel. For example, does python have a function for sorting lists? Can you turn a "string" into a python list that would allow you to use indices? Lastly, note that a for loop can use more than one variable at a time. For my version I have a line that reads, 
@@ -907,8 +907,8 @@ Remember not to re-invent the wheel. For example, does python have a function fo
 </li>
 </ol>
 </div>
-<div id="outline-container-org295264d" class="outline-4">
-<h4 id="org295264d"><span class="section-number-4">3.1.5.</span> How I Will Grade</h4>
+<div id="outline-container-org8b3ba8e" class="outline-4">
+<h4 id="org8b3ba8e"><span class="section-number-4">3.1.5.</span> How I Will Grade</h4>
 <div class="outline-text-4" id="text-3-1-5">
 <p>
 I will run your program from the command line e.g. <code>python firstLast2LstsSorted.py</code>. It will either spit out the correct lists or it won't. If it does you get full credit, and if not I will give partial credit and you can try to fix it for more points. 
@@ -946,8 +946,8 @@ How to work. I like the idea of having a console open on one side for testing an
 </div>
 </div>
 
-<div id="outline-container-org1c7f1f7" class="outline-4">
-<h4 id="org1c7f1f7"><span class="section-number-4">3.2.2.</span> Task</h4>
+<div id="outline-container-org22c6f98" class="outline-4">
+<h4 id="org22c6f98"><span class="section-number-4">3.2.2.</span> Task</h4>
 <div class="outline-text-4" id="text-3-2-2">
 <p>
 To write the beginning pieces of a hangman game in python. This version will <a href="https://en.wikipedia.org/wiki/Hard_coding">hard code</a> the word to be guessed. It will not produce any sort of graphic, You will ask the user for  letters and report if the player spells out the word or not. Depending on how fast you master that, I may suggest further improvements when you submit. 
@@ -968,19 +968,19 @@ Write a script<sup><a id="fnr.4" class="footref" href="#fn.4" role="doc-backlink
 </div>
 </div>
 
-<div id="outline-container-org723d544" class="outline-4">
-<h4 id="org723d544"><span class="section-number-4">3.2.4.</span> Comments</h4>
+<div id="outline-container-orgd15ca97" class="outline-4">
+<h4 id="orgd15ca97"><span class="section-number-4">3.2.4.</span> Comments</h4>
 <div class="outline-text-4" id="text-3-2-4">
 </div>
 <ol class="org-ol">
-<li><a id="org8b3ba8e"></a>How I Will Grade<br />
+<li><a id="orgf768860"></a>How I Will Grade<br />
 <div class="outline-text-5" id="text-3-2-4-1">
 <p>
 I will run your program from the terminal, and it will work as above or it will not. If it does, I will give you full marks, if not, I will give partial credit and allow you to try and fix the mistakes. 
 </p>
 </div>
 </li>
-<li><a id="orgc04ebf5"></a>Hints<br />
+<li><a id="org3cffc98"></a>Hints<br />
 <div class="outline-text-5" id="text-3-2-4-2">
 <p>
 You might find it useful to learn about python's <code>in</code> operator, and to think about how you might use the <code>enumerate</code> function we used in the <a href="forLoopPythonAssessment.html">for loop in python assessment</a>.
@@ -1024,7 +1024,7 @@ A script is a file that ends with .py and that I can call from the terminal. If 
 <div id="postamble" class="status">
 <p class="date">Date: 2023-02-07 Tue 00:00</p>
 <p class="author">Author: Britt Anderson</p>
-<p class="date">Created: 2023-02-07 Tue 08:04</p>
+<p class="date">Created: 2023-02-13 Mon 11:16</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

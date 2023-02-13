@@ -1,0 +1,1 @@
+A simple org file for testing plotting in python and R that worked in July 2022 on xubuntu. 

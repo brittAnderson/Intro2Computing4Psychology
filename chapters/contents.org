@@ -9,3 +9,16 @@
 - [[file:beginning-python.org][Beginning Python]]
 - [[file:working-with-data-in-python.org][Working With Data in Python]]
 - [[file:basic-plotting.org][Basic Plotting with R and Python]]
+- [[file:report-writing.org][Writing Reproducible Research Reports]]
+- codeExamples
+  - [[file:codeExamples/simpOrgDemoFile.org][This is a title]]
+  - presents
+    - [[file:codeExamples/presents/testBeamer.org][testBeamer]]
+  - reportGen
+    - [[file:codeExamples/reportGen/testRBabel.org][testRBabel]]
+    - [[file:codeExamples/reportGen/testRBabelBib.org][testRBabel]]
+    - [[file:codeExamples/reportGen/testLatex.org][testLatex]]
+  - plottingExample
+    - [[file:codeExamples/plottingExample/plottingRandPy.org][Plotting in R and Python]]
+    - plotExampleJuly2022
+      - [[file:codeExamples/plottingExample/plotExampleJuly2022/test.org][New test file for plotting]]

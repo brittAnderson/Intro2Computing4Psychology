@@ -1,0 +1,25 @@
+#+Title: This is a title
+
+* This is a heading
+* This is a subheading
+
+  1. this is a list item
+  2. this should be second
+  3. this is another list item
+
+** Let's make a link
+
+   [[https://uwaterloo.ca][University of Waterloo]]
+
+** Let's try R
+
+   #+Begin_src R :exports both
+   a <- 2
+   b <- 2
+   print(a+b)
+   #+end_src
+
+   #+RESULTS:
+   : 4
+
+   
