@@ -2,4 +2,4 @@
 #+Author: Britt Anderson
 #+date: <2023-02-14 Tue>
 
-Click [[https://brittanderson.github.io/Intro2Computing4Psychology/book/index.html][here]] for the online course notes. 
+Click [[https://brittanderson.github.io/Intro2Computing4Psychology/blob/org-book/book/index.html][here]] for the online course notes. 
