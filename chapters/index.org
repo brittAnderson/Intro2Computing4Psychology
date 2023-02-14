@@ -67,14 +67,9 @@ We will be using Linux, but the installation process can be tricky and time cons
 
 * Programming Psychology Experiments
 [[file:programming-psychology-experiments.org][Programming Psychology Experiments]]
-# * Presentations (Extra WIP)
-# ** From Text File to Slideshow
-# *** org-tree-slide
-# *** beamer
-# *** reveal-js
-# *** And many more. 
-# ** Files
-# ** Videos
+
+IAMHERE
+/home/britt/gitRepos/Intro2Computing4Psychology/chapters/assets/assessments/finalProjectAssessment.org
 # * Final Projects
 #   Making a reproducible report. Putting it altogether.
 #   Detailed instructions can be found [[file:../assessments/finalProjectAssessment.org][here]].
