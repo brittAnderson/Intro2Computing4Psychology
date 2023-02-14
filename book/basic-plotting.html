@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-02-13 Mon 11:16 -->
+<!-- 2023-02-14 Tue 05:28 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Basic Plotting with R and Python</title>
@@ -337,7 +337,7 @@ For base plot two primitive commands are <code>plot</code> and <code>lines</code
 </div>
 
 
-<div id="org44cc42a" class="figure">
+<div id="orge46e22a" class="figure">
 <p><img src="./baseplot1.png" alt="baseplot1.png" />
 </p>
 </div>
@@ -368,7 +368,7 @@ How would you include another data series in this plot?
 </p>
 
 <div class="org-src-container">
-<label class="org-src-name"><span class="listing-number">Listing 1: </span>Our base plot with additional data series added.</label><pre class="src src-R" id="org7127ec3">plot(x,y1,type = <span style="color: #8b2252;">'b'</span>, frame = F, pch = 19, col = <span style="color: #8b2252;">"red"</span> , ylab = <span style="color: #8b2252;">"y"</span>, lty = 1, lwd = 3)
+<label class="org-src-name"><span class="listing-number">Listing 1: </span>Our base plot with additional data series added.</label><pre class="src src-R" id="orgaf92937">plot(x,y1,type = <span style="color: #8b2252;">'b'</span>, frame = F, pch = 19, col = <span style="color: #8b2252;">"red"</span> , ylab = <span style="color: #8b2252;">"y"</span>, lty = 1, lwd = 3)
 lines(x,y2, pch = 18, col = <span style="color: #8b2252;">"blue"</span>, type = <span style="color: #8b2252;">"b"</span> , lty = 2, lwd = 1)
 lines(x,y3, pch = 17, col = <span style="color: #8b2252;">"green"</span> , type = <span style="color: #8b2252;">"l"</span>, lty=3, lwd = 4)
 legend(<span style="color: #8b2252;">"topleft"</span>, legend = c(<span style="color: #8b2252;">"Line 1"</span>, <span style="color: #8b2252;">"Line 2"</span>, <span style="color: #8b2252;">"Line 3"</span>), col = c(<span style="color: #8b2252;">"red"</span>,<span style="color: #8b2252;">"blue"</span>,<span style="color: #8b2252;">"green"</span>),
@@ -377,7 +377,7 @@ legend(<span style="color: #8b2252;">"topleft"</span>, legend = c(<span style="c
 </div>
 
 
-<div id="orgaf92937" class="figure">
+<div id="org7db760f" class="figure">
 <p><img src="./baseplot3.png" alt="baseplot3.png" />
 </p>
 </div>
@@ -415,7 +415,7 @@ ggsave(<span style="color: #8b2252;">"ggplot1.png"</span>, width = 8, height = 5
 </div>
 
 
-<div id="org787355d" class="figure">
+<div id="org4f907db" class="figure">
 <p><img src="./ggplot1.png" alt="ggplot1.png" />
 </p>
 </div>
@@ -533,7 +533,7 @@ f
 </div>
 
 
-<div id="orgf63c4b4" class="figure">
+<div id="orgc5bb778" class="figure">
 <p><img src="example-os.png" alt="example-os.png" />
 </p>
 </div>
@@ -561,7 +561,7 @@ fn
 </div>
 
 
-<div id="orge46e22a" class="figure">
+<div id="orgfb98995" class="figure">
 <p><img src="./py-inter-fit-plt.png" alt="py-inter-fit-plt.png" />
 </p>
 </div>
@@ -639,7 +639,7 @@ Notice that in this file we will execute both R code and Python code mixed with 
 <div id="postamble" class="status">
 <p class="date">Date: 2023-02-10 Fri 00:00</p>
 <p class="author">Author: Britt Anderson</p>
-<p class="date">Created: 2023-02-13 Mon 11:16</p>
+<p class="date">Created: 2023-02-14 Tue 05:28</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

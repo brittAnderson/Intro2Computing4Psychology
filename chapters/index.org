@@ -44,6 +44,9 @@ We will be using Linux, but the installation process can be tricky and time cons
 * Linux
 [[file:linux.org][Linux]]
 
+* Terminal
+[[file:terminal.org][Terminal]]
+
 * Emacs
 [[file:emacs.org][Emacs]]
 

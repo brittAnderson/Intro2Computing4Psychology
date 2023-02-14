@@ -10,6 +10,7 @@
 - [[file:working-with-data-in-python.org][Working With Data in Python]]
 - [[file:basic-plotting.org][Basic Plotting with R and Python]]
 - [[file:report-writing.org][Writing Reproducible Research Reports]]
+- [[file:terminal.org][Terminal]]
 - codeExamples
   - [[file:codeExamples/simpOrgDemoFile.org][This is a title]]
   - presents
