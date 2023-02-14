@@ -11,6 +11,7 @@
 - [[file:basic-plotting.org][Basic Plotting with R and Python]]
 - [[file:report-writing.org][Writing Reproducible Research Reports]]
 - [[file:terminal.org][Terminal]]
+- [[file:programming-psychology-experiments.org][Programming Psychology Experiments]]
 - codeExamples
   - [[file:codeExamples/simpOrgDemoFile.org][This is a title]]
   - presents
