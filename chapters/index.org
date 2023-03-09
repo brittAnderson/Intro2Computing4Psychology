@@ -66,10 +66,7 @@ As the framework for accomplishing these tasks I will be requiring you to use th
 * Programming Psychology Experiments
 [[file:programming-psychology-experiments.org][Programming Psychology Experiments]]
 
-IAMHERE
-/home/britt/gitRepos/Intro2Computing4Psychology/chapters/assets/assessments/finalProjectAssessment.org
-# * Final Projects
-#   Making a reproducible report. Putting it altogether.
-#   Detailed instructions can be found [[file:../assessments/finalProjectAssessment.org][here]].
+* Final Projects
+
 
 
