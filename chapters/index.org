@@ -18,22 +18,20 @@
 
 * Welcome
 
-These are the course notes for Psych363 at the University of Waterloo: An Introduction to Computing for Psychology students.
+These are the course notes for Psych363 at the University of Waterloo: An Introduction to Computing for Psychology students. This current update is for the Spring 2023 term. 
 
-*Need more here. Just testing export for now*
+This is the /index/ file for finding your way through the course topics and activities. The later chapters often assume information from the earlier ones. I recommend you follow the topics in the order below. Work through each chapter in sequence and make sure you understand the basics before moving on. This will remove much confusion. Our term is twelve weeks long and there are twelve chapters. This means you will need to work through, on average, one chapter a week. I recommend you try to get the first two or three done in less time so as to allow more time for the more complex material that comes towards the end of the course. 
 
-This is the /index/ file for finding your way through the course topics and activities.
-
-I recommend you follow the topics in the order below. Work through each chapter in sequence and make sure you understand the basics before moving on. This will remove much confusion.
-
-The videos that you will find linked are not mean to replace the written material. They are intended to supplement it. If you start with the videos things will take longer and you will learn less. If you start with the assignments and then just try to skim around how to solve them you will learn much less, spend much more time on the activity, and get much more frustrated.
-
-Read the chapter. Watch the Video. Try the Exercise.
+The videos that you will find embedded in this document can also be found on the course channel on [[https://vimeo.com/channels/i2c4p][vimeo]]. The videos and the written material are meant to work together and you will usually need to both read and watch to learn what you need know in order to complete the assessments. I recommend skimming the entire text before watching any of the videos. Then go back and start working through the text. You can then watch the video and fast forward or skip sections that you understand.  My experience is that students who start with the videos, or only watch the videos, take longer and learn less. For most of you the worst approach is start with the assignments and then just try to skim around searching for solutions. The assessments are meant to help you learn. They are less about getting a score. I want you to be able to use these tools after the course is over. Approach the assessments as another tool for you to assess how well you have mastered the material. 
 
 ** Goals
-*stuff here*
+The goal for the course is to expose you to an array of tools and techniques useful for research in psychology. Some of these tools are ancillary, e.g. managing a reference data base. Some of them are practical, such as programming a behavioral experiment. All of them will involve learning things about how to use your computer effectively. These fundamentals should serve you well even as the world of computing and computational tools evolve. It is the cliché of teaching one to fish. If you practice what is described here you will learn the ur-skills needed to master new tools and new techniques in the years to come.
 
-We will be using Linux, but the installation process can be tricky and time consuming for some. Starting with RStudio allows me to introduce some of the ideas and concepts for programming while not letting us get stuck waiting for you to install a new operating system.
+Our more practical goals are suggested by the chapter headings below. You will get an introduction to programming and using programming languages to do the things academics need to do: Analyze data; Visualize Data; Collect Data; and Report Data. 
+
+As the framework for accomplishing these tasks I will be requiring you to use the Linux operating system. Mostly this is so you come to a deeper understanding of what software is and how to make your computer work for you. I do not want you to master how to use a particular program on a particular operating system, but to acquire the meta knowledge that will enable you to learn how to use any piece of software on any computing platform that your future career requires. But we do have to start somewhere and the  installation process and terminology around Linux can be a big first step. Thus, our first lesson uses [[https://posit.co/][RStudio]]. This allows me to introduce some of the ideas and concepts for programming while not letting us get stuck waiting for you to install a new operating system.
+
+*Important Note* Computing changes quickly. Every time I teach this course some section of the notes, often large sections of the notes, go out of date. Most of the videos were made for the first pandemic offering in Winter 2020. If something seems wrong or doesn't work anymore then let me know so I can update things. You can do this most easily by using the [[https://github.com/brittAnderson/Intro2Computing4Psychology][github repository]] for this course. Ideally, you would fix the mistake with a pull request (see the chapter on [[file:version-control.org::*Terms][version control]]). But at a minimum you can report it as an [[https://github.com/brittAnderson/Intro2Computing4Psychology/issues][issue]]. This also allows you to see if someone else has already reported the same mistake and a fix has been shared. 
 
 * Chapter RStudio
 [[file:rstudio.org][RStudio]]
