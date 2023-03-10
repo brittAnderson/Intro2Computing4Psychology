@@ -5,7 +5,7 @@
 #+options: p:nil pri:nil prop:nil stat:t tags:t tasks:t tex:t
 #+options: timestamp:t title:t toc:t todo:t |:t
 #+title: RStudio
-#+date: <2023-01-13 Fri>
+#+date: <2023-03-10 Fri>
 #+author: Britt Anderson
 #+email: britt@uwaterloo.ca
 #+language: en
@@ -37,20 +37,19 @@ Programming means writing instructions for a computer. R is a common programming
    
    The CRAN webpage also has links to [[https://cran.r-project.org/manuals.html][manuals]] that are useful for learning more about the language and its functions. While there is great material elsewhere, and you can find it by internet searches, it is still advisable to start at CRAN first. You know that information is curated by the body that funds, develops, and supports the language. 
 
-   This video walks through the [[https://vimeo.com/450719112][R download process]].
+#+begin_export html
+<div style="padding:65.03% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/806891583?h=513983199b" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
+<p><a href="https://vimeo.com/806891583">Install R and RStudio on an M2 Mac in March 2023</a> from <a href="https://vimeo.com/epistemic">Britt Anderson</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
+#+end_export
 
-   #+begin_export html
-   <iframe title="vimeo-player" src="https://player.vimeo.com/video/450719112?h=8245fb58e1" width="640" height="360" frameborder="0" allowfullscreen></iframe>
-   #+end_export
+
+   A few years ago I recorded some videos about the download process using a Windows computer. If you have trouble following the instructions from this Mac demo you can also look at those older options. This video walks through the [[https://vimeo.com/450719112][R download process]]. And this [[https://vimeo.com/450719047][one]] shows a download of Rstudio, but note that some of the website addresses have changed, but the process is largely the same. 
+
    
 ** Download RStudio 
    RStudio is not R. It is a development environment wrapped around R. You can use R without RStudio (that is the way I use it and what I recommend). However, RStudio does provide an easy way to get started. The people who make RStudio have a free desktop version that will provide all the functionality that we will need. They also make commercial tools that build on the basic RStudio functionality.
    
-  1. [[https://rstudio.com/products/rstudio/download/#download][Here]] is where you can get RStudio. Choose the right version for your operating system and follow the instructions.    
-  2. This [[https://vimeo.com/450719047][video]] shows a Rstudio download process:
-     #+begin_export html
-     <iframe src="https://player.vimeo.com/video/450719047?h=ad2b25da4c" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
-     #+end_export
+  1. [[https://posit.co][Here]] is where you can get RStudio. Choose the right version for your operating system and follow the instructions. Make sure you have [[https://cran.r-project.org/][downloaded R]] first (and that you get the correct version for your operating system).
 
 ** Verify That Both R and RStudio Are Working
    The way to do this is to open the RStudio program and type in some simple equation such as $2 + 2$ and it should print ~4~.
@@ -68,12 +67,12 @@ Pay attention to the difference between the /editor/ window and the /console/. T
 
 #+begin_export html
 <iframe src="https://player.vimeo.com/video/450719009?h=a948a7e251" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
-<p><a href="https://vimeo.com/450719009">B3 : RStudio Walkthrough (i2c4p)</a> from <a href="https://vimeo.com/epistemic">Britt Anderson</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
+<p><a href="https://vimeo.com/450719009">RStudio Walkthrough from 2020 (should be very similar to 2023 version)</a> from <a href="https://vimeo.com/epistemic">Britt Anderson</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
 #+end_export
 
 #+begin_export html
 <iframe src="https://player.vimeo.com/video/450718879?h=67edf0e412" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
-<p><a href="https://vimeo.com/450718879">B4 : Demonstrating the Power of RMarkdown (i2c4p)</a> from <a href="https://vimeo.com/epistemic">Britt Anderson</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
+<p><a href="https://vimeo.com/450718879">Demonstrating the Power of RMarkdown (2020)</a> from <a href="https://vimeo.com/epistemic">Britt Anderson</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
 #+end_export
 
 ** Using R and RStudio
@@ -110,7 +109,7 @@ Programming languages can look very different, but most of the common ones have 
    We will want some basic text in our =init.el= file to make things work. See [[file:emacsPythonIdeInstructions.org][here]] as well for some hints on getting started with your ~init.el~ file.
    #+begin_src elisp :eval never
    (setq org-confirm-babel-evaluate nil)
-   (setq org-babel-python-command "python3")
+   (setq org-babel-python-command "python")
      (org-babel-do-load-languages
      'org-babel-load-languages
      '((emacs-lisp . t) 
