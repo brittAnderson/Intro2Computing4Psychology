@@ -142,7 +142,7 @@ My respositories are at: [[https://github.com/brittAnderson?tab=repositories][Br
 <div style="padding:56.39% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/456349595?h=4b78ed9d6a&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Fc : Drawing to Understand Git and Github (i2c4p)"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
 #+end_export
 
-On your laptop (Ybuntu):
+On your laptop (Ubuntu):
    1. Move to a directory where you want to keep things organized. I use =~/gitRepos/=. To make that directory you could do ~mkdir ~/gitRepos/~ and then ~cd~ to it. Verify you are there with ~pwd~. All this is happening /in the terminal./
    2. Open a web browser and find *your fork* of Psych363. On that page there should be a button to clone it that will allow you to copy the command. It may be hidden. Look for a blue "code" button. Hitting that may open the dialogue that shows you the clone command.
    3. Go back to your terminal and paste it (usually =Ctrl-Shift v=). Hit <enter>.
