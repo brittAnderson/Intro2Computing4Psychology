@@ -27,7 +27,7 @@ I will summarize the different approaches for installing the Linux operating sys
 When you do this you will irrevocably erase everything on your computer's hard disk and you will *only* have linux. This is the easiest method *if* you have a laptop accessible that you do not need for another purpose. With all the computers we have all bought over the years this is not so far fetched. Even a ten year old laptop will probably be just fine.  One of the computers I used to develop this course dated from 2011 (Lenovo X220T).
 
 *** Dual Boot
-   With this set up you have more than one operating system. You can use your usual Windows or Mac operating system, but if you choose, when you start, you can opt to use the Linux system you installed.
+   With this set up you have more than one operating system. You can use your usual Windows or Mac operating system, but you can also opt to use the Linux system you installed.
    If you have a Windows laptop this is not particularly hard to get working, but there is some risk when you /partition/ your hard drive. You will need be pay close attention to that step.
 
    If you have an older Mac with the Intel chip this is also not too hard. The same cautions apply and you will need to follow slightly different directions.
@@ -37,7 +37,7 @@ When you do this you will irrevocably erase everything on your computer's hard d
    Contact me if you want to try this method and I will point you to some example instructions.
    
 *** Run from a USB (or SD card or external hard drive) *DEPRECATED*
-This is the method that does the least to your laptop and so there is the least risk of data loss. It is also the *hardest*, most technically demanding, and has the highest concentration of black magic (where you will be typing incantations you don't understand just to make things work). Thus I call this method "deprecated." If you are adventurous, have some spare time, of just curious feel free to give it a go, but for most of you I think the Virtual Machine method will be just as safe and technically easier.
+This is the method that does the least to your laptop and so there is the least risk of data loss. It is also the *hardest*, most technically demanding, and has the highest concentration of black magic (where you will be typing incantations you don't understand just to make things work). Thus I call this method "deprecated." If you are adventurous, have some spare time, or just curious feel free to give it a go, but for most of you I think the Virtual Machine method will be just as safe and technically easier.
 
 Most of the Linux distributions have a "live" version that can be run from a USB, bu those live versions do not allow persistent data. That means anything you write or download will be lost when you power down. It is fine therefore to try out a new distribution of linux to see if you like the look and feel, but not ideal if you want to do work. Also, since USB and SD cards were not made with the intention of being used daily as the host of the operating system they are more prone to catastrophic failure where the card gets corrupted and you lose all your saved files. Your computer will be fine, but not the data that you have saved only to the USB or SD card.
 
