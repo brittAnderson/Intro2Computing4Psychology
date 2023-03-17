@@ -60,6 +60,15 @@ My respositories are at: [[https://github.com/brittAnderson?tab=repositories][Br
      A. [[https://github.com/brittAnderson/Intro2Computing4Psychology][Intro2Computing4Psychology]]
      B. [[https://github.com/brittAnderson/psych363Practice][psych363Practice]]
   3. Submit a screen short of your github account with appropriate respositories created to the Dropbox on Learn.
+
+*Note bene*: Some things about authenticating for github have changed. You now need a personal access token instead of just a password to make certain things work. The video below provides you some pointers for the creation of a personal access token.
+
+#+begin_export html
+<div style="padding:65.03% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/809166691?h=4666ea8fb9" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
+<p><a href="https://vimeo.com/809166691">personalAccessTokenGithub.mp4</a> from <a href="https://vimeo.com/epistemic">Britt Anderson</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
+<p>Where to find the information to generate a personal access token for github.</p>
+#+end_export
+
 * More about Git, Github and Forking Repositories
 =git= is a program that allows you to do version control. /Github/ is one of the larger social coding platform: an online agora for sharing, finding, and collaborating. It uses =git= as its base version control program, but it does other things too. We will now delve more into the details of using git including command line controls. 
 * Goal
