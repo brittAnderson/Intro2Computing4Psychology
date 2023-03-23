@@ -19,12 +19,12 @@
 Scientific computing moves in advance of consumer adoption. To be able to take full advantage of your computer as a research tool you may need to install software or applications that require new tools or techniques or that are not /user friendly./ In fact, the main consumer operating systems: Windows and OSX may not meet your needs out-of-the-box. By installing and using Linux you will learn and practice installing software that should prepare you for the day when you need some program or some computational tool that is not available through an app store. Or when you need to figure out how to do something completely novel with your machine. 
 
 ** Installing Linux to Your Own Computer
-There are a few different methods for getting Linux to run on your computer. All of them pose challenges. Any of the are acceptable, *but I will recommend using a virtual machine*. The other methods are summarized here, and you are welcome to try them if you wish. They will work just fine. But they are also methods that require a bit more patience, benfit from some experience, and involve a greater risk of data loss.
+There are a few different methods for getting Linux to run on your computer. All of them pose challenges. Any of the are acceptable, *but I will recommend using a virtual machine* [fn:1]. The other methods are summarized here, and you are welcome to try them if you wish. They will work just fine. But they are also methods that require a bit more patience, benfit from some experience, or involve a greater risk of data loss.
 
-I will summarize the different approaches for installing the Linux operating system (OS) to your computer below, and the follow with more specific instructions.
+I will summarize the different approaches for installing the Linux operating system (OS) to your computer below, and then follow with more specific instructions.
 
 *** Linux Only
-When you do this you will irrevocably erase everything on your computer's hard disk and you will *only* have linux. This is the easiest method *if* you have a laptop accessible that you do not need for another purpose. With all the computers we have all bought over the years this is not so far fetched. Even a ten year old laptop will probably be just fine.  One of the computers I used to develop this course dated from 2011 (Lenovo X220T).
+When you do this you will irrevocably erase everything on your computer's hard disk and you will *only* have linux. This is the easiest method *if* you have a laptop accessible that you do not need for another purpose. With all the computers we have all bought over the years this is not so far fetched. Even a ten year old laptop will probably be just fine.  One of the computers I used to develop this course dates from 2011 (Lenovo X220T).
 
 *** Dual Boot
    With this set up you have more than one operating system. You can use your usual Windows or Mac operating system, but you can also opt to use the Linux system you installed.
@@ -39,15 +39,15 @@ When you do this you will irrevocably erase everything on your computer's hard d
 *** Run from a USB (or SD card or external hard drive) *DEPRECATED*
 This is the method that does the least to your laptop and so there is the least risk of data loss. It is also the *hardest*, most technically demanding, and has the highest concentration of black magic (where you will be typing incantations you don't understand just to make things work). Thus I call this method "deprecated." If you are adventurous, have some spare time, or just curious feel free to give it a go, but for most of you I think the Virtual Machine method will be just as safe and technically easier.
 
-Most of the Linux distributions have a "live" version that can be run from a USB, bu those live versions do not allow persistent data. That means anything you write or download will be lost when you power down. It is fine therefore to try out a new distribution of linux to see if you like the look and feel, but not ideal if you want to do work. Also, since USB and SD cards were not made with the intention of being used daily as the host of the operating system they are more prone to catastrophic failure where the card gets corrupted and you lose all your saved files. Your computer will be fine, but not the data that you have saved only to the USB or SD card.
+Most of the Linux distributions have a "live" version that can be run from a USB, but those live versions do not allow persistent data. That means anything you write or download will be lost when you power down. It is fine therefore to try out a new distribution of linux to see if you like the look and feel, but not ideal if you want to do work. Also, since USB and SD cards were not made with the intention of being used daily as the host of the operating system they are more prone to catastrophic failure where the card gets corrupted and you lose all your saved files. Your computer will be fine, but not the data that you have saved only to the USB or SD card.
 
 If you want to try this method you will want a new USB, and you should ask me to point you to directions. I have them in an older branch of this course, but they are not linked here to decrease the risk of someone accidentally trying an old or outdated method or using the Mac method when the need the Windows version or vice versa. 
 
 *** Install Linux As A Virtual Machine
 
-    This is the  method I prefer as of Spring 2023. There are a number of videos for Mac and Windows users on how to do this on the Internet. Pay careful attention to the dates. Things are changing rapidly in this space and what worked a few years ago may not work well now. Note *the rules are different depending on whether you are using an M1/M2 mac or an Intel mac* or a Window machine. Don't know which you have? Well, find out. A good workman knows their tools.
+    This is the  method I prefer as of Spring 2023. There are a number of videos for Mac and Windows users on how to do this on the Internet. Pay careful attention to the dates. Things are changing rapidly in this space and what worked even just last year may not work well now. Note *the rules are different depending on whether you are using an M1/M2 mac or an Intel mac* or a Window machine. Don't know which you have? Well, find out. A good workman knows their tools.
 
-    *IMPORTANT* For all these methods and regardless of your machine make sure you have fully update Windows or OSX to the latest available version. This means Windows 11 where possible and Ventura (13) on Macs. 
+    *IMPORTANT* For all these methods and regardless of your machine make sure you have fully update Windows or OSX to the latest available version. This means Windows 11 where possible and Ventura (13) on Macs. You also need free disk space. I recommend 64gb, but 32gb is a minimum. Check the free space on your computer's hard disk before starting (not how much one-drive or icloud space you have). If you do not have enough space, then you will need to make some by uninstalling old programs you never use, and deleting those video and music files you have backed-up elsewhere and never listen to. 
     
 **** Windows
 In order to use a virtual machine on Windows you need to make sure that the BIOS permits virtualization. Your BIOS is the basic input output system that starts up even before your operating system starts to tell your computer where to find essential start up files and to make sure that the hardware is set up to correctly use and communicate with the available software. Getting to the BIOS is generally unique to your laptop's make and model and you will have to look up how to enter the BIOS for your laptop yourself. Sometimes the default settings for Windows machines can obstruct your ability to do this. You may need to turn of Smart Boot and Quick Boot features. But try first without fiddling with those settings. 
@@ -153,6 +153,12 @@ Any particular program that you want to run in modern times probably requires se
 
 Demonstrate that you have a functioning Linux installation and that you can use the package management system. 
 
+#+begin_export html
+<div style="padding:65.03% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/810618916?h=aeed127e2d" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
+<p><a href="https://vimeo.com/810618916">Installing Emacs on Ubuntu 2023</a> from <a href="https://vimeo.com/epistemic">Britt Anderson</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
+<p>A short demo of installing emacs on a Ubuntu virtual machine (running on an M2 Mac Air)</p>
+#+end_export
+
 *** Details
   1. Open up a terminal. In Xubuntu go to the upper left of your desktop and click the icon. Type terminal in the search bar and select the top option.
   2. When the terminal opens type ~sudo apt update~ to update your list of currently available packages. This package manager works for Xubuntu, but will not be found on all Linux distributions.
@@ -168,3 +174,7 @@ Demonstrate that you have a functioning Linux installation and that you can use 
   To get ahead of things and learn more about the org-mode utilities you just used you can search for emacs and orgmode online. Or type ~C-h i~ to open the information functionality and navigate to the orgmode chapter.
 
   And if you get stressed you can always consult Emacs' built in therapist with ~M-x doctor~.
+
+* Footnotes
+
+[fn:1] This presents problems for us when it comes to the [[file:programming-psychology-experiments.org][Psychopy session]]. If you are using a virtual machine as recommended you will need to take a different approach to handling the psychopy assignment. If you are dual booting Linux or using a laptop running over Linux then there should be no problems.  
