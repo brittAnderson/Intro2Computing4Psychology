@@ -101,6 +101,7 @@ Note the instructions about getting a wx wheel. [[https://wxpython.org/][WX]] is
 
    Everything may run at this point, but to get the best support for precise timing and sound the PsychoPy developers currently recommend installing some libraries from the Ubuntu repositories using your ~apt~ skills (~apt-get~ is a bit like ~apt~ and was the forerunner - you can just use ~apt~ in its place).
 
+
    #+begin_src sh :eval never
    sudo apt-get install libusb-1.0-0-dev portaudio19-dev libasound2-dev
    #+end_src
@@ -113,7 +114,7 @@ Purpose: Demonstrate that you have psychopy installed and functioning
 
 If you have psychopy correctly installed you should be able to run some of the demo programs to learn about its capabilities.
 
-First, navigate to where the package is installed. Open a terminal and ~cd~ to the directory where the program installed. On my computer on (<2020-10-15 Thu>) this is: =~/.lib/python3.6/site-packages/psychopy/demos/coder/stimuli/=
+First, navigate to where the package is installed. Open a terminal and ~cd~ to the directory where the program installed. On my computer on <2023-03-23 Thu> this is: =~/.local/lib/python3.10/site-packages/psychopy/demos/coder/stimuli/=
 
 *Note* that that line contains a python version number. If you have a different version of python you will probably need to edit that line to use the correct python version for your machine.
 
