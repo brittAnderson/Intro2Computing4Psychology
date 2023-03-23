@@ -70,7 +70,14 @@ As you read the rest of this file you may want to also skim the following video 
     Emacs tries to find an initialization file to see your customizations and what, if any, extra packages you may have installed. There are multiple places where it looks, and we want it to look in the right one. 
     Do ~C-x d~. This will display your current directory. The first line shows you where you are. Move up or down as needed to get to your home directory. Look for a file called ~.emacs~. Navigate to it by ~C-n~ and ~C-p~ to move up and down. When you find it and the cursor is on it. Type a capital ~D~. Then confirm the delete. Then ~C-x d~ and tab to =~/.emacs.d/=. Type a plus sign ~+~. For the name of the new file type ~init.el.~
 *** The init.el file and packages
-    Emacs has it's own package system that allows you to greatly expand its functionality. You can learn more by reading the info file =C-h i=. If for some reason your info files are missing see this Stackoverflow question for hints on how to install [fn:4]. Many packages could be installed through the =apt= methods, but it is better not to mix and match package systems. Since there may well be packages you will eventually want that are not built by xubuntu you should probably use packages from the emacs system. The big package warehouse that most emacs users rely on is called "melpa". Here is how to get a basic package database available.
+
+#+begin_export html
+<div style="padding:65.03% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/810618444?h=6e9557e0c4" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
+<p><a href="https://vimeo.com/810618444">Emacs Package Management 1</a> from <a href="https://vimeo.com/epistemic">Britt Anderson</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
+<p>An short overview of what file you need to access to establish your packages for Emacs</p>
+#+end_export
+
+ Emacs has it's own package system that allows you to greatly expand its functionality. You can learn more by reading the info file =C-h i=. If for some reason your info files are missing see this Stackoverflow question for hints on how to install [fn:4]. Many packages could be installed through the =apt= methods, but it is better not to mix and match package systems. Since there may well be packages you will eventually want that are not built by xubuntu you should probably use packages from the emacs system. The big package warehouse that most emacs users rely on is called "melpa". Here is how to get a basic package database available.
     #+begin_src emacslisp :eval never :exports code
     (require 'package)
     (add-to-list 'package-archives '("melpa" ."http://melpa.org/packages/") t)
@@ -80,6 +87,13 @@ As you read the rest of this file you may want to also skim the following video 
 *** Additional Tools for Package Management with Emacs
     The easiest way to get started with Emacs packages is to install packages via the ~package-list-packages~. In that pane that opens up you can search for a package (using ~C-s~) and then type an "i" to install it.
 
+
+#+begin_export html
+   <div style="padding:65.03% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/810618692?h=6a31a1bea5" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
+<p><a href="https://vimeo.com/810618692">Emacs Packagement - using use-package</a> from <a href="https://vimeo.com/epistemic">Britt Anderson</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
+<p>A demo of use-package for packages and configuration in Emacs</p> 
+#+end_export
+    
     As you become more comfortable with Emacs, if in fact you ever do, you might want to consider other ways to manage your package. I quite like [[https://suvratapte.com/configuring-emacs-from-scratch-use-package/][use-package]] as it allowed me to write down what packages and customizations I was using in a single place. Then I could use that file on a new computer to fairly easily get the same set-up. Here is an example of how one might use the =use-package= system:
 
     #+begin_src emacslisp :eval never :exports code
