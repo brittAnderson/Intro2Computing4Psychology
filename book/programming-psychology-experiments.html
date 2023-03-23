@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-02-14 Tue 09:02 -->
+<!-- 2023-03-23 Thu 09:12 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Programming Psychology Experiments</title>
@@ -201,37 +201,37 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org0346d4b">1. Programming Psychology Experiments in Python</a>
+<li><a href="#org25d667d">1. Programming Psychology Experiments in Python</a>
 <ul>
-<li><a href="#orgfe134f0">1.1. Why Program Your Psychology Experiment</a></li>
-<li><a href="#org93625fd">1.2. Which language?</a>
+<li><a href="#orgee412dd">1.1. Why Program Your Psychology Experiment</a></li>
+<li><a href="#org7837a0d">1.2. Which language?</a>
 <ul>
-<li><a href="#org1941cff">1.2.1. Python</a></li>
-<li><a href="#org6289c5e">1.2.2. What about Javascript?</a></li>
+<li><a href="#orgb014c87">1.2.1. Python</a></li>
+<li><a href="#orgcaad257">1.2.2. What about Javascript?</a></li>
 </ul>
 </li>
-<li><a href="#org7ee2a0d">1.3. Programming Psychology Experiments With PsychoPy</a>
+<li><a href="#orgc385eef">1.3. Programming Psychology Experiments With PsychoPy</a>
 <ul>
-<li><a href="#orga40c6e9">1.3.1. Installing Psychopy</a></li>
+<li><a href="#org22db439">1.3.1. Installing Psychopy</a></li>
 </ul>
 </li>
-<li><a href="#orgb7d2b52">1.4. What is <code>pip</code>?</a>
+<li><a href="#org3af4c70">1.4. What is <code>pip</code>?</a>
 <ul>
-<li><a href="#org1e84cb3">1.4.1. Testing Your PsychoPy Installation</a></li>
-<li><a href="#org7356b1a">1.4.2. Resources for Psychopy.</a></li>
-<li><a href="#org07a6ac3">1.4.3. Psychopy Exercise</a></li>
-<li><a href="#orgb69215f">1.4.4. Extending the Exercise</a></li>
-<li><a href="#orgcb1094a">1.4.5. Simple Tutorials from Psychopy</a></li>
+<li><a href="#org45d7c11">1.4.1. Testing Your PsychoPy Installation</a></li>
+<li><a href="#orgbb29607">1.4.2. Resources for Psychopy.</a></li>
+<li><a href="#org793f360">1.4.3. Psychopy Exercise</a></li>
+<li><a href="#org0848c53">1.4.4. Extending the Exercise</a></li>
+<li><a href="#org4902c7a">1.4.5. Simple Tutorials from Psychopy</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#orgd365553">2. Assessement Psychopy</a>
+<li><a href="#org5974fc9">2. Assessement Psychopy</a>
 <ul>
-<li><a href="#org14e2d36">2.1. Task</a></li>
-<li><a href="#org472c968">2.2. Objective</a></li>
-<li><a href="#orga78b3de">2.3. Detailed Instructions</a></li>
-<li><a href="#orgcfc3c33">2.4. Hints</a></li>
+<li><a href="#org03afb95">2.1. Task</a></li>
+<li><a href="#orgb7e067c">2.2. Objective</a></li>
+<li><a href="#org43a8a9d">2.3. Detailed Instructions</a></li>
+<li><a href="#orge6ac2dc">2.4. Hints</a></li>
 </ul>
 </li>
 </ul>
@@ -239,12 +239,12 @@
 </div>
 
 
-<div id="outline-container-org0346d4b" class="outline-2">
-<h2 id="org0346d4b"><span class="section-number-2">1.</span> Programming Psychology Experiments in Python</h2>
+<div id="outline-container-org25d667d" class="outline-2">
+<h2 id="org25d667d"><span class="section-number-2">1.</span> Programming Psychology Experiments in Python</h2>
 <div class="outline-text-2" id="text-1">
 </div>
-<div id="outline-container-orgfe134f0" class="outline-3">
-<h3 id="orgfe134f0"><span class="section-number-3">1.1.</span> Why Program Your Psychology Experiment</h3>
+<div id="outline-container-orgee412dd" class="outline-3">
+<h3 id="orgee412dd"><span class="section-number-3">1.1.</span> Why Program Your Psychology Experiment</h3>
 <div class="outline-text-3" id="text-1-1">
 <p>
 If you use a graphical environment to design your experiment you will be limited to the potential elements and structures that were envisioned by the developers of that graphical programming environment. While this will cover many popular cases, it will probably not cover all of them. The designers of these programs spend their time thinking about the most common uses. But that means if you try to do something particularly new or novel you may spend your time trying to figure out how to shoehorn your experimental idea into the limits of a graphical design language instead of using the design elements to meet your experimental requirements. If you can write your own code you will be able to augment the code output by a graphical program. And if none of the pre-packaged experiments fit your needs you will be able to build what you need to pursue your experimental ambitions. The question then becomes what language to use for programming your own experiments?
@@ -256,23 +256,23 @@ If you use a graphical environment to design your experiment you will be limited
 </div>
 </div>
 
-<div id="outline-container-org93625fd" class="outline-3">
-<h3 id="org93625fd"><span class="section-number-3">1.2.</span> Which language?</h3>
+<div id="outline-container-org7837a0d" class="outline-3">
+<h3 id="org7837a0d"><span class="section-number-3">1.2.</span> Which language?</h3>
 <div class="outline-text-3" id="text-1-2">
 <div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/469970967?h=7611824ab1" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
 <p><a href="https://vimeo.com/469970967">Lb : Which Language Should I use? (i2c4p)</a> from <a href="https://vimeo.com/epistemic">Britt Anderson</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
 <p>Deciding to program your own experiments is the first step. Choosing the language to use is the second.</p>
 </div>
 
-<div id="outline-container-org1941cff" class="outline-4">
-<h4 id="org1941cff"><span class="section-number-4">1.2.1.</span> Python</h4>
+<div id="outline-container-orgb014c87" class="outline-4">
+<h4 id="orgb014c87"><span class="section-number-4">1.2.1.</span> Python</h4>
 <div class="outline-text-4" id="text-1-2-1">
 <p>
 As we have seen python is a widely popular programming language. It has good library support for a wide range of general programming needs and it can also be used for data analysis and plotting. Thus, time spent learning to program your experiments in python will also be useful for other scientific tasks such as plotting your data or analyzing your data. In addition, non-experimental computing work you may need to do will likely also be helped by knowing more python. 
 </p>
 </div>
 <ol class="org-ol">
-<li><a id="orgecf3e28"></a>Domain support<br />
+<li><a id="org21a7044"></a>Domain support<br />
 <div class="outline-text-5" id="text-1-2-1-1">
 <p>
 While the reasons above make python a good first language to consider for any coding project the ultimate selection should consider whether there is good library support for your particular needs. In the case of psychology there is an excellent well supported library, <a href="https://www.psychopy.org">PsychoPy</a>.
@@ -297,8 +297,8 @@ If someone has already largely solved your problem, then don't reinvent the whee
 </li>
 </ol>
 </div>
-<div id="outline-container-org6289c5e" class="outline-4">
-<h4 id="org6289c5e"><span class="section-number-4">1.2.2.</span> What about Javascript?</h4>
+<div id="outline-container-orgcaad257" class="outline-4">
+<h4 id="orgcaad257"><span class="section-number-4">1.2.2.</span> What about Javascript?</h4>
 <div class="outline-text-4" id="text-1-2-2">
 <p>
 Writing in 2020 when many psychology labs are closed to in-person studies, the ability to design and deliver experiments remotely, on-line, has great appeal. <a href="https://www.javascript.com/">JavaScript</a> is the language of active elements on the web, and therefore deserves definite consideration. Javascript as a language has matured, gotten faster, and extended itself to multiple programming paradigms. There are even variants that enforce a static type system and that can let you find bugs in the compilation stage rather than at run time. <a href="https://www.typescriptlang.org/">Typescript</a> is the principle example. There are good libraries for developing psychology experiments with JavaScript as well. The people who produce PsychoPy have a graphical front-end that generates javascript output (<a href="https://github.com/psychopy/psychojs">psychojs</a>). And the closely named <a href="https://www.jspsych.org/">JSPsych</a> has great support for writing code using the traditional elements of psychology. In my lab some students prefer to write native Javascript while others find the JSPsych library to be convenient, simple, and meeting their needs.
@@ -319,17 +319,33 @@ Javascript and its limits have also built momentum for a successor language: <a 
 </div>
 </div>
 
-<div id="outline-container-org7ee2a0d" class="outline-3">
-<h3 id="org7ee2a0d"><span class="section-number-3">1.3.</span> Programming Psychology Experiments With PsychoPy</h3>
+<div id="outline-container-orgc385eef" class="outline-3">
+<h3 id="orgc385eef"><span class="section-number-3">1.3.</span> Programming Psychology Experiments With PsychoPy</h3>
 <div class="outline-text-3" id="text-1-3">
 <p>
 Before we can use the psychopy library we have to install it. This used to be a big hurdle, but lately it has become much easier. 
 </p>
 </div>
 
-<div id="outline-container-orga40c6e9" class="outline-4">
-<h4 id="orga40c6e9"><span class="section-number-4">1.3.1.</span> Installing Psychopy</h4>
+<div id="outline-container-org22db439" class="outline-4">
+<h4 id="org22db439"><span class="section-number-4">1.3.1.</span> Installing Psychopy</h4>
 <div class="outline-text-4" id="text-1-3-1">
+</div>
+<ol class="org-ol">
+<li><a id="org78e4264"></a><b>Important Message</b> Spring 2023 <i>Please read if you are using a VM</i><br />
+<div class="outline-text-5" id="text-1-3-1-1">
+<p>
+The world of computing changes quickly. In March of 2023 I tried to install Psychopy's latest version in a Ubuntu 22.04 VM running on an M2 Mac and also on a Windows 11 VM. In both cases I was not able to get it working without important errors. This does not mean that it cannot be done, it just means that it would require considerably more work than we have time for, and would require digging into details that may not transfer to future use cases. Even if you figured it out it will probably be different a year from now. Some of the challenge is running everything in a VM which puts one more level of indirection between us and our program. So, for now, Spring 2023 if you are a VM you will want to install the "standalone" version. The following video shows me doing this on a Mac, but the process is similar on a Windows machine. Note that you still <b>cannot</b> use the builder for your homework or for building your experiment to run in class.
+</p>
+
+<div style="padding:65.03% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/810622435?h=45aa642eb0" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
+<p><a href="https://vimeo.com/810622435">Getting Psychopy on the New Macs (M!/2)</a> from <a href="https://vimeo.com/epistemic">Britt Anderson</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
+<p>What you can do if you need Psychopy on an M1/2 Mac (applicable to running a VM on Windows 11 as well)</p>
+</div>
+</li>
+
+<li><a id="orgad269e8"></a>Non-VM Installation<br />
+<div class="outline-text-5" id="text-1-3-1-2">
 <div style="padding:56.39% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/460262765?h=9964ab1ae4" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
 <p><a href="https://vimeo.com/460262765">Lc : Installing Psychopy (i2c4p)</a> from <a href="https://vimeo.com/epistemic">Britt Anderson</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
 <p>How do you install psychopy on Xubuntu, and how can you see if you have a functioning installation?</p>
@@ -356,22 +372,24 @@ Everything may run at this point, but to get the best support for precise timing
 </pre>
 </div>
 </div>
+</li>
+</ol>
 </div>
 </div>
 
-<div id="outline-container-orgb7d2b52" class="outline-3">
-<h3 id="orgb7d2b52"><span class="section-number-3">1.4.</span> What is <code>pip</code>?</h3>
+<div id="outline-container-org3af4c70" class="outline-3">
+<h3 id="org3af4c70"><span class="section-number-3">1.4.</span> What is <code>pip</code>?</h3>
 <div class="outline-text-3" id="text-1-4">
 <p>
 <code>pip</code> is a program for installing python packages. The python package installation procedure is a long, varied, and ever changing one, but for right now <code>pip</code> is an excellent choice that gets packages from a curated and vetted source. You can read more about it <a href="https://www.w3schools.com/python/python_pip.asp">here</a> and <a href="https://realpython.com/what-is-pip/">here</a>.
 </p>
 </div>
-<div id="outline-container-org1e84cb3" class="outline-4">
-<h4 id="org1e84cb3"><span class="section-number-4">1.4.1.</span> Testing Your PsychoPy Installation</h4>
+<div id="outline-container-org45d7c11" class="outline-4">
+<h4 id="org45d7c11"><span class="section-number-4">1.4.1.</span> Testing Your PsychoPy Installation</h4>
 <div class="outline-text-4" id="text-1-4-1">
 </div>
 <ol class="org-ol">
-<li><a id="org3c5c21a"></a>Use the Psychopy Demos<br />
+<li><a id="org1a18bec"></a>Use the Psychopy Demos<br />
 <div class="outline-text-5" id="text-1-4-1-1">
 <p>
 Purpose: Demonstrate that you have psychopy installed and functioning
@@ -394,7 +412,7 @@ If you run <code>ls</code> in this directory you will see all the demos. Run one
 </p>
 </div>
 </li>
-<li><a id="orgb23b5c4"></a>Activity<br />
+<li><a id="orgd9832e6"></a>Activity<br />
 <div class="outline-text-5" id="text-1-4-1-2">
 <p>
 &#x2026; change something.
@@ -405,7 +423,7 @@ Open up one of the file in Emacs (or another text editor) and look at the python
 </p>
 </div>
 <ol class="org-ol">
-<li><a id="org0e3e5ad"></a>Tips<br />
+<li><a id="org9f8bc0d"></a>Tips<br />
 <div class="outline-text-6" id="text-1-4-1-2-1">
 <ol class="org-ol">
 <li>Don't directly edit the working file. Create a copy and edit that. That way if you mess something up you still have the original.</li>
@@ -424,8 +442,8 @@ Moral: Never hesitate to look at the source code!
 </ol>
 </div>
 
-<div id="outline-container-org7356b1a" class="outline-4">
-<h4 id="org7356b1a"><span class="section-number-4">1.4.2.</span> Resources for Psychopy.</h4>
+<div id="outline-container-orgbb29607" class="outline-4">
+<h4 id="orgbb29607"><span class="section-number-4">1.4.2.</span> Resources for Psychopy.</h4>
 <div class="outline-text-4" id="text-1-4-2">
 <ol class="org-ol">
 <li>The authors of the Psychopy library have written an entire <a href="https://us.sagepub.com/en-us/nam/building-experiments-in-psychopy/book253480#contents">textbook</a> on using python for psychology experiments that includes the online extensions. That is a good resource to pursue things after this course. It is focused more on the <i>builder</i> interface than the <i>coder</i> interface.</li>
@@ -434,8 +452,8 @@ Moral: Never hesitate to look at the source code!
 </ol>
 </div>
 </div>
-<div id="outline-container-org07a6ac3" class="outline-4">
-<h4 id="org07a6ac3"><span class="section-number-4">1.4.3.</span> Psychopy Exercise</h4>
+<div id="outline-container-org793f360" class="outline-4">
+<h4 id="org793f360"><span class="section-number-4">1.4.3.</span> Psychopy Exercise</h4>
 <div class="outline-text-4" id="text-1-4-3">
 <p>
 This exercise is intended to give you a minimalist introduction to using the most basic elements of the psychopy library. The large <code>psychopy</code> package has several submodules. You can import them selectively, and then you don't have quite as much "bloat." That is what is going in the line that starts "from" below.
@@ -463,8 +481,8 @@ From there, have fun!
 </div>
 </div>
 
-<div id="outline-container-orgb69215f" class="outline-4">
-<h4 id="orgb69215f"><span class="section-number-4">1.4.4.</span> Extending the Exercise</h4>
+<div id="outline-container-org0848c53" class="outline-4">
+<h4 id="org0848c53"><span class="section-number-4">1.4.4.</span> Extending the Exercise</h4>
 <div class="outline-text-4" id="text-1-4-4">
 <p>
 To do this you will probably need to consult the <a href="https://www.psychopy.org/api/index.html">psychopy API.</a>
@@ -478,8 +496,8 @@ Can you?
 </ol>
 </div>
 </div>
-<div id="outline-container-orgcb1094a" class="outline-4">
-<h4 id="orgcb1094a"><span class="section-number-4">1.4.5.</span> Simple Tutorials from Psychopy</h4>
+<div id="outline-container-org4902c7a" class="outline-4">
+<h4 id="org4902c7a"><span class="section-number-4">1.4.5.</span> Simple Tutorials from Psychopy</h4>
 <div class="outline-text-4" id="text-1-4-5">
 <ol class="org-ol">
 <li><a href="https://www.psychopy.org/coder/tutorial1.html">Here</a> is the first</li>
@@ -491,16 +509,16 @@ Can you?
 </div>
 
 
-<div id="outline-container-orgd365553" class="outline-2">
-<h2 id="orgd365553"><span class="section-number-2">2.</span> Assessement Psychopy</h2>
+<div id="outline-container-org5974fc9" class="outline-2">
+<h2 id="org5974fc9"><span class="section-number-2">2.</span> Assessement Psychopy</h2>
 <div class="outline-text-2" id="text-2">
 <div style="padding:56.39% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/460262765?h=9964ab1ae4" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
 <p><a href="https://vimeo.com/460262765">Lc : Installing Psychopy (i2c4p)</a> from <a href="https://vimeo.com/epistemic">Britt Anderson</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
 <p>How do you install psychopy on Xubuntu, and how can you see if you have a functioning installation?</p>
 </div>
 
-<div id="outline-container-org14e2d36" class="outline-3">
-<h3 id="org14e2d36"><span class="section-number-3">2.1.</span> Task</h3>
+<div id="outline-container-org03afb95" class="outline-3">
+<h3 id="org03afb95"><span class="section-number-3">2.1.</span> Task</h3>
 <div class="outline-text-3" id="text-2-1">
 <p>
 Submit a .py file that demonstrates a minimal version of a single trial of a Posner cuing task.
@@ -508,8 +526,8 @@ Submit a .py file that demonstrates a minimal version of a single trial of a Pos
 </div>
 </div>
 
-<div id="outline-container-org472c968" class="outline-3">
-<h3 id="org472c968"><span class="section-number-3">2.2.</span> Objective</h3>
+<div id="outline-container-orgb7e067c" class="outline-3">
+<h3 id="orgb7e067c"><span class="section-number-3">2.2.</span> Objective</h3>
 <div class="outline-text-3" id="text-2-2">
 <p>
 To familiarize yourself with the basic elements of the psychopy library and how to combine a few of them into something that could become a psychology experiment. We will use the <a href="https://en.wikipedia.org/wiki/Posner_cueing_task">Posner Cuing</a> task for this project.
@@ -517,8 +535,8 @@ To familiarize yourself with the basic elements of the psychopy library and how 
 </div>
 </div>
 
-<div id="outline-container-orga78b3de" class="outline-3">
-<h3 id="orga78b3de"><span class="section-number-3">2.3.</span> Detailed Instructions</h3>
+<div id="outline-container-org43a8a9d" class="outline-3">
+<h3 id="org43a8a9d"><span class="section-number-3">2.3.</span> Detailed Instructions</h3>
 <div class="outline-text-3" id="text-2-3">
 <p>
 Provide me with a python file that,
@@ -535,8 +553,8 @@ Provide me with a python file that,
 </div>
 </div>
 
-<div id="outline-container-orgcfc3c33" class="outline-3">
-<h3 id="orgcfc3c33"><span class="section-number-3">2.4.</span> Hints</h3>
+<div id="outline-container-orge6ac2dc" class="outline-3">
+<h3 id="orge6ac2dc"><span class="section-number-3">2.4.</span> Hints</h3>
 <div class="outline-text-3" id="text-2-4">
 <p>
 The following psychopy objects may be useful.
@@ -558,7 +576,7 @@ The following psychopy objects may be useful.
 <div id="postamble" class="status">
 <p class="date">Date: 2023-02-14 Tue 00:00</p>
 <p class="author">Author: Britt Anderson</p>
-<p class="date">Created: 2023-02-14 Tue 09:02</p>
+<p class="date">Created: 2023-03-23 Thu 09:12</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

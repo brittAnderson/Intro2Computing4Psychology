@@ -63,6 +63,18 @@ Javascript and its limits have also built momentum for a successor language: [[h
 
 *** Installing Psychopy
 
+**** *Important Message* Spring 2023 /Please read if you are using a VM/
+
+The world of computing changes quickly. In March of 2023 I tried to install Psychopy's latest version in a Ubuntu 22.04 VM running on an M2 Mac and also on a Windows 11 VM. In both cases I was not able to get it working without important errors. This does not mean that it cannot be done, it just means that it would require considerably more work than we have time for, and would require digging into details that may not transfer to future use cases. Even if you figured it out it will probably be different a year from now. Some of the challenge is running everything in a VM which puts one more level of indirection between us and our program. So, for now, Spring 2023 if you are a VM you will want to install the "standalone" version. The following video shows me doing this on a Mac, but the process is similar on a Windows machine. Note that you still *cannot* use the builder for your homework or for building your experiment to run in class.
+
+#+begin_export html
+<div style="padding:65.03% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/810622435?h=45aa642eb0" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
+<p><a href="https://vimeo.com/810622435">Getting Psychopy on the New Macs (M!/2)</a> from <a href="https://vimeo.com/epistemic">Britt Anderson</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
+<p>What you can do if you need Psychopy on an M1/2 Mac (applicable to running a VM on Windows 11 as well)</p>
+#+end_export
+
+**** Non-VM Installation
+
 #+begin_export html
 <div style="padding:56.39% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/460262765?h=9964ab1ae4" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
 <p><a href="https://vimeo.com/460262765">Lc : Installing Psychopy (i2c4p)</a> from <a href="https://vimeo.com/epistemic">Britt Anderson</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
