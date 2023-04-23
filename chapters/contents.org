@@ -1,9 +1,8 @@
 #+TITLE: Contents
 
-- [[file:rstudio.org][RStudio]]
 - [[file:index.org][Introduction]]
 - [[file:beginning-r.org][Beginning R]]
-- [[file:version-control.org][Version Control Github PullReqest and Remotes]]
+- [[file:version-control.org][Version Control]]
 - [[file:emacs.org][Emacs]]
 - [[file:linux.org][Linux]]
 - [[file:beginning-python.org][Beginning Python]]
@@ -12,15 +11,16 @@
 - [[file:report-writing.org][Writing Reproducible Research Reports]]
 - [[file:terminal.org][Terminal]]
 - [[file:programming-psychology-experiments.org][Programming Psychology Experiments]]
+- [[file:rstudio.org][RStudio]]
 - codeExamples
   - [[file:codeExamples/simpOrgDemoFile.org][This is a title]]
+  - plottingExample
+    - [[file:codeExamples/plottingExample/plottingRandPy.org][Plotting in R and Python]]
+    - plotExampleJuly2022
+      - [[file:codeExamples/plottingExample/plotExampleJuly2022/test.org][New test file for plotting]]
   - presents
     - [[file:codeExamples/presents/testBeamer.org][testBeamer]]
   - reportGen
     - [[file:codeExamples/reportGen/testRBabel.org][testRBabel]]
     - [[file:codeExamples/reportGen/testRBabelBib.org][testRBabel]]
     - [[file:codeExamples/reportGen/testLatex.org][testLatex]]
-  - plottingExample
-    - [[file:codeExamples/plottingExample/plottingRandPy.org][Plotting in R and Python]]
-    - plotExampleJuly2022
-      - [[file:codeExamples/plottingExample/plotExampleJuly2022/test.org][New test file for plotting]]
