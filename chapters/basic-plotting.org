@@ -25,7 +25,7 @@ In this segment we will experiment with plotting data using programing tools and
 #+end_export
 
 
-** Plotting in R: A tale of two approachs
+** Plotting in R: A tale of two approaches
    R has two main contenders in the plotting domain: base and ggplot. This topic takes a look at both. 
 
 * Why Both R and Python? Why Can't I Just Pick One?
