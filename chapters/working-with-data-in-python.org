@@ -15,8 +15,8 @@
 #+bibliography: /home/britt/gitRepos/Intro2Computing4Psychology/chapters/i2c4p.bib
 #+cite_export: csl assets/chicago-note-bibliography-16th-edition.csl
 
-* Working with Data Python
-For a long time data handling and graph production in python lagged behind that of R. Data were collected in comma or tab separated ([[https://en.wikipedia.org/wiki/Comma-separated_values][CSV]]) formats or often in [[https://docs.python.org/3/library/pickle.html][pickle]] files. Pickled data was textual data converted to a binary representation and had to be converted back to be read. These issues made it harder to use python in an interactive and interpreted environment for data analyis and many workers in psychology would collect their data with experiments coded in python (or other languages), and then use R as the language for statistical testing.
+* Working with Data in Python
+For a long time data handling and graph production in python lagged behind that of R. Data were collected in comma or tab separated ([[https://en.wikipedia.org/wiki/Comma-separated_values][CSV]]) formats or often in [[https://docs.python.org/3/library/pickle.html][pickle]] files. Pickled data was textual data converted to a binary representation and had to be converted back to be read. These issues made it harder to use python in an interactive and interpreted environment for data analysis and many workers in psychology would collect their data with experiments coded in python (or other languages), and then use R as the language for statistical testing.
 
 However, over the last few years the scientific python community has expanded its options for both graphing and data handling markedly, and working entirely in python is increasingly a viable option. The most widely used python library for handling data is [[https://pandas.pydata.org/][Pandas]]. In many respects it has a similar look and feel to the =data.frame= style of data analysis used in R. However, there are definite syntactic and implementation differences. While a familiarity with R and data.frames is a good base for beginning to use Pandas there will remain a lot of concrete specfics to learn to use python effectively. In this topic a few of the pandas basics are demonstrated. In addition to the illustrations here, there are numerous online tutorials and blogs that explain pandas in more detail, and with many more examples.
 
@@ -41,18 +41,18 @@ However, over the last few years the scientific python community has expanded it
 #+end_export
 *** Pandas
     How to get Pandas?
-    1. [[https://docs.continuum.io/anaconda/][Anaconda]] (Conda) - you will see this in a lot of documentation. This is a collection of packages for python that are curated to work well together and allow you to set up virutal environments (which protects your projects and their differing requirements from leading to conflicts with each other). Using =conda= is not hard, but it is another took, and it has its own learning curve, so it will not be used here. If you find yourself using python regularly and you are comfortable with how to install and use software and packages then I encourage you to read more Anaconda and decided if it is a python solution that will work for you.
+    1. [[https://docs.continuum.io/anaconda/][Anaconda]] (Conda) - you will see this in a lot of documentation. This is a collection of packages for python that are curated to work well together and allow you to set up virtual environments (which protects your projects and their differing requirements from leading to conflicts with each other). Using =conda= is not hard, but it is another tool, and it has its own learning curve, so it will not be used here. If you find yourself using python regularly and you are comfortable with how to install and use software and packages then I encourage you to read more about Anaconda and decided if it is a python solution that will work for you.
     2. Xubuntu stable ~sudo apt-get install python3-pandas~.
     3. Pip (PyPI) ~pip3 install pandas~
 
 To try and get all our python packages from one source (and thereby reduce our chance for conflicts) we will use the =pip= method as that will work well with our subsequent installation of the =psychopy= package.
-*** Interactve Pandas
+*** Interactive Pandas
 Python is an interpreted language. You can use Python from an interpreter much as you used R in an R console (or RStudio).
 *** Getting Your Data Into Python
 #+begin_export html
 <div style="padding:56.39% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/462705724?h=dc0c22cba8" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
 <p><a href="https://vimeo.com/462705724">Ic : Using Python to Request Data from the Internet (i2c4p)</a> from <a href="https://vimeo.com/epistemic">Britt Anderson</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
-<p>This video demonstrates some of the steps below for getting day from Python. It uses the request library.</p>
+<p>This video demonstrates some of the steps below for getting data from Python. It uses the requests library.</p>
 #+end_export
 
      Before you can get data into python, you have to get data.
@@ -64,7 +64,7 @@ There are a large number of sources for data online that you can use to explore 
      4. [[https://www.kaggle.com/tags/psychology][The Kaggle Competition]]
 	Kaggle competitions allow you to make data analysis a competitive sport.
 
-For demonstration purposes we will get data from the Open Psychometrics project (I am using the humor questi. You could just go to the website and right click and download, but you could also use python to get the data. There are many methods for this and the one used here came from this [[https://www.simplifiedpython.net/python-download-file/][online post.]]
+For demonstration purposes we will get data from the Open Psychometrics project (I am using the humor styles questionnaire). You could just go to the website and right click and download, but you could also use python to get the data. There are many methods for this and the one used here came from this [[https://www.simplifiedpython.net/python-download-file/][online post.]]
 
 You will have to ~pip3 install requests~ to get the requests library
 
@@ -111,7 +111,7 @@ This file is a "zip" file. For a zip file the data have been compressed to save 
 
 *** Repeating Things We Did In R With Pandas
 **** The length of a list
-      In R you would use the ~length~ command, but in python it is ~len~. Almost every language you will program in will have a command for finding the length, but the actual word may different or the syntax may be different.
+      In R you would use the ~length~ command, but in python it is ~len~. Almost every language you will program in will have a command for finding the length, but the actual word may be different or the syntax may be different.
       
       #+begin_src python :session *dataPython* 
       len(dpd['Q1'])

@@ -201,7 +201,7 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org7c0a24a">1. Working with Data Python</a>
+<li><a href="#org7c0a24a">1. Working with Data in Python</a>
 <ul>
 <li><a href="#orgb8530d4">1.1. Some additional sources</a>
 <ul>
@@ -212,7 +212,7 @@
 <li><a href="#orgc374781">1.2. Data handling in Python</a>
 <ul>
 <li><a href="#org84db6e6">1.2.1. Pandas</a></li>
-<li><a href="#org29cc7d1">1.2.2. Interactve Pandas</a></li>
+<li><a href="#org29cc7d1">1.2.2. Interactive Pandas</a></li>
 <li><a href="#orgc353eda">1.2.3. Getting Your Data Into Python</a></li>
 <li><a href="#org348ea0f">1.2.4. Repeating Things We Did In R With Pandas</a></li>
 <li><a href="#org5b2e734">1.2.5. Functional Styles versus Object Orientation</a></li>
@@ -232,10 +232,10 @@
 </div>
 
 <div id="outline-container-org7c0a24a" class="outline-2">
-<h2 id="org7c0a24a"><span class="section-number-2">1.</span> Working with Data Python</h2>
+<h2 id="org7c0a24a"><span class="section-number-2">1.</span> Working with Data in Python</h2>
 <div class="outline-text-2" id="text-1">
 <p>
-For a long time data handling and graph production in python lagged behind that of R. Data were collected in comma or tab separated (<a href="https://en.wikipedia.org/wiki/Comma-separated_values">CSV</a>) formats or often in <a href="https://docs.python.org/3/library/pickle.html">pickle</a> files. Pickled data was textual data converted to a binary representation and had to be converted back to be read. These issues made it harder to use python in an interactive and interpreted environment for data analyis and many workers in psychology would collect their data with experiments coded in python (or other languages), and then use R as the language for statistical testing.
+For a long time data handling and graph production in python lagged behind that of R. Data were collected in comma or tab separated (<a href="https://en.wikipedia.org/wiki/Comma-separated_values">CSV</a>) formats or often in <a href="https://docs.python.org/3/library/pickle.html">pickle</a> files. Pickled data was textual data converted to a binary representation and had to be converted back to be read. These issues made it harder to use python in an interactive and interpreted environment for data analysis and many workers in psychology would collect their data with experiments coded in python (or other languages), and then use R as the language for statistical testing.
 </p>
 
 <p>
@@ -283,7 +283,7 @@ However, over the last few years the scientific python community has expanded it
 How to get Pandas?
 </p>
 <ol class="org-ol">
-<li><a href="https://docs.continuum.io/anaconda/">Anaconda</a> (Conda) - you will see this in a lot of documentation. This is a collection of packages for python that are curated to work well together and allow you to set up virutal environments (which protects your projects and their differing requirements from leading to conflicts with each other). Using <code>conda</code> is not hard, but it is another took, and it has its own learning curve, so it will not be used here. If you find yourself using python regularly and you are comfortable with how to install and use software and packages then I encourage you to read more Anaconda and decided if it is a python solution that will work for you.</li>
+<li><a href="https://docs.continuum.io/anaconda/">Anaconda</a> (Conda) - you will see this in a lot of documentation. This is a collection of packages for python that are curated to work well together and allow you to set up virtual environments (which protects your projects and their differing requirements from leading to conflicts with each other). Using <code>conda</code> is not hard, but it is another tool, and it has its own learning curve, so it will not be used here. If you find yourself using python regularly and you are comfortable with how to install and use software and packages then I encourage you to read more about Anaconda and decided if it is a python solution that will work for you.</li>
 <li>Xubuntu stable <code>sudo apt-get install python3-pandas</code>.</li>
 <li>Pip (PyPI) <code>pip3 install pandas</code></li>
 </ol>
@@ -294,7 +294,7 @@ To try and get all our python packages from one source (and thereby reduce our c
 </div>
 </div>
 <div id="outline-container-org29cc7d1" class="outline-4">
-<h4 id="org29cc7d1"><span class="section-number-4">1.2.2.</span> Interactve Pandas</h4>
+<h4 id="org29cc7d1"><span class="section-number-4">1.2.2.</span> Interactive Pandas</h4>
 <div class="outline-text-4" id="text-1-2-2">
 <p>
 Python is an interpreted language. You can use Python from an interpreter much as you used R in an R console (or RStudio).
@@ -306,7 +306,7 @@ Python is an interpreted language. You can use Python from an interpreter much a
 <div class="outline-text-4" id="text-1-2-3">
 <div style="padding:56.39% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/462705724?h=dc0c22cba8" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
 <p><a href="https://vimeo.com/462705724">Ic : Using Python to Request Data from the Internet (i2c4p)</a> from <a href="https://vimeo.com/epistemic">Britt Anderson</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
-<p>This video demonstrates some of the steps below for getting day from Python. It uses the request library.</p>
+<p>This video demonstrates some of the steps below for getting data from Python. It uses the requests library.</p>
 
 <p>
 Before you can get data into python, you have to get data.
@@ -324,7 +324,7 @@ Kaggle competitions allow you to make data analysis a competitive sport.</li>
 </ol>
 
 <p>
-For demonstration purposes we will get data from the Open Psychometrics project (I am using the humor questi. You could just go to the website and right click and download, but you could also use python to get the data. There are many methods for this and the one used here came from this <a href="https://www.simplifiedpython.net/python-download-file/">online post.</a>
+For demonstration purposes we will get data from the Open Psychometrics project (I am using the humor styles questionnaire). You could just go to the website and right click and download, but you could also use python to get the data. There are many methods for this and the one used here came from this <a href="https://www.simplifiedpython.net/python-download-file/">online post.</a>
 </p>
 
 <p>
@@ -385,7 +385,7 @@ This file is a "zip" file. For a zip file the data have been compressed to save 
 <li><a id="org1a65179"></a>The length of a list<br />
 <div class="outline-text-5" id="text-1-2-4-1">
 <p>
-In R you would use the <code>length</code> command, but in python it is <code>len</code>. Almost every language you will program in will have a command for finding the length, but the actual word may different or the syntax may be different.
+In R you would use the <code>length</code> command, but in python it is <code>len</code>. Almost every language you will program in will have a command for finding the length, but the actual word may be different or the syntax may be different.
 </p>
 
 <div class="org-src-container">
