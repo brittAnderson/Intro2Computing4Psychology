@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-03-17 Fri 15:16 -->
+<!-- 2023-04-23 Sun 11:53 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>RStudio</title>
@@ -193,27 +193,38 @@
     { background-color: #ffff00; color: #000000; font-weight: bold; }
   .org-svg { }
 </style>
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        displayAlign: "center",
-        displayIndent: "0em",
-
-        "HTML-CSS": { scale: 100,
-                        linebreaks: { automatic: "false" },
-                        webFont: "TeX"
-                       },
-        SVG: {scale: 100,
-              linebreaks: { automatic: "false" },
-              font: "TeX"},
-        NativeMML: {scale: 100},
-        TeX: { equationNumbers: {autoNumber: "AMS"},
-               MultLineWidth: "85%",
-               TagSide: "right",
-               TagIndent: ".8em"
-             }
-});
+<script>
+  window.MathJax = {
+    tex: {
+      ams: {
+        multlineWidth: '85%'
+      },
+      tags: 'ams',
+      tagSide: 'right',
+      tagIndent: '.8em'
+    },
+    chtml: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    svg: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    output: {
+      font: 'mathjax-modern',
+      displayOverflow: 'overflow'
+    }
+  };
 </script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
+
+<script
+  id="MathJax-script"
+  async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
 </head>
 <body>
 <div id="content" class="content">
@@ -222,36 +233,36 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#orgf665f83">1. First Steps in Programming and Markdown: RStudio</a></li>
-<li><a href="#org6a81f5d">2. Overview Of The Steps To Be Taken</a>
+<li><a href="#orgf8e0eff">1. First Steps in Programming and Markdown: RStudio</a></li>
+<li><a href="#orgbe000d6">2. Overview Of The Steps To Be Taken</a>
 <ul>
-<li><a href="#orgca52964">2.1. Download R</a></li>
-<li><a href="#org657e910">2.2. Download RStudio</a></li>
-<li><a href="#org6155932">2.3. Verify That Both R and RStudio Are Working</a></li>
-<li><a href="#org8e2ed86">2.4. Generate and Rmd file; Try some simple programming; export a webpage</a>
+<li><a href="#org8800fb1">2.1. Download R</a></li>
+<li><a href="#org2b95b36">2.2. Download RStudio</a></li>
+<li><a href="#org3eed640">2.3. Verify That Both R and RStudio Are Working</a></li>
+<li><a href="#org2e6c7d8">2.4. Generate and Rmd file; Try some simple programming; export a webpage</a>
 <ul>
-<li><a href="#org5c31a3d">2.4.1. A Video Example of Using RStudio</a></li>
+<li><a href="#orgbf68e10">2.4.1. A Video Example of Using RStudio</a></li>
 </ul>
 </li>
-<li><a href="#org145865a">2.5. Using R and RStudio</a>
+<li><a href="#org2158ceb">2.5. Using R and RStudio</a>
 <ul>
-<li><a href="#org6dcd220">2.5.1. Variables, Loops and Functions</a></li>
+<li><a href="#orgb6543a7">2.5.1. Variables, Loops and Functions</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#orgb70e9da">3. Testing Yourself</a>
+<li><a href="#org3636e83">3. Testing Yourself</a>
 <ul>
-<li><a href="#org18a031b">3.1. First Rmd Assessment</a>
+<li><a href="#org2e0207c">3.1. First Rmd Assessment</a>
 <ul>
-<li><a href="#org392e52a">3.1.1. Tasks</a></li>
+<li><a href="#orgd70f626">3.1.1. Tasks</a></li>
 </ul>
 </li>
-<li><a href="#org51cc8d7">3.2. Rmd Export to HTML Assessment</a>
+<li><a href="#org97bfe45">3.2. Rmd Export to HTML Assessment</a>
 <ul>
-<li><a href="#org9aec27b">3.2.1. Task</a></li>
-<li><a href="#org32c1828">3.2.2. Goal/Purpose</a></li>
-<li><a href="#org01c4e16">3.2.3. Instructions</a></li>
+<li><a href="#orgb515be7">3.2.1. Task</a></li>
+<li><a href="#orga4357ff">3.2.2. Goal/Purpose</a></li>
+<li><a href="#org87f99ae">3.2.3. Instructions</a></li>
 </ul>
 </li>
 </ul>
@@ -260,8 +271,8 @@
 </div>
 </div>
 
-<div id="outline-container-orgf665f83" class="outline-2">
-<h2 id="orgf665f83"><span class="section-number-2">1.</span> First Steps in Programming and Markdown: RStudio</h2>
+<div id="outline-container-orgf8e0eff" class="outline-2">
+<h2 id="orgf8e0eff"><span class="section-number-2">1.</span> First Steps in Programming and Markdown: RStudio</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 Programming means writing instructions for a computer. R is a common programming language that is designed for facilitating statistical analyses and visualizations. In order to make programming easier there are other programs called Integrated Development Environments (IDE) that provide an editor for writing, syntax checking to highlight important code features and facilitate catching errors. They may also allow for visualizations of results and looking up help and other documentation. For this chapter we will install the programming language R, the IDE Rstudio, and will learn how to use a simple markup language to combine text and code in a single document. The markup language we will use for this chapter is called <b>RMarkdown</b>.
@@ -269,8 +280,8 @@ Programming means writing instructions for a computer. R is a common programming
 </div>
 </div>
 
-<div id="outline-container-org6a81f5d" class="outline-2">
-<h2 id="org6a81f5d"><span class="section-number-2">2.</span> Overview Of The Steps To Be Taken</h2>
+<div id="outline-container-orgbe000d6" class="outline-2">
+<h2 id="orgbe000d6"><span class="section-number-2">2.</span> Overview Of The Steps To Be Taken</h2>
 <div class="outline-text-2" id="text-2">
 <ol class="org-ol">
 <li>Download R</li>
@@ -288,8 +299,8 @@ Programming means writing instructions for a computer. R is a common programming
 </ol>
 </div>
 
-<div id="outline-container-orgca52964" class="outline-3">
-<h3 id="orgca52964"><span class="section-number-3">2.1.</span> Download R</h3>
+<div id="outline-container-org8800fb1" class="outline-3">
+<h3 id="org8800fb1"><span class="section-number-3">2.1.</span> Download R</h3>
 <div class="outline-text-3" id="text-2-1">
 <p>
 R is free statistical software. As it is a very popular language of academic statisticians many new and cutting edge statistical techniques are available for R users that are well vetted. The comprehensive R network (<a href="https://cran.r-project.org/">CRAN</a>) maintains download links and instructions. 
@@ -310,8 +321,8 @@ A few years ago I recorded some videos about the download process using a Window
 </div>
 
 
-<div id="outline-container-org657e910" class="outline-3">
-<h3 id="org657e910"><span class="section-number-3">2.2.</span> Download RStudio</h3>
+<div id="outline-container-org2b95b36" class="outline-3">
+<h3 id="org2b95b36"><span class="section-number-3">2.2.</span> Download RStudio</h3>
 <div class="outline-text-3" id="text-2-2">
 <p>
 RStudio is not R. It is a development environment wrapped around R. You can use R without RStudio (that is the way I use it and what I recommend). However, RStudio does provide an easy way to get started. The people who make RStudio have a free desktop version that will provide all the functionality that we will need. They also make commercial tools that build on the basic RStudio functionality.
@@ -323,8 +334,8 @@ RStudio is not R. It is a development environment wrapped around R. You can use 
 </div>
 </div>
 
-<div id="outline-container-org6155932" class="outline-3">
-<h3 id="org6155932"><span class="section-number-3">2.3.</span> Verify That Both R and RStudio Are Working</h3>
+<div id="outline-container-org3eed640" class="outline-3">
+<h3 id="org3eed640"><span class="section-number-3">2.3.</span> Verify That Both R and RStudio Are Working</h3>
 <div class="outline-text-3" id="text-2-3">
 <p>
 The way to do this is to open the RStudio program and type in some simple equation such as \(2 + 2\) and it should print <code>4</code>.
@@ -332,8 +343,8 @@ The way to do this is to open the RStudio program and type in some simple equati
 </div>
 </div>
 
-<div id="outline-container-org8e2ed86" class="outline-3">
-<h3 id="org8e2ed86"><span class="section-number-3">2.4.</span> Generate and Rmd file; Try some simple programming; export a webpage</h3>
+<div id="outline-container-org2e6c7d8" class="outline-3">
+<h3 id="org2e6c7d8"><span class="section-number-3">2.4.</span> Generate and Rmd file; Try some simple programming; export a webpage</h3>
 <div class="outline-text-3" id="text-2-4">
 <p>
 One of our course goals is to promote reproducible research. One of the ways you do this is by sharing the actual code you used for an analysis. Ideally this is embedded in the actual file you use to generate your report and manuscript. But you don't want the code showing in the finished version. Using a markup language to write the report allows you to accomplish all this. You write the article in text. You write the code for statistical tests and plots in the code. You blend the two together to produce a manuscript with the results of the code executed and embedded. You can share the raw file with anyone who wishes to repeat your analysis or edit it.
@@ -348,8 +359,8 @@ We are using R because we will use the R language for our programming later on a
 </p>
 </div>
 
-<div id="outline-container-org5c31a3d" class="outline-4">
-<h4 id="org5c31a3d"><span class="section-number-4">2.4.1.</span> A Video Example of Using RStudio</h4>
+<div id="outline-container-orgbf68e10" class="outline-4">
+<h4 id="orgbf68e10"><span class="section-number-4">2.4.1.</span> A Video Example of Using RStudio</h4>
 <div class="outline-text-4" id="text-2-4-1">
 <p>
 Pay attention to the difference between the <i>editor</i> window and the <i>console</i>. The console evaluates the code and prints out the answer. You can use it to test whether your R code does what you think it should be doing. The editor is where you mix the code with text. It lies static until you tell it to run a line, a block, or the entire document. It will then ouput the result (if there were no errors that you have to fix) in a viewer that is internal to RStudio. You want to be able to save that output somewhere (or know where RStudio saves it). Then you can open that file in your browser to see the full power of being able to write a simple text file and get produced a fully featured web page. 
@@ -364,27 +375,27 @@ Pay attention to the difference between the <i>editor</i> window and the <i>cons
 </div>
 </div>
 
-<div id="outline-container-org145865a" class="outline-3">
-<h3 id="org145865a"><span class="section-number-3">2.5.</span> Using R and RStudio</h3>
+<div id="outline-container-org2158ceb" class="outline-3">
+<h3 id="org2158ceb"><span class="section-number-3">2.5.</span> Using R and RStudio</h3>
 <div class="outline-text-3" id="text-2-5">
 <p>
 Programming languages can look very different, but most of the common ones have the same basic constructs. If you familiarize yourself with these common constructs you will be able to get started more quickly, and more easily transition to other programming languages that might fit your future needs better.
 </p>
 </div>
 
-<div id="outline-container-org6dcd220" class="outline-4">
-<h4 id="org6dcd220"><span class="section-number-4">2.5.1.</span> Variables, Loops and Functions</h4>
+<div id="outline-container-orgb6543a7" class="outline-4">
+<h4 id="orgb6543a7"><span class="section-number-4">2.5.1.</span> Variables, Loops and Functions</h4>
 <div class="outline-text-4" id="text-2-5-1">
 </div>
 <ol class="org-ol">
-<li><a id="orgf27ff6c"></a>Variables<br />
+<li><a id="orgd53c951"></a>Variables<br />
 <div class="outline-text-5" id="text-2-5-1-1">
 <p>
 A <b>variable</b> is something that holds a value. A value doesn't have to be a number. It could be name, character, or a list of pupil diameters, of even some larger data structure. As the name implies a variable may vary in most programming languages. You could for instance use a variable to "count" how many times you have done an operation. Repeating an operation or action several times is often referred to as "looping."
 </p>
 
 <div class="org-src-container">
-<label class="org-src-name"><span class="listing-number">Listing 1: </span>Declaring a Variable in R. Note that this is typeset using a markup language call <code>orgmode</code> that is accessible in <code>emacs</code>, a text editing environment we will learn to use later in this course. If you look at the source code for this file you will see that this code is being executed to produce the final html file that you can view online.</label><pre class="src src-R" id="org11e09a8">a = 3
+<label class="org-src-name"><span class="listing-number">Listing 1: </span>Declaring a Variable in R. Note that this is typeset using a markup language call <code>orgmode</code> that is accessible in <code>emacs</code>, a text editing environment we will learn to use later in this course. If you look at the source code for this file you will see that this code is being executed to produce the final html file that you can view online.</label><pre class="src src-R" id="orgac71627">a = 3
 a = a + 1
 print(a)
 </pre>
@@ -396,7 +407,7 @@ print(a)
 </div>
 </li>
 
-<li><a id="org53c8f2e"></a>Loops<br />
+<li><a id="org9059b15"></a>Loops<br />
 <div class="outline-text-5" id="text-2-5-1-2">
 <p>
 Often we use programs to automate things that need to be done over and over again. In many statistical and experimental procedures this need for repetition is common. Consider  finding the mean reaction time for a large number of experimental participants who each completed a large number of experimental trials.
@@ -413,7 +424,7 @@ When you have a task to do that needs to run until some condition is met you wil
 </pre>
 </div>
 
-<pre class="example" id="org488510b">
+<pre class="example" id="org1e334f4">
 [1] 1
 [1] 2
 [1] 3
@@ -447,7 +458,7 @@ We will want some basic text in our <code>init.el</code> file to make things wor
 </div>
 </li>
 
-<li><a id="orgd57f386"></a>Functions<br />
+<li><a id="orgc392190"></a>Functions<br />
 <div class="outline-text-5" id="text-2-5-1-3">
 <p>
 Functions in programming languages are black boxes for taking input and returning output. You, the author of the function, fill in the details of the black box, but we users only know what we feed in and what we get back. Each programming language has its own way of telling the processor what is and what is not a function. In R we use the keyword <code>function</code> and assign our code to a name that users can type to call our code. It also allows us to say what the input can be and to give names to the input that are used <b>locally</b> in our function.
@@ -493,20 +504,20 @@ We could then use this output value to test whether to print the number by using
 </div>
 
 
-<div id="outline-container-orgb70e9da" class="outline-2">
-<h2 id="orgb70e9da"><span class="section-number-2">3.</span> Testing Yourself</h2>
+<div id="outline-container-org3636e83" class="outline-2">
+<h2 id="org3636e83"><span class="section-number-2">3.</span> Testing Yourself</h2>
 <div class="outline-text-2" id="text-3">
 <p>
 Try to produce an Rmd file from the above examples and see if you can get it and export it to an html file that we can open in a web browser and that displays correctly. 
 </p>
 </div>
 
-<div id="outline-container-org18a031b" class="outline-3">
-<h3 id="org18a031b"><span class="section-number-3">3.1.</span> First Rmd Assessment</h3>
+<div id="outline-container-org2e0207c" class="outline-3">
+<h3 id="org2e0207c"><span class="section-number-3">3.1.</span> First Rmd Assessment</h3>
 <div class="outline-text-3" id="text-3-1">
 </div>
-<div id="outline-container-org392e52a" class="outline-4">
-<h4 id="org392e52a"><span class="section-number-4">3.1.1.</span> Tasks</h4>
+<div id="outline-container-orgd70f626" class="outline-4">
+<h4 id="orgd70f626"><span class="section-number-4">3.1.1.</span> Tasks</h4>
 <div class="outline-text-4" id="text-3-1-1">
 <p>
 Create and save an Rmd file making use of basic markdown conventions.
@@ -520,7 +531,7 @@ An image link that will inline on export. For example:
 </p>
 
 
-<div id="org9f7647e" class="figure">
+<div id="org41c45ed" class="figure">
 <p><img src="https://imgs.xkcd.com/comics/linux_user_at_best_buy.png" alt="linux_user_at_best_buy.png" />
 </p>
 </div></li>
@@ -528,7 +539,7 @@ An image link that will inline on export. For example:
 </div>
 
 <ol class="org-ol">
-<li><a id="org0445b2b"></a>Comments<br />
+<li><a id="org6caac23"></a>Comments<br />
 <div class="outline-text-5" id="text-3-1-1-1">
 <p>
 We will be using various markdown dialects to combine text, references, code, data, and analyses in making reproducible research reports. The goal of this assignment is to get you started on discovering and using some of the markdown conventions that will enable you to do so. RStudio has a built in cheat sheet for markdown, but you can easily find <a href="https://en.wikipedia.org/wiki/Markdown">others</a> on line. There are several different dialects of markdown. 
@@ -541,12 +552,12 @@ We will be using various markdown dialects to combine text, references, code, da
 
 
 
-<div id="outline-container-org51cc8d7" class="outline-3">
-<h3 id="org51cc8d7"><span class="section-number-3">3.2.</span> Rmd Export to HTML Assessment</h3>
+<div id="outline-container-org97bfe45" class="outline-3">
+<h3 id="org97bfe45"><span class="section-number-3">3.2.</span> Rmd Export to HTML Assessment</h3>
 <div class="outline-text-3" id="text-3-2">
 </div>
-<div id="outline-container-org9aec27b" class="outline-4">
-<h4 id="org9aec27b"><span class="section-number-4">3.2.1.</span> Task</h4>
+<div id="outline-container-orgb515be7" class="outline-4">
+<h4 id="orgb515be7"><span class="section-number-4">3.2.1.</span> Task</h4>
 <div class="outline-text-4" id="text-3-2-1">
 <p>
 Expand on your Rmd file submitted for Your First Rmd File to include additional material.
@@ -554,8 +565,8 @@ Expand on your Rmd file submitted for Your First Rmd File to include additional 
 </div>
 </div>
 
-<div id="outline-container-org32c1828" class="outline-4">
-<h4 id="org32c1828"><span class="section-number-4">3.2.2.</span> Goal/Purpose</h4>
+<div id="outline-container-orga4357ff" class="outline-4">
+<h4 id="orga4357ff"><span class="section-number-4">3.2.2.</span> Goal/Purpose</h4>
 <div class="outline-text-4" id="text-3-2-2">
 <p>
 Markdown allows you to use plain text to give instructions to a <i>compiler</i> to assemble a file with appropriate formatting. By assembling an html file with code and links from a markdown starter file you will see the basics of this approach.
@@ -575,8 +586,8 @@ Your submission should include both the Rmd file and the compiled html file prod
 </div>
 </div>
 
-<div id="outline-container-org01c4e16" class="outline-4">
-<h4 id="org01c4e16"><span class="section-number-4">3.2.3.</span> Instructions</h4>
+<div id="outline-container-org87f99ae" class="outline-4">
+<h4 id="org87f99ae"><span class="section-number-4">3.2.3.</span> Instructions</h4>
 <div class="outline-text-4" id="text-3-2-3">
 <ol class="org-ol">
 <li>Take your Rmd file from the first Rmd assessment as a starting point.</li>
@@ -593,7 +604,7 @@ Your submission should include both the Rmd file and the compiled html file prod
 <div id="postamble" class="status">
 <p class="date">Date: 2023-03-10 Fri 00:00</p>
 <p class="author">Author: Britt Anderson</p>
-<p class="date">Created: 2023-03-17 Fri 15:16</p>
+<p class="date">Created: 2023-04-23 Sun 11:53</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

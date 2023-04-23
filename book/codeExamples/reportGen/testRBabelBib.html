@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-02-14 Tue 05:28 -->
+<!-- 2023-04-23 Sun 11:52 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>testRBabel</title>
@@ -193,27 +193,38 @@
     { background-color: #ffff00; color: #000000; font-weight: bold; }
   .org-svg { }
 </style>
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        displayAlign: "center",
-        displayIndent: "0em",
-
-        "HTML-CSS": { scale: 100,
-                        linebreaks: { automatic: "false" },
-                        webFont: "TeX"
-                       },
-        SVG: {scale: 100,
-              linebreaks: { automatic: "false" },
-              font: "TeX"},
-        NativeMML: {scale: 100},
-        TeX: { equationNumbers: {autoNumber: "AMS"},
-               MultLineWidth: "85%",
-               TagSide: "right",
-               TagIndent: ".8em"
-             }
-});
+<script>
+  window.MathJax = {
+    tex: {
+      ams: {
+        multlineWidth: '85%'
+      },
+      tags: 'ams',
+      tagSide: 'right',
+      tagIndent: '.8em'
+    },
+    chtml: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    svg: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    output: {
+      font: 'mathjax-modern',
+      displayOverflow: 'overflow'
+    }
+  };
 </script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
+
+<script
+  id="MathJax-script"
+  async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
 </head>
 <body>
 <div id="content" class="content">
@@ -222,7 +233,7 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org3449674">1. Testing Citations</a></li>
+<li><a href="#orgcf5e971">1. Testing Citations</a></li>
 </ul>
 </div>
 </div>
@@ -251,7 +262,7 @@ print(mean(y))
 </div>
 
 <pre class="example">
-0.0599058823235198
+0.532560325155113
 </pre>
 
 
@@ -260,8 +271,8 @@ print(mean(y))
 </pre>
 </div>
 
-<div id="outline-container-org3449674" class="outline-2">
-<h2 id="org3449674"><span class="section-number-2">1.</span> Testing Citations</h2>
+<div id="outline-container-orgcf5e971" class="outline-2">
+<h2 id="orgcf5e971"><span class="section-number-2">1.</span> Testing Citations</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 This stackexchange <a href="https://tex.stackexchange.com/questions/114864/how-to-get-bibtex-to-work-with-org-mode-latex-export">question</a> may be useful if you have trouble getting things to work. 
@@ -281,7 +292,7 @@ I wrote a book about using computers in psychology \cite{anderson2014computation
 <div id="postamble" class="status">
 <p class="date">Date: \today</p>
 <p class="author">Author: Britt Anderson</p>
-<p class="date">Created: 2023-02-14 Tue 05:28</p>
+<p class="date">Created: 2023-04-23 Sun 11:52</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

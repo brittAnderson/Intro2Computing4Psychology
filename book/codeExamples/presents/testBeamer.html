@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-02-14 Tue 05:28 -->
+<!-- 2023-04-23 Sun 11:52 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>testBeamer</title>
@@ -193,27 +193,38 @@
     { background-color: #ffff00; color: #000000; font-weight: bold; }
   .org-svg { }
 </style>
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        displayAlign: "center",
-        displayIndent: "0em",
-
-        "HTML-CSS": { scale: 100,
-                        linebreaks: { automatic: "false" },
-                        webFont: "TeX"
-                       },
-        SVG: {scale: 100,
-              linebreaks: { automatic: "false" },
-              font: "TeX"},
-        NativeMML: {scale: 100},
-        TeX: { equationNumbers: {autoNumber: "AMS"},
-               MultLineWidth: "85%",
-               TagSide: "right",
-               TagIndent: ".8em"
-             }
-});
+<script>
+  window.MathJax = {
+    tex: {
+      ams: {
+        multlineWidth: '85%'
+      },
+      tags: 'ams',
+      tagSide: 'right',
+      tagIndent: '.8em'
+    },
+    chtml: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    svg: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    output: {
+      font: 'mathjax-modern',
+      displayOverflow: 'overflow'
+    }
+  };
 </script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
+
+<script
+  id="MathJax-script"
+  async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
 </head>
 <body>
 <div id="content" class="content">
@@ -222,24 +233,24 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org6bf9f35">1. This is the title of my slide show</a>
+<li><a href="#orge6a880c">1. This is the title of my slide show</a>
 <ul>
-<li><a href="#org0ae42ee">1.1. This is a slide</a></li>
-<li><a href="#org42498c7">1.2. Another side with some math</a></li>
-<li><a href="#org1d9d153">1.3. Let's look at some code</a></li>
-<li><a href="#org05ec295">1.4. Including a plot</a></li>
+<li><a href="#orgd1d2184">1.1. This is a slide</a></li>
+<li><a href="#org0501f9e">1.2. Another side with some math</a></li>
+<li><a href="#org66aeb98">1.3. Let's look at some code</a></li>
+<li><a href="#orgf7fbbbf">1.4. Including a plot</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org6bf9f35" class="outline-2">
-<h2 id="org6bf9f35"><span class="section-number-2">1.</span> This is the title of my slide show</h2>
+<div id="outline-container-orge6a880c" class="outline-2">
+<h2 id="orge6a880c"><span class="section-number-2">1.</span> This is the title of my slide show</h2>
 <div class="outline-text-2" id="text-1">
 </div>
-<div id="outline-container-org0ae42ee" class="outline-3">
-<h3 id="org0ae42ee"><span class="section-number-3">1.1.</span> This is a slide</h3>
+<div id="outline-container-orgd1d2184" class="outline-3">
+<h3 id="orgd1d2184"><span class="section-number-3">1.1.</span> This is a slide</h3>
 <div class="outline-text-3" id="text-1-1">
 <p>
 Here is some important text.
@@ -247,8 +258,8 @@ Here is some important text.
 </div>
 </div>
 
-<div id="outline-container-org42498c7" class="outline-3">
-<h3 id="org42498c7"><span class="section-number-3">1.2.</span> Another side with some math</h3>
+<div id="outline-container-org0501f9e" class="outline-3">
+<h3 id="org0501f9e"><span class="section-number-3">1.2.</span> Another side with some math</h3>
 <div class="outline-text-3" id="text-1-2">
 <p>
 \(\Sigma_{i=1}^n i\)
@@ -257,8 +268,8 @@ Here is some important text.
 </div>
 
 
-<div id="outline-container-org1d9d153" class="outline-3">
-<h3 id="org1d9d153"><span class="section-number-3">1.3.</span> Let's look at some code</h3>
+<div id="outline-container-org66aeb98" class="outline-3">
+<h3 id="org66aeb98"><span class="section-number-3">1.3.</span> Let's look at some code</h3>
 <div class="outline-text-3" id="text-1-3">
 <p>
 What is the correlation between height and weight in women? We can use the built in dataset <code>women</code> in R.
@@ -275,8 +286,8 @@ What is the correlation between height and weight in women? We can use the built
 </div>
 </div>
 
-<div id="outline-container-org05ec295" class="outline-3">
-<h3 id="org05ec295"><span class="section-number-3">1.4.</span> Including a plot</h3>
+<div id="outline-container-orgf7fbbbf" class="outline-3">
+<h3 id="orgf7fbbbf"><span class="section-number-3">1.4.</span> Including a plot</h3>
 <div class="outline-text-3" id="text-1-4">
 <div class="org-src-container">
 <pre class="src src-R">print(with(women,plot(height,weight)))
@@ -289,7 +300,7 @@ What is the correlation between height and weight in women? We can use the built
 <div id="postamble" class="status">
 <p class="date">Date: <span class="timestamp-wrapper"><span class="timestamp">&lt;2019-12-03 Tue&gt;</span></span> \today</p>
 <p class="author">Author: Britt Anderson</p>
-<p class="date">Created: 2023-02-14 Tue 05:28</p>
+<p class="date">Created: 2023-04-23 Sun 11:52</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

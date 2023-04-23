@@ -1,0 +1,596 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2023-04-23 Sun 11:52 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Programming Psychology Experiments</title>
+<meta name="author" content="Britt Anderson" />
+<meta name="generator" content="Org Mode" />
+<style>
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { }
+</style>
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">Programming Psychology Experiments</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org65c1bfc">1. Programming Psychology Experiments in Python</a>
+<ul>
+<li><a href="#org547aec1">1.1. Why Program Your Psychology Experiment</a></li>
+<li><a href="#org2029702">1.2. Which language?</a>
+<ul>
+<li><a href="#orge916c37">1.2.1. Python</a></li>
+<li><a href="#org1f9556c">1.2.2. What about Javascript?</a></li>
+</ul>
+</li>
+<li><a href="#org33c3a9d">1.3. Programming Psychology Experiments With PsychoPy</a>
+<ul>
+<li><a href="#org085e6fb">1.3.1. Installing Psychopy</a></li>
+</ul>
+</li>
+<li><a href="#org2d9b0b5">1.4. What is <code>pip</code>?</a>
+<ul>
+<li><a href="#orgc0c9308">1.4.1. Testing Your PsychoPy Installation</a></li>
+<li><a href="#org948498d">1.4.2. Resources for Psychopy.</a></li>
+<li><a href="#org99326b7">1.4.3. Psychopy Exercise</a></li>
+<li><a href="#org5d9039b">1.4.4. Extending the Exercise</a></li>
+<li><a href="#orga3746cb">1.4.5. Simple Tutorials from Psychopy</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org43f6387">2. Assessement Psychopy</a>
+<ul>
+<li><a href="#org3f4b370">2.1. Task</a></li>
+<li><a href="#orgd98fa54">2.2. Objective</a></li>
+<li><a href="#org36e3095">2.3. Detailed Instructions</a></li>
+<li><a href="#orga5cf004">2.4. Hints</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+
+<div id="outline-container-org65c1bfc" class="outline-2">
+<h2 id="org65c1bfc"><span class="section-number-2">1.</span> Programming Psychology Experiments in Python</h2>
+<div class="outline-text-2" id="text-1">
+</div>
+<div id="outline-container-org547aec1" class="outline-3">
+<h3 id="org547aec1"><span class="section-number-3">1.1.</span> Why Program Your Psychology Experiment</h3>
+<div class="outline-text-3" id="text-1-1">
+<p>
+If you use a graphical environment to design your experiment you will be limited to the potential elements and structures that were envisioned by the developers of that graphical programming environment. While this will cover many popular cases, it will probably not cover all of them. The designers of these programs spend their time thinking about the most common uses. But that means if you try to do something particularly new or novel you may spend your time trying to figure out how to shoehorn your experimental idea into the limits of a graphical design language instead of using the design elements to meet your experimental requirements. If you can write your own code you will be able to augment the code output by a graphical program. And if none of the pre-packaged experiments fit your needs you will be able to build what you need to pursue your experimental ambitions. The question then becomes what language to use for programming your own experiments?
+</p>
+
+  <div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/469970965?h=7271813760" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
+<p><a href="https://vimeo.com/469970965">La : Intro to Prog Experiments (i2c4p)</a> from <a href="https://vimeo.com/epistemic">Britt Anderson</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
+<p>Programming experiments for psychology; which language and how to use the PsychoPy library.</p>
+</div>
+</div>
+
+<div id="outline-container-org2029702" class="outline-3">
+<h3 id="org2029702"><span class="section-number-3">1.2.</span> Which language?</h3>
+<div class="outline-text-3" id="text-1-2">
+<div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/469970967?h=7611824ab1" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
+<p><a href="https://vimeo.com/469970967">Lb : Which Language Should I use? (i2c4p)</a> from <a href="https://vimeo.com/epistemic">Britt Anderson</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
+<p>Deciding to program your own experiments is the first step. Choosing the language to use is the second.</p>
+</div>
+
+<div id="outline-container-orge916c37" class="outline-4">
+<h4 id="orge916c37"><span class="section-number-4">1.2.1.</span> Python</h4>
+<div class="outline-text-4" id="text-1-2-1">
+<p>
+As we have seen python is a widely popular programming language. It has good library support for a wide range of general programming needs and it can also be used for data analysis and plotting. Thus, time spent learning to program your experiments in python will also be useful for other scientific tasks such as plotting your data or analyzing your data. In addition, non-experimental computing work you may need to do will likely also be helped by knowing more python. 
+</p>
+</div>
+<ol class="org-ol">
+<li><a id="orgac62e6f"></a>Domain support<br />
+<div class="outline-text-5" id="text-1-2-1-1">
+<p>
+While the reasons above make python a good first language to consider for any coding project the ultimate selection should consider whether there is good library support for your particular needs. In the case of psychology there is an excellent well supported library, <a href="https://www.psychopy.org">PsychoPy</a>.
+</p>
+
+<p>
+Psychopy has the ability to make deploying complex visual stimuli relatively easy, and it can also be used as the basis for scaffolding other tools such as eye trackers and EEG machines. R does not have the same level of support. Other languages that do, such as <a href="https://www.mathworks.com/products/matlab.html">MatLab</a> (with its <a href="http://psychtoolbox.org/">PsychToolbox</a>)are proprietary, and less general purpose though they are very powerful tools for modeling, simulation, and data analysis.
+</p>
+
+<p>
+While any general purpose programming language could, in principle, work for any purpose when choosing a programming language for your project consider the following:
+</p>
+<ul class="org-ul">
+<li>access
+Will you and your users have access? This might be relevant when using a language that is proprietary, has a small user base, or is difficult to install and use because of limited tooling. You might also want to try and think whether the trajectory of the language is one that leads you to believe it will be around in years to come,</li>
+<li>expertise &amp; experience
+Your project will go better if you are writing in a language you know and for which you have local sources that you can consult for advice,</li>
+<li>quality libraries
+If someone has already largely solved your problem, then don't reinvent the wheel, but use your time to develop the modifications needed to fit your specific need.</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+<div id="outline-container-org1f9556c" class="outline-4">
+<h4 id="org1f9556c"><span class="section-number-4">1.2.2.</span> What about Javascript?</h4>
+<div class="outline-text-4" id="text-1-2-2">
+<p>
+Writing in 2020 when many psychology labs are closed to in-person studies, the ability to design and deliver experiments remotely, on-line, has great appeal. <a href="https://www.javascript.com/">JavaScript</a> is the language of active elements on the web, and therefore deserves definite consideration. Javascript as a language has matured, gotten faster, and extended itself to multiple programming paradigms. There are even variants that enforce a static type system and that can let you find bugs in the compilation stage rather than at run time. <a href="https://www.typescriptlang.org/">Typescript</a> is the principle example. There are good libraries for developing psychology experiments with JavaScript as well. The people who produce PsychoPy have a graphical front-end that generates javascript output (<a href="https://github.com/psychopy/psychojs">psychojs</a>). And the closely named <a href="https://www.jspsych.org/">JSPsych</a> has great support for writing code using the traditional elements of psychology. In my lab some students prefer to write native Javascript while others find the JSPsych library to be convenient, simple, and meeting their needs.
+</p>
+
+<p>
+However, I do not recommend javascript as your first or primary programming language for two principal reasons. One, if you are a beginner, JavaScript adds another level of domain knowledge you need to know to code your experiment effectively. You have to have some familiarity with web browsers and what constitutes a web page. What is HTML and how is the web page, as a document, constructed (the DOM )? Learning all that at the same time makes for a higher hurdle. If getting your experiment up and running for on-line use is your specific need then it certainly is doable, but it makes for a harder start. Also, you won't be able to write the simple scripts and general purpose programs in javascript that you can in other languages. The expertise you develop in javascript may not transfer as directly to other languages and other types of applications. Your knowledge will be more selective, and more specific to the web. That is a large and popular area to be restricted to, but it is still narrower than I recommend for a first language.
+</p>
+
+<p>
+The second consideration concerns longevity. I read many blog posts by people who hate to program in javascript. I read very few by those who love it. It is hard enough to learn to code without adding the barrier of being forced to struggle with an unappealing language. There are active efforts to let you write in other languages that then <i>transpile</i> to javascript. As one example, <a href="https://elm-lang.org/">Elm</a> is a language that compiles to javascript, but which you write with a different language. However, <code>Elm</code> is still close enough to programming for the web that all the knowledge of HTML and DOM is still beneficial.
+</p>
+
+<p>
+Javascript and its limits have also built momentum for a successor language: <a href="https://webassembly.org/">Web Assembly</a> (aka WASM). Web Assembly may well supersede much writing in javascript (even if javascript appears in the final compiled product), and web assembly makes it easier for computer scientists to produce <span class="underline">transpilers</span>: tools that allow you to code in one language and output code in another. Right now certain aspects of Python prevent easy transpilation from python to web assembly, but development is active and this may well not be the case in the near future. Thus, your expertise in python would allow you to work on general programs and may well allow you to code for the web more easily in the future. Therefore, I feel the first, best choice, for learning to code experiments for psychology right now is Python.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org33c3a9d" class="outline-3">
+<h3 id="org33c3a9d"><span class="section-number-3">1.3.</span> Programming Psychology Experiments With PsychoPy</h3>
+<div class="outline-text-3" id="text-1-3">
+<p>
+Before we can use the psychopy library we have to install it. This used to be a big hurdle, but lately it has become much easier. 
+</p>
+</div>
+
+<div id="outline-container-org085e6fb" class="outline-4">
+<h4 id="org085e6fb"><span class="section-number-4">1.3.1.</span> Installing Psychopy</h4>
+<div class="outline-text-4" id="text-1-3-1">
+</div>
+<ol class="org-ol">
+<li><a id="org3c53206"></a><b>Important Message</b> Spring 2023 <i>Please read if you are using a VM</i><br />
+<div class="outline-text-5" id="text-1-3-1-1">
+<p>
+The world of computing changes quickly. In March of 2023 I tried to install Psychopy's latest version in a Ubuntu 22.04 VM running on an M2 Mac and also on a Windows 11 VM. In both cases I was not able to get it working without important errors. This does not mean that it cannot be done, it just means that it would require considerably more work than we have time for, and would require digging into details that may not transfer to future use cases. Even if you figured it out it will probably be different a year from now. Some of the challenge is running everything in a VM which puts one more level of indirection between us and our program. So, for now, Spring 2023 if you are a VM you will want to install the "standalone" version. The following video shows me doing this on a Mac, but the process is similar on a Windows machine. Note that you still <b>cannot</b> use the builder for your homework or for building your experiment to run in class.
+</p>
+
+<div style="padding:65.03% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/810622435?h=45aa642eb0" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
+<p><a href="https://vimeo.com/810622435">Getting Psychopy on the New Macs (M!/2)</a> from <a href="https://vimeo.com/epistemic">Britt Anderson</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
+<p>What you can do if you need Psychopy on an M1/2 Mac (applicable to running a VM on Windows 11 as well)</p>
+</div>
+</li>
+
+<li><a id="org56af864"></a>Non-VM Installation<br />
+<div class="outline-text-5" id="text-1-3-1-2">
+<div style="padding:56.39% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/460262765?h=9964ab1ae4" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
+<p><a href="https://vimeo.com/460262765">Lc : Installing Psychopy (i2c4p)</a> from <a href="https://vimeo.com/epistemic">Britt Anderson</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
+<p>How do you install psychopy on Xubuntu, and how can you see if you have a functioning installation?</p>
+
+<p>
+Instructions for installation of PsychoPy can be found via the <a href="https://www.psychopy.org/index.html">home page</a>.
+</p>
+
+<p>
+Given the difficulties with VM installation I verified (2023) that Psychopy does install quite easily on a machine running Linux if it isn't also running Windows or OSX. The instructions are basically as above, but may involve one or two small tweaks as shown in the video below. Note that this video was made on a decades old laptop so that the video quality and audio quality are not great.
+</p>
+
+<div style="padding:56.34% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/811064510?h=bb3c4ae6d2" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
+<p><a href="https://vimeo.com/811064510">Psychopy and Linux 2023</a> from <a href="https://vimeo.com/epistemic">Britt Anderson</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
+<p>Verifying an installation of Psychopy on Xubuntu 22.04, and a couple of tiny tweaks, in 2023.</p>
+
+<p>
+Basically we can use `pip` to grab and install almost all the elements we need. First verify you have pip installed <code>pip --version</code> from the command line of a terminal will suffice. Then you can use it to grab psychopy and <i>almost</i> all of its dependencies. There are a lot of them and this process will take some time. Be patient.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-sh">pip install psychopy
+</pre>
+</div>
+
+<p>
+Note the instructions about getting a wx wheel. <a href="https://wxpython.org/">WX</a> is a graphical user interface toolkit that psychopy uses for some elements. Psychopy recommends getting the wx kit you need (for us at this time it is ubuntu 20.04) from <a href="https://extras.wxpython.org/wxPython4/extras/linux/gtk3/">here.</a> After you have downloaded and expanded that directory you will need to repeat the <code>pip</code> command, but be careful. Here you are installing a particular version and file. You need to follow your <code>pip install</code> command with the path that leads to the specific .whl file you just downloaded.
+</p>
+
+<p>
+Everything may run at this point, but to get the best support for precise timing and sound the PsychoPy developers currently recommend installing some libraries from the Ubuntu repositories using your <code>apt</code> skills (<code>apt-get</code> is a bit like <code>apt</code> and was the forerunner - you can just use <code>apt</code> in its place).
+</p>
+
+
+<div class="org-src-container">
+<pre class="src src-sh">sudo apt-get install libusb-1.0-0-dev portaudio19-dev libasound2-dev
+</pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-org2d9b0b5" class="outline-3">
+<h3 id="org2d9b0b5"><span class="section-number-3">1.4.</span> What is <code>pip</code>?</h3>
+<div class="outline-text-3" id="text-1-4">
+<p>
+<code>pip</code> is a program for installing python packages. The python package installation procedure is a long, varied, and ever changing one, but for right now <code>pip</code> is an excellent choice that gets packages from a curated and vetted source. You can read more about it <a href="https://www.w3schools.com/python/python_pip.asp">here</a> and <a href="https://realpython.com/what-is-pip/">here</a>.
+</p>
+</div>
+<div id="outline-container-orgc0c9308" class="outline-4">
+<h4 id="orgc0c9308"><span class="section-number-4">1.4.1.</span> Testing Your PsychoPy Installation</h4>
+<div class="outline-text-4" id="text-1-4-1">
+</div>
+<ol class="org-ol">
+<li><a id="org619b30d"></a>Use the Psychopy Demos<br />
+<div class="outline-text-5" id="text-1-4-1-1">
+<p>
+Purpose: Demonstrate that you have psychopy installed and functioning
+</p>
+
+<p>
+If you have psychopy correctly installed you should be able to run some of the demo programs to learn about its capabilities.
+</p>
+
+<p>
+First, navigate to where the package is installed. Open a terminal and <code>cd</code> to the directory where the program installed. On my computer on <span class="timestamp-wrapper"><span class="timestamp">&lt;2023-03-23 Thu&gt; </span></span> this is: <code>~/.local/lib/python3.10/site-packages/psychopy/demos/coder/stimuli/</code>
+</p>
+
+<p>
+<b>Note</b> that that line contains a python version number. If you have a different version of python you will probably need to edit that line to use the correct python version for your machine.
+</p>
+
+<p>
+If you run <code>ls</code> in this directory you will see all the demos. Run one. I particularily like     <code>python3 face_jpg.py</code>. If that works try some more, then &#x2026;
+</p>
+</div>
+</li>
+<li><a id="org0cf6375"></a>Activity<br />
+<div class="outline-text-5" id="text-1-4-1-2">
+<p>
+&#x2026; change something.
+</p>
+
+<p>
+Open up one of the file in Emacs (or another text editor) and look at the python code. Try changing something and then running your new version.
+</p>
+</div>
+<ol class="org-ol">
+<li><a id="orgf449088"></a>Tips<br />
+<div class="outline-text-6" id="text-1-4-1-2-1">
+<ol class="org-ol">
+<li>Don't directly edit the working file. Create a copy and edit that. That way if you mess something up you still have the original.</li>
+<li>Start small. Change the window size for example or try to see if you can change the background color.</li>
+<li>The <b>API</b> is your friend.
+API stands for application program (or programmer) interface. It is your guide to what each function is, what it does, what it expects, and what, if anything, it outputs. The API for psychopy is <a href="https://www.psychopy.org/api/index.html">here.</a> But every significant library will have something like this.</li>
+</ol>
+
+<p>
+Moral: Never hesitate to look at the source code!	
+</p>
+</div>
+</li>
+</ol>
+</li>
+</ol>
+</div>
+
+<div id="outline-container-org948498d" class="outline-4">
+<h4 id="org948498d"><span class="section-number-4">1.4.2.</span> Resources for Psychopy.</h4>
+<div class="outline-text-4" id="text-1-4-2">
+<ol class="org-ol">
+<li>The authors of the Psychopy library have written an entire <a href="https://us.sagepub.com/en-us/nam/building-experiments-in-psychopy/book253480#contents">textbook</a> on using python for psychology experiments that includes the online extensions. That is a good resource to pursue things after this course. It is focused more on the <i>builder</i> interface than the <i>coder</i> interface.</li>
+<li>On the psychopy website is an <a href="https://www.psychopy.org/coder/index.html#coder">introduction</a> to using the coder component of psychopy.</li>
+<li>Searching online with <code>psychopy tutorial</code> will get you a variety of hits. Note that you want to emphasize the <code>coder</code> version. Maybe the <code>builder</code> will meet your needs, but better to start with the <code>coder</code> version and use the <code>builder</code> for efficiency. In many cases it will be harder to build a complex experiment in the <code>builder</code> than by directly using the <code>coder</code> version.</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-org99326b7" class="outline-4">
+<h4 id="org99326b7"><span class="section-number-4">1.4.3.</span> Psychopy Exercise</h4>
+<div class="outline-text-4" id="text-1-4-3">
+<p>
+This exercise is intended to give you a minimalist introduction to using the most basic elements of the psychopy library. The large <code>psychopy</code> package has several submodules. You can import them selectively, and then you don't have quite as much "bloat." That is what is going in the line that starts "from" below.
+From there, have fun!
+</p>
+
+<ol class="org-ol">
+<li>Open up a terminal.</li>
+<li>Begin a python session</li>
+<li><code>from psychopy import visual,core</code></li>
+<li>Create a window
+<code>mywin = visual.Window(size = (640,480))</code></li>
+<li>Test it
+<code>mywin.flip()</code></li>
+<li>Why is it called <i>flip</i>?</li>
+<li>Add a red rectangle.
+<code>myrect = visual.Rect(mywin, linewidth = 0, fillcolor = "red", size = [.2,.2],pos=[0,0],units="norm")</code></li>
+<li>Draw it
+<code>myrect.draw()</code></li>
+<li>Show it
+<code>mywin.flip()</code></li>
+<li>Clean up and shut down in an orderly way
+<code>core.quit()</code></li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-org5d9039b" class="outline-4">
+<h4 id="org5d9039b"><span class="section-number-4">1.4.4.</span> Extending the Exercise</h4>
+<div class="outline-text-4" id="text-1-4-4">
+<p>
+To do this you will probably need to consult the <a href="https://www.psychopy.org/api/index.html">psychopy API.</a>
+Can you?
+</p>
+<ol class="org-ol">
+<li>Change the color of the square.</li>
+<li>Move the Square.</li>
+<li>Add some text</li>
+<li>Keep the window open for a certain amount of time, and then close it when that time has elapsed.</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-orga3746cb" class="outline-4">
+<h4 id="orga3746cb"><span class="section-number-4">1.4.5.</span> Simple Tutorials from Psychopy</h4>
+<div class="outline-text-4" id="text-1-4-5">
+<ol class="org-ol">
+<li><a href="https://www.psychopy.org/coder/tutorial1.html">Here</a> is the first</li>
+<li><a href="https://www.psychopy.org/coder/tutorial2.html">A formula for JND</a></li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-org43f6387" class="outline-2">
+<h2 id="org43f6387"><span class="section-number-2">2.</span> Assessement Psychopy</h2>
+<div class="outline-text-2" id="text-2">
+<div style="padding:56.39% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/460262765?h=9964ab1ae4" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
+<p><a href="https://vimeo.com/460262765">Lc : Installing Psychopy (i2c4p)</a> from <a href="https://vimeo.com/epistemic">Britt Anderson</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
+<p>How do you install psychopy on Xubuntu, and how can you see if you have a functioning installation?</p>
+</div>
+
+<div id="outline-container-org3f4b370" class="outline-3">
+<h3 id="org3f4b370"><span class="section-number-3">2.1.</span> Task</h3>
+<div class="outline-text-3" id="text-2-1">
+<p>
+Submit a .py file that demonstrates a minimal version of a single trial of a Posner cuing task.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgd98fa54" class="outline-3">
+<h3 id="orgd98fa54"><span class="section-number-3">2.2.</span> Objective</h3>
+<div class="outline-text-3" id="text-2-2">
+<p>
+To familiarize yourself with the basic elements of the psychopy library and how to combine a few of them into something that could become a psychology experiment. We will use the <a href="https://en.wikipedia.org/wiki/Posner_cueing_task">Posner Cuing</a> task for this project.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org36e3095" class="outline-3">
+<h3 id="org36e3095"><span class="section-number-3">2.3.</span> Detailed Instructions</h3>
+<div class="outline-text-3" id="text-2-3">
+<p>
+Provide me with a python file that,
+</p>
+<ol class="org-ol">
+<li>Imports the psychopy library elements (and any other necessary libraries) in order to,</li>
+<li>Places a white cross (or plus sign) at the center of the screen. Make the cross white and the background gray. Imagine the cross is to be our "fixation spot."</li>
+<li>After a delay a white square appears to the right or left of fixation (the side to be chose randomly on each trial).</li>
+<li>200 ms after the white square appears a black dot (or filled circle) appears either in the center of the white square or equidistant on the other side. The first if a "valid" cue condition, and the second is "invalid."</li>
+<li>Require the user/participant to press the z button on the keyboard if the target (black dot) is on the left and the "/" key if the target is on the right.</li>
+<li>After the keypress print to the screen which key was pressed and how much time elapsed between the appearance of the black dot and the key press. This is your reaction time (RT).</li>
+<li><span class="underline">Optional</span> if that comes very quickly make a loop to do this ten times and write the results to a file rather than putting them on the screen.</li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-orga5cf004" class="outline-3">
+<h3 id="orga5cf004"><span class="section-number-3">2.4.</span> Hints</h3>
+<div class="outline-text-3" id="text-2-4">
+<p>
+The following psychopy objects may be useful.
+</p>
+<ol class="org-ol">
+<li>Visual.window</li>
+<li>Visual.TextStim</li>
+<li>Visual.ShapeStim or Visual.Circle</li>
+<li>Core.Quit</li>
+<li>Clock.Clock</li>
+<li>Clock.getTime</li>
+<li>Clock.wait</li>
+<li>Event.getKeys</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">Date: 2023-02-14 Tue 00:00</p>
+<p class="author">Author: Britt Anderson</p>
+<p class="date">Created: 2023-04-23 Sun 11:52</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

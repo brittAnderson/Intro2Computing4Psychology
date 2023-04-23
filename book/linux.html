@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-03-23 Thu 08:46 -->
+<!-- 2023-04-23 Sun 11:52 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Linux</title>
@@ -201,39 +201,39 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org245fecd">0.1. Goals and Objectives</a></li>
-<li><a href="#orgde72220">0.2. Installing Linux to Your Own Computer</a>
+<li><a href="#org662d45a">0.1. Goals and Objectives</a></li>
+<li><a href="#org779d1d0">0.2. Installing Linux to Your Own Computer</a>
 <ul>
-<li><a href="#orgc27b12b">0.2.1. Linux Only</a></li>
-<li><a href="#org153e74b">0.2.2. Dual Boot</a></li>
-<li><a href="#orgdb04f15">0.2.3. Run from a USB (or SD card or external hard drive) <b>DEPRECATED</b></a></li>
-<li><a href="#orga6d8a72">0.2.4. Install Linux As A Virtual Machine</a></li>
+<li><a href="#orgf5cb3ad">0.2.1. Linux Only</a></li>
+<li><a href="#org9aec300">0.2.2. Dual Boot</a></li>
+<li><a href="#org4d31f71">0.2.3. Run from a USB (or SD card or external hard drive) <b>DEPRECATED</b></a></li>
+<li><a href="#orgf0ab17b">0.2.4. Install Linux As A Virtual Machine</a></li>
 </ul>
 </li>
-<li><a href="#org62d21d8">0.3. Xubuntu Walkthrough</a></li>
-<li><a href="#orgb16c4a8">0.4. Package Management</a></li>
+<li><a href="#org8f2750a">0.3. Xubuntu Walkthrough</a></li>
+<li><a href="#orgc1d511c">0.4. Package Management</a></li>
 </ul>
 </li>
-<li><a href="#orgf750e6d">1. Assessments</a>
+<li><a href="#org9881662">1. Assessments</a>
 <ul>
-<li><a href="#org64761dc">1.1. Installing Linux</a>
+<li><a href="#orgf32dcaa">1.1. Installing Linux</a>
 <ul>
-<li><a href="#org39015d6">1.1.1. Comments</a></li>
+<li><a href="#org6e50ea4">1.1.1. Comments</a></li>
 </ul>
 </li>
-<li><a href="#orgf013561">1.2. Install Emacs Package</a>
+<li><a href="#orgb1ce7ea">1.2. Install Emacs Package</a>
 <ul>
-<li><a href="#orgf036930">1.2.1. Task</a></li>
-<li><a href="#orgf52e56f">1.2.2. Details</a></li>
-<li><a href="#orgb9a1163">1.2.3. Comments</a></li>
+<li><a href="#org13a4231">1.2.1. Task</a></li>
+<li><a href="#orgd385da1">1.2.2. Details</a></li>
+<li><a href="#org687ae4f">1.2.3. Comments</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org245fecd" class="outline-3">
-<h3 id="org245fecd"><span class="section-number-3">0.1.</span> Goals and Objectives</h3>
+<div id="outline-container-org662d45a" class="outline-3">
+<h3 id="org662d45a"><span class="section-number-3">0.1.</span> Goals and Objectives</h3>
 <div class="outline-text-3" id="text-0-1">
 <p>
 Scientific computing moves in advance of consumer adoption. To be able to take full advantage of your computer as a research tool you may need to install software or applications that require new tools or techniques or that are not <i>user friendly.</i> In fact, the main consumer operating systems: Windows and OSX may not meet your needs out-of-the-box. By installing and using Linux you will learn and practice installing software that should prepare you for the day when you need some program or some computational tool that is not available through an app store. Or when you need to figure out how to do something completely novel with your machine. 
@@ -241,8 +241,8 @@ Scientific computing moves in advance of consumer adoption. To be able to take f
 </div>
 </div>
 
-<div id="outline-container-orgde72220" class="outline-3">
-<h3 id="orgde72220"><span class="section-number-3">0.2.</span> Installing Linux to Your Own Computer</h3>
+<div id="outline-container-org779d1d0" class="outline-3">
+<h3 id="org779d1d0"><span class="section-number-3">0.2.</span> Installing Linux to Your Own Computer</h3>
 <div class="outline-text-3" id="text-0-2">
 <p>
 There are a few different methods for getting Linux to run on your computer. All of them pose challenges. Any of the are acceptable, <b>but I will recommend using a virtual machine</b> <sup><a id="fnr.1" class="footref" href="#fn.1" role="doc-backlink">1</a></sup>. The other methods are summarized here, and you are welcome to try them if you wish. They will work just fine. But they are also methods that require a bit more patience, benfit from some experience, or involve a greater risk of data loss.
@@ -253,8 +253,8 @@ I will summarize the different approaches for installing the Linux operating sys
 </p>
 </div>
 
-<div id="outline-container-orgc27b12b" class="outline-4">
-<h4 id="orgc27b12b"><span class="section-number-4">0.2.1.</span> Linux Only</h4>
+<div id="outline-container-orgf5cb3ad" class="outline-4">
+<h4 id="orgf5cb3ad"><span class="section-number-4">0.2.1.</span> Linux Only</h4>
 <div class="outline-text-4" id="text-0-2-1">
 <p>
 When you do this you will irrevocably erase everything on your computer's hard disk and you will <b>only</b> have linux. This is the easiest method <b>if</b> you have a laptop accessible that you do not need for another purpose. With all the computers we have all bought over the years this is not so far fetched. Even a ten year old laptop will probably be just fine.  One of the computers I used to develop this course dates from 2011 (Lenovo X220T).
@@ -262,8 +262,8 @@ When you do this you will irrevocably erase everything on your computer's hard d
 </div>
 </div>
 
-<div id="outline-container-org153e74b" class="outline-4">
-<h4 id="org153e74b"><span class="section-number-4">0.2.2.</span> Dual Boot</h4>
+<div id="outline-container-org9aec300" class="outline-4">
+<h4 id="org9aec300"><span class="section-number-4">0.2.2.</span> Dual Boot</h4>
 <div class="outline-text-4" id="text-0-2-2">
 <p>
 With this set up you have more than one operating system. You can use your usual Windows or Mac operating system, but you can also opt to use the Linux system you installed.
@@ -284,8 +284,8 @@ Contact me if you want to try this method and I will point you to some example i
 </div>
 </div>
 
-<div id="outline-container-orgdb04f15" class="outline-4">
-<h4 id="orgdb04f15"><span class="section-number-4">0.2.3.</span> Run from a USB (or SD card or external hard drive) <b>DEPRECATED</b></h4>
+<div id="outline-container-org4d31f71" class="outline-4">
+<h4 id="org4d31f71"><span class="section-number-4">0.2.3.</span> Run from a USB (or SD card or external hard drive) <b>DEPRECATED</b></h4>
 <div class="outline-text-4" id="text-0-2-3">
 <p>
 This is the method that does the least to your laptop and so there is the least risk of data loss. It is also the <b>hardest</b>, most technically demanding, and has the highest concentration of black magic (where you will be typing incantations you don't understand just to make things work). Thus I call this method "deprecated." If you are adventurous, have some spare time, or just curious feel free to give it a go, but for most of you I think the Virtual Machine method will be just as safe and technically easier.
@@ -301,8 +301,8 @@ If you want to try this method you will want a new USB, and you should ask me to
 </div>
 </div>
 
-<div id="outline-container-orga6d8a72" class="outline-4">
-<h4 id="orga6d8a72"><span class="section-number-4">0.2.4.</span> Install Linux As A Virtual Machine</h4>
+<div id="outline-container-orgf0ab17b" class="outline-4">
+<h4 id="orgf0ab17b"><span class="section-number-4">0.2.4.</span> Install Linux As A Virtual Machine</h4>
 <div class="outline-text-4" id="text-0-2-4">
 <p>
 This is the  method I prefer as of Spring 2023. There are a number of videos for Mac and Windows users on how to do this on the Internet. Pay careful attention to the dates. Things are changing rapidly in this space and what worked even just last year may not work well now. Note <b>the rules are different depending on whether you are using an M1/M2 mac or an Intel mac</b> or a Window machine. Don't know which you have? Well, find out. A good workman knows their tools.
@@ -314,7 +314,7 @@ This is the  method I prefer as of Spring 2023. There are a number of videos for
 </div>
 
 <ol class="org-ol">
-<li><a id="org1b39c73"></a>Windows<br />
+<li><a id="org7bc7b25"></a>Windows<br />
 <div class="outline-text-5" id="text-0-2-4-1">
 <p>
 In order to use a virtual machine on Windows you need to make sure that the BIOS permits virtualization. Your BIOS is the basic input output system that starts up even before your operating system starts to tell your computer where to find essential start up files and to make sure that the hardware is set up to correctly use and communicate with the available software. Getting to the BIOS is generally unique to your laptop's make and model and you will have to look up how to enter the BIOS for your laptop yourself. Sometimes the default settings for Windows machines can obstruct your ability to do this. You may need to turn of Smart Boot and Quick Boot features. But try first without fiddling with those settings. 
@@ -343,7 +343,7 @@ After that you should install Ubuntu (or Xubuntu). These are two different versi
 </li>
 
 
-<li><a id="org7e99e90"></a>MAC OSX (INTEL)<br />
+<li><a id="org28ad463"></a>MAC OSX (INTEL)<br />
 <div class="outline-text-5" id="text-0-2-4-2">
 <p>
 For Macintosh computer/laptops with intel based chips we can use a virtual machine software called virtual box. It is like the hypervisor described above for Windows. It is free and open and is a good choice. 
@@ -376,7 +376,7 @@ And as our final step in the process will install our linux operating system to 
 </li>
 
 
-<li><a id="orge91701e"></a>MAC OSX (ARM, ie M1 or M2)<br />
+<li><a id="org4f6b6ca"></a>MAC OSX (ARM, ie M1 or M2)<br />
 <div class="outline-text-5" id="text-0-2-4-3">
 <p>
 In some ways the newer macs make things harder, in others easier. You will have many less options to get a VM going and fewer choices, at this time, for linux versions, but the method for getting a Ubuntu VM installed is quite slick, and simpler than the Intel mac.
@@ -394,8 +394,8 @@ In some ways the newer macs make things harder, in others easier. You will have 
 </div>
 </div>
 
-<div id="outline-container-org62d21d8" class="outline-3">
-<h3 id="org62d21d8"><span class="section-number-3">0.3.</span> Xubuntu Walkthrough</h3>
+<div id="outline-container-org8f2750a" class="outline-3">
+<h3 id="org8f2750a"><span class="section-number-3">0.3.</span> Xubuntu Walkthrough</h3>
 <div class="outline-text-3" id="text-0-3">
 <p>
 When you start up your Linux desktop for the first time you may wonder what to do to get started. In the following video I show you a basic walkthrough of a first boot and I demo this on Xubuntu. The steps are similar for Ubuntu. In addition, you will hear me mention starting from a USB. This video was made when I was using that method, but you can just ignore the USB talk. It will be basically the same once you have started U(Xu)buntu on your VM. 
@@ -413,8 +413,8 @@ Next I illustrate updating all the software to the latest and greatest using ter
 </div>
 </div>
 
-<div id="outline-container-orgb16c4a8" class="outline-3">
-<h3 id="orgb16c4a8"><span class="section-number-3">0.4.</span> Package Management</h3>
+<div id="outline-container-orgc1d511c" class="outline-3">
+<h3 id="orgc1d511c"><span class="section-number-3">0.4.</span> Package Management</h3>
 <div class="outline-text-3" id="text-0-4">
 <p>
 Any particular program that you want to run in modern times probably requires several other pieces of software to be available on your computer. Thus, to install a program you usually have to install a <i>package</i>, which is that collection of pieces of code and their <i>dependencies</i>: the things they depend on to work. Of course, those dependencies are software too and they may also have dependencies. Some software you download and run will require downloading many pieces of software. A <i>package manager</i> is a convenient tool to make this job easier. Different Linux distributions use different package managers. The terminal based package manager that we will be using in this course is <code>apt</code>. The course also makes extensive use of a text processing program called <code>emacs</code> and so we will download <code>emacs</code> as our first package. The steps for doing that are demonstrated in the following video. 
@@ -424,20 +424,20 @@ Any particular program that you want to run in modern times probably requires se
 </div>
 </div>
 
-<div id="outline-container-orgf750e6d" class="outline-2">
-<h2 id="orgf750e6d"><span class="section-number-2">1.</span> Assessments</h2>
+<div id="outline-container-org9881662" class="outline-2">
+<h2 id="org9881662"><span class="section-number-2">1.</span> Assessments</h2>
 <div class="outline-text-2" id="text-1">
 </div>
-<div id="outline-container-org64761dc" class="outline-3">
-<h3 id="org64761dc"><span class="section-number-3">1.1.</span> Installing Linux</h3>
+<div id="outline-container-orgf32dcaa" class="outline-3">
+<h3 id="orgf32dcaa"><span class="section-number-3">1.1.</span> Installing Linux</h3>
 <div class="outline-text-3" id="text-1-1">
 <p>
 Demonstrate that you have installed Ubuntu to your computer. If you are one of my uwaterloo students you will do this by uploading a screen shot of your Ubuntu desktop to the Learn Dropbox. Have something open where you can type in your name and student id so that I can verify who is who. 
 </p>
 </div>
 
-<div id="outline-container-org39015d6" class="outline-4">
-<h4 id="org39015d6"><span class="section-number-4">1.1.1.</span> Comments</h4>
+<div id="outline-container-org6e50ea4" class="outline-4">
+<h4 id="org6e50ea4"><span class="section-number-4">1.1.1.</span> Comments</h4>
 <div class="outline-text-4" id="text-1-1-1">
 <p>
 There are <a href="https://linuxconfig.org/how-to-take-a-screenshot-on-ubuntu-20-04-focal-fossa-linux">screen capture tools</a> available for your Ubuntu installation.
@@ -447,12 +447,12 @@ There are <a href="https://linuxconfig.org/how-to-take-a-screenshot-on-ubuntu-20
 </div>
 
 
-<div id="outline-container-orgf013561" class="outline-3">
-<h3 id="orgf013561"><span class="section-number-3">1.2.</span> Install Emacs Package</h3>
+<div id="outline-container-orgb1ce7ea" class="outline-3">
+<h3 id="orgb1ce7ea"><span class="section-number-3">1.2.</span> Install Emacs Package</h3>
 <div class="outline-text-3" id="text-1-2">
 </div>
-<div id="outline-container-orgf036930" class="outline-4">
-<h4 id="orgf036930"><span class="section-number-4">1.2.1.</span> Task</h4>
+<div id="outline-container-org13a4231" class="outline-4">
+<h4 id="org13a4231"><span class="section-number-4">1.2.1.</span> Task</h4>
 <div class="outline-text-4" id="text-1-2-1">
 <p>
 Demonstrate that you have a functioning Linux installation and that you can use the package management system. 
@@ -464,8 +464,8 @@ Demonstrate that you have a functioning Linux installation and that you can use 
 </div>
 </div>
 
-<div id="outline-container-orgf52e56f" class="outline-4">
-<h4 id="orgf52e56f"><span class="section-number-4">1.2.2.</span> Details</h4>
+<div id="outline-container-orgd385da1" class="outline-4">
+<h4 id="orgd385da1"><span class="section-number-4">1.2.2.</span> Details</h4>
 <div class="outline-text-4" id="text-1-2-2">
 <ol class="org-ol">
 <li>Open up a terminal. In Xubuntu go to the upper left of your desktop and click the icon. Type terminal in the search bar and select the top option.</li>
@@ -478,8 +478,8 @@ Demonstrate that you have a functioning Linux installation and that you can use 
 </div>
 </div>
 
-<div id="outline-container-orgb9a1163" class="outline-4">
-<h4 id="orgb9a1163"><span class="section-number-4">1.2.3.</span> Comments</h4>
+<div id="outline-container-org687ae4f" class="outline-4">
+<h4 id="org687ae4f"><span class="section-number-4">1.2.3.</span> Comments</h4>
 <div class="outline-text-4" id="text-1-2-3">
 <p>
 If you want to try something fun open the file back up in emacs after doing the above. Then type <code>C-c C-e h h</code>. <code>C-c</code> means typing the "Ctrl" key and the lower case "c" key simultaneously. The spaces between those instructions mean you have a sequence of four key chords to enter. If all goes well you have just created a web page of that file. You should be able to open it in your browser. To test, use the file browser in Xubuntu to navigate to the file with the name you used above, but now ending in <code>.html</code> and not the <code>.org</code> one. Double click and your web browser should open with that file displayed.
@@ -510,7 +510,7 @@ This presents problems for us when it comes to the <a href="programming-psycholo
 <div id="postamble" class="status">
 <p class="date">Date: 2023-02-06 Mon 00:00</p>
 <p class="author">Author: Britt Anderson</p>
-<p class="date">Created: 2023-03-23 Thu 08:46</p>
+<p class="date">Created: 2023-04-23 Sun 11:52</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

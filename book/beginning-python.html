@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-02-14 Tue 05:28 -->
+<!-- 2023-04-23 Sun 11:53 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Beginning Python</title>
@@ -201,62 +201,62 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org938e978">1. Overview</a></li>
-<li><a href="#org6f748f7">2. General Programming Concepts Illustrated with Python</a>
+<li><a href="#orgac25a48">1. Overview</a></li>
+<li><a href="#org471d533">2. General Programming Concepts Illustrated with Python</a>
 <ul>
-<li><a href="#org135bc59">2.1. A digression on programming (aka writing code)</a>
+<li><a href="#org1622e74">2.1. A digression on programming (aka writing code)</a>
 <ul>
-<li><a href="#org8e3d352">2.1.1. It is nothing deep: thinking before doing saves you time and improves the result.</a></li>
+<li><a href="#org7292034">2.1.1. It is nothing deep: thinking before doing saves you time and improves the result.</a></li>
 </ul>
 </li>
-<li><a href="#orgf543427">2.2. Compilation versus Interpretation</a>
+<li><a href="#orgf9a8f4d">2.2. Compilation versus Interpretation</a>
 <ul>
-<li><a href="#org50473b7">2.2.1. Interpreters</a></li>
-<li><a href="#org0e3c456">2.2.2. Compilers</a></li>
-<li><a href="#orgad8ce36">2.2.3. Which is better?</a></li>
+<li><a href="#org95f170a">2.2.1. Interpreters</a></li>
+<li><a href="#orgccc6659">2.2.2. Compilers</a></li>
+<li><a href="#org68da629">2.2.3. Which is better?</a></li>
 </ul>
 </li>
-<li><a href="#org360d10c">2.3. Coding styles</a></li>
-<li><a href="#org5c12895">2.4. Org-babel</a></li>
-<li><a href="#org40401ab">2.5. Some programming vocabulary</a>
+<li><a href="#orgf8af099">2.3. Coding styles</a></li>
+<li><a href="#orga398ee4">2.4. Org-babel</a></li>
+<li><a href="#orgd23cd00">2.5. Some programming vocabulary</a>
 <ul>
-<li><a href="#org73e7c09">2.5.1. Data often come in <b>Types</b></a></li>
-<li><a href="#orge9630de">2.5.2. Constants and Variables</a></li>
-<li><a href="#orgb84a214">2.5.3. Assignment and Equality</a></li>
-<li><a href="#org2beddaf">2.5.4. Loops</a></li>
-<li><a href="#org81575e1">2.5.5. Functions</a></li>
-<li><a href="#org5453ce3">2.5.6. Libraries</a></li>
-<li><a href="#org841dbd6">2.5.7. Programs</a></li>
-<li><a href="#org8a7e0cd">2.5.8. Debugging and Basic Working Methods</a></li>
-<li><a href="#org21f277c">2.5.9. IDEs</a></li>
+<li><a href="#org17608e2">2.5.1. Data often come in <b>Types</b></a></li>
+<li><a href="#org1ed1b2c">2.5.2. Constants and Variables</a></li>
+<li><a href="#orgdf588a8">2.5.3. Assignment and Equality</a></li>
+<li><a href="#org4fa9ae9">2.5.4. Loops</a></li>
+<li><a href="#orgfbce17b">2.5.5. Functions</a></li>
+<li><a href="#orgb3ba5f4">2.5.6. Libraries</a></li>
+<li><a href="#org1926ff8">2.5.7. Programs</a></li>
+<li><a href="#org399ca38">2.5.8. Debugging and Basic Working Methods</a></li>
+<li><a href="#org9759feb">2.5.9. IDEs</a></li>
 </ul>
 </li>
-<li><a href="#orgdfb0dde">2.6. Pip to Install Libraries and Virtual Environments</a>
+<li><a href="#orga9d081c">2.6. Pip to Install Libraries and Virtual Environments</a>
 <ul>
-<li><a href="#org01798b3">2.6.1. Pip</a></li>
-<li><a href="#orgc83d657">2.6.2. Virtual Environments</a></li>
-<li><a href="#orge1cf438">2.6.3. Beginning Python Assessment 2</a></li>
+<li><a href="#orgcad3d12">2.6.1. Pip</a></li>
+<li><a href="#org1c6537e">2.6.2. Virtual Environments</a></li>
+<li><a href="#orgbb1d443">2.6.3. Beginning Python Assessment 2</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#org3e2475e">3. Assessments</a>
+<li><a href="#orgea17ae7">3. Assessments</a>
 <ul>
-<li><a href="#orgf479126">3.1. For Loop with Python</a>
+<li><a href="#org37ffc04">3.1. For Loop with Python</a>
 <ul>
-<li><a href="#org22c6f98">3.1.1. Task</a></li>
-<li><a href="#orgd74a078">3.1.2. What it should look like</a></li>
-<li><a href="#orgb6551a9">3.1.3. Detailed Instructions</a></li>
-<li><a href="#orgd15ca97">3.1.4. Comments</a></li>
-<li><a href="#orgf768860">3.1.5. How I Will Grade</a></li>
+<li><a href="#orge0affa1">3.1.1. Task</a></li>
+<li><a href="#orgd3addd5">3.1.2. What it should look like</a></li>
+<li><a href="#org3032d6a">3.1.3. Detailed Instructions</a></li>
+<li><a href="#orgd717d0c">3.1.4. Comments</a></li>
+<li><a href="#orgc4a6202">3.1.5. How I Will Grade</a></li>
 </ul>
 </li>
-<li><a href="#org4c9b81e">3.2. Hangman in Python (starter kit)</a>
+<li><a href="#orgd97419d">3.2. Hangman in Python (starter kit)</a>
 <ul>
-<li><a href="#org24b0073">3.2.1. Words of Encouragement</a></li>
-<li><a href="#org391b289">3.2.2. Task</a></li>
-<li><a href="#org395e11e">3.2.3. Detail - tackle this in steps.</a></li>
-<li><a href="#orgb794e9d">3.2.4. Comments</a></li>
+<li><a href="#orgf6c3db4">3.2.1. Words of Encouragement</a></li>
+<li><a href="#orgee39311">3.2.2. Task</a></li>
+<li><a href="#org9d7943f">3.2.3. Detail - tackle this in steps.</a></li>
+<li><a href="#orgacaf0b7">3.2.4. Comments</a></li>
 </ul>
 </li>
 </ul>
@@ -265,8 +265,8 @@
 </div>
 </div>
 
-<div id="outline-container-org938e978" class="outline-2">
-<h2 id="org938e978"><span class="section-number-2">1.</span> Overview</h2>
+<div id="outline-container-orgac25a48" class="outline-2">
+<h2 id="orgac25a48"><span class="section-number-2">1.</span> Overview</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 What is programming, and what are some of the basics of approach and terminology? Using python as an example, basic concepts such as variables, loops, indexing and assignments are illustrated. We will also begin to examine how we can mix code with text in Emacs in preparing to generate reproducible research reports that mix code, data, text, and references. Our tool for that is called <i>org babel</i>.
@@ -274,8 +274,8 @@ What is programming, and what are some of the basics of approach and terminology
 </div>
 </div>
 
-<div id="outline-container-org6f748f7" class="outline-2">
-<h2 id="org6f748f7"><span class="section-number-2">2.</span> General Programming Concepts Illustrated with Python</h2>
+<div id="outline-container-org471d533" class="outline-2">
+<h2 id="org471d533"><span class="section-number-2">2.</span> General Programming Concepts Illustrated with Python</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 These general comments apply to more than just python. For some of the particular examples of code python is used as the example language.
@@ -286,8 +286,8 @@ These general comments apply to more than just python. For some of the particula
 </div>
 
 
-<div id="outline-container-org135bc59" class="outline-3">
-<h3 id="org135bc59"><span class="section-number-3">2.1.</span> A digression on programming (aka writing code)</h3>
+<div id="outline-container-org1622e74" class="outline-3">
+<h3 id="org1622e74"><span class="section-number-3">2.1.</span> A digression on programming (aka writing code)</h3>
 <div class="outline-text-3" id="text-2-1">
 <p>
 I write below a few thoughts about what to think about before you start typing. In the video that follows I talk about some of the terminology and lingo that is often invoked when programming.
@@ -297,8 +297,8 @@ I write below a few thoughts about what to think about before you start typing. 
 <p><a href="https://vimeo.com/458286273">Gb : Some general comments on programming (i2c4p)</a> from <a href="https://vimeo.com/epistemic">Britt Anderson</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
 <p>A few general comments on programming, which boil down to know what you want to do and how you want to do it before you starting typing your code.</p>
 </div>
-<div id="outline-container-org8e3d352" class="outline-4">
-<h4 id="org8e3d352"><span class="section-number-4">2.1.1.</span> It is nothing deep: thinking before doing saves you time and improves the result.</h4>
+<div id="outline-container-org7292034" class="outline-4">
+<h4 id="org7292034"><span class="section-number-4">2.1.1.</span> It is nothing deep: thinking before doing saves you time and improves the result.</h4>
 <div class="outline-text-4" id="text-2-1-1">
 <p>
 You are writing a recipe. Do these things to get this result. Just like cooking has a certain vocabulary you need to know to follow or write a recipe, the same is true of programming.
@@ -312,22 +312,22 @@ Just like you have to think what you want to cook before you write a recipe, and
 <a href="https://medium.com/edge-coders/the-mistakes-i-made-as-a-beginner-programmer-ac8b3e54c312">Another blog in support of this idea</a>.</li>
 <li><a href="https://www.quora.com/Should-you-always-write-pseudocode-before-real-code/answer/Bruce-Richardson-4">Sketch out how the different pieces of your plan need to go together</a>.</li>
 <li><b>Only then</b> decide on which programming language and tools best suit this purpose. Sometimes this will be biased by what you know, but often it can be driven by what <b>libraries</b> and <b>packages</b> have already been written by other that will do some or most of what you want to do.</li>
-<li>Select the tool for writing your code. Selection of an <b>ide</b> (integrated development environment) is a large <a href="#org21f277c">IDEs</a> to itself. It is more a matter of style,taste and your community than technical advantages; that is why there are so many of them. Here you will be using Emacs, but after this course most of you will probably settle on a different IDE. Shop around before you settle down.</li>
+<li>Select the tool for writing your code. Selection of an <b>ide</b> (integrated development environment) is a large <a href="#org9759feb">IDEs</a> to itself. It is more a matter of style,taste and your community than technical advantages; that is why there are so many of them. Here you will be using Emacs, but after this course most of you will probably settle on a different IDE. Shop around before you settle down.</li>
 <li><b>Only now</b> should you start typing your code.
 If you know what you want to happen, and how you want it to happen, then finding the right keyword in R or Python or most other languages is a comparatively easy task.</li>
 </ul>
 </div>
 </div>
 </div>
-<div id="outline-container-orgf543427" class="outline-3">
-<h3 id="orgf543427"><span class="section-number-3">2.2.</span> Compilation versus Interpretation</h3>
+<div id="outline-container-orgf9a8f4d" class="outline-3">
+<h3 id="orgf9a8f4d"><span class="section-number-3">2.2.</span> Compilation versus Interpretation</h3>
 <div class="outline-text-3" id="text-2-2">
 <p>
 Are you simultaneously translating a conversation or translating a book?
 </p>
 </div>
-<div id="outline-container-org50473b7" class="outline-4">
-<h4 id="org50473b7"><span class="section-number-4">2.2.1.</span> Interpreters</h4>
+<div id="outline-container-org95f170a" class="outline-4">
+<h4 id="org95f170a"><span class="section-number-4">2.2.1.</span> Interpreters</h4>
 <div class="outline-text-4" id="text-2-2-1">
 <p>
 are tools that take your code one line at a time and translate that into the language your computer speaks. It is like a simultaneous translation of a language. When you start a python or R interpreter you are asking that each line you type be immediately translated and executed.
@@ -335,16 +335,16 @@ The advantages of this are that it can lead to quicker feedback, and encourage e
 </p>
 </div>
 </div>
-<div id="outline-container-org0e3c456" class="outline-4">
-<h4 id="org0e3c456"><span class="section-number-4">2.2.2.</span> Compilers</h4>
+<div id="outline-container-orgccc6659" class="outline-4">
+<h4 id="orgccc6659"><span class="section-number-4">2.2.2.</span> Compilers</h4>
 <div class="outline-text-4" id="text-2-2-2">
 <p>
 are tools for taking an entire text of code (like a book) and translating that into machine code. Thus, compilers can exploit their knowledge of the whole document to make things run more efficiently or robustly. The advantage is you can share the result, your program or application, with a non-technical user and they can input their data or use the program via your coded interface. The downside is that development can be slower and more complex.
 </p>
 </div>
 </div>
-<div id="outline-container-orgad8ce36" class="outline-4">
-<h4 id="orgad8ce36"><span class="section-number-4">2.2.3.</span> Which is better?</h4>
+<div id="outline-container-org68da629" class="outline-4">
+<h4 id="org68da629"><span class="section-number-4">2.2.3.</span> Which is better?</h4>
 <div class="outline-text-4" id="text-2-2-3">
 <p>
 Neither. Different tasks require different tools. An R interpreter is a great way to conduct data exploration. A compiled c program might be the better way to tackle a large scale complex data analysis routine. 
@@ -359,8 +359,8 @@ Neither. Different tasks require different tools. An R interpreter is a great wa
 
 
 
-<div id="outline-container-org360d10c" class="outline-3">
-<h3 id="org360d10c"><span class="section-number-3">2.3.</span> Coding styles</h3>
+<div id="outline-container-orgf8af099" class="outline-3">
+<h3 id="orgf8af099"><span class="section-number-3">2.3.</span> Coding styles</h3>
 <div class="outline-text-3" id="text-2-3">
 <p>
 Makes your code easier to read by people using the same language.
@@ -379,8 +379,8 @@ Try to follow good programming style, and if available, language guides.
 
 
 
-<div id="outline-container-org5c12895" class="outline-3">
-<h3 id="org5c12895"><span class="section-number-3">2.4.</span> Org-babel</h3>
+<div id="outline-container-orga398ee4" class="outline-3">
+<h3 id="orga398ee4"><span class="section-number-3">2.4.</span> Org-babel</h3>
 <div class="outline-text-3" id="text-2-4">
 <p>
 For those of you who prefer video you can watch this. All the information is contained in the following text though.
@@ -412,7 +412,7 @@ We will want some basic text in our <code>init.el</code> file to make things wor
 Then you can create a source code block with
 </p>
 
-<pre class="example" id="orgae40c68">
+<pre class="example" id="orgd5b422a">
 
 #+Begin_src &lt;langname&gt; :exports code
 &lt;code here ... code here&gt;
@@ -445,10 +445,10 @@ And another code block for python
 </p>
 
 <div class="org-src-container">
-<pre class="src src-python"><span style="color: #a0522d;">myname</span> = <span style="color: #8b2252;">"britt"</span>
-<span style="color: #a0522d;">mylistname</span> = <span style="color: #483d8b;">list</span>(myname)
-<span style="color: #a020f0;">for</span> i,j <span style="color: #a020f0;">in</span> <span style="color: #483d8b;">enumerate</span>(mylistname):
-    <span style="color: #483d8b;">print</span>((i,j))
+<pre class="src src-python"><span style="color: #a0522d;">my_name</span> = <span style="color: #8b2252;">"britt"</span>
+<span style="color: #a0522d;">my_name_as_list</span> = <span style="color: #483d8b;">list</span>(my_name)
+<span style="color: #a020f0;">for</span> i, j <span style="color: #a020f0;">in</span> <span style="color: #483d8b;">enumerate</span>(my_name_as_list):
+    <span style="color: #483d8b;">print</span>((i, j))
 </pre>
 </div>
 
@@ -464,8 +464,8 @@ And another code block for python
 
 
 
-<div id="outline-container-org40401ab" class="outline-3">
-<h3 id="org40401ab"><span class="section-number-3">2.5.</span> Some programming vocabulary</h3>
+<div id="outline-container-orgd23cd00" class="outline-3">
+<h3 id="orgd23cd00"><span class="section-number-3">2.5.</span> Some programming vocabulary</h3>
 <div class="outline-text-3" id="text-2-5">
 <p>
 Many of the examples and much of the text that is written below is also reviewed in this companion video.
@@ -476,15 +476,15 @@ Many of the examples and much of the text that is written below is also reviewed
 <p>An overview of a few basic and fundamental programming terms.</p>
 </div>
 
-<div id="outline-container-org73e7c09" class="outline-4">
-<h4 id="org73e7c09"><span class="section-number-4">2.5.1.</span> Data often come in <b>Types</b></h4>
+<div id="outline-container-org17608e2" class="outline-4">
+<h4 id="org17608e2"><span class="section-number-4">2.5.1.</span> Data often come in <b>Types</b></h4>
 <div class="outline-text-4" id="text-2-5-1">
 <p>
 Some languages dynamically type whereas other statically type. Python tries to figure out whether you meant "1" to be a character or a numeral and may interpret it as either depending on context. That can make it easier for you to just get working and not worry about all the details. In a statically typed language you may have to tell your compiler or interpreter exactly how you want it to interpret a particular "1". This can make writing your code slower and more wordy, but gives you a lower risk of errors later on.
 </p>
 </div>
 <ol class="org-ol">
-<li><a id="orgc700d35"></a>Some common <a href="https://docs.python.org/3/library/stdtypes.html">types</a><br />
+<li><a id="orga6b3b86"></a>Some common <a href="https://docs.python.org/3/library/stdtypes.html">types</a><br />
 <div class="outline-text-5" id="text-2-5-1-1">
 <dl class="org-dl">
 <dt>Integers</dt><dd>1, 2, &#x2026;</dd>
@@ -504,18 +504,18 @@ Define with square brackets in python.</dd>
 </li>
 </ol>
 </div>
-<div id="outline-container-orge9630de" class="outline-4">
-<h4 id="orge9630de"><span class="section-number-4">2.5.2.</span> Constants and Variables</h4>
+<div id="outline-container-org1ed1b2c" class="outline-4">
+<h4 id="org1ed1b2c"><span class="section-number-4">2.5.2.</span> Constants and Variables</h4>
 <div class="outline-text-4" id="text-2-5-2">
 <p>
 A conceptual difference more than a implementation difference in python. Do you think the value will always be the same, like hours in the day, then it is a "constant". Do you think that the value will mutate over the course your program runs, like the time on a clock, then it is a variable. Both may be defined in python with an equal sign. Some people use the typography to distinguish the two, but note that some programming languages are case sensitive meaning <code>ONE</code> is different from <code>one</code>. 
 </p>
 
 <div class="org-src-container">
-<pre class="src src-python"><span style="color: #a0522d;">NUMDAYPERYEAR</span> = 365
-<span style="color: #a0522d;">x</span> = NUMDAYPERYEAR
-<span style="color: #a0522d;">daysThisYear</span> = x + 1
-daysThisYear
+<pre class="src src-python"><span style="color: #a0522d;">NUM_DAY_PER_YEAR</span> = 365
+<span style="color: #a0522d;">x</span> = NUM_DAY_PER_YEAR
+<span style="color: #a0522d;">days_this_year</span> = x + 1
+days_this_year
 </pre>
 </div>
 
@@ -537,8 +537,8 @@ Here we treat the number of days in a regular year as a constant while allowing 
 </p>
 </div>
 </div>
-<div id="outline-container-orgb84a214" class="outline-4">
-<h4 id="orgb84a214"><span class="section-number-4">2.5.3.</span> Assignment and Equality</h4>
+<div id="outline-container-orgdf588a8" class="outline-4">
+<h4 id="orgdf588a8"><span class="section-number-4">2.5.3.</span> Assignment and Equality</h4>
 <div class="outline-text-4" id="text-2-5-3">
 <p>
 <code>=</code> is different from <code>==</code>
@@ -555,39 +555,39 @@ False
 </pre>
 </div>
 </div>
-<div id="outline-container-org2beddaf" class="outline-4">
-<h4 id="org2beddaf"><span class="section-number-4">2.5.4.</span> Loops</h4>
+<div id="outline-container-org4fa9ae9" class="outline-4">
+<h4 id="org4fa9ae9"><span class="section-number-4">2.5.4.</span> Loops</h4>
 <div class="outline-text-4" id="text-2-5-4">
 <p>
 We saw a quick demonstration of this above. The intuition remains that of a recipe: "stir egg whites until peaked" or "simmer for 30 minutes".
 </p>
 </div>
 <ol class="org-ol">
-<li><a id="org051e8bb"></a>For Loop<br />
+<li><a id="org4c7855e"></a>For Loop<br />
 <div class="outline-text-5" id="text-2-5-4-1">
 <p>
 Python refers to things called "iterables." To iterate is another way of saying something you can keep doing the same thing over and over to. Imagine a bowl of ice cream. It is "eatable". You take one spoon, and keep taking spoonfuls until the bowl is empty. 
 </p>
 </div>
 <ol class="org-ol">
-<li><a id="org77d77a3"></a>Indexing<br />
+<li><a id="orgabfad06"></a>Indexing<br />
 <div class="outline-text-6" id="text-2-5-4-1-1">
 <p>
 You can get the location of an element in a list by referring to its <i>index</i>. Think of the row or column number in a spread sheet program, but indexes can be more powerful, and can be nested easily. In many programming languages, but sadly not all, indexes start at 0. Different programming languages will have slightly different syntax. 
 </p>
 <div class="org-src-container">
-<pre class="src src-python" id="org7831d4f"><span style="color: #a0522d;">nameDict</span> = {<span style="color: #8b2252;">'firstName'</span> : <span style="color: #8b2252;">'Britt'</span>, <span style="color: #8b2252;">'lastName'</span> : <span style="color: #8b2252;">'Anderson'</span>}
-<span style="color: #a0522d;">mylist</span> = <span style="color: #483d8b;">list</span>(<span style="color: #483d8b;">range</span>(1,10))
+<pre class="src src-python" id="orgd728dde"><span style="color: #a0522d;">name_dict</span> = {<span style="color: #8b2252;">'firstName'</span> : <span style="color: #8b2252;">'Britt'</span>, <span style="color: #8b2252;">'lastName'</span> : <span style="color: #8b2252;">'Anderson'</span>}
+<span style="color: #a0522d;">my_list</span> = <span style="color: #483d8b;">list</span>(<span style="color: #483d8b;">range</span>(1, 10))
 
-<span style="color: #483d8b;">print</span>(nameDict[<span style="color: #8b2252;">'firstName'</span>])
+<span style="color: #483d8b;">print</span>(name_dict[<span style="color: #8b2252;">'firstName'</span>])
 
-<span style="color: #483d8b;">print</span>(mylist)
+<span style="color: #483d8b;">print</span>(my_list)
 
-<span style="color: #483d8b;">print</span>(mylist[0])
+<span style="color: #483d8b;">print</span>(my_list[0])
 
-<span style="color: #483d8b;">print</span>(mylist[-1])
+<span style="color: #483d8b;">print</span>(my_list[-1])
 
-<span style="color: #483d8b;">print</span>(mylist[0:4])
+<span style="color: #483d8b;">print</span>(my_list[0:4])
 </pre>
 </div>
 
@@ -605,16 +605,16 @@ The use of the <code>-1</code> as an index is a python trick for getting the las
 </p>
 
 <div class="org-src-container">
-<pre class="src src-python" id="org53ff477"><span style="color: #a020f0;">for</span> ml <span style="color: #a020f0;">in</span> mylist:
+<pre class="src src-python" id="org8f300f6"><span style="color: #a020f0;">for</span> ml <span style="color: #a020f0;">in</span> my_list:
     <span style="color: #483d8b;">print</span>(ml)
 
 
-<span style="color: #a020f0;">for</span> i,ml <span style="color: #a020f0;">in</span> <span style="color: #483d8b;">enumerate</span>(mylist):
-    <span style="color: #483d8b;">print</span>(<span style="color: #8b2252;">"The {0}th element was {1}"</span>.<span style="color: #483d8b;">format</span>(i,ml))
+<span style="color: #a020f0;">for</span> i, ml <span style="color: #a020f0;">in</span> <span style="color: #483d8b;">enumerate</span>(my_list):
+    <span style="color: #483d8b;">print</span>(<span style="color: #8b2252;">"The {0}th element was {1}"</span>.<span style="color: #483d8b;">format</span>(i, ml))
 </pre>
 </div>
 
-<pre class="example" id="orgd73b7d8">
+<pre class="example" id="org7587d52">
 1
 2
 3
@@ -638,23 +638,23 @@ The 8th element was 9
 </li>
 </ol>
 </li>
-<li><a id="org1557161"></a>While Loop<br />
+<li><a id="org24c28b4"></a>While Loop<br />
 <div class="outline-text-5" id="text-2-5-4-2">
 <p>
 These are like <code>for</code> loops in that they do stuff over and over, but unlike <code>for</code> loops they do things indefinitely, until that is, you tell them to stop. How do you do that? You use a <i>predicate</i> that they test for each time through the loop.
 </p>
 </div>
 </li>
-<li><a id="orgf0bd655"></a>Conditionals<br />
+<li><a id="org69ff150"></a>Conditionals<br />
 <div class="outline-text-5" id="text-2-5-4-3">
 <p>
 This is where you test whether something is or is not <code>True</code>. Note that Python, but not all computer languages, treats 0 the same as False, and all non-zero values as True. 
 </p>
 
 <div class="org-src-container">
-<pre class="src src-python"><span style="color: #a020f0;">if</span> (2 == 3):
+<pre class="src src-python"><span style="color: #a020f0;">if</span> 2 == 3:
     <span style="color: #483d8b;">print</span>(<span style="color: #8b2252;">"Wha.....?\n\n"</span>)
-<span style="color: #a020f0;">elif</span> (3 == 2):
+<span style="color: #a020f0;">elif</span> 3 == 2:
     <span style="color: #483d8b;">print</span>(<span style="color: #8b2252;">"Now that is odd"</span>)
 <span style="color: #a020f0;">else</span>:
     <span style="color: #483d8b;">print</span>(<span style="color: #8b2252;">"2 does not equal 3."</span>)
@@ -667,13 +667,13 @@ NB: note the use of colon (:) at the end of the <code>for</code> and <code>while
 
 <div class="org-src-container">
 <pre class="src src-python"><span style="color: #a0522d;">i</span> = 0
-<span style="color: #a020f0;">while</span> (i&lt;=10):
+<span style="color: #a020f0;">while</span> i &lt;= 10:
     <span style="color: #483d8b;">print</span>(<span style="color: #8b2252;">"brittAnderson"</span>[i])
-    <span style="color: #a0522d;">i</span> = i+1
+    <span style="color: #a0522d;">i</span> = i + 1
 </pre>
 </div>
 
-<pre class="example" id="org3d308d7">
+<pre class="example" id="org7a1d64d">
 b
 r
 i
@@ -691,11 +691,11 @@ s
 </ol>
 </div>
 
-<div id="outline-container-org81575e1" class="outline-4">
-<h4 id="org81575e1"><span class="section-number-4">2.5.5.</span> Functions</h4>
+<div id="outline-container-orgfbce17b" class="outline-4">
+<h4 id="orgfbce17b"><span class="section-number-4">2.5.5.</span> Functions</h4>
 <div class="outline-text-4" id="text-2-5-5">
 <p>
-We encountered an <a href="rstudio.html#orgd57f386">example</a> of this earlier. Think
+We encountered an <a href="rstudio.html#orgc392190">example</a> of this earlier. Think
 of a function as a machine that grinds meat. You pour in a cow.
 You get out hamburger. Input -&gt; Output. Note that arguments are
 "local". They are not referring to variables outside the function,
@@ -705,27 +705,27 @@ those names in your function, because until you use it, your
 function doesn't know what it will be getting.
 </p>
 <div class="org-src-container">
-<pre class="src src-python"><span style="color: #a020f0;">def</span> <span style="color: #0000ff;">myadd</span>(x,y):
-   <span style="color: #a020f0;">return</span>(x+y)
+<pre class="src src-python"><span style="color: #a020f0;">def</span> <span style="color: #0000ff;">my_add</span>(x, y):
+   <span style="color: #a020f0;">return</span>(x + y)
 </pre>
 </div>
 
 <div class="org-src-container">
-<pre class="src src-python">myadd(2,3)
+<pre class="src src-python">my_add(2, 3)
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org5453ce3" class="outline-4">
-<h4 id="org5453ce3"><span class="section-number-4">2.5.6.</span> Libraries</h4>
+<div id="outline-container-orgb3ba5f4" class="outline-4">
+<h4 id="orgb3ba5f4"><span class="section-number-4">2.5.6.</span> Libraries</h4>
 <div class="outline-text-4" id="text-2-5-6">
 <p>
 Lots of people use python. Python has been around a long time. Almost anything you might think to do at this point has been done by someone else. Look for a library and use someone else's code if you can. Use your time and effort to perfect your particular project, not to reinvent the wheel. An advantage of popular libraries is that they are likely to have withstood the tests of many users and will be more robust and correct than something you are likely to write as a first effort. 
 </p>
 </div>
 <ol class="org-ol">
-<li><a id="org60a67f1"></a>What are some popular libraries?<br />
+<li><a id="org24998dd"></a>What are some popular libraries?<br />
 <div class="outline-text-5" id="text-2-5-6-1">
 <p>
 <a href="https://pythontips.com/2013/07/30/20-python-libraries-you-cant-live-without/">Here</a> are 20 recommended ones (and a more recent <a href="https://www.ubuntupit.com/best-python-libraries-and-packages-for-beginners/">list</a>).
@@ -746,16 +746,16 @@ Of particular note for us are:
 </ol>
 </div>
 
-<div id="outline-container-org841dbd6" class="outline-4">
-<h4 id="org841dbd6"><span class="section-number-4">2.5.7.</span> Programs</h4>
+<div id="outline-container-org1926ff8" class="outline-4">
+<h4 id="org1926ff8"><span class="section-number-4">2.5.7.</span> Programs</h4>
 <div class="outline-text-4" id="text-2-5-7">
 <p>
 Programs are simply collections of all of the above. Complex programs may have smaller programs as components or span many files and subsidiary libraries.
 </p>
 </div>
 </div>
-<div id="outline-container-org8a7e0cd" class="outline-4">
-<h4 id="org8a7e0cd"><span class="section-number-4">2.5.8.</span> Debugging and Basic Working Methods</h4>
+<div id="outline-container-org399ca38" class="outline-4">
+<h4 id="org399ca38"><span class="section-number-4">2.5.8.</span> Debugging and Basic Working Methods</h4>
 <div class="outline-text-4" id="text-2-5-8">
 <p>
 Debugging refers to the general process of finding the mistakes in your code and fixing them. Bugs can be mistakes that keep your code from running or they can be mistakes in your logic. Then the code runs, but it doesn't do what you want. Those are the worst, and the hardest to fix. 
@@ -766,8 +766,8 @@ Many programming environments will provide sophisticated tools for debugging, bu
 </p>
 </div>
 </div>
-<div id="outline-container-org21f277c" class="outline-4">
-<h4 id="org21f277c"><span class="section-number-4">2.5.9.</span> IDEs</h4>
+<div id="outline-container-org9759feb" class="outline-4">
+<h4 id="org9759feb"><span class="section-number-4">2.5.9.</span> IDEs</h4>
 <div class="outline-text-4" id="text-2-5-9">
 <p>
 What does IDE stand for: Integrated development environment.
@@ -782,7 +782,7 @@ Two popular python IDEs are:
 </ol>
 </div>
 <ol class="org-ol">
-<li><a id="org0e45f66"></a><a href="https://realpython.com/emacs-the-best-python-editor/">Emacs as a python IDE</a><br />
+<li><a id="org3c4456f"></a><a href="https://realpython.com/emacs-the-best-python-editor/">Emacs as a python IDE</a><br />
 <div class="outline-text-5" id="text-2-5-9-1">
 <p>
 <b>For this course I recommend using emacs.</b><sup><a id="fnr.2" class="footref" href="#fn.2" role="doc-backlink">2</a></sup>
@@ -804,32 +804,32 @@ A simple demonstration of vanilla emacs.
 </ol>
 </div>
 </div>
-<div id="outline-container-orgdfb0dde" class="outline-3">
-<h3 id="orgdfb0dde"><span class="section-number-3">2.6.</span> Pip to Install Libraries and Virtual Environments</h3>
+<div id="outline-container-orga9d081c" class="outline-3">
+<h3 id="orga9d081c"><span class="section-number-3">2.6.</span> Pip to Install Libraries and Virtual Environments</h3>
 <div class="outline-text-3" id="text-2-6">
 <p>
 In general, try to use one packaging system for your installation. If you chose to get your packages via Ubuntu repositories (i.e. <code>apt</code>) then try to get as many from there as you can. 
 Otherwise the <code>pip</code> tool is convenient. 
 </p>
 </div>
-<div id="outline-container-org01798b3" class="outline-4">
-<h4 id="org01798b3"><span class="section-number-4">2.6.1.</span> Pip</h4>
+<div id="outline-container-orgcad3d12" class="outline-4">
+<h4 id="orgcad3d12"><span class="section-number-4">2.6.1.</span> Pip</h4>
 <div class="outline-text-4" id="text-2-6-1">
 <p>
 <code>pip</code> is the python install package program. There have been many ways to install python packages over the years and you will find a lot of tracks on the internet.  For now stick with pip (ubuntu also has many of these packages, but I find it better to try and not to mix package managers. Use your choice; mine is pip).
 </p>
 </div>
 </div>
-<div id="outline-container-orgc83d657" class="outline-4">
-<h4 id="orgc83d657"><span class="section-number-4">2.6.2.</span> Virtual Environments</h4>
+<div id="outline-container-org1c6537e" class="outline-4">
+<h4 id="org1c6537e"><span class="section-number-4">2.6.2.</span> Virtual Environments</h4>
 <div class="outline-text-4" id="text-2-6-2">
 <p>
 When you install software to your system there is always a chance that you will install packages that conflict with each other. One way to reduce the risk of this problem is to install your programs and packages into small isolated sandboxes. The idea is that each sandbox exists independent of each of the others and only sees the packages that are installed locally to it. <a href="https://docs.python.org/3/tutorial/venv.html">Virtual environments</a> are a way to achieve this sandboxing, and python has built in tools to support this idea. The use of <code>venv</code> and similar ideas is beyond the scope of what we have time for here, but it is not overly complicated to set up and use. You should read further on this topic if you plan to use python more extensively in the future. Another related approach is to use <a href="https://www.geeksforgeeks.org/set-up-virtual-environment-for-python-using-anaconda/">conda/anaconda</a>.
 </p>
 </div>
 </div>
-<div id="outline-container-orge1cf438" class="outline-4">
-<h4 id="orge1cf438"><span class="section-number-4">2.6.3.</span> Beginning Python Assessment 2</h4>
+<div id="outline-container-orgbb1d443" class="outline-4">
+<h4 id="orgbb1d443"><span class="section-number-4">2.6.3.</span> Beginning Python Assessment 2</h4>
 <div class="outline-text-4" id="text-2-6-3">
 <p>
 <a href="file:///home/britt/gitRepos/Intro2Computing4Psychology/assessments/hangmanPython.html">hangman and python assessment</a>
@@ -841,8 +841,8 @@ When you install software to your system there is always a chance that you will 
 
 
 
-<div id="outline-container-org3e2475e" class="outline-2">
-<h2 id="org3e2475e"><span class="section-number-2">3.</span> Assessments</h2>
+<div id="outline-container-orgea17ae7" class="outline-2">
+<h2 id="orgea17ae7"><span class="section-number-2">3.</span> Assessments</h2>
 <div class="outline-text-2" id="text-3">
 <p>
 I have found that these assignments are where many people feel like things start getting tough so I recorded a little video with some hints and encouragment.
@@ -853,12 +853,12 @@ I have found that these assignments are where many people feel like things start
 <p>Beginning python assessments: hints and words of encouragement.</p>
 </div>
 
-<div id="outline-container-orgf479126" class="outline-3">
-<h3 id="orgf479126"><span class="section-number-3">3.1.</span> For Loop with Python</h3>
+<div id="outline-container-org37ffc04" class="outline-3">
+<h3 id="org37ffc04"><span class="section-number-3">3.1.</span> For Loop with Python</h3>
 <div class="outline-text-3" id="text-3-1">
 </div>
-<div id="outline-container-org22c6f98" class="outline-4">
-<h4 id="org22c6f98"><span class="section-number-4">3.1.1.</span> Task</h4>
+<div id="outline-container-orge0affa1" class="outline-4">
+<h4 id="orge0affa1"><span class="section-number-4">3.1.1.</span> Task</h4>
 <div class="outline-text-4" id="text-3-1-1">
 <p>
 Write a function that will print a list of characters unsorted, sorted, and combined. To complete this task you will need to be familiar with how to write a <b>for loop</b>, use python's <b>indexing</b>, and also how to use the <a href="https://realpython.com/python-formatted-output/">print format command</a> <sup><a id="fnr.3" class="footref" href="#fn.3" role="doc-backlink">3</a></sup> 
@@ -866,8 +866,8 @@ Write a function that will print a list of characters unsorted, sorted, and comb
 </div>
 </div>
 
-<div id="outline-container-orgd74a078" class="outline-4">
-<h4 id="orgd74a078"><span class="section-number-4">3.1.2.</span> What it should look like</h4>
+<div id="outline-container-orgd3addd5" class="outline-4">
+<h4 id="orgd3addd5"><span class="section-number-4">3.1.2.</span> What it should look like</h4>
 <div class="outline-text-4" id="text-3-1-2">
 <p>
 I run your function with "trib". It prints t, r, i, b, then prints b, i, r, t, and then prints something like "The first letter of list one is 't', but it is 'b' in the sorted list&#x2026; and so on through all the letters.
@@ -875,8 +875,8 @@ I run your function with "trib". It prints t, r, i, b, then prints b, i, r, t, a
 </div>
 </div>
 
-<div id="outline-container-orgb6551a9" class="outline-4">
-<h4 id="orgb6551a9"><span class="section-number-4">3.1.3.</span> Detailed Instructions</h4>
+<div id="outline-container-org3032d6a" class="outline-4">
+<h4 id="org3032d6a"><span class="section-number-4">3.1.3.</span> Detailed Instructions</h4>
 <div class="outline-text-4" id="text-3-1-3">
 <ol class="org-ol">
 <li>Create a list of at least 8 individual characters.</li>
@@ -888,27 +888,27 @@ I run your function with "trib". It prints t, r, i, b, then prints b, i, r, t, a
 </div>
 </div>
 
-<div id="outline-container-orgd15ca97" class="outline-4">
-<h4 id="orgd15ca97"><span class="section-number-4">3.1.4.</span> Comments</h4>
+<div id="outline-container-orgd717d0c" class="outline-4">
+<h4 id="orgd717d0c"><span class="section-number-4">3.1.4.</span> Comments</h4>
 <div class="outline-text-4" id="text-3-1-4">
 </div>
 <ol class="org-ol">
-<li><a id="org3cffc98"></a>Hints<br />
+<li><a id="org0cdbe75"></a>Hints<br />
 <div class="outline-text-5" id="text-3-1-4-1">
 <p>
 Remember not to re-invent the wheel. For example, does python have a function for sorting lists? Can you turn a "string" into a python list that would allow you to use indices? Lastly, note that a for loop can use more than one variable at a time. For my version I have a line that reads, 
 </p>
 
 <div class="org-src-container">
-<pre class="src src-python"><span style="color: #a020f0;">for</span> i,l <span style="color: #a020f0;">in</span> <span style="color: #483d8b;">enumerate</span>(<span style="color: #483d8b;">zip</span>(myList,<span style="color: #483d8b;">sorted</span>(myList))):
+<pre class="src src-python"><span style="color: #a020f0;">for</span> i, l <span style="color: #a020f0;">in</span> <span style="color: #483d8b;">enumerate</span>(<span style="color: #483d8b;">zip</span>(my_list, <span style="color: #483d8b;">sorted</span>(my_list))):
 </pre>
 </div>
 </div>
 </li>
 </ol>
 </div>
-<div id="outline-container-orgf768860" class="outline-4">
-<h4 id="orgf768860"><span class="section-number-4">3.1.5.</span> How I Will Grade</h4>
+<div id="outline-container-orgc4a6202" class="outline-4">
+<h4 id="orgc4a6202"><span class="section-number-4">3.1.5.</span> How I Will Grade</h4>
 <div class="outline-text-4" id="text-3-1-5">
 <p>
 I will run your program from the command line e.g. <code>python firstLast2LstsSorted.py</code>. It will either spit out the correct lists or it won't. If it does you get full credit, and if not I will give partial credit and you can try to fix it for more points. 
@@ -917,12 +917,12 @@ I will run your program from the command line e.g. <code>python firstLast2LstsSo
 </div>
 </div>
 
-<div id="outline-container-org4c9b81e" class="outline-3">
-<h3 id="org4c9b81e"><span class="section-number-3">3.2.</span> Hangman in Python (starter kit)</h3>
+<div id="outline-container-orgd97419d" class="outline-3">
+<h3 id="orgd97419d"><span class="section-number-3">3.2.</span> Hangman in Python (starter kit)</h3>
 <div class="outline-text-3" id="text-3-2">
 </div>
-<div id="outline-container-org24b0073" class="outline-4">
-<h4 id="org24b0073"><span class="section-number-4">3.2.1.</span> Words of Encouragement</h4>
+<div id="outline-container-orgf6c3db4" class="outline-4">
+<h4 id="orgf6c3db4"><span class="section-number-4">3.2.1.</span> Words of Encouragement</h4>
 <div class="outline-text-4" id="text-3-2-1">
 <p>
 This is the first non-trivial thing we will have done in the programming line. Do not get too frustrated if it takes you several submissions to get things right.
@@ -946,8 +946,8 @@ How to work. I like the idea of having a console open on one side for testing an
 </div>
 </div>
 
-<div id="outline-container-org391b289" class="outline-4">
-<h4 id="org391b289"><span class="section-number-4">3.2.2.</span> Task</h4>
+<div id="outline-container-orgee39311" class="outline-4">
+<h4 id="orgee39311"><span class="section-number-4">3.2.2.</span> Task</h4>
 <div class="outline-text-4" id="text-3-2-2">
 <p>
 To write the beginning pieces of a hangman game in python. This version will <a href="https://en.wikipedia.org/wiki/Hard_coding">hard code</a> the word to be guessed. It will not produce any sort of graphic, You will ask the user for  letters and report if the player spells out the word or not. Depending on how fast you master that, I may suggest further improvements when you submit. 
@@ -955,8 +955,8 @@ To write the beginning pieces of a hangman game in python. This version will <a 
 </div>
 </div>
 
-<div id="outline-container-org395e11e" class="outline-4">
-<h4 id="org395e11e"><span class="section-number-4">3.2.3.</span> Detail - tackle this in steps.</h4>
+<div id="outline-container-org9d7943f" class="outline-4">
+<h4 id="org9d7943f"><span class="section-number-4">3.2.3.</span> Detail - tackle this in steps.</h4>
 <div class="outline-text-4" id="text-3-2-3">
 <ol class="org-ol">
 <li>Look up how to get user input from python on the command line.
@@ -968,19 +968,19 @@ Write a script<sup><a id="fnr.4" class="footref" href="#fn.4" role="doc-backlink
 </div>
 </div>
 
-<div id="outline-container-orgb794e9d" class="outline-4">
-<h4 id="orgb794e9d"><span class="section-number-4">3.2.4.</span> Comments</h4>
+<div id="outline-container-orgacaf0b7" class="outline-4">
+<h4 id="orgacaf0b7"><span class="section-number-4">3.2.4.</span> Comments</h4>
 <div class="outline-text-4" id="text-3-2-4">
 </div>
 <ol class="org-ol">
-<li><a id="org75b566f"></a>How I Will Grade<br />
+<li><a id="org65e1e4b"></a>How I Will Grade<br />
 <div class="outline-text-5" id="text-3-2-4-1">
 <p>
 I will run your program from the terminal, and it will work as above or it will not. If it does, I will give you full marks, if not, I will give partial credit and allow you to try and fix the mistakes. 
 </p>
 </div>
 </li>
-<li><a id="org60ab7bb"></a>Hints<br />
+<li><a id="org614d404"></a>Hints<br />
 <div class="outline-text-5" id="text-3-2-4-2">
 <p>
 You might find it useful to learn about python's <code>in</code> operator, and to think about how you might use the <code>enumerate</code> function we used in the <a href="forLoopPythonAssessment.html">for loop in python assessment</a>.
@@ -1024,7 +1024,7 @@ A script is a file that ends with .py and that I can call from the terminal. If 
 <div id="postamble" class="status">
 <p class="date">Date: 2023-02-07 Tue 00:00</p>
 <p class="author">Author: Britt Anderson</p>
-<p class="date">Created: 2023-02-14 Tue 05:28</p>
+<p class="date">Created: 2023-04-23 Sun 11:53</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

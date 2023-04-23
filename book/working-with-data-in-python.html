@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-02-14 Tue 05:28 -->
+<!-- 2023-04-23 Sun 11:53 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Working With Data in Python</title>
@@ -201,38 +201,38 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org7c0a24a">1. Working with Data in Python</a>
+<li><a href="#orgb2c1593">1. Working with Data in Python</a>
 <ul>
-<li><a href="#orgb8530d4">1.1. Some additional sources</a>
+<li><a href="#org1bfd25e">1.1. Some additional sources</a>
 <ul>
-<li><a href="#org90b4806">1.1.1. Pandas Books</a></li>
-<li><a href="#orgce59f2c">1.1.2. Blogs</a></li>
+<li><a href="#orgcb025ad">1.1.1. Pandas Books</a></li>
+<li><a href="#org1ee990b">1.1.2. Blogs</a></li>
 </ul>
 </li>
-<li><a href="#orgc374781">1.2. Data handling in Python</a>
+<li><a href="#org5c77d8c">1.2. Data handling in Python</a>
 <ul>
-<li><a href="#org84db6e6">1.2.1. Pandas</a></li>
-<li><a href="#org29cc7d1">1.2.2. Interactive Pandas</a></li>
-<li><a href="#orgc353eda">1.2.3. Getting Your Data Into Python</a></li>
-<li><a href="#org348ea0f">1.2.4. Repeating Things We Did In R With Pandas</a></li>
-<li><a href="#org5b2e734">1.2.5. Functional Styles versus Object Orientation</a></li>
+<li><a href="#orge94627c">1.2.1. Pandas</a></li>
+<li><a href="#org107aa53">1.2.2. Interactive Pandas</a></li>
+<li><a href="#org7819cfe">1.2.3. Getting Your Data Into Python</a></li>
+<li><a href="#orged7db39">1.2.4. Repeating Things We Did In R With Pandas</a></li>
+<li><a href="#orgd6cbcba">1.2.5. Functional Styles versus Object Orientation</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#orgd83dee9">2. Assessing Your Use of Pandas</a>
+<li><a href="#orgfe62c45">2. Assessing Your Use of Pandas</a>
 <ul>
-<li><a href="#orga5e6c87">2.1. Task</a></li>
-<li><a href="#org3206fd7">2.2. Requirements</a></li>
-<li><a href="#org90dfd2d">2.3. Comments</a></li>
+<li><a href="#orgcaf3f2f">2.1. Task</a></li>
+<li><a href="#org0ef4ea6">2.2. Requirements</a></li>
+<li><a href="#org706ea30">2.3. Comments</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org7c0a24a" class="outline-2">
-<h2 id="org7c0a24a"><span class="section-number-2">1.</span> Working with Data in Python</h2>
+<div id="outline-container-orgb2c1593" class="outline-2">
+<h2 id="orgb2c1593"><span class="section-number-2">1.</span> Working with Data in Python</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 For a long time data handling and graph production in python lagged behind that of R. Data were collected in comma or tab separated (<a href="https://en.wikipedia.org/wiki/Comma-separated_values">CSV</a>) formats or often in <a href="https://docs.python.org/3/library/pickle.html">pickle</a> files. Pickled data was textual data converted to a binary representation and had to be converted back to be read. These issues made it harder to use python in an interactive and interpreted environment for data analysis and many workers in psychology would collect their data with experiments coded in python (or other languages), and then use R as the language for statistical testing.
@@ -247,20 +247,20 @@ However, over the last few years the scientific python community has expanded it
 <p>This module gives an overview of using python to request data via the internet; unzip a data file; and load that data into python with pandas for exploratory analysis.</p>
 </div>
 
-<div id="outline-container-orgb8530d4" class="outline-3">
-<h3 id="orgb8530d4"><span class="section-number-3">1.1.</span> Some additional sources</h3>
+<div id="outline-container-org1bfd25e" class="outline-3">
+<h3 id="org1bfd25e"><span class="section-number-3">1.1.</span> Some additional sources</h3>
 <div class="outline-text-3" id="text-1-1">
 </div>
-<div id="outline-container-org90b4806" class="outline-4">
-<h4 id="org90b4806"><span class="section-number-4">1.1.1.</span> Pandas Books</h4>
+<div id="outline-container-orgcb025ad" class="outline-4">
+<h4 id="orgcb025ad"><span class="section-number-4">1.1.1.</span> Pandas Books</h4>
 <div class="outline-text-4" id="text-1-1-1">
 <ul class="org-ul">
 <li><a href="https://www.chapters.indigo.ca/en-ca/books/python-for-data-analysis-data/9781449319793-item.html">Python for Data Analysis</a> - This book is available for online reading to University of Waterloo students.</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orgce59f2c" class="outline-4">
-<h4 id="orgce59f2c"><span class="section-number-4">1.1.2.</span> Blogs</h4>
+<div id="outline-container-org1ee990b" class="outline-4">
+<h4 id="org1ee990b"><span class="section-number-4">1.1.2.</span> Blogs</h4>
 <div class="outline-text-4" id="text-1-1-2">
 <ul class="org-ul">
 <li><a href="https://pandas.pydata.org/pandas-docs/stable/getting_started/tutorials.html">Community Tutorials</a></li>
@@ -269,15 +269,15 @@ However, over the last few years the scientific python community has expanded it
 </div>
 </div>
 </div>
-<div id="outline-container-orgc374781" class="outline-3">
-<h3 id="orgc374781"><span class="section-number-3">1.2.</span> Data handling in Python</h3>
+<div id="outline-container-org5c77d8c" class="outline-3">
+<h3 id="org5c77d8c"><span class="section-number-3">1.2.</span> Data handling in Python</h3>
 <div class="outline-text-3" id="text-1-2">
 <div style="padding:56.39% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/462705737?h=8f04df6247" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
 <p><a href="https://vimeo.com/462705737">Ib : Installing Pandas (i2c4p)</a> from <a href="https://vimeo.com/epistemic">Britt Anderson</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
 <p>There are several methods for installing Pandas. In this video I demonstrate one of the: using pip</p>
 </div>
-<div id="outline-container-org84db6e6" class="outline-4">
-<h4 id="org84db6e6"><span class="section-number-4">1.2.1.</span> Pandas</h4>
+<div id="outline-container-orge94627c" class="outline-4">
+<h4 id="orge94627c"><span class="section-number-4">1.2.1.</span> Pandas</h4>
 <div class="outline-text-4" id="text-1-2-1">
 <p>
 How to get Pandas?
@@ -293,16 +293,16 @@ To try and get all our python packages from one source (and thereby reduce our c
 </p>
 </div>
 </div>
-<div id="outline-container-org29cc7d1" class="outline-4">
-<h4 id="org29cc7d1"><span class="section-number-4">1.2.2.</span> Interactive Pandas</h4>
+<div id="outline-container-org107aa53" class="outline-4">
+<h4 id="org107aa53"><span class="section-number-4">1.2.2.</span> Interactive Pandas</h4>
 <div class="outline-text-4" id="text-1-2-2">
 <p>
 Python is an interpreted language. You can use Python from an interpreter much as you used R in an R console (or RStudio).
 </p>
 </div>
 </div>
-<div id="outline-container-orgc353eda" class="outline-4">
-<h4 id="orgc353eda"><span class="section-number-4">1.2.3.</span> Getting Your Data Into Python</h4>
+<div id="outline-container-org7819cfe" class="outline-4">
+<h4 id="org7819cfe"><span class="section-number-4">1.2.3.</span> Getting Your Data Into Python</h4>
 <div class="outline-text-4" id="text-1-2-3">
 <div style="padding:56.39% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/462705724?h=dc0c22cba8" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
 <p><a href="https://vimeo.com/462705724">Ic : Using Python to Request Data from the Internet (i2c4p)</a> from <a href="https://vimeo.com/epistemic">Britt Anderson</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
@@ -377,12 +377,12 @@ This file is a "zip" file. For a zip file the data have been compressed to save 
 </div>
 </div>
 
-<div id="outline-container-org348ea0f" class="outline-4">
-<h4 id="org348ea0f"><span class="section-number-4">1.2.4.</span> Repeating Things We Did In R With Pandas</h4>
+<div id="outline-container-orged7db39" class="outline-4">
+<h4 id="orged7db39"><span class="section-number-4">1.2.4.</span> Repeating Things We Did In R With Pandas</h4>
 <div class="outline-text-4" id="text-1-2-4">
 </div>
 <ol class="org-ol">
-<li><a id="org1a65179"></a>The length of a list<br />
+<li><a id="orgd246010"></a>The length of a list<br />
 <div class="outline-text-5" id="text-1-2-4-1">
 <p>
 In R you would use the <code>length</code> command, but in python it is <code>len</code>. Almost every language you will program in will have a command for finding the length, but the actual word may be different or the syntax may be different.
@@ -395,7 +395,7 @@ In R you would use the <code>length</code> command, but in python it is <code>le
 </div>
 </li>
 
-<li><a id="org2e223fa"></a>Using a Conditional<br />
+<li><a id="org0f75baa"></a>Using a Conditional<br />
 <div class="outline-text-5" id="text-1-2-4-2">
 <p>
 In R we did things like <code>mydataframe$mydatacol</code> to get a column of data from a data frame. In python the format looks more like a python dictionary.
@@ -416,8 +416,8 @@ What happens if you just select with <code>in</code>? You keep the same number o
 </ol>
 </div>
 
-<div id="outline-container-org5b2e734" class="outline-4">
-<h4 id="org5b2e734"><span class="section-number-4">1.2.5.</span> Functional Styles versus Object Orientation</h4>
+<div id="outline-container-orgd6cbcba" class="outline-4">
+<h4 id="orgd6cbcba"><span class="section-number-4">1.2.5.</span> Functional Styles versus Object Orientation</h4>
 <div class="outline-text-4" id="text-1-2-5">
 <p>
 Python is an object oriented language. R is in a more eclectic style that  reflects its LISP origins. Object oriented languages have data structures: objects, that encapsulate both attributes (what objects are like) and methods (what objects can do). A list would have its contents, the items in the list, as its attributes, but would have the ability, a method, to report the length of its <i>self</i> <sup><a id="fnr.1" class="footref" href="#fn.1" role="doc-backlink">1</a></sup>. The attributes and methods of a python object are often accessed by a name that includes a <b>dot</b> '<code>.</code>' like the ".isin" you see in the code snippet above. Pandas creates a <i>data.frame object</i> (the name emphasizes its R heritage), but it is not the same thing, and while most of the commands are achievable in either, they are not the same. The <b>dot</b> shows you we are accessing either an attribute or a method of an object. 
@@ -427,12 +427,12 @@ Python is an object oriented language. R is in a more eclectic style that  refle
 </div>
 </div>
 
-<div id="outline-container-orgd83dee9" class="outline-2">
-<h2 id="orgd83dee9"><span class="section-number-2">2.</span> Assessing Your Use of Pandas</h2>
+<div id="outline-container-orgfe62c45" class="outline-2">
+<h2 id="orgfe62c45"><span class="section-number-2">2.</span> Assessing Your Use of Pandas</h2>
 <div class="outline-text-2" id="text-2">
 </div>
-<div id="outline-container-orga5e6c87" class="outline-3">
-<h3 id="orga5e6c87"><span class="section-number-3">2.1.</span> Task</h3>
+<div id="outline-container-orgcaf3f2f" class="outline-3">
+<h3 id="orgcaf3f2f"><span class="section-number-3">2.1.</span> Task</h3>
 <div class="outline-text-3" id="text-2-1">
 <p>
 You will
@@ -447,8 +447,8 @@ You will
 </div>
 </div>
 
-<div id="outline-container-org3206fd7" class="outline-3">
-<h3 id="org3206fd7"><span class="section-number-3">2.2.</span> Requirements</h3>
+<div id="outline-container-org0ef4ea6" class="outline-3">
+<h3 id="org0ef4ea6"><span class="section-number-3">2.2.</span> Requirements</h3>
 <div class="outline-text-3" id="text-2-2">
 <p>
 Your submission will be either an org<sup><a id="fnr.4" class="footref" href="#fn.4" role="doc-backlink">4</a></sup> file with code blocks that let me execute each of these steps by myself interactively one at a time. Or a python script that I can run from the command line and that will perform each of these functions displaying its output to <code>stdout</code>. Stdout is the linux name for printing to the screen in the terminal. For example, when you do <code>ls</code> to list the names of files in a directory you are directing to stdout. 
@@ -456,8 +456,8 @@ Your submission will be either an org<sup><a id="fnr.4" class="footref" href="#f
 </div>
 </div>
 
-<div id="outline-container-org90dfd2d" class="outline-3">
-<h3 id="org90dfd2d"><span class="section-number-3">2.3.</span> Comments</h3>
+<div id="outline-container-org706ea30" class="outline-3">
+<h3 id="org706ea30"><span class="section-number-3">2.3.</span> Comments</h3>
 <div class="outline-text-3" id="text-2-3">
 <p>
 Don't start by writing this as a script. That will almost certainly be too hard. Begin by doing this interactively, perhaps at a python interpreter until you get the code for a particular step done corrrectly. Then copy that code to your file and and test that it still works; that something did not get messed up in the copying and pasting.
@@ -495,7 +495,7 @@ To make some nicer formatting and help available when using python from within e
 <div id="postamble" class="status">
 <p class="date">Date: 2023-02-09 Thu 00:00</p>
 <p class="author">Author: Britt Anderson</p>
-<p class="date">Created: 2023-02-14 Tue 05:28</p>
+<p class="date">Created: 2023-04-23 Sun 11:53</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
