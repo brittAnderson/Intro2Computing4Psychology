@@ -128,8 +128,8 @@ For those of you who prefer video you can watch this. All the information is con
    #+Begin_src python :results output :exports both :session *beginpython*
    myname = "britt"
    mylistname = list(myname)
-   for i,j in enumerate(mylistname):
-       print((i,j))
+   for i, j in enumerate(mylistname):
+       print((i, j))
    #+End_src
 
    #+RESULTS:
@@ -205,7 +205,7 @@ Here we treat the number of days in a regular year as a constant while allowing 
       #+Name: Indexing
       #+begin_src python :session *beginpython* :exports both :results output
 	nameDict = {'firstName' : 'Britt', 'lastName' : 'Anderson'}
-	mylist = list(range(1,10))
+	mylist = list(range(1, 10))
 
 	print(nameDict['firstName'])
 
@@ -233,8 +233,8 @@ Here we treat the number of days in a regular year as a constant while allowing 
             print(ml)
 
 
-	for i,ml in enumerate(mylist):
-            print("The {0}th element was {1}".format(i,ml))
+	for i, ml in enumerate(mylist):
+            print("The {0}th element was {1}".format(i, ml))
       #+end_src
 
       #+RESULTS: For Loop
@@ -264,9 +264,9 @@ Here we treat the number of days in a regular year as a constant while allowing 
      This is where you test whether something is or is not ~True~. Note that Python, but not all computer languages, treats 0 the same as False, and all non-zero values as True. 
 
      #+begin_src python :exports code  :session *beginpython* :results output
-       if (2 == 3):
+       if 2 == 3:
            print("Wha.....?\n\n")
-       elif (3 == 2):
+       elif 3 == 2:
            print("Now that is odd")
        else:
            print("2 does not equal 3.")
@@ -279,9 +279,9 @@ Here we treat the number of days in a regular year as a constant while allowing 
 
      #+begin_src python :exports both :session *beginpython* :results output
        i = 0
-       while (i<=10):
+       while i <= 10:
            print("brittAnderson"[i])
-           i = i+1
+           i = i + 1
          #+end_src
 
          #+RESULTS:
@@ -309,14 +309,14 @@ Here we treat the number of days in a regular year as a constant while allowing 
     those names in your function, because until you use it, your
     function doesn't know what it will be getting.
  #+begin_src python :exports code  :session *beginpython*
- def myadd(x,y):
-    return(x+y)
+ def myadd(x, y):
+    return(x + y)
  #+end_src
 
  #+RESULTS:
 
  #+begin_src python :exports both :results output :session *beginpython*
- myadd(2,3)
+ myadd(2, 3)
  #+end_src
 
  #+RESULTS:
@@ -398,7 +398,7 @@ I have found that these assignments are where many people feel like things start
    Remember not to re-invent the wheel. For example, does python have a function for sorting lists? Can you turn a "string" into a python list that would allow you to use indices? Lastly, note that a for loop can use more than one variable at a time. For my version I have a line that reads, 
 
    #+begin_src python :session *beginpython* :exports code :eval never
-	 for i,l in enumerate(zip(myList,sorted(myList))):
+	 for i, l in enumerate(zip(myList, sorted(myList))):
    #+end_src
 
    #+RESULTS:
