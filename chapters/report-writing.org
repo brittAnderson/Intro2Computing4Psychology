@@ -33,7 +33,7 @@ To introduce writing _reproducible research_ reports: reports that mix text, cod
 
 For this topic we will be using emacs as the text editor and a pipeline that produces a pdf file as the viewable result. That pdf will be produced from a combination of code, text, and mark-up in a single "org" file. We will use the ability of emacs and its org babel system to execute code and insert the results into our document. 
 
-The production of a reproducible research report is inspired by ideas from [[https://en.wikipedia.org/wiki/Literate_programming][literate programming.]] One can _tangle_ the original file into only its code compenents. One _weaves_ the text and code into the documentation. 
+The production of a reproducible research report is inspired by ideas from [[https://en.wikipedia.org/wiki/Literate_programming][literate programming.]] One can _tangle_ the original file into only its code components. One _weaves_ the text and code into the documentation.
 
 Other tools that are used to accomplish similar results are RStudio and related tools. One can even write a technical [[https://bookdown.org/][book]] using this pipeline. 
 
