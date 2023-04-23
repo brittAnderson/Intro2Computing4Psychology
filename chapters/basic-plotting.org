@@ -75,7 +75,7 @@ This analogy is particulary apt when it comes to plotting. While I expect the si
 
 For base plot two primitive commands are ~plot~ and ~lines~. Be careful. There is a command ~line~ (no 's'). That is not what you will want here.
      #+begin_src R :session *rPlotting* :results file graphics replace :exports both :file ./baseplot1.png :dir .
-     plot(x,y2)
+     plot(xs,ydouble)
      #+end_src
 
      #+RESULTS:
@@ -92,7 +92,7 @@ For base plot two primitive commands are ~plot~ and ~lines~. Be careful. There i
 You have multiple /hidden/ arguments you can use to change the look of the plot such as the symbols, whether it plots lines or dots, the color, the font size. Always remember to try the help command. Here is just one example. Help is your friend here. Try ~help(plot)~ in your R console. 
 
      #+begin_src R :session *rPlotting* :results file graphics replace :file ./baseplot2.png
-     plot(x,y1,type = 'b', frame = F, pch = 19, col = "red" , ylabel = "y", lty = 1, lwd = 3)
+     plot(xs,ysquare,type = 'b', frame = F, pch = 19, col = "red" , ylab = "y", lty = 1, lwd = 3)
      #+end_src
 
      #+RESULTS:
@@ -106,9 +106,9 @@ You have multiple /hidden/ arguments you can use to change the look of the plot 
      #+Name: addlines
      #+Caption: Our base plot with additional data series added.
      #+begin_src R :session *rPlotting* :results file graphics :exports both :file "./baseplot3.png"
-            plot(x,y1,type = 'b', frame = F, pch = 19, col = "red" , ylab = "y", lty = 1, lwd = 3)
-            lines(x,y2, pch = 18, col = "blue", type = "b" , lty = 2, lwd = 1)
-            lines(x,y3, pch = 17, col = "green" , type = "l", lty=3, lwd = 4)
+            plot(xs,ysquare,type = 'b', frame = F, pch = 19, col = "red" , ylab = "y", lty = 1, lwd = 3)
+            lines(xs,ydouble, pch = 18, col = "blue", type = "b" , lty = 2, lwd = 1)
+            lines(xs,yrandom, pch = 17, col = "green" , type = "l", lty=3, lwd = 4)
             legend("topleft", legend = c("Line 1", "Line 2", "Line 3"), col = c("red","blue","green"),
                    lty = 1:3, cex = 0.8)
     #+end_src
@@ -134,8 +134,8 @@ You have multiple /hidden/ arguments you can use to change the look of the plot 
      
      #+begin_src R :session *rPlotting* :results file replace graphics :exports both :file "./ggplot1.png" 
        library(ggplot2)
-       p  <- ggplot(data = data.frame("x" = x, "y1" = y1, "y2" = y2, "y3" = y3), aes(x = x, y = y1, col= 'r'))
-       p <- p + geom_point() + geom_line() + theme(legend.position = c(0.2,0.65)) + geom_line(aes(x=x,y=y2, col = "blue")) + geom_line(aes(y=y3,col = "green"))
+       p  <- ggplot(data = data.frame("x" = xs, "y1" = ysquare, "y2" = ydouble, "y3" = yrandom), aes(x = xs, y = ysquare, col= 'r'))
+       p <- p + geom_point() + geom_line() + theme(legend.position = c(0.2,0.65)) + geom_line(aes(x=x,y=ydouble, col = "blue")) + geom_line(aes(y=yrandom,col = "green"))
        ggsave("ggplot1.png", width = 8, height = 5, units = "cm") 
      #+end_src
 
