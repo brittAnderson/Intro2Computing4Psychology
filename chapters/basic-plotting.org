@@ -221,11 +221,11 @@ This gives us a "connect-the-dots" sort of look to our data. We would prefer to 
 #+begin_src python :session *pyPlotting* :results value file graphics :exports both :var fn="./py-inter-fit-plt.png"
   from statsmodels.formula.api import ols
   ols_d = ols(formula="therms ~ degreedays * Location", data=d)
-  myfits = ols_d.fit()
+  my_fits = ols_d.fit()
   plt.clf()
   f = plt.figure()
   a = f.gca()
-  ip1 = interaction_plot(d['degreedays'], d['Location'], myfits.fittedvalues, plottype="line", ax=a)
+  ip1 = interaction_plot(d['degreedays'], d['Location'], my_fits.fittedvalues, plottype="line", ax=a)
   ip2 = interaction_plot(d['degreedays'], d['Location'], d['therms'], plottype='scatter', ax=a)
   lines, labels = f.axes[0].get_legend_handles_labels()
   a.legend_ = None
