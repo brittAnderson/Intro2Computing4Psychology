@@ -41,8 +41,8 @@ This analogy is particulary apt when it comes to plotting. While I expect the si
 
     #+begin_src R :session *rPlotting* :results output :exports both
       xs <- 1:10
-      ysquare <- x^2
-      ydouble  <- 2*y1
+      ysquare <- xs^2
+      ydouble  <- 2*ysquare
       yrandom  <- rnorm(10)
       mapply(function (x,y,z,q) {c(x,y,z,q)}, xs, ysquare, ydouble, yrandom)
     #+end_src
