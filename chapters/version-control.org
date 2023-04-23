@@ -34,7 +34,7 @@ Science is collaborative and iterative. Computing projects, whether for industry
 ** Get your id   
     This is a straightfoward process. Navigate to [[https://github.com][Github]] and complete the sign up process on the home page. You should use whatever email address is convenient, and you can chose whatever username is available, but think for a moment. If you are successful in this course at improving your computing skills the Github platform is something you may want to use professionally in the future; pick a username that won't embarass you later.
 ** Sign in to your user account
-   You should see a blank page with a random geometric avatar and no activity or respositories. 
+   You should see a blank page with a random geometric avatar and no activity or repositories. 
 * Look at the Github Guides
 #+begin_export html
 <iframe src="https://player.vimeo.com/video/450563176?h=438a094373" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
@@ -43,15 +43,15 @@ Science is collaborative and iterative. Computing projects, whether for industry
    The [[https://guides.github.com/][Github Guides]] will provide you with short introductions to the git terminology, the Github workflow, and how to create your first repository.
 ** Read the Hello World guide and create your first repository.
    The [[https://guides.github.com/activities/hello-world/][hello world]] guide will walk you through creating a repository. Even if you delete after creation go through these steps to learn what a repository is. 
-* Navigate to my Github respositories and Fork the Course Repository and Practice Repository
-My respositories are at: [[https://github.com/brittAnderson?tab=repositories][Britt's Repos]]
+* Navigate to my Github repositories and Fork the Course Repository and Practice Repository
+My repositories are at: [[https://github.com/brittAnderson?tab=repositories][Britt's Repos]]
 ** What is a "Fork"?
     There is short github guide on the notion of a [[https://guides.github.com/activities/forking/][fork]]. 
 ** Fork the main course repository
    When you fork the course repository you will enable /cloning/ (to be covered later) your own local version on your home computer or laptop. Your fork will also give you access to your own copies of all files that you can edit or add to without affecting my copies. Your fork (and subsequently your clone) will give you a way to add changes back to my copies (if I accept your /pull request/) and easily incorporate new changes that I make into your version. 
    The main course repository is here: https://github.com/brittAnderson/Intro2Computing4Psychology
    Note that there is a ~readme~ file on the landing page. This is created from the ~readme.org~ file that you can see in the list of code files right above. Open this up by clicking on it and make a local change to your version of the readme.org file. Maybe add a line that says this is your fork; something minor; and then ~commit~ that change. You should see the readme region change to reflect your change (you may have to refresh your browser). You will at this point have progressed through some of the core features of version control, but to practice some more ...
-** Fork the course practice respository
+** Fork the course practice repository
    You can find that here: https://github.com/brittAnderson/psych363practice
 * Complete the github id assessment
 ** Task
@@ -59,7 +59,7 @@ My respositories are at: [[https://github.com/brittAnderson?tab=repositories][Br
   2. *Fork* the two course related repositories.
      A. [[https://github.com/brittAnderson/Intro2Computing4Psychology][Intro2Computing4Psychology]]
      B. [[https://github.com/brittAnderson/psych363Practice][psych363Practice]]
-  3. Submit a screen short of your github account with appropriate respositories created to the Dropbox on Learn.
+  3. Submit a screen short of your github account with appropriate repositories created to the Dropbox on Learn.
 
 *Note bene*: Some things about authenticating for github have changed. You now need a personal access token instead of just a password to make certain things work. The video below provides you some pointers for the creation of a personal access token.
 

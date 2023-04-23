@@ -74,7 +74,7 @@ As you read the rest of this file you may want to also skim the following video 
 #+begin_export html
 <div style="padding:65.03% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/810618444?h=6e9557e0c4" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
 <p><a href="https://vimeo.com/810618444">Emacs Package Management 1</a> from <a href="https://vimeo.com/epistemic">Britt Anderson</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
-<p>An short overview of what file you need to access to establish your packages for Emacs</p>
+<p>A short overview of what file you need to access to establish your packages for Emacs</p>
 #+end_export
 
  Emacs has it's own package system that allows you to greatly expand its functionality. You can learn more by reading the info file =C-h i=. If for some reason your info files are missing see this Stackoverflow question for hints on how to install [fn:4]. Many packages could be installed through the =apt= methods, but it is better not to mix and match package systems. Since there may well be packages you will eventually want that are not built by xubuntu you should probably use packages from the emacs system. The big package warehouse that most emacs users rely on is called "melpa". Here is how to get a basic package database available.
@@ -110,7 +110,7 @@ As you read the rest of this file you may want to also skim the following video 
 
     Lastly, there are Emacs bundles where someone has decided to create a system that uses Emacs and contains an already configured selection of emacs packages that play well together. Many people find these a nice help when getting started. If you decide you want to keep trying emacs after this course, but find it hard to get started, then one of these two options ([[https://www.spacemacs.org/][spacemacs]] ; [[https://github.com/doomemacs/doomemacs][doomemacs]] ) might be worth a look. If you are the kind of person who likes books for learning, check out [[https://www.masteringemacs.org/][Mastering Emacs]]. 
 *** Program Your Editor
-    Emacs can be programmed with elisp code, it's own [[https://en.wikipedia.org/wiki/Lisp_(programming_language)][lisp]]. You can actually change the functions of your editor while using it. Usually, you don't really need to know elisp. You just need to have the confidence to cut and paste to the right location, usually you =init.el= file. 
+    Emacs can be programmed with elisp code, it's own [[https://en.wikipedia.org/wiki/Lisp_(programming_language)][lisp]]. You can actually change the functions of your editor while using it. Usually, you don't really need to know elisp. You just need to have the confidence to cut and paste to the right location, usually your =init.el= file. 
 **** An example: Turn off the tool bar.
      - To search for functions you can use the help ~C-h-f~. This will allow you to search for functions. Try the keyword menu and tab and see if you come across a likely contender (~menu-bar-showhide-tool-bar-menu-customize-disable~).
      - Navigate to the scratch buffer. Put that function in parantheses. Move to the end. Type ~C-x C-e~. Did your tool bar go away?
