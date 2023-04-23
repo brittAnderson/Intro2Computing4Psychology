@@ -188,7 +188,7 @@ The above code block is a little bit of housekeeping to make sure it is easy for
 
   import pandas as pd
   url = "http://personality-project.org/r/datasets/heating.txt"
-  d = pd.read_csv(url, sep = "\t")
+  d = pd.read_csv(url, sep="\t")
   d.columns
 #+end_src
 
@@ -207,7 +207,7 @@ We will also use some additional python modules to help us make this easier, spe
 #+begin_src python :session *pyPlotting* :results file graphics :var f="example-os.png" :exports both
   from statsmodels.graphics.factorplots import interaction_plot
   from matplotlib import pyplot as plt
-  interaction_plot(d['degreedays'],d['Location'],d['therms'])
+  interaction_plot(d['degreedays'], d['Location'], d['therms'])
   plt.savefig(f)
   f
 #+end_src
@@ -220,16 +220,16 @@ This gives us a "connect-the-dots" sort of look to our data. We would prefer to 
 
 #+begin_src python :session *pyPlotting* :results value file graphics :exports both :var fn="./py-inter-fit-plt.png"
   from statsmodels.formula.api import ols
-  ols_d = ols(formula = "therms ~ degreedays * Location",data = d)
-  myfits = ols_d.fit()
+  ols_d = ols(formula="therms ~ degreedays * Location", data=d)
+  my_fits = ols_d.fit()
   plt.clf()
   f = plt.figure()
   a = f.gca()
-  ip1 = interaction_plot(d['degreedays'],d['Location'],myfits.fittedvalues,plottype="line",ax = a)
-  ip2 = interaction_plot(d['degreedays'],d['Location'],d['therms'],plottype='scatter',ax = a)
+  ip1 = interaction_plot(d['degreedays'], d['Location'], my_fits.fittedvalues, plottype="line", ax=a)
+  ip2 = interaction_plot(d['degreedays'], d['Location'], d['therms'], plottype='scatter', ax=a)
   lines, labels = f.axes[0].get_legend_handles_labels()
-  a.legend_=None
-  f.legend(lines[0:3], labels[0:3], loc = 'upper left',bbox_to_anchor=(0.15,0.85))
+  a.legend_ = None
+  f.legend(lines[0:3], labels[0:3], loc='upper left', bbox_to_anchor=(0.15, 0.85))
   plt.savefig(fn)
   fn
 #+end_src
@@ -242,7 +242,7 @@ This gives us a "connect-the-dots" sort of look to our data. We would prefer to 
 Note that figuring out how to get the legend only for the plot with the lines and not a redundant legend for the scatterplot, and to place it properly took me about an hour. This is not as easy a system to get started in as the ~R~ commands are. 
 
 * Assessment
-Words of warning: do not think you can just cut and paste the R commands with the Python commands and vice versa. You will need to look up how to do the things in python that we do in R and vice versa by consulting on line sources. In some cases the easy thing in R is hard in python and vice versa. 
+Words of warning: do not think you can just cut and paste the R commands with the Python commands and vice versa. You will need to look up how to do the things in python that we do in R and vice versa by consulting online sources. In some cases the easy thing in R is hard in python and vice versa.
 
 * Plotting Assessment: R and Python
 

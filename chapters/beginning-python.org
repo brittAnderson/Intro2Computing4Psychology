@@ -126,10 +126,10 @@ For those of you who prefer video you can watch this. All the information is con
    And another code block for python
 
    #+Begin_src python :results output :exports both :session *beginpython*
-   myname = "britt"
-   mylistname = list(myname)
-   for i,j in enumerate(mylistname):
-       print((i,j))
+   my_name = "britt"
+   my_name_as_list = list(my_name)
+   for i, j in enumerate(my_name_as_list):
+       print((i, j))
    #+End_src
 
    #+RESULTS:
@@ -168,10 +168,10 @@ Many of the examples and much of the text that is written below is also reviewed
     A conceptual difference more than a implementation difference in python. Do you think the value will always be the same, like hours in the day, then it is a "constant". Do you think that the value will mutate over the course your program runs, like the time on a clock, then it is a variable. Both may be defined in python with an equal sign. Some people use the typography to distinguish the two, but note that some programming languages are case sensitive meaning ~ONE~ is different from ~one~. 
 
     #+begin_src python  :session *beginpython* :exports both :results value replace
-      NUMDAYPERYEAR = 365
-      x = NUMDAYPERYEAR
-      daysThisYear = x + 1
-      daysThisYear
+      NUM_DAY_PER_YEAR = 365
+      x = NUM_DAY_PER_YEAR
+      days_this_year = x + 1
+      days_this_year
       #+end_src
 
       #+RESULTS:
@@ -204,18 +204,18 @@ Here we treat the number of days in a regular year as a constant while allowing 
       You can get the location of an element in a list by referring to its /index/. Think of the row or column number in a spread sheet program, but indexes can be more powerful, and can be nested easily. In many programming languages, but sadly not all, indexes start at 0. Different programming languages will have slightly different syntax. 
       #+Name: Indexing
       #+begin_src python :session *beginpython* :exports both :results output
-	nameDict = {'firstName' : 'Britt', 'lastName' : 'Anderson'}
-	mylist = list(range(1,10))
+	name_dict = {'firstName' : 'Britt', 'lastName' : 'Anderson'}
+	my_list = list(range(1, 10))
 
-	print(nameDict['firstName'])
+	print(name_dict['firstName'])
 
-	print(mylist)
+	print(my_list)
 
-	print(mylist[0])
+	print(my_list[0])
 
-	print(mylist[-1])
+	print(my_list[-1])
 
-	print(mylist[0:4])
+	print(my_list[0:4])
       #+end_src
 
       #+RESULTS: Indexing
@@ -229,12 +229,12 @@ Here we treat the number of days in a regular year as a constant while allowing 
      
       #+Name: For Loop
       #+begin_src python :session *beginpython* :exports both :results output
-	for ml in mylist:
+	for ml in my_list:
             print(ml)
 
 
-	for i,ml in enumerate(mylist):
-            print("The {0}th element was {1}".format(i,ml))
+	for i, ml in enumerate(my_list):
+            print("The {0}th element was {1}".format(i, ml))
       #+end_src
 
       #+RESULTS: For Loop
@@ -264,9 +264,9 @@ Here we treat the number of days in a regular year as a constant while allowing 
      This is where you test whether something is or is not ~True~. Note that Python, but not all computer languages, treats 0 the same as False, and all non-zero values as True. 
 
      #+begin_src python :exports code  :session *beginpython* :results output
-       if (2 == 3):
+       if 2 == 3:
            print("Wha.....?\n\n")
-       elif (3 == 2):
+       elif 3 == 2:
            print("Now that is odd")
        else:
            print("2 does not equal 3.")
@@ -279,9 +279,9 @@ Here we treat the number of days in a regular year as a constant while allowing 
 
      #+begin_src python :exports both :session *beginpython* :results output
        i = 0
-       while (i<=10):
+       while i <= 10:
            print("brittAnderson"[i])
-           i = i+1
+           i = i + 1
          #+end_src
 
          #+RESULTS:
@@ -309,14 +309,14 @@ Here we treat the number of days in a regular year as a constant while allowing 
     those names in your function, because until you use it, your
     function doesn't know what it will be getting.
  #+begin_src python :exports code  :session *beginpython*
- def myadd(x,y):
-    return(x+y)
+ def my_add(x, y):
+    return(x + y)
  #+end_src
 
  #+RESULTS:
 
  #+begin_src python :exports both :results output :session *beginpython*
- myadd(2,3)
+ my_add(2, 3)
  #+end_src
 
  #+RESULTS:
@@ -398,7 +398,7 @@ I have found that these assignments are where many people feel like things start
    Remember not to re-invent the wheel. For example, does python have a function for sorting lists? Can you turn a "string" into a python list that would allow you to use indices? Lastly, note that a for loop can use more than one variable at a time. For my version I have a line that reads, 
 
    #+begin_src python :session *beginpython* :exports code :eval never
-	 for i,l in enumerate(zip(myList,sorted(myList))):
+	 for i, l in enumerate(zip(my_list, sorted(my_list))):
    #+end_src
 
    #+RESULTS:
