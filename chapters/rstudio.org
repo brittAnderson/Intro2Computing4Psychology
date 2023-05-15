@@ -54,7 +54,7 @@ Programming means writing instructions for a computer. R is a common programming
 ** Verify That Both R and RStudio Are Working
    The way to do this is to open the RStudio program and type in some simple equation such as $2 + 2$ and it should print ~4~.
 
-** Generate and Rmd file; Try some simple programming; export a webpage
+** Generate an Rmd file; Try some simple programming; export a webpage
 One of our course goals is to promote reproducible research. One of the ways you do this is by sharing the actual code you used for an analysis. Ideally this is embedded in the actual file you use to generate your report and manuscript. But you don't want the code showing in the finished version. Using a markup language to write the report allows you to accomplish all this. You write the article in text. You write the code for statistical tests and plots in the code. You blend the two together to produce a manuscript with the results of the code executed and embedded. You can share the raw file with anyone who wishes to repeat your analysis or edit it.
 
 RStudio supports several different ways of interacting with R and generating output. We will use the Rmd file, which stands for R Mark Down.
