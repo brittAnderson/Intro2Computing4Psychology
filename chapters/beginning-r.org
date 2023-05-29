@@ -16,7 +16,7 @@
 #+cite_export: csl assets/chicago-note-bibliography-16th-edition.csl
 
 * Objectives and Overview
-TBD
+
 
 #+begin_export html
 <div style="padding:56.39% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/460263215?h=f91db2a2dc" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
@@ -98,22 +98,30 @@ This assumes you have opened emacs.
 
   #+Name: typeof
   #+Caption: Use the function ~typeof~ in R to determine the datatype of a variable. 
-  #+begin_src R :session *beginR*
-    a = 1
-   f typeof(a)
+  #+begin_src R :session *beginR* :exports both :results output
+     a = 1
+     typeof(a)
   #+end_src
+
+  #+RESULTS: typeof
+  : [1] "double"
 
   
 ** Lists and other data structures in R
 
   #+Name: Lists and Tuples and Data Frames
   #+Caption: Lists, Tuples, Data.Frames and Data.Tables
-  #+begin_src R *beginR*
+  #+begin_src R *beginR* :exports both :results value
     tpl = c(1,2)
     lst = list("firstName" = 'Britt', "lastName" = 'Anderson')
     df = data.frame('fn' = c("bob","jane","griffin"),"gndr" = c('m','f','o'))
     df
   #+end_src
+
+  #+RESULTS: Lists and Tuples and Data Frames
+  | bob     | m |
+  | jane    | f |
+  | griffin | o |
 
 
 ** Data Frames
@@ -128,17 +136,23 @@ sheets. But they are much handier. For example, let's look at the cars
 data frame that comes as part of the base R installation. You can
 verify it is installed like this.
   
-     #+begin_src R :session *beginR*
+     #+begin_src R :session *beginR* :exports both :results output
        is.data.frame(cars)
      #+end_src
+
+     #+RESULTS:
+     : [1] TRUE
 
 *** Selection by Booleans
 In our Python section we learned about _predicates_ (or [[file:beginning-python.org::*Conditionals][conditionals]]). These were tests that returned true or false and that we could use in [[file:beginning-python.org::*While Loop][while loops]].
     
 How many cars are there that can go faster than 10, but not more than 20?
-    #+begin_src R :session *beginR*
+    #+begin_src R :session *beginR* :exports both :results output
     length(cars$dist[cars$speed > 10 & cars$speed < 20])
     #+end_src
+
+    #+RESULTS:
+    : [1] 29
 
 
 Can you do that easily in Excel?
