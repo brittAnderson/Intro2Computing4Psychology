@@ -78,7 +78,7 @@ LaTeX could be a whole lecture (maybe even a course) in itself. We will not go i
     - [[http://ctan.mirror.rafal.ca/info/lshort/english/lshort.pdf][The not so short introduction (pdf)]]
     - [[https://en.wikibooks.org/wiki/LaTeX/Basics][Not as good but really short]]
     - [[http://tug.ctan.org/info/latex4wp/latex4wp.pdf][LaTeX for Word Processor Users (pdf)]]
-    - [[https://medium.com/@marko_kovic/why-i-write-with-latex-and-why-you-should-too-ba6a764fadf9][A polemic for writing in latex]]
+    - [[https://web.archive.org/web/20201003223727/https://medium.com/@marko_kovic/why-i-write-with-latex-and-why-you-should-too-ba6a764fadf9][A polemic for writing in latex]]
       You can do this in emacs too. Look for information on the [[https://www.gnu.org/software/auctex/][Auctex.]]
 
 *** Pdf Viewers

@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-04-23 Sun 11:52 -->
+<!-- 2023-05-29 Mon 11:07 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Writing Reproducible Research Reports</title>
@@ -201,36 +201,36 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org2655a56">1. Writing Reproducible Reports</a>
+<li><a href="#org76318aa">1. Writing Reproducible Reports</a>
 <ul>
-<li><a href="#org293e930">1.1. Topic Goal</a></li>
-<li><a href="#org92b5bc0">1.2. Many Paths - One Destination</a></li>
-<li><a href="#org990d349">1.3. Preliminaries</a>
+<li><a href="#orgea77fd4">1.1. Topic Goal</a></li>
+<li><a href="#orga55a639">1.2. Many Paths - One Destination</a></li>
+<li><a href="#org26f3e84">1.3. Preliminaries</a>
 <ul>
-<li><a href="#org4250924">1.3.1. Latex Installing</a></li>
-<li><a href="#org48a5e3a">1.3.2. LaTeX Tutorials for Beginners</a></li>
-<li><a href="#orgca3b8da">1.3.3. Pdf Viewers</a></li>
-<li><a href="#org258791e">1.3.4. Preparing Xubuntu</a></li>
-<li><a href="#org443761c">1.3.5. Preparing Emacs</a></li>
-<li><a href="#org63971b2">1.3.6. Building Pdf-Tools</a></li>
+<li><a href="#org2ff8df6">1.3.1. Latex Installing</a></li>
+<li><a href="#org410ecef">1.3.2. LaTeX Tutorials for Beginners</a></li>
+<li><a href="#orgc922f0a">1.3.3. Pdf Viewers</a></li>
+<li><a href="#org9360cae">1.3.4. Preparing Xubuntu</a></li>
+<li><a href="#orgba20488">1.3.5. Preparing Emacs</a></li>
+<li><a href="#orga9625eb">1.3.6. Building Pdf-Tools</a></li>
 </ul>
 </li>
-<li><a href="#org544d603">1.4. Writing a simple report</a></li>
-<li><a href="#orgafcbff0">1.5. Writing a not-so-simple report</a>
+<li><a href="#org5561e4c">1.4. Writing a simple report</a></li>
+<li><a href="#org2552348">1.5. Writing a not-so-simple report</a>
 <ul>
-<li><a href="#org7687aba">1.5.1. Testing the inclusion of source code</a></li>
-<li><a href="#org32ee96d">1.5.2. Tables.</a></li>
-<li><a href="#org5aab188">1.5.3. What is an inline result?</a></li>
-<li><a href="#org5d41e3f">1.5.4. Can I include references?</a></li>
+<li><a href="#org4c430ec">1.5.1. Testing the inclusion of source code</a></li>
+<li><a href="#orgd652728">1.5.2. Tables.</a></li>
+<li><a href="#orgd839dde">1.5.3. What is an inline result?</a></li>
+<li><a href="#orgb2f80b6">1.5.4. Can I include references?</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#org59b0c8e">2. Assessment: Report Generation with Org Babel</a>
+<li><a href="#org41e4699">2. Assessment: Report Generation with Org Babel</a>
 <ul>
-<li><a href="#org6bbc5b3">2.1. Purpose</a></li>
-<li><a href="#org8ebf078">2.2. Task</a></li>
-<li><a href="#org81ff326">2.3. Comments</a></li>
+<li><a href="#org08f7625">2.1. Purpose</a></li>
+<li><a href="#orgc837c39">2.2. Task</a></li>
+<li><a href="#org0a197e4">2.3. Comments</a></li>
 </ul>
 </li>
 </ul>
@@ -239,12 +239,12 @@
 
 
 
-<div id="outline-container-org2655a56" class="outline-2">
-<h2 id="org2655a56"><span class="section-number-2">1.</span> Writing Reproducible Reports</h2>
+<div id="outline-container-org76318aa" class="outline-2">
+<h2 id="org76318aa"><span class="section-number-2">1.</span> Writing Reproducible Reports</h2>
 <div class="outline-text-2" id="text-1">
 </div>
-<div id="outline-container-org293e930" class="outline-3">
-<h3 id="org293e930"><span class="section-number-3">1.1.</span> Topic Goal</h3>
+<div id="outline-container-orgea77fd4" class="outline-3">
+<h3 id="orgea77fd4"><span class="section-number-3">1.1.</span> Topic Goal</h3>
 <div class="outline-text-3" id="text-1-1">
 <p>
 To introduce writing <span class="underline">reproducible research</span> reports: reports that mix text, code, analyses, and output into a single document so that readers can see the report and the methods used to generate the analyses and are free to re-evaluate the claims by editing the source for the "viewable" document. 
@@ -257,8 +257,8 @@ To introduce writing <span class="underline">reproducible research</span> report
 </div>
 </div>
 
-<div id="outline-container-org92b5bc0" class="outline-3">
-<h3 id="org92b5bc0"><span class="section-number-3">1.2.</span> Many Paths - One Destination</h3>
+<div id="outline-container-orga55a639" class="outline-3">
+<h3 id="orga55a639"><span class="section-number-3">1.2.</span> Many Paths - One Destination</h3>
 <div class="outline-text-3" id="text-1-2">
 <p>
 There is no standard for the software and tools needed to write a reproducible report. What is common is not software or tooling, but rather the final product. To be a reproducible report the reader should be able to repeat the analyses reported. That requires access to the code used to generate the analyses and the data on which the analyses were done. It should include the detailed specifics about how the data was collected, but for many (though not all experiments) the collection of the data itself is not a part of the reproducible report. If you string together a writing process that accomplishes that end then you will have produced a reproducible report. The "best" tool for the job will depend on your domain, what other workers in your area are used to and find customary, and practical concerns such as the speed of development and the ease of use. 
@@ -291,12 +291,12 @@ To compare them for their ease of use and fit to your use case will require tryi
 </div>
 
 
-<div id="outline-container-org990d349" class="outline-3">
-<h3 id="org990d349"><span class="section-number-3">1.3.</span> Preliminaries</h3>
+<div id="outline-container-org26f3e84" class="outline-3">
+<h3 id="org26f3e84"><span class="section-number-3">1.3.</span> Preliminaries</h3>
 <div class="outline-text-3" id="text-1-3">
 </div>
-<div id="outline-container-org4250924" class="outline-4">
-<h4 id="org4250924"><span class="section-number-4">1.3.1.</span> Latex Installing</h4>
+<div id="outline-container-org2ff8df6" class="outline-4">
+<h4 id="org2ff8df6"><span class="section-number-4">1.3.1.</span> Latex Installing</h4>
 <div class="outline-text-4" id="text-1-3-1">
 <p>
 <a href="https://en.wikipedia.org/wiki/LaTeX">LaTex</a> is a type setting program. It is widely used in the mathematical and computing communities for its ability to produce precisely and correctly typeset mathematical notation. But it has grown well beyond those roots. We will use it as the method to go from a plain .tex file to a .pdf file. 
@@ -328,21 +328,21 @@ LaTeX could be a whole lecture (maybe even a course) in itself. We will not go i
 </div>
 
 
-<div id="outline-container-org48a5e3a" class="outline-4">
-<h4 id="org48a5e3a"><span class="section-number-4">1.3.2.</span> LaTeX Tutorials for Beginners</h4>
+<div id="outline-container-org410ecef" class="outline-4">
+<h4 id="org410ecef"><span class="section-number-4">1.3.2.</span> LaTeX Tutorials for Beginners</h4>
 <div class="outline-text-4" id="text-1-3-2">
 <ul class="org-ul">
 <li><a href="http://ctan.mirror.rafal.ca/info/lshort/english/lshort.pdf">The not so short introduction (pdf)</a></li>
 <li><a href="https://en.wikibooks.org/wiki/LaTeX/Basics">Not as good but really short</a></li>
 <li><a href="http://tug.ctan.org/info/latex4wp/latex4wp.pdf">LaTeX for Word Processor Users (pdf)</a></li>
-<li><a href="https://medium.com/@marko_kovic/why-i-write-with-latex-and-why-you-should-too-ba6a764fadf9">A polemic for writing in latex</a>
+<li><a href="https://web.archive.org/web/20201003223727/https://medium.com/@marko_kovic/why-i-write-with-latex-and-why-you-should-too-ba6a764fadf9">A polemic for writing in latex</a>
 You can do this in emacs too. Look for information on the <a href="https://www.gnu.org/software/auctex/">Auctex.</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-orgca3b8da" class="outline-4">
-<h4 id="orgca3b8da"><span class="section-number-4">1.3.3.</span> Pdf Viewers</h4>
+<div id="outline-container-orgc922f0a" class="outline-4">
+<h4 id="orgc922f0a"><span class="section-number-4">1.3.3.</span> Pdf Viewers</h4>
 <div class="outline-text-4" id="text-1-3-3">
 <p>
 There are many pdf viewers that work well in the linux world. A very minimal version is
@@ -363,8 +363,8 @@ It is common for the Ubuntu packages to come in both regular and development ver
 </div>
 </div>
 
-<div id="outline-container-org258791e" class="outline-4">
-<h4 id="org258791e"><span class="section-number-4">1.3.4.</span> Preparing Xubuntu</h4>
+<div id="outline-container-org9360cae" class="outline-4">
+<h4 id="org9360cae"><span class="section-number-4">1.3.4.</span> Preparing Xubuntu</h4>
 <div class="outline-text-4" id="text-1-3-4">
 <p>
 You may already have many of the files you will need to build the <code>pdf-tools</code> package, but just in case make sure to install: 
@@ -383,8 +383,8 @@ You may already have many of the files you will need to build the <code>pdf-tool
 </ol>
 </div>
 </div>
-<div id="outline-container-org443761c" class="outline-4">
-<h4 id="org443761c"><span class="section-number-4">1.3.5.</span> Preparing Emacs</h4>
+<div id="outline-container-orgba20488" class="outline-4">
+<h4 id="orgba20488"><span class="section-number-4">1.3.5.</span> Preparing Emacs</h4>
 <div class="outline-text-4" id="text-1-3-5">
 <p>
 Run <code>M-x package-list-packages</code> to refresh and display available packages. Search for <code>let-alist</code> and <code>tablist</code>. Mark them both with an <code>i</code> and then type <code>x</code> to <i>execute</i> the installation. 
@@ -395,8 +395,8 @@ Then search for <code>pdf-tools</code> make it with an <code>i</code> and then e
 </p>
 </div>
 </div>
-<div id="outline-container-org63971b2" class="outline-4">
-<h4 id="org63971b2"><span class="section-number-4">1.3.6.</span> Building Pdf-Tools</h4>
+<div id="outline-container-orga9625eb" class="outline-4">
+<h4 id="orga9625eb"><span class="section-number-4">1.3.6.</span> Building Pdf-Tools</h4>
 <div class="outline-text-4" id="text-1-3-6">
 <p>
 Edit your <code>init.el</code> file and add the line 
@@ -422,8 +422,8 @@ Test it out with a pdf. If you don't have one handy just down load one via schol
 </div>
 </div>
 
-<div id="outline-container-org544d603" class="outline-3">
-<h3 id="org544d603"><span class="section-number-3">1.4.</span> Writing a simple report</h3>
+<div id="outline-container-org5561e4c" class="outline-3">
+<h3 id="org5561e4c"><span class="section-number-3">1.4.</span> Writing a simple report</h3>
 <div class="outline-text-3" id="text-1-4">
 <ol class="org-ol">
 <li>Start Emacs</li>
@@ -442,20 +442,20 @@ In the future you might prefer to use the <a href="https://github.com/yihui/knit
 </div>
 </div>
 
-<div id="outline-container-orgafcbff0" class="outline-3">
-<h3 id="orgafcbff0"><span class="section-number-3">1.5.</span> Writing a not-so-simple report</h3>
+<div id="outline-container-org2552348" class="outline-3">
+<h3 id="org2552348"><span class="section-number-3">1.5.</span> Writing a not-so-simple report</h3>
 <div class="outline-text-3" id="text-1-5">
 </div>
-<div id="outline-container-org7687aba" class="outline-4">
-<h4 id="org7687aba"><span class="section-number-4">1.5.1.</span> Testing the inclusion of source code</h4>
+<div id="outline-container-org4c430ec" class="outline-4">
+<h4 id="org4c430ec"><span class="section-number-4">1.5.1.</span> Testing the inclusion of source code</h4>
 <div class="outline-text-4" id="text-1-5-1">
 <p>
 Go back to the file you wrote in Rmd and which has the for-loop. Now convert that file to an org file (just do a save as: <code>C-x C-w</code> substituting .org for .rmd). Edit the code blocks that you wrote as R chunks to be source blocks in org mode. You have seen examples of this already, but there is a reminder <a href="https://orgmode.org/worg/org-contrib/babel/intro.html">here</a>. Now compile it with the <code>C-c C-e l p</code> command to generate a pdf. Keep tweaking until you get it to work. 
 </p>
 </div>
 </div>
-<div id="outline-container-org32ee96d" class="outline-4">
-<h4 id="org32ee96d"><span class="section-number-4">1.5.2.</span> Tables.</h4>
+<div id="outline-container-orgd652728" class="outline-4">
+<h4 id="orgd652728"><span class="section-number-4">1.5.2.</span> Tables.</h4>
 <div class="outline-text-4" id="text-1-5-2">
 <p>
 Pretty much happens automatically. You may have to play with the <i>header</i> <a href="https://orgmode.org/manual/Header-arguments.html#Header-arguments">arguments</a> to get exactly the look you want. The <i>header</i> arguments are those things appearing on the <code>+#Begin_Src</code> line. 
@@ -484,8 +484,8 @@ Try adding this to your prior file just to make sure you can get the table to ex
 </p>
 </div>
 </div>
-<div id="outline-container-org5aab188" class="outline-4">
-<h4 id="org5aab188"><span class="section-number-4">1.5.3.</span> What is an inline result?</h4>
+<div id="outline-container-orgd839dde" class="outline-4">
+<h4 id="orgd839dde"><span class="section-number-4">1.5.3.</span> What is an inline result?</h4>
 <div class="outline-text-4" id="text-1-5-3">
 <p>
 An inline result is one that appears at the correct place in the text. 
@@ -496,13 +496,13 @@ Imagine that you are doing an analysis for a report and instead of having to cut
 </p>
 
 <p>
-The mean of 100 mean 0 normally distributed numbers is 0.144151247588365.
+The mean of 100 mean 0 normally distributed numbers is 0.0498254924850924.
 </p>
 </div>
 </div>
 
-<div id="outline-container-org5d41e3f" class="outline-4">
-<h4 id="org5d41e3f"><span class="section-number-4">1.5.4.</span> Can I include references?</h4>
+<div id="outline-container-orgb2f80b6" class="outline-4">
+<h4 id="orgb2f80b6"><span class="section-number-4">1.5.4.</span> Can I include references?</h4>
 <div class="outline-text-4" id="text-1-5-4">
 <p>
 Yes. Of course you can. <b>And you should</b>.
@@ -514,14 +514,14 @@ Yes. Of course you can. <b>And you should</b>.
 </div>
 
 <ol class="org-ol">
-<li><a id="org57eab56"></a>Using bibtex (biber and biblatex)<br />
+<li><a id="orgd68eb7f"></a>Using bibtex (biber and biblatex)<br />
 <div class="outline-text-5" id="text-1-5-4-1">
 <p>
 Biblatex is the modern version of this, but it can be a bit easier to get started with than <i>bibtex</i>. Both of them use the same basic format for saved text files to keep all the references that you may ever want to use. They allow you to easily reformat and reuse your references in multiple documents or flip from APA style to another reference style with a few characters of text. Using an alphabetical format that requires changing to a cite in numerical order? Just change the bibtex command and recompile your document. Done. 
 </p>
 </div>
 </li>
-<li><a id="orge984862"></a>Testing<br />
+<li><a id="orgc0b9004"></a>Testing<br />
 <div class="outline-text-5" id="text-1-5-4-2">
 <p>
 Open up the <code>test.bib</code> file in the <code>codeExamples/reportGen/</code> sub-directory. This will show you an example of a book and an article reference. Make sure that <code>testRBabelBib.org</code> and <code>test.bib</code> are in the same directory and that it is your current directory. If you have the right packages for latex installed, you should be able to <code>C-c C-e l l</code> to produce a file ending with .tex as an extension. Open this in emacs and enter <code>C-c C-c</code> . Ask for <code>latex</code>. Then repeat the <code>C-c C-c</code> for <code>bibtex</code> and twice more for <code>latex</code> and finally <code>pdflatex</code>. If all this seems repetitive it is possible to set things up in your =init.el` file to avoid this repetition, but this is already a pretty heavy lesson. Now look at the pdf file in emacs. You have a correctly edited, cited, and hyper linked pdf file. Amazing?
@@ -534,12 +534,12 @@ Open up the <code>test.bib</code> file in the <code>codeExamples/reportGen/</cod
 </div>
 
 
-<div id="outline-container-org59b0c8e" class="outline-2">
-<h2 id="org59b0c8e"><span class="section-number-2">2.</span> Assessment: Report Generation with Org Babel</h2>
+<div id="outline-container-org41e4699" class="outline-2">
+<h2 id="org41e4699"><span class="section-number-2">2.</span> Assessment: Report Generation with Org Babel</h2>
 <div class="outline-text-2" id="text-2">
 </div>
-<div id="outline-container-org6bbc5b3" class="outline-3">
-<h3 id="org6bbc5b3"><span class="section-number-3">2.1.</span> Purpose</h3>
+<div id="outline-container-org08f7625" class="outline-3">
+<h3 id="org08f7625"><span class="section-number-3">2.1.</span> Purpose</h3>
 <div class="outline-text-3" id="text-2-1">
 <p>
 Gain familiarity with report generation using org and babel and the inclusion of code blocks, graphics, and reference sections
@@ -547,8 +547,8 @@ Gain familiarity with report generation using org and babel and the inclusion of
 </div>
 </div>
 
-<div id="outline-container-org8ebf078" class="outline-3">
-<h3 id="org8ebf078"><span class="section-number-3">2.2.</span> Task</h3>
+<div id="outline-container-orgc837c39" class="outline-3">
+<h3 id="orgc837c39"><span class="section-number-3">2.2.</span> Task</h3>
 <div class="outline-text-3" id="text-2-2">
 <p>
 Provide an org file and its companion bib file that has a
@@ -577,8 +577,8 @@ There are many ways to get references in the bibtex format. Scholar Google can e
 </div>
 </div>
 
-<div id="outline-container-org81ff326" class="outline-3">
-<h3 id="org81ff326"><span class="section-number-3">2.3.</span> Comments</h3>
+<div id="outline-container-org0a197e4" class="outline-3">
+<h3 id="org0a197e4"><span class="section-number-3">2.3.</span> Comments</h3>
 <div class="outline-text-3" id="text-2-3">
 <p>
 I will evaluate submissions by compiling from org to pdf in my version of emacs. Either I will be able to produce a pdf of your report or I won't. If I can, and it meets all the requirements above then you will get full credit. 
@@ -590,7 +590,7 @@ I will evaluate submissions by compiling from org to pdf in my version of emacs.
 <div id="postamble" class="status">
 <p class="date">Date: 2023-02-13 Mon 00:00</p>
 <p class="author">Author: Britt Anderson</p>
-<p class="date">Created: 2023-04-23 Sun 11:52</p>
+<p class="date">Created: 2023-05-29 Mon 11:07</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
