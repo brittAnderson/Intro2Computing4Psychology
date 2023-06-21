@@ -1,0 +1,6 @@
+#+begin_src python :results function :exports both
+  return(2+2)
+#+end_src
+
+#+RESULTS:
+: 4
