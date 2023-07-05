@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-04-23 Sun 11:52 -->
+<!-- 2023-07-05 Wed 14:49 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Basic Plotting with R and Python</title>
@@ -201,50 +201,50 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org864e1bc">1. Basic Plotting</a>
+<li><a href="#orgae8932e">1. Basic Plotting</a>
 <ul>
-<li><a href="#orgff6519f">1.1. Plotting in R: A tale of two approaches</a></li>
+<li><a href="#orgd736428">1.1. Plotting in R: A tale of two approaches</a></li>
 </ul>
 </li>
-<li><a href="#org2652528">2. Why Both R and Python? Why Can't I Just Pick One?</a></li>
-<li><a href="#org45f1e17">3. R</a>
+<li><a href="#orgcf1d26b">2. Why Both R and Python? Why Can't I Just Pick One?</a></li>
+<li><a href="#org98614a9">3. R</a>
 <ul>
-<li><a href="#orgf549bd7">3.1. Libraries for Plotting</a></li>
-<li><a href="#org1002399">3.2. A first taste of plotting in R</a>
+<li><a href="#org8b2969f">3.1. Libraries for Plotting</a></li>
+<li><a href="#orgd87cb78">3.2. A first taste of plotting in R</a>
 <ul>
-<li><a href="#org2dce019">3.2.1. Base Plot</a></li>
-<li><a href="#org63dd30a">3.2.2. Changing the look of base plot</a></li>
-<li><a href="#org6b959ec">3.2.3. ggplot</a></li>
+<li><a href="#org07769d8">3.2.1. Base Plot</a></li>
+<li><a href="#orgee679ed">3.2.2. Changing the look of base plot</a></li>
+<li><a href="#org3b1fdd4">3.2.3. ggplot</a></li>
 </ul>
 </li>
-<li><a href="#orgb311086">3.3. Practice makes perfect</a>
+<li><a href="#org80fbbe3">3.3. Practice makes perfect</a>
 <ul>
-<li><a href="#orge30e06c">3.3.1. Lattice (the third, very powerful, plotting alternative for R)</a></li>
+<li><a href="#org5586697">3.3.1. Lattice (the third, very powerful, plotting alternative for R)</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#orgc6e4a44">4. Python</a>
+<li><a href="#org19feb6a">4. Python</a>
 <ul>
-<li><a href="#org47c7278">4.1. Interaction Plots</a></li>
-<li><a href="#orge3b61f4">4.2. Getting the data</a></li>
-<li><a href="#org2e168ba">4.3. Pandas Read in Text</a></li>
+<li><a href="#org7fe67bf">4.1. Interaction Plots</a></li>
+<li><a href="#orgd2342ef">4.2. Getting the data</a></li>
+<li><a href="#orgf5ed499">4.3. Pandas Read in Text</a></li>
 </ul>
 </li>
-<li><a href="#orgd4e9f1b">5. Assessment</a></li>
-<li><a href="#org7213f62">6. Plotting Assessment: R and Python</a>
+<li><a href="#org707c659">5. Assessment</a></li>
+<li><a href="#plotting_assessment">6. Plotting Assessment: R and Python</a>
 <ul>
-<li><a href="#orgf0c80f6">6.1. Task</a></li>
-<li><a href="#org5aca2fd">6.2. What to submit</a></li>
-<li><a href="#org86063e9">6.3. Hints</a></li>
+<li><a href="#orgdebf475">6.1. Task</a></li>
+<li><a href="#orgfca60fe">6.2. What to submit</a></li>
+<li><a href="#org771105c">6.3. Hints</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org864e1bc" class="outline-2">
-<h2 id="org864e1bc"><span class="section-number-2">1.</span> Basic Plotting</h2>
+<div id="outline-container-orgae8932e" class="outline-2">
+<h2 id="orgae8932e"><span class="section-number-2">1.</span> Basic Plotting</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 In this segment we will experiment with plotting data using programing tools and not just dragging lines on a screen or clicking columns in a spreadsheet. The principal advantage of this approach is that the code becomes the documentation for how to generate a plot. This makes it easy to repeat plots with other data sets or to repeat a plot when we have added to our data collection. We can embed the code in our report and the figure will be generated for us. Never again will we search our computers for a missing image file. In addition, this method makes it easy to alter a figure or plot. If we feel the need to change the background color or font size we can just edit our code and hit enter. The new figure with all our old tweaks appears with the new edits.
@@ -256,8 +256,8 @@ In this segment we will experiment with plotting data using programing tools and
 </div>
 
 
-<div id="outline-container-orgff6519f" class="outline-3">
-<h3 id="orgff6519f"><span class="section-number-3">1.1.</span> Plotting in R: A tale of two approaches</h3>
+<div id="outline-container-orgd736428" class="outline-3">
+<h3 id="orgd736428"><span class="section-number-3">1.1.</span> Plotting in R: A tale of two approaches</h3>
 <div class="outline-text-3" id="text-1-1">
 <p>
 R has two main contenders in the plotting domain: base and ggplot. This topic takes a look at both. 
@@ -266,8 +266,8 @@ R has two main contenders in the plotting domain: base and ggplot. This topic ta
 </div>
 </div>
 
-<div id="outline-container-org2652528" class="outline-2">
-<h2 id="org2652528"><span class="section-number-2">2.</span> Why Both R and Python? Why Can't I Just Pick One?</h2>
+<div id="outline-container-orgcf1d26b" class="outline-2">
+<h2 id="orgcf1d26b"><span class="section-number-2">2.</span> Why Both R and Python? Why Can't I Just Pick One?</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 While it may be <i>theoretically</i> possible to do anything that can be done in one computer language in another (after all <a href="https://www.felienne.com/archives/2974">Excel is Turing complete</a>) it may be <i>practically</i> easier in one language than another.   Thus you want to balance being a jack of all trades, but a master of none, with expertise that runs deep, but is narrow. My experience has been that knowing the basics of a few languages is better when you are trying to stitch something together. You can pull what is good from each and glue them together. You take pieces that are robust and have been well vetted and use your own glue code to create the pipeline for your one off or urgent need. However, for something that you will be using in the long term, or where you contemplate sharing with others, it may be better to dig deep and learn some of the specialist's knowledge in one particular programming language. This is another example of making your tools appropriate to your task. A jack-knife is handy to have, you can do almost anything with it, but it is rarely the best tool for any job (I think the source for this is <a href="https://en.wikipedia.org/wiki/John_Tukey">John Tukey</a>).
@@ -279,20 +279,20 @@ This analogy is particulary apt when it comes to plotting. While I expect the si
 </div>
 </div>
 
-<div id="outline-container-org45f1e17" class="outline-2">
-<h2 id="org45f1e17"><span class="section-number-2">3.</span> R</h2>
+<div id="outline-container-org98614a9" class="outline-2">
+<h2 id="org98614a9"><span class="section-number-2">3.</span> R</h2>
 <div class="outline-text-2" id="text-3">
 </div>
-<div id="outline-container-orgf549bd7" class="outline-3">
-<h3 id="orgf549bd7"><span class="section-number-3">3.1.</span> Libraries for Plotting</h3>
+<div id="outline-container-org8b2969f" class="outline-3">
+<h3 id="org8b2969f"><span class="section-number-3">3.1.</span> Libraries for Plotting</h3>
 <div class="outline-text-3" id="text-3-1">
 <p>
 Plotting in R is not one thing. There are at least three plotting libraries you could choose from in R, and two are very common. <code>Base plot</code> and <code>ggplot</code> are the two most common. They can do similar things, but the libraries authors took very different design approaches. With <i>base</i> you build up your plot line by line, entry by entry. With <i>ggplot</i> you create a description of your plot. It is easier to get nice plots quickly with <i>ggplot</i>. It is easier to tweak a plot to perfection in <i>base.</i> These are my personal opinions and I find that different users feel comfortable in the different libraries. You should try both and draw your own conclusions.
 </p>
 </div>
 </div>
-<div id="outline-container-org1002399" class="outline-3">
-<h3 id="org1002399"><span class="section-number-3">3.2.</span> A first taste of plotting in R</h3>
+<div id="outline-container-orgd87cb78" class="outline-3">
+<h3 id="orgd87cb78"><span class="section-number-3">3.2.</span> A first taste of plotting in R</h3>
 <div class="outline-text-3" id="text-3-2">
 <p>
 First, make some pseudo-data. We can use <a href="https://www.math.csi.cuny.edu/Statistics/R/simpleR/stat007.html">the random number generators</a> of <code>R</code> to supply us some data for plotting.<sup><a id="fnr.1" class="footref" href="#fn.1" role="doc-backlink">1</a></sup>
@@ -307,17 +307,17 @@ mapply(<span style="color: #a020f0;">function</span> (x,y,z,q) {c(x,y,z,q)}, xs,
 </pre>
 </div>
 
-<pre class="example" id="org9590e60">
-	   [,1]       [,2]       [,3]       [,4]       [,5]       [,6]
-[1,]  1.0000000 2.00000000  3.0000000  4.0000000  5.0000000  6.0000000
-[2,]  1.0000000 4.00000000  9.0000000 16.0000000 25.0000000 36.0000000
-[3,]  2.0000000 8.00000000 18.0000000 32.0000000 50.0000000 72.0000000
-[4,] -0.2564273 0.05740032  0.9256191  0.3628195  0.6618832  0.7734908
-	   [,7]       [,8]        [,9]       [,10]
-[1,]  7.0000000   8.000000   9.0000000  10.0000000
-[2,] 49.0000000  64.000000  81.0000000 100.0000000
-[3,] 98.0000000 128.000000 162.0000000 200.0000000
-[4,] -0.8655096   1.581502   0.4589741   0.7488712
+<pre class="example" id="org6bf80c6">
+	  [,1]       [,2]       [,3]       [,4]   [,5]       [,6]       [,7]
+[1,] 1.0000000 2.00000000  3.0000000  4.0000000  5.000  6.0000000  7.0000000
+[2,] 1.0000000 4.00000000  9.0000000 16.0000000 25.000 36.0000000 49.0000000
+[3,] 2.0000000 8.00000000 18.0000000 32.0000000 50.000 72.0000000 98.0000000
+[4,] 0.3516467 0.08102127 -0.7312347 -0.6682148 -1.983 -0.2623215  0.1662537
+	   [,8]         [,9]     [,10]
+[1,]   8.000000   9.00000000  10.00000
+[2,]  64.000000  81.00000000 100.00000
+[3,] 128.000000 162.00000000 200.00000
+[4,]  -1.328868  -0.04187366  -1.70868
 </pre>
 
 
@@ -326,8 +326,8 @@ We use <code>R</code>'s assignment operator to create a sequence from 1 to 10 fo
 </p>
 </div>
 
-<div id="outline-container-org2dce019" class="outline-4">
-<h4 id="org2dce019"><span class="section-number-4">3.2.1.</span> Base Plot</h4>
+<div id="outline-container-org07769d8" class="outline-4">
+<h4 id="org07769d8"><span class="section-number-4">3.2.1.</span> Base Plot</h4>
 <div class="outline-text-4" id="text-3-2-1">
 <div style="padding:56.39% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/463524914?h=5a0c9a1bd9" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
 <p><a href="https://vimeo.com/463524914">Jb : Using Base Plot in R (i2c4p)</a> from <a href="https://vimeo.com/epistemic">Britt Anderson</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
@@ -343,15 +343,15 @@ For base plot two primitive commands are <code>plot</code> and <code>lines</code
 </div>
 
 
-<div id="org7fcd0c5" class="figure">
+<div id="org5ec44e7" class="figure">
 <p><img src="./baseplot1.png" alt="baseplot1.png" />
 </p>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org63dd30a" class="outline-4">
-<h4 id="org63dd30a"><span class="section-number-4">3.2.2.</span> Changing the look of base plot</h4>
+<div id="outline-container-orgee679ed" class="outline-4">
+<h4 id="orgee679ed"><span class="section-number-4">3.2.2.</span> Changing the look of base plot</h4>
 <div class="outline-text-4" id="text-3-2-2">
 <div style="padding:56.39% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/463524870?h=38d6437425" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
 <p><a href="https://vimeo.com/463524870">Jc : Editing the Aesthetics of a Base R Plot (i2c4p)</a> from <a href="https://vimeo.com/epistemic">Britt Anderson</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
@@ -374,7 +374,7 @@ How would you include another data series in this plot?
 </p>
 
 <div class="org-src-container">
-<label class="org-src-name"><span class="listing-number">Listing 1: </span>Our base plot with additional data series added.</label><pre class="src src-R" id="org60598fa">plot(xs,ysquare,type = <span style="color: #8b2252;">'b'</span>, frame = F, pch = 19, col = <span style="color: #8b2252;">"red"</span> , ylab = <span style="color: #8b2252;">"y"</span>, lty = 1, lwd = 3)
+<label class="org-src-name"><span class="listing-number">Listing 1: </span>Our base plot with additional data series added.</label><pre class="src src-R" id="orgcdba705">plot(xs,ysquare,type = <span style="color: #8b2252;">'b'</span>, frame = F, pch = 19, col = <span style="color: #8b2252;">"red"</span> , ylab = <span style="color: #8b2252;">"y"</span>, lty = 1, lwd = 3)
 lines(xs,ydouble, pch = 18, col = <span style="color: #8b2252;">"blue"</span>, type = <span style="color: #8b2252;">"b"</span> , lty = 2, lwd = 1)
 lines(xs,yrandom, pch = 17, col = <span style="color: #8b2252;">"green"</span> , type = <span style="color: #8b2252;">"l"</span>, lty=3, lwd = 4)
 legend(<span style="color: #8b2252;">"topleft"</span>, legend = c(<span style="color: #8b2252;">"Line 1"</span>, <span style="color: #8b2252;">"Line 2"</span>, <span style="color: #8b2252;">"Line 3"</span>), col = c(<span style="color: #8b2252;">"red"</span>,<span style="color: #8b2252;">"blue"</span>,<span style="color: #8b2252;">"green"</span>),
@@ -383,7 +383,7 @@ legend(<span style="color: #8b2252;">"topleft"</span>, legend = c(<span style="c
 </div>
 
 
-<div id="orgdd3400f" class="figure">
+<div id="org26cf32f" class="figure">
 <p><img src="./baseplot3.png" alt="baseplot3.png" />
 </p>
 </div>
@@ -398,8 +398,8 @@ Who wants to try and recreate this in Excel or SPSS? As a quick test can you cha
 </div>
 </div>
 
-<div id="outline-container-org6b959ec" class="outline-4">
-<h4 id="org6b959ec"><span class="section-number-4">3.2.3.</span> ggplot</h4>
+<div id="outline-container-org3b1fdd4" class="outline-4">
+<h4 id="org3b1fdd4"><span class="section-number-4">3.2.3.</span> ggplot</h4>
 <div class="outline-text-4" id="text-3-2-3">
 <div style="padding:56.39% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/463524796?h=30f0620069" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
 <p><a href="https://vimeo.com/463524796">Jd : GGplot in R (i2c4p)</a> from <a href="https://vimeo.com/epistemic">Britt Anderson</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
@@ -421,7 +421,7 @@ ggsave(<span style="color: #8b2252;">"ggplot1.png"</span>, width = 8, height = 5
 </div>
 
 
-<div id="orgfcd655c" class="figure">
+<div id="orgc86fa8b" class="figure">
 <p><img src="./ggplot1.png" alt="ggplot1.png" />
 </p>
 </div>
@@ -433,8 +433,8 @@ Notice that here we are saving the results of our calls to <code>ggplot</code> a
 </div>
 </div>
 
-<div id="outline-container-orgb311086" class="outline-3">
-<h3 id="orgb311086"><span class="section-number-3">3.3.</span> Practice makes perfect</h3>
+<div id="outline-container-org80fbbe3" class="outline-3">
+<h3 id="org80fbbe3"><span class="section-number-3">3.3.</span> Practice makes perfect</h3>
 <div class="outline-text-3" id="text-3-3">
 <p>
 To get some hands on experience with plotting I suggest creating <a href="https://en.wikipedia.org/wiki/Scatter_plot">scatter plots</a> and <a href="https://en.wikipedia.org/wiki/Box_plot">box plots</a> with R using one of the built in data sets. 
@@ -451,8 +451,8 @@ Here are a couple of links to help you get started:
 </ol></li>
 </ol>
 </div>
-<div id="outline-container-orge30e06c" class="outline-4">
-<h4 id="orge30e06c"><span class="section-number-4">3.3.1.</span> Lattice (the third, very powerful, plotting alternative for R)</h4>
+<div id="outline-container-org5586697" class="outline-4">
+<h4 id="org5586697"><span class="section-number-4">3.3.1.</span> Lattice (the third, very powerful, plotting alternative for R)</h4>
 <div class="outline-text-4" id="text-3-3-1">
 <p>
      <a href="https://stat.ethz.ch/R-manual/R-devel/library/lattice/html/Lattice.html">
@@ -467,8 +467,8 @@ When should you consider using <code>lattice</code>? When multivariate data are 
 </div>
 </div>
 
-<div id="outline-container-orgc6e4a44" class="outline-2">
-<h2 id="orgc6e4a44"><span class="section-number-2">4.</span> Python</h2>
+<div id="outline-container-org19feb6a" class="outline-2">
+<h2 id="org19feb6a"><span class="section-number-2">4.</span> Python</h2>
 <div class="outline-text-2" id="text-4">
 <div style="padding:56.39% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/463524647?h=9fa558f167" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
 <p><a href="https://vimeo.com/463524647">Je : Plotting with Python (i2c4p)</a> from <a href="https://vimeo.com/epistemic">Britt Anderson</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
@@ -478,16 +478,16 @@ When should you consider using <code>lattice</code>? When multivariate data are 
 Python has many plotting libraries too. <a href="https://matplotlib.org/">Matplotlib</a> is very popular and the most well established. It is leveraged by the Pandas package to make plotting available from Pandas. Other plotting libraries worth checking out are <a href="https://seaborn.pydata.org/">Seaborn</a> and <a href="https://docs.bokeh.org/en/latest/">Bokeh</a>. Bokeh seeks to use the same graphics grammar as ggplot. Lastly, <a href="https://plotly.com/python/">Plotly</a> has become popular and can make interactive plots as well.
 </p>
 </div>
-<div id="outline-container-org47c7278" class="outline-3">
-<h3 id="org47c7278"><span class="section-number-3">4.1.</span> Interaction Plots</h3>
+<div id="outline-container-org7fe67bf" class="outline-3">
+<h3 id="org7fe67bf"><span class="section-number-3">4.1.</span> Interaction Plots</h3>
 <div class="outline-text-3" id="text-4-1">
 <p>
 This example is included because SPSS, a common and powerful statistical package used by many psychologists, makes interaction plots difficult to achieve (or so I am told - I have never used SPSS). If you are taking an advanced statistics course knowing how to create these kinds of plots could be very useful. 
 </p>
 </div>
 </div>
-<div id="outline-container-orge3b61f4" class="outline-3">
-<h3 id="orge3b61f4"><span class="section-number-3">4.2.</span> Getting the data</h3>
+<div id="outline-container-orgd2342ef" class="outline-3">
+<h3 id="orgd2342ef"><span class="section-number-3">4.2.</span> Getting the data</h3>
 <div class="outline-text-3" id="text-4-2">
 <p>
 For this example we will use the data from <a href="http://personality-project.org/r/datasets/heating.txt">http://personality-project.org/r/datasets/heating.txt</a>, but you don't need to download it manually. We can do this from within python itself. Instead of using the request library (a general library in python for making internet requests) we will use the <code>read_csv</code> functionality of pandas to read data from a url (universal resource locator - an address on the world wide web). <sup><a id="fnr.2" class="footref" href="#fn.2" role="doc-backlink">2</a></sup>
@@ -495,11 +495,11 @@ For this example we will use the data from <a href="http://personality-project.o
 </div>
 </div>
 
-<div id="outline-container-org2e168ba" class="outline-3">
-<h3 id="org2e168ba"><span class="section-number-3">4.3.</span> Pandas Read in Text</h3>
+<div id="outline-container-orgf5ed499" class="outline-3">
+<h3 id="orgf5ed499"><span class="section-number-3">4.3.</span> Pandas Read in Text</h3>
 <div class="outline-text-3" id="text-4-3">
 <div class="org-src-container">
-<pre class="src src-python" id="orgbbd6793"><span style="color: #a020f0;">import</span> os
+<pre class="src src-python" id="org454c2e1"><span style="color: #a020f0;">import</span> os
 os.chdir(<span style="color: #8b2252;">"."</span>)
 </pre>
 </div>
@@ -539,7 +539,7 @@ f
 </div>
 
 
-<div id="org0825987" class="figure">
+<div id="org8c1a238" class="figure">
 <p><img src="example-os.png" alt="example-os.png" />
 </p>
 </div>
@@ -567,7 +567,7 @@ fn
 </div>
 
 
-<div id="orgf0dc1d2" class="figure">
+<div id="org9b66b59" class="figure">
 <p><img src="./py-inter-fit-plt.png" alt="py-inter-fit-plt.png" />
 </p>
 </div>
@@ -581,8 +581,8 @@ Note that figuring out how to get the legend only for the plot with the lines an
 </div>
 </div>
 
-<div id="outline-container-orgd4e9f1b" class="outline-2">
-<h2 id="orgd4e9f1b"><span class="section-number-2">5.</span> Assessment</h2>
+<div id="outline-container-org707c659" class="outline-2">
+<h2 id="org707c659"><span class="section-number-2">5.</span> Assessment</h2>
 <div class="outline-text-2" id="text-5">
 <p>
 Words of warning: do not think you can just cut and paste the R commands with the Python commands and vice versa. You will need to look up how to do the things in python that we do in R and vice versa by consulting online sources. In some cases the easy thing in R is hard in python and vice versa.
@@ -590,12 +590,14 @@ Words of warning: do not think you can just cut and paste the R commands with th
 </div>
 </div>
 
-<div id="outline-container-org7213f62" class="outline-2">
-<h2 id="org7213f62"><span class="section-number-2">6.</span> Plotting Assessment: R and Python</h2>
-<div class="outline-text-2" id="text-6">
+<div id="outline-container-plotting_assessment" class="outline-2">
+<h2 id="plotting_assessment"><span class="section-number-2">6.</span> Plotting Assessment: R and Python</h2>
+<div class="outline-text-2" id="text-plotting_assessment">
 </div>
-<div id="outline-container-orgf0c80f6" class="outline-3">
-<h3 id="orgf0c80f6"><span class="section-number-3">6.1.</span> Task</h3>
+
+
+<div id="outline-container-orgdebf475" class="outline-3">
+<h3 id="orgdebf475"><span class="section-number-3">6.1.</span> Task</h3>
 <div class="outline-text-3" id="text-6-1">
 <ol class="org-ol">
 <li>Do exactly what we did in the topic, but reverse which language you use to do each.</li>
@@ -605,8 +607,8 @@ Words of warning: do not think you can just cut and paste the R commands with th
 </div>
 </div>
 
-<div id="outline-container-org5aca2fd" class="outline-3">
-<h3 id="org5aca2fd"><span class="section-number-3">6.2.</span> What to submit</h3>
+<div id="outline-container-orgfca60fe" class="outline-3">
+<h3 id="orgfca60fe"><span class="section-number-3">6.2.</span> What to submit</h3>
 <div class="outline-text-3" id="text-6-2">
 <p>
 An *.org file that includes code blocks for the plots (and the included files for the plots) that accomplish the assigned tasks. It should export to a nice html.
@@ -614,8 +616,8 @@ An *.org file that includes code blocks for the plots (and the included files fo
 </div>
 </div>
 
-<div id="outline-container-org86063e9" class="outline-3">
-<h3 id="org86063e9"><span class="section-number-3">6.3.</span> Hints</h3>
+<div id="outline-container-org771105c" class="outline-3">
+<h3 id="org771105c"><span class="section-number-3">6.3.</span> Hints</h3>
 <div class="outline-text-3" id="text-6-3">
 <ul class="org-ul">
 <li>R can read in data from a url as well as pandas. See <a href="https://stackoverflow.com/questions/6299220/access-a-url-and-read-data-with-r">this</a>stack overflow question/answer.</li>
@@ -645,7 +647,7 @@ Notice that in this file we will execute both R code and Python code mixed with 
 <div id="postamble" class="status">
 <p class="date">Date: 2023-02-10 Fri 00:00</p>
 <p class="author">Author: Britt Anderson</p>
-<p class="date">Created: 2023-04-23 Sun 11:52</p>
+<p class="date">Created: 2023-07-05 Wed 14:49</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

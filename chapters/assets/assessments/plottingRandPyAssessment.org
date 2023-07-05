@@ -6,7 +6,8 @@
   3. The interaction plot should be done with R
 
 * What to submit
-  An *.org file that includes code blocks for the plots (and the included files for the plots) that accomplish the assigned tasks. It should export to a nice html (see the example exported from the topic file in the [[file:~/warehouse/sdcard/gitRepos/Intro2Computing4Psychology/codeExamples/plottingExample/plottingRandPy.html][codeExamples]] subdirectory).
+  An *.org file that includes code blocks for the plots (and the included files for the plots) that accomplish the assigned tasks. It should export to a nice html (see the example exported from the topic file in the
+[[file:~/gitRepos/Intro2Computing4Psychology/chapters/codeExamples/plottingExample/plottingRandPy.org][codeExamples]] subdirectory).
 
 
 * Hints

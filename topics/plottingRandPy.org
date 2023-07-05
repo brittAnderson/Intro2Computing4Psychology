@@ -161,7 +161,7 @@
      Note that figuring out how to get the legend only for the plot with the lines and not a redundant legend for the scatterplot, and to place it properly took me about an hour. This is not as easy a system to get started in as the ~R~ commands are. 
 
 * Assessment
-  The [[file:~/gitRepos/Intro2Computing4Psychology/assessments/plottingRandPyAssessment.org][assessment]] will ask you to reverse the above. Create the R plots with Pandas and the Interaction plot with R.
+  The [[file:~/gitRepos/Intro2Computing4Psychology/chapters/assets/assessments/plottingRandPyAssessment.org][assessment]] will ask you to reverse the above. Create the R plots with Pandas and the Interaction plot with R.
 
 * Footnotes
 
