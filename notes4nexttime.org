@@ -1,0 +1,19 @@
+#+Title: Notes for Next Time (S2023 edition)
+
+* Purpose
+Short, stream-of-conscious notes for things I may try to do, or re-do before the next offering.
+
+* Things to consider changing
+1. How we depend on Linux.
+   I still feel that getting familiarity with a second operatings system and its tools is useful, but this is weighed against the challenge of supporting such a diverse range of student capbabilities and different hardward. The VM machine is easy to get started, but hard to maintain. I had students creating 12gb virtual hard drives, and certain software (such as the Psychopy library) does not always install smoothly in this environment.
+   1. Things to try: Can I get all the windows users using WSL2 for Linux?
+   2. Can all the Mac users get the tools they need through their native terminal and homebrew?
+2. Redo some of the videos.
+   As interfaces change or even how arguments are listed the small changes can have a big effect on student comprehension. The demo videos seem quite successful. I should probably remake them (eventually all of them) to take account of the minor, but still confusing to new comers, changse that occur from version to version.
+3. Replace hangman with something more structured to introduce writing both .R and .py files?
+   Some students still don't get the hang of writing functions they can import and reuse. I still see very long scripts. Maybe this can just be made more structured with specific steps, or I can just grow the data analyses to include these components and stretch them out over time.
+4. Replace psychopy
+   The original goal for psychopy was an easy to use tool for coding experiments. The psychopy people have focused so heavily on the builder that the coder interface is hard to access. Also, the javascript and other components now seem to be the priority. Alas, it seems that psychopy is basically becoming e-prime. I don't want students learning to use a /particular/ tools, but rather learning how to use tools generally. For this reason I think it may be better to use pygame directly. That should be good enough here. The practice components I build up to, instead of just a simple posner cuing, could use words and pictures and RT. Also, a better way to handle data and save to file could better equip students for after the course.
+5. Emacs 29 with =citeproc= and =org-cite=
+   Should be much easier for the citation components. Will this be part of the -buntu offerings? If not, show how to install from source? 
+   
