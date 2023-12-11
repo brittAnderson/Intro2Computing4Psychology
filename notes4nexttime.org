@@ -14,6 +14,21 @@ Short, stream-of-conscious notes for things I may try to do, or re-do before the
    Some students still don't get the hang of writing functions they can import and reuse. I still see very long scripts. Maybe this can just be made more structured with specific steps, or I can just grow the data analyses to include these components and stretch them out over time.
 4. Replace psychopy
    The original goal for psychopy was an easy to use tool for coding experiments. The psychopy people have focused so heavily on the builder that the coder interface is hard to access. Also, the javascript and other components now seem to be the priority. Alas, it seems that psychopy is basically becoming e-prime. I don't want students learning to use a /particular/ tools, but rather learning how to use tools generally. For this reason I think it may be better to use pygame directly. That should be good enough here. The practice components I build up to, instead of just a simple posner cuing, could use words and pictures and RT. Also, a better way to handle data and save to file could better equip students for after the course.
+
+   Also noted that the '/' key doesn't work anymore unless you use the name 'slash'.
 5. Emacs 29 with =citeproc= and =org-cite=
-   Should be much easier for the citation components. Will this be part of the -buntu offerings? If not, show how to install from source? 
-   
+   Should be much easier for the citation components. Will this be part of the -buntu offerings? If not, show how to install from source?
+6. Students noticed a mismatch between learn and github:
+   #+begin_quote
+   > On GitHub, it states that we need at least one plot, and that the introduction and discussion must have at least one citation
+  > each. On LEARN, you’ve asked that we have two plots and at least five citations. Which guidelines should we follow?
+  #+end_quote
+7. Look at seaborn package to make for easier nicer plotting in python?
+8. Citing figures (or at least acknowledge sources)
+9. Reference/cite your use of computational and statistical software. Not just the statistical method but which version of R/Psychopy and any other packages.
+10. Discuss possibly a package for Rmd to mix python with R code? [[https://rstudio.github.io/reticulate/articles/r_markdown.html][Reticulate]]
+11. Another VM option for newer macs? Yet to try: [[https://eclecticlight.co/virtualisation-on-apple-silicon/][Viable]].
+12. Former student had an interesting idea of pairing students from more technical backgrounds with more junior students. Maybe that might help get over code paralysis. Could do it as a mini-group project with hangman?
+13. A citation to justify why they have to document their analytical choices: https://www.nature.com/articles/d41586-023-03177-1
+14. An [[https://github.com/james-stoup/emacs-org-mode-tutorial#org56377d5][org mode]] guide that might be useful?
+15. Use a pandoc workflow for the report writing?
