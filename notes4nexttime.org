@@ -32,3 +32,7 @@ Short, stream-of-conscious notes for things I may try to do, or re-do before the
 13. A citation to justify why they have to document their analytical choices: https://www.nature.com/articles/d41586-023-03177-1
 14. An [[https://github.com/james-stoup/emacs-org-mode-tutorial#org56377d5][org mode]] guide that might be useful?
 15. Use a pandoc workflow for the report writing?
+16. There is a nice update to citation handling that I should adapt. It is well described in this [[https://amerygration.com/Blog/citation_handling_in_emacs.html][recent blog post]].
+
+* Other links to include?
+1. An [[https://neuro4ml.github.io/][online course]] I have not had a chance to look at yet. Might be good for 420.
